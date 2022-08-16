@@ -1,0 +1,107 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/DesComp/Aula3Delta/simulation/qsim
+Edeltaatv1aula3
+Z1 w1660244057
+Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
+Z3 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
+Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
+Z5 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z6 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
+Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z10 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
+!i122 0
+R0
+Z11 8DeltaAtv1Aula3.vho
+Z12 FDeltaAtv1Aula3.vho
+l0
+L39 1
+VR4Xk9019InTdhS>iRf[D]1
+!s100 bZQm;0j0?9RXRSK`1bF`Z2
+Z13 OV;C;2020.1;71
+32
+Z14 !s110 1660244059
+!i10b 1
+Z15 !s108 1660244059.000000
+Z16 !s90 -work|work|DeltaAtv1Aula3.vho|
+Z17 !s107 DeltaAtv1Aula3.vho|
+!i113 1
+Z18 o-work work
+Z19 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+DEx4 work 14 deltaatv1aula3 0 22 R4Xk9019InTdhS>iRf[D]1
+!i122 0
+l194
+L108 1571
+Vj4?NHUF7gQBnLXS[=:=^a0
+!s100 XdTYTL3mA;:kBn83J<Ij@1
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 1
+R18
+R19
+Edeltaatv1aula3_vhd_vec_tst
+Z20 w1660244055
+R8
+R9
+!i122 1
+R0
+Z21 8Waveform.vwf.vht
+Z22 FWaveform.vwf.vht
+l0
+L32 1
+V3_LNN]TTYSkVNR;mKUNR[2
+!s100 3;cJ7e9?<dZBMNPE3adL:3
+R13
+32
+Z23 !s110 1660244060
+!i10b 1
+R15
+Z24 !s90 -work|work|Waveform.vwf.vht|
+!s107 Waveform.vwf.vht|
+!i113 1
+R18
+R19
+Adeltaatv1aula3_arch
+R8
+R9
+DEx4 work 26 deltaatv1aula3_vhd_vec_tst 0 22 3_LNN]TTYSkVNR;mKUNR[2
+!i122 1
+l57
+L34 77
+Vk[e8^Y[V[njQN_MJGWn3P2
+!s100 a^boef@jEYJV`^hV=e9P@0
+R13
+32
+R23
+!i10b 1
+R15
+R24
+Z25 !s107 Waveform.vwf.vht|
+!i113 1
+R18
+R19
