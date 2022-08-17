@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DeltaAtv1Aula3
-Tue Aug 16 20:02:33 2022
+Tue Aug 16 20:23:29 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -53,7 +53,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Aug 16 20:02:33 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Aug 16 20:23:29 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; DeltaAtv1Aula3                              ;
 ; Top-level Entity Name           ; DeltaAtv1Aula3                              ;
@@ -177,18 +177,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                  ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------+---------+
-; DeltaAtv1Aula3.vhd               ; yes             ; User VHDL File  ; C:/DesComp/Aula3Delta/DeltaAtv1Aula3.vhd      ;         ;
-; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/DesComp/Aula3Delta/conversorHex7Seg.vhd    ;         ;
-; divisorGenerico.vhd              ; yes             ; User VHDL File  ; C:/DesComp/Aula3Delta/divisorGenerico.vhd     ;         ;
-; decoder1x4.vhd                   ; yes             ; User VHDL File  ; C:/DesComp/Aula3Delta/decoder1x4.vhd          ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/DesComp/Aula3Delta/registradorGenerico.vhd ;         ;
-; somaConstante.vhd                ; yes             ; User VHDL File  ; C:/DesComp/Aula3Delta/somaConstante.vhd       ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
+; DeltaAtv1Aula3.vhd               ; yes             ; User VHDL File  ; C:/DesComp/DesComp_Delta/Aula3Delta/DeltaAtv1Aula3.vhd      ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/DesComp/DesComp_Delta/Aula3Delta/conversorHex7Seg.vhd    ;         ;
+; divisorGenerico.vhd              ; yes             ; User VHDL File  ; C:/DesComp/DesComp_Delta/Aula3Delta/divisorGenerico.vhd     ;         ;
+; decoder1x4.vhd                   ; yes             ; User VHDL File  ; C:/DesComp/DesComp_Delta/Aula3Delta/decoder1x4.vhd          ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/DesComp/DesComp_Delta/Aula3Delta/registradorGenerico.vhd ;         ;
+; somaConstante.vhd                ; yes             ; User VHDL File  ; C:/DesComp/DesComp_Delta/Aula3Delta/somaConstante.vhd       ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -386,54 +386,54 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Aug 16 20:02:24 2022
+    Info: Processing started: Tue Aug 16 20:23:19 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DeltaAtv1Aula3 -c DeltaAtv1Aula3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file deltaatv1aula3.vhd
-    Info (12022): Found design unit 1: DeltaAtv1Aula3-funcionamento File: C:/DesComp/Aula3Delta/DeltaAtv1Aula3.vhd Line: 18
-    Info (12023): Found entity 1: DeltaAtv1Aula3 File: C:/DesComp/Aula3Delta/DeltaAtv1Aula3.vhd Line: 4
+    Info (12022): Found design unit 1: DeltaAtv1Aula3-funcionamento File: C:/DesComp/DesComp_Delta/Aula3Delta/DeltaAtv1Aula3.vhd Line: 18
+    Info (12023): Found entity 1: DeltaAtv1Aula3 File: C:/DesComp/DesComp_Delta/Aula3Delta/DeltaAtv1Aula3.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file conversorhex7seg.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/DesComp/Aula3Delta/conversorHex7Seg.vhd Line: 17
-    Info (12023): Found entity 1: conversorHex7Seg File: C:/DesComp/Aula3Delta/conversorHex7Seg.vhd Line: 4
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/DesComp/DesComp_Delta/Aula3Delta/conversorHex7Seg.vhd Line: 17
+    Info (12023): Found entity 1: conversorHex7Seg File: C:/DesComp/DesComp_Delta/Aula3Delta/conversorHex7Seg.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file divisorgenerico.vhd
-    Info (12022): Found design unit 1: divisorGenerico-divInteiro File: C:/DesComp/Aula3Delta/divisorGenerico.vhd Line: 15
-    Info (12023): Found entity 1: divisorGenerico File: C:/DesComp/Aula3Delta/divisorGenerico.vhd Line: 5
+    Info (12022): Found design unit 1: divisorGenerico-divInteiro File: C:/DesComp/DesComp_Delta/Aula3Delta/divisorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: divisorGenerico File: C:/DesComp/DesComp_Delta/Aula3Delta/divisorGenerico.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
-    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/DesComp/Aula3Delta/muxGenerico2x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico2x1 File: C:/DesComp/Aula3Delta/muxGenerico2x1.vhd Line: 4
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/DesComp/DesComp_Delta/Aula3Delta/muxGenerico2x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico2x1 File: C:/DesComp/DesComp_Delta/Aula3Delta/muxGenerico2x1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoder1x4.vhd
-    Info (12022): Found design unit 1: decoder1x4-comportamento File: C:/DesComp/Aula3Delta/decoder1x4.vhd Line: 11
-    Info (12023): Found entity 1: decoder1x4 File: C:/DesComp/Aula3Delta/decoder1x4.vhd Line: 4
+    Info (12022): Found design unit 1: decoder1x4-comportamento File: C:/DesComp/DesComp_Delta/Aula3Delta/decoder1x4.vhd Line: 11
+    Info (12023): Found entity 1: decoder1x4 File: C:/DesComp/DesComp_Delta/Aula3Delta/decoder1x4.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/DesComp/Aula3Delta/registradorGenerico.vhd Line: 15
-    Info (12023): Found entity 1: registradorGenerico File: C:/DesComp/Aula3Delta/registradorGenerico.vhd Line: 4
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/DesComp/DesComp_Delta/Aula3Delta/registradorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico File: C:/DesComp/DesComp_Delta/Aula3Delta/registradorGenerico.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file somaconstante.vhd
-    Info (12022): Found design unit 1: somaConstante-comportamento File: C:/DesComp/Aula3Delta/somaConstante.vhd Line: 18
-    Info (12023): Found entity 1: somaConstante File: C:/DesComp/Aula3Delta/somaConstante.vhd Line: 5
+    Info (12022): Found design unit 1: somaConstante-comportamento File: C:/DesComp/DesComp_Delta/Aula3Delta/somaConstante.vhd Line: 18
+    Info (12023): Found entity 1: somaConstante File: C:/DesComp/DesComp_Delta/Aula3Delta/somaConstante.vhd Line: 5
 Info (12127): Elaborating entity "DeltaAtv1Aula3" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at DeltaAtv1Aula3.vhd(21): object "CLK" assigned a value but never read File: C:/DesComp/Aula3Delta/DeltaAtv1Aula3.vhd Line: 21
-Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:Somador" File: C:/DesComp/Aula3Delta/DeltaAtv1Aula3.vhd Line: 31
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:Contador" File: C:/DesComp/Aula3Delta/DeltaAtv1Aula3.vhd Line: 34
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:DHEX0" File: C:/DesComp/Aula3Delta/DeltaAtv1Aula3.vhd Line: 38
-Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico:divisor" File: C:/DesComp/Aula3Delta/DeltaAtv1Aula3.vhd Line: 66
-Info (12128): Elaborating entity "decoder1x4" for hierarchy "decoder1x4:endereco" File: C:/DesComp/Aula3Delta/DeltaAtv1Aula3.vhd Line: 70
+Warning (10036): Verilog HDL or VHDL warning at DeltaAtv1Aula3.vhd(21): object "CLK" assigned a value but never read File: C:/DesComp/DesComp_Delta/Aula3Delta/DeltaAtv1Aula3.vhd Line: 21
+Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:Somador" File: C:/DesComp/DesComp_Delta/Aula3Delta/DeltaAtv1Aula3.vhd Line: 31
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:Contador" File: C:/DesComp/DesComp_Delta/Aula3Delta/DeltaAtv1Aula3.vhd Line: 34
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:DHEX0" File: C:/DesComp/DesComp_Delta/Aula3Delta/DeltaAtv1Aula3.vhd Line: 38
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico:divisor" File: C:/DesComp/DesComp_Delta/Aula3Delta/DeltaAtv1Aula3.vhd Line: 66
+Info (12128): Elaborating entity "decoder1x4" for hierarchy "decoder1x4:endereco" File: C:/DesComp/DesComp_Delta/Aula3Delta/DeltaAtv1Aula3.vhd Line: 70
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/DesComp/Aula3Delta/DeltaAtv1Aula3.vhd Line: 10
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/DesComp/Aula3Delta/DeltaAtv1Aula3.vhd Line: 12
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/DesComp/Aula3Delta/DeltaAtv1Aula3.vhd Line: 12
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/DesComp/Aula3Delta/DeltaAtv1Aula3.vhd Line: 12
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/DesComp/DesComp_Delta/Aula3Delta/DeltaAtv1Aula3.vhd Line: 10
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/DesComp/DesComp_Delta/Aula3Delta/DeltaAtv1Aula3.vhd Line: 12
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/DesComp/DesComp_Delta/Aula3Delta/DeltaAtv1Aula3.vhd Line: 12
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/DesComp/DesComp_Delta/Aula3Delta/DeltaAtv1Aula3.vhd Line: 12
 Info (21057): Implemented 89 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 38 output pins
     Info (21061): Implemented 36 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4838 megabytes
-    Info: Processing ended: Tue Aug 16 20:02:33 2022
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Peak virtual memory: 4846 megabytes
+    Info: Processing ended: Tue Aug 16 20:23:29 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:22
 
 

@@ -1,5 +1,5 @@
 Flow report for DeltaAtv1Aula3
-Tue Aug 16 20:03:05 2022
+Tue Aug 16 20:24:12 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Aug 16 20:03:05 2022       ;
+; Flow Status                     ; Successful - Tue Aug 16 20:24:12 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; DeltaAtv1Aula3                              ;
 ; Top-level Entity Name           ; DeltaAtv1Aula3                              ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/16/2022 20:02:24 ;
+; Start date & time ; 08/16/2022 20:23:19 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DeltaAtv1Aula3      ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 110073161798291.166069094409476        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 110073161798291.166069219900264        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -99,12 +99,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4838 MB             ; 00:00:21                           ;
-; Fitter               ; 00:00:18     ; 1.0                     ; 6257 MB             ; 00:00:31                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4816 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.1                     ; 5066 MB             ; 00:00:05                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4846 MB             ; 00:00:21                           ;
+; Fitter               ; 00:00:26     ; 1.0                     ; 6255 MB             ; 00:00:39                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4817 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.1                     ; 5066 MB             ; 00:00:06                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4715 MB             ; 00:00:01                           ;
-; Total                ; 00:00:35     ; --                      ; --                  ; 00:01:01                           ;
+; Total                ; 00:00:48     ; --                      ; --                  ; 00:01:11                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

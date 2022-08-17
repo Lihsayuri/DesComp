@@ -1,5 +1,5 @@
 Fitter report for DeltaAtv1Aula3
-Tue Aug 16 20:02:51 2022
+Tue Aug 16 20:23:56 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Tue Aug 16 20:02:51 2022       ;
+; Fitter Status                   ; Successful - Tue Aug 16 20:23:56 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; DeltaAtv1Aula3                              ;
 ; Top-level Entity Name           ; DeltaAtv1Aula3                              ;
@@ -256,7 +256,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/DesComp/Aula3Delta/output_files/DeltaAtv1Aula3.pin.
+The pin-out file can be found in C:/DesComp/DesComp_Delta/Aula3Delta/output_files/DeltaAtv1Aula3.pin.
 
 
 +------------------------------------------------------------------------------------------+
@@ -1425,7 +1425,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "HEX5[4]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "HEX5[5]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "HEX5[6]" is assigned to location or region, but does not exist in design
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:04
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:05
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'DeltaAtv1Aula3.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
@@ -1443,24 +1443,24 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.19 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.22 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:03
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:04
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
-Info (144001): Generated suppressed messages file C:/DesComp/Aula3Delta/output_files/DeltaAtv1Aula3.fit.smsg
+Info (144001): Generated suppressed messages file C:/DesComp/DesComp_Delta/Aula3Delta/output_files/DeltaAtv1Aula3.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 22 warnings
-    Info: Peak virtual memory: 6257 megabytes
-    Info: Processing ended: Tue Aug 16 20:02:52 2022
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Peak virtual memory: 6255 megabytes
+    Info: Processing ended: Tue Aug 16 20:23:57 2022
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:40
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/DesComp/Aula3Delta/output_files/DeltaAtv1Aula3.fit.smsg.
+The suppressed messages can be found in C:/DesComp/DesComp_Delta/Aula3Delta/output_files/DeltaAtv1Aula3.fit.smsg.
 
 
