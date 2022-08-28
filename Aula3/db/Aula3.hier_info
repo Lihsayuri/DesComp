@@ -24,10 +24,10 @@ LEDR[2] << registradorgenerico:REGA.DOUT[2]
 LEDR[3] << registradorgenerico:REGA.DOUT[3]
 LEDR[4] << <GND>
 LEDR[5] << <GND>
-LEDR[6] << memoriarom:ROM1.Dado[0]
-LEDR[7] << memoriarom:ROM1.Dado[1]
-LEDR[8] << memoriarom:ROM1.Dado[2]
-LEDR[9] << memoriarom:ROM1.Dado[3]
+LEDR[6] << decoderinstru:decoderInstru1.saida[0]
+LEDR[7] << decoderinstru:decoderInstru1.saida[1]
+LEDR[8] << decoderinstru:decoderInstru1.saida[2]
+LEDR[9] << decoderinstru:decoderInstru1.saida[3]
 
 
 |Aula3|muxGenerico2x1:MUX1
@@ -134,5 +134,32 @@ Dado[0] <= memROM.DATAOUT
 Dado[1] <= memROM.DATAOUT1
 Dado[2] <= memROM.DATAOUT2
 Dado[3] <= memROM.DATAOUT3
+
+
+|Aula3|decoderInstru:decoderInstru1
+opcode[0] => Equal0.IN3
+opcode[0] => Equal1.IN3
+opcode[0] => Equal2.IN2
+opcode[0] => Equal3.IN3
+opcode[0] => Equal4.IN3
+opcode[1] => Equal0.IN2
+opcode[1] => Equal1.IN2
+opcode[1] => Equal2.IN3
+opcode[1] => Equal3.IN2
+opcode[1] => Equal4.IN2
+opcode[2] => Equal0.IN1
+opcode[2] => Equal1.IN1
+opcode[2] => Equal2.IN1
+opcode[2] => Equal3.IN1
+opcode[2] => Equal4.IN1
+opcode[3] => Equal0.IN0
+opcode[3] => Equal1.IN0
+opcode[3] => Equal2.IN0
+opcode[3] => Equal3.IN0
+opcode[3] => Equal4.IN0
+saida[0] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 

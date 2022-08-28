@@ -25,6 +25,7 @@ architecture arquitetura of Aula3 is
   signal MUX_REG1 : std_logic_vector (larguraDados-1 downto 0);
   signal REG1_ULA_A : std_logic_vector (larguraDados-1 downto 0);
   signal Saida_ULA : std_logic_vector (larguraDados-1 downto 0);
+  signal comandosEncoder : std_logic_vector (3 downto 0);
   signal Sinais_Controle : std_logic_vector (3 downto 0);
   signal Endereco : std_logic_vector (2 downto 0);
   signal proxPC : std_logic_vector (2 downto 0);
@@ -68,12 +69,15 @@ incrementaPC :  entity work.somaConstante  generic map (larguraDados => larguraE
 
 -- O port map completo da ULA:
 ULA1 : entity work.ULASomaSub  generic map(larguraDados => larguraDados)
-          port map (entradaA => REG1_ULA_A, entradaB => chavesX_ULA_B, saida => Saida_ULA, seletor => Operacao_ULA);
-
+          port map (entradaA => REG1_ULA_A, entradaB => chavesX_ULA_B, saida => Saida_ULA, seletor => Operacao_ULA);	 
+			 
 -- Falta acertar o conteudo da ROM (no arquivo memoriaROM.vhd)
 ROM1 : entity work.memoriaROM   generic map (dataWidth => larguraDados, addrWidth => larguraEnderecos)
-          port map (Endereco => Endereco, Dado => Sinais_Controle);
+          port map (Endereco => Endereco, Dado => comandosEncoder);
 
+decoderInstru1 : entity work.decoderInstru
+        port map( opcode => comandosEncoder,
+                 saida => Sinais_Controle);		
 
 selMUX <= Sinais_Controle(3);
 Habilita_A <= Sinais_Controle(2);

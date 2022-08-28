@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Aula3
-Wed Aug 24 11:18:19 2022
+Sat Aug 27 17:10:06 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                    ;
 +---------------------------+-----------------------------------+
-; EDA Netlist Writer Status ; Failed - Wed Aug 24 11:18:19 2022 ;
+; EDA Netlist Writer Status ; Failed - Sat Aug 27 17:10:06 2022 ;
 ; Revision Name             ; Aula3                             ;
 ; Top-level Entity Name     ; Aula3                             ;
 ; Family                    ; Cyclone V                         ;
@@ -62,14 +62,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Wed Aug 24 11:18:18 2022
+    Info: Processing started: Sat Aug 27 17:10:06 2022
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Aula3 -c Aula3 --vector_source=C:/DesComp/Aula3/output_files/Waveform.vwf --testbench_file=C:/DesComp/Aula3/simulation/qsim/output_files/Waveform.vwf.vht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Error (199013): HDL output file name "C:/DesComp/Aula3/simulation/qsim/output_files/Waveform.vwf.vht" used with --testbench_file option contains a non-existent directory path
 Error: Quartus Prime EDA Netlist Writer was unsuccessful. 1 error, 1 warning
     Error: Peak virtual memory: 4710 megabytes
-    Error: Processing ended: Wed Aug 24 11:18:19 2022
-    Error: Elapsed time: 00:00:01
+    Error: Processing ended: Sat Aug 27 17:10:06 2022
+    Error: Elapsed time: 00:00:00
     Error: Total CPU time (on all processors): 00:00:01
 
 

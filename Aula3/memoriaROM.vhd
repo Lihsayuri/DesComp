@@ -22,11 +22,11 @@ architecture assincrona of memoriaROM is
   begin
       -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
       -- Inicializa os endereços:
-        tmp(0)  := "1011";   -- Desta posicao para baixo, é necessário acertar os valores
-        tmp(1)  := "1101";
-        tmp(2)  := "1101";
-        tmp(3)  := "1101";
-        tmp(4)  := "1100"; -- coloca no X o valor pra subtrair
+        tmp(0)  := "1111";   -- primeiro dá clear (valor do decoder)
+        tmp(1)  := "0010";   -- depois começam as somas
+        tmp(2)  := "0010";
+        tmp(3)  := "0010";
+        tmp(4)  := "0011"; -- coloca no X o valor pra subtrair
         tmp(5)  := "0000";
         tmp(6)  := "0000";
         tmp(7)  := "0000";

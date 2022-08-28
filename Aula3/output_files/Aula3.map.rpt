@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Aula3
-Wed Aug 24 11:29:58 2022
+Sat Aug 27 16:10:57 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -51,7 +51,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Aug 24 11:29:58 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sat Aug 27 16:10:57 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Aula3                                       ;
 ; Top-level Entity Name           ; Aula3                                       ;
@@ -181,12 +181,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path             ; Library ;
 +----------------------------------+-----------------+-----------------+------------------------------------------+---------+
-; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; C:/DesComp/Aula3/ULASomaSub.vhd          ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/DesComp/Aula3/registradorGenerico.vhd ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/DesComp/Aula3/muxGenerico2x1.vhd      ;         ;
 ; Aula3.vhd                        ; yes             ; User VHDL File  ; C:/DesComp/Aula3/Aula3.vhd               ;         ;
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; C:/DesComp/Aula3/ULASomaSub.vhd          ;         ;
 ; memoriaROM.vhd                   ; yes             ; User VHDL File  ; C:/DesComp/Aula3/memoriaROM.vhd          ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/DesComp/Aula3/muxGenerico2x1.vhd      ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/DesComp/Aula3/registradorGenerico.vhd ;         ;
 ; somaConstante.vhd                ; yes             ; User VHDL File  ; C:/DesComp/Aula3/somaConstante.vhd       ;         ;
+; decoderInstru.vhd                ; yes             ; User VHDL File  ; C:/DesComp/Aula3/decoderInstru.vhd       ;         ;
 +----------------------------------+-----------------+-----------------+------------------------------------------+---------+
 
 
@@ -197,12 +198,12 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------------+
 ; Estimate of Logic utilization (ALMs needed) ; 6                              ;
 ;                                             ;                                ;
-; Combinational ALUT usage for logic          ; 11                             ;
+; Combinational ALUT usage for logic          ; 12                             ;
 ;     -- 7 input functions                    ; 0                              ;
 ;     -- 6 input functions                    ; 0                              ;
-;     -- 5 input functions                    ; 0                              ;
+;     -- 5 input functions                    ; 4                              ;
 ;     -- 4 input functions                    ; 0                              ;
-;     -- <=3 input functions                  ; 11                             ;
+;     -- <=3 input functions                  ; 8                              ;
 ;                                             ;                                ;
 ; Dedicated logic registers                   ; 7                              ;
 ;                                             ;                                ;
@@ -210,24 +211,25 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                ;
 ; Total DSP Blocks                            ; 0                              ;
 ;                                             ;                                ;
-; Maximum fan-out node                        ; registradorGenerico:PC|DOUT[2] ;
-; Maximum fan-out                             ; 11                             ;
-; Total fan-out                               ; 101                            ;
-; Average fan-out                             ; 1.36                           ;
+; Maximum fan-out node                        ; registradorGenerico:PC|DOUT[0] ;
+; Maximum fan-out                             ; 13                             ;
+; Total fan-out                               ; 114                            ;
+; Average fan-out                             ; 1.52                           ;
 +---------------------------------------------+--------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                           ;
-+-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Entity Name         ; Library Name ;
-+-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+---------------------+--------------+
-; |Aula3                        ; 11 (0)              ; 7 (0)                     ; 0                 ; 0          ; 28   ; 0            ; |Aula3                          ; Aula3               ; work         ;
-;    |ULASomaSub:ULA1|          ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula3|ULASomaSub:ULA1          ; ULASomaSub          ; work         ;
-;    |memoriaROM:ROM1|          ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula3|memoriaROM:ROM1          ; memoriaROM          ; work         ;
-;    |registradorGenerico:PC|   ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula3|registradorGenerico:PC   ; registradorGenerico ; work         ;
-;    |registradorGenerico:REGA| ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula3|registradorGenerico:REGA ; registradorGenerico ; work         ;
-+-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+---------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                   ;
++-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name         ; Library Name ;
++-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+---------------------+--------------+
+; |Aula3                            ; 12 (0)              ; 7 (0)                     ; 0                 ; 0          ; 28   ; 0            ; |Aula3                              ; Aula3               ; work         ;
+;    |ULASomaSub:ULA1|              ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula3|ULASomaSub:ULA1              ; ULASomaSub          ; work         ;
+;    |decoderInstru:decoderInstru1| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula3|decoderInstru:decoderInstru1 ; decoderInstru       ; work         ;
+;    |muxGenerico2x1:MUX1|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula3|muxGenerico2x1:MUX1          ; muxGenerico2x1      ; work         ;
+;    |registradorGenerico:PC|       ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula3|registradorGenerico:PC       ; registradorGenerico ; work         ;
+;    |registradorGenerico:REGA|     ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula3|registradorGenerico:REGA     ; registradorGenerico ; work         ;
++-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -340,17 +342,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     plain             ; 3                           ;
 ; arriav_lcell_comb     ; 13                          ;
 ;     arith             ; 5                           ;
-;         1 data inputs ; 1                           ;
-;         3 data inputs ; 4                           ;
+;         3 data inputs ; 1                           ;
+;         5 data inputs ; 4                           ;
 ;     normal            ; 8                           ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 1                           ;
-;         3 data inputs ; 4                           ;
+;         3 data inputs ; 5                           ;
 ; boundary_port         ; 28                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 1.40                        ;
-; Average LUT depth     ; 0.94                        ;
+; Average LUT depth     ; 0.97                        ;
 +-----------------------+-----------------------------+
 
 
@@ -369,39 +371,43 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Aug 24 11:29:48 2022
+    Info: Processing started: Sat Aug 27 16:10:47 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Aula3 -c Aula3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file aula3.vhd
+    Info (12022): Found design unit 1: Aula3-arquitetura File: C:/DesComp/Aula3/Aula3.vhd Line: 20
+    Info (12023): Found entity 1: Aula3 File: C:/DesComp/Aula3/Aula3.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ulasomasub.vhd
     Info (12022): Found design unit 1: ULASomaSub-comportamento File: C:/DesComp/Aula3/ULASomaSub.vhd Line: 14
     Info (12023): Found entity 1: ULASomaSub File: C:/DesComp/Aula3/ULASomaSub.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/DesComp/Aula3/registradorGenerico.vhd Line: 15
-    Info (12023): Found entity 1: registradorGenerico File: C:/DesComp/Aula3/registradorGenerico.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
-    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/DesComp/Aula3/muxGenerico2x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico2x1 File: C:/DesComp/Aula3/muxGenerico2x1.vhd Line: 4
 Info (12021): Found 3 design units, including 1 entities, in source file edgedetector.vhd
     Info (12022): Found design unit 1: edgeDetector-bordaSubida File: C:/DesComp/Aula3/edgeDetector.vhd Line: 10
     Info (12022): Found design unit 2: edgeDetector-bordaDescida File: C:/DesComp/Aula3/edgeDetector.vhd Line: 23
     Info (12023): Found entity 1: edgeDetector File: C:/DesComp/Aula3/edgeDetector.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file aula3.vhd
-    Info (12022): Found design unit 1: Aula3-arquitetura File: C:/DesComp/Aula3/Aula3.vhd Line: 20
-    Info (12023): Found entity 1: Aula3 File: C:/DesComp/Aula3/Aula3.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file memoriarom.vhd
     Info (12022): Found design unit 1: memoriaROM-assincrona File: C:/DesComp/Aula3/memoriaROM.vhd Line: 16
     Info (12023): Found entity 1: memoriaROM File: C:/DesComp/Aula3/memoriaROM.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/DesComp/Aula3/muxGenerico2x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico2x1 File: C:/DesComp/Aula3/muxGenerico2x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/DesComp/Aula3/registradorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico File: C:/DesComp/Aula3/registradorGenerico.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file somaconstante.vhd
     Info (12022): Found design unit 1: somaConstante-comportamento File: C:/DesComp/Aula3/somaConstante.vhd Line: 18
     Info (12023): Found entity 1: somaConstante File: C:/DesComp/Aula3/somaConstante.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file decoderinstru.vhd
+    Info (12022): Found design unit 1: decoderInstru-comportamento File: C:/DesComp/Aula3/decoderInstru.vhd Line: 10
+    Info (12023): Found entity 1: decoderInstru File: C:/DesComp/Aula3/decoderInstru.vhd Line: 4
 Info (12127): Elaborating entity "Aula3" for the top level hierarchy
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX1" File: C:/DesComp/Aula3/Aula3.vhd Line: 51
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGA" File: C:/DesComp/Aula3/Aula3.vhd Line: 58
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: C:/DesComp/Aula3/Aula3.vhd Line: 62
-Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:incrementaPC" File: C:/DesComp/Aula3/Aula3.vhd Line: 65
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "ULASomaSub:ULA1" File: C:/DesComp/Aula3/Aula3.vhd Line: 70
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/DesComp/Aula3/Aula3.vhd Line: 74
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX1" File: C:/DesComp/Aula3/Aula3.vhd Line: 52
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGA" File: C:/DesComp/Aula3/Aula3.vhd Line: 59
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: C:/DesComp/Aula3/Aula3.vhd Line: 63
+Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:incrementaPC" File: C:/DesComp/Aula3/Aula3.vhd Line: 66
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "ULASomaSub:ULA1" File: C:/DesComp/Aula3/Aula3.vhd Line: 71
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/DesComp/Aula3/Aula3.vhd Line: 75
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "decoderInstru:decoderInstru1" File: C:/DesComp/Aula3/Aula3.vhd Line: 78
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "memoriaROM:ROM1|memROM" is uninferred due to inappropriate RAM size File: C:/DesComp/Aula3/memoriaROM.vhd Line: 36
 Warning (13024): Output pins are stuck at VCC or GND
@@ -417,14 +423,14 @@ Warning (21074): Design contains 6 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[3]" File: C:/DesComp/Aula3/Aula3.vhd Line: 12
     Warning (15610): No output dependent on input pin "SW[4]" File: C:/DesComp/Aula3/Aula3.vhd Line: 13
     Warning (15610): No output dependent on input pin "SW[5]" File: C:/DesComp/Aula3/Aula3.vhd Line: 13
-Info (21057): Implemented 39 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 40 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 13 output pins
-    Info (21061): Implemented 11 logic cells
+    Info (21061): Implemented 12 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4846 megabytes
-    Info: Processing ended: Wed Aug 24 11:29:58 2022
+    Info: Peak virtual memory: 4849 megabytes
+    Info: Processing ended: Sat Aug 27 16:10:57 2022
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Total CPU time (on all processors): 00:00:22
 
 
