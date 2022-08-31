@@ -3,7 +3,7 @@ $comment
 		vcd file fluxoMemoria.msim.vcd -direction
 $end
 $date
-	Thu Aug 25 16:19:31 2022
+	Mon Aug 29 17:27:44 2022
 $end
 $version
 	ModelSim Version 2020.1

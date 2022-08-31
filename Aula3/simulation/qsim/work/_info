@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dC:/DesComp/Aula3/simulation/qsim
 Eaula3
-Z1 w1661631243
+Z1 w1661883962
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,19 +20,19 @@ Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z10 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 2
+!i122 8
 R0
 Z11 8Aula3.vho
 Z12 FAula3.vho
 l0
 L39 1
-V32Qdl;@iD]d7_ahRj1jnD3
-!s100 kH8DlEI?QTeGN?@?>Q4Ai0
+V2NT_2ZhFoo>^2gP`=k7K@2
+!s100 SZ@f;iaWB1f=Z]b>6Nd6R0
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1661631244
+Z14 !s110 1661883963
 !i10b 1
-Z15 !s108 1661631244.000000
+Z15 !s108 1661883963.000000
 Z16 !s90 -work|work|Aula3.vho|
 Z17 !s107 Aula3.vho|
 !i113 1
@@ -48,12 +48,12 @@ R7
 R8
 R9
 R10
-DEx4 work 5 aula3 0 22 32Qdl;@iD]d7_ahRj1jnD3
-!i122 2
-l143
-L80 826
-V2amS?]2UVP9F[JW`DM?9_0
-!s100 X3GD@V@azi]=?1>C42Cd;2
+DEx4 work 5 aula3 0 22 2NT_2ZhFoo>^2gP`=k7K@2
+!i122 8
+l142
+L80 799
+VeP^8H4Q>H`_gWT=RoomL03
+!s100 _e0<8@:3oKWa9amK^ELRb0
 R13
 32
 R14
@@ -65,10 +65,10 @@ R17
 R18
 R19
 Eaula3_vhd_vec_tst
-Z20 w1661631242
+Z20 w1661883960
 R8
 R9
-!i122 3
+!i122 9
 R0
 Z21 8output_files/Waveform.vwf.vht
 Z22 Foutput_files/Waveform.vwf.vht
@@ -90,11 +90,11 @@ Aaula3_arch
 R8
 R9
 Z25 DEx4 work 17 aula3_vhd_vec_tst 0 22 lB6Abc2HDL?XlOc55`[BT3
-!i122 3
+!i122 9
 l51
 Z26 L34 112
-Z27 Ve>0oQQNaTVVN=koG<F=I52
-Z28 !s100 NTF`bcJ`lKX92daR^X`b62
+Z27 VnC_GC8Ggo:34P=SHV3nN^1
+Z28 !s100 ;^kD0k3BnoUBP2jgRDIZV3
 R13
 32
 R14

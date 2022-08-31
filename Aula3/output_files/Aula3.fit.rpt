@@ -1,5 +1,5 @@
 Fitter report for Aula3
-Sat Aug 27 16:11:14 2022
+Tue Aug 30 15:16:37 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -64,7 +64,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Sat Aug 27 16:11:14 2022       ;
+; Fitter Status                   ; Successful - Tue Aug 30 15:16:37 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Aula3                                       ;
 ; Top-level Entity Name           ; Aula3                                       ;
@@ -154,13 +154,13 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.00        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.2%      ;
-;     Processors 3-4         ;   0.2%      ;
+;     Processors 3-4         ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -288,8 +288,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]     ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+-------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                   ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 77 ) ; 0.00 % ( 0 / 77 )          ; 0.00 % ( 0 / 77 )        ;
-;     -- Achieved     ; 0.00 % ( 0 / 77 ) ; 0.00 % ( 0 / 77 )          ; 0.00 % ( 0 / 77 )        ;
+;     -- Requested    ; 0.00 % ( 0 / 76 ) ; 0.00 % ( 0 / 76 )          ; 0.00 % ( 0 / 76 )        ;
+;     -- Achieved     ; 0.00 % ( 0 / 76 ) ; 0.00 % ( 0 / 76 )          ; 0.00 % ( 0 / 76 )        ;
 ;                     ;                   ;                            ;                          ;
 ; Routing (by net)    ;                   ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )  ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -312,7 +312,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 77 )     ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 76 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 0 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -330,12 +330,12 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 +-------------------------------------------------------------+--------------------+-------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 7 / 18,480         ; < 1 % ;
 ; ALMs needed [=A-B+C]                                        ; 7                  ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 8 / 18,480         ; < 1 % ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 7 / 18,480         ; < 1 % ;
 ;         [a] ALMs used for LUT logic and registers           ; 4                  ;       ;
-;         [b] ALMs used for LUT logic                         ; 4                  ;       ;
+;         [b] ALMs used for LUT logic                         ; 3                  ;       ;
 ;         [c] ALMs used for registers                         ; 0                  ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 1 / 18,480         ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 0 / 18,480         ; 0 %   ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 18,480         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -348,12 +348,12 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ;     -- Logic LABs                                           ; 2                  ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
 ;                                                             ;                    ;       ;
-; Combinational ALUT usage for logic                          ; 13                 ;       ;
+; Combinational ALUT usage for logic                          ; 12                 ;       ;
 ;     -- 7 input functions                                    ; 0                  ;       ;
 ;     -- 6 input functions                                    ; 0                  ;       ;
 ;     -- 5 input functions                                    ; 4                  ;       ;
 ;     -- 4 input functions                                    ; 0                  ;       ;
-;     -- <=3 input functions                                  ; 9                  ;       ;
+;     -- <=3 input functions                                  ; 8                  ;       ;
 ; Combinational ALUT usage for route-throughs                 ; 0                  ;       ;
 ;                                                             ;                    ;       ;
 ; Dedicated logic registers                                   ; 10                 ;       ;
@@ -366,7 +366,7 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
 ; I/O pins                                                    ; 28 / 224           ; 13 %  ;
-;     -- Clock pins                                           ; 2 / 9              ; 22 %  ;
+;     -- Clock pins                                           ; 1 / 9              ; 11 %  ;
 ;     -- Dedicated input pins                                 ; 0 / 11             ; 0 %   ;
 ;                                                             ;                    ;       ;
 ; M10K blocks                                                 ; 0 / 308            ; 0 %   ;
@@ -389,11 +389,11 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ; Oscillator blocks                                           ; 0 / 1              ; 0 %   ;
 ; Impedance control blocks                                    ; 0 / 3              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.0% / 0.0% / 0.1% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 0.3% / 0.2% / 0.5% ;       ;
+; Peak interconnect usage (total/H/V)                         ; 0.2% / 0.2% / 0.3% ;       ;
 ; Maximum fan-out                                             ; 10                 ;       ;
 ; Highest non-global fan-out                                  ; 8                  ;       ;
-; Total fan-out                                               ; 121                ;       ;
-; Average fan-out                                             ; 1.51               ;       ;
+; Total fan-out                                               ; 110                ;       ;
+; Average fan-out                                             ; 1.39               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
@@ -404,12 +404,12 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 +-------------------------------------------------------------+---------------------+--------------------------------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 7 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
 ; ALMs needed [=A-B+C]                                        ; 7                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 8 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 7 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
 ;         [a] ALMs used for LUT logic and registers           ; 4                   ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 4                   ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 3                   ; 0                              ;
 ;         [c] ALMs used for registers                         ; 0                   ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                   ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 1 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 0 / 18480 ( 0 % )   ; 0 / 18480 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 18480 ( 0 % )   ; 0 / 18480 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                   ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                   ; 0                              ;
@@ -422,12 +422,12 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ;     -- Logic LABs                                           ; 2                   ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                   ; 0                              ;
 ;                                                             ;                     ;                                ;
-; Combinational ALUT usage for logic                          ; 13                  ; 0                              ;
+; Combinational ALUT usage for logic                          ; 12                  ; 0                              ;
 ;     -- 7 input functions                                    ; 0                   ; 0                              ;
 ;     -- 6 input functions                                    ; 0                   ; 0                              ;
 ;     -- 5 input functions                                    ; 4                   ; 0                              ;
 ;     -- 4 input functions                                    ; 0                   ; 0                              ;
-;     -- <=3 input functions                                  ; 9                   ; 0                              ;
+;     -- <=3 input functions                                  ; 8                   ; 0                              ;
 ; Combinational ALUT usage for route-throughs                 ; 0                   ; 0                              ;
 ; Memory ALUT usage                                           ; 0                   ; 0                              ;
 ;     -- 64-address deep                                      ; 0                   ; 0                              ;
@@ -456,8 +456,8 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ;     -- Registered Output Connections                        ; 0                   ; 0                              ;
 ;                                                             ;                     ;                                ;
 ; Internal Connections                                        ;                     ;                                ;
-;     -- Total Connections                                    ; 121                 ; 0                              ;
-;     -- Registered Connections                               ; 44                  ; 0                              ;
+;     -- Total Connections                                    ; 110                 ; 0                              ;
+;     -- Registered Connections                               ; 41                  ; 0                              ;
 ;                                                             ;                     ;                                ;
 ; External Connections                                        ;                     ;                                ;
 ;     -- Top                                                  ; 0                   ; 0                              ;
@@ -494,10 +494,10 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ; KEY[1]   ; W9    ; 3A       ; 11           ; 0            ; 34           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; KEY[2]   ; M7    ; 3A       ; 14           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; KEY[3]   ; M6    ; 3A       ; 14           ; 0            ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
-; SW[0]    ; U13   ; 4A       ; 33           ; 0            ; 40           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
-; SW[1]    ; V13   ; 4A       ; 33           ; 0            ; 57           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
-; SW[2]    ; T13   ; 4A       ; 34           ; 0            ; 0            ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
-; SW[3]    ; T12   ; 4A       ; 34           ; 0            ; 17           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
+; SW[0]    ; U13   ; 4A       ; 33           ; 0            ; 40           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
+; SW[1]    ; V13   ; 4A       ; 33           ; 0            ; 57           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
+; SW[2]    ; T13   ; 4A       ; 34           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
+; SW[3]    ; T12   ; 4A       ; 34           ; 0            ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; SW[4]    ; AA15  ; 4A       ; 36           ; 0            ; 34           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; SW[5]    ; AB15  ; 4A       ; 36           ; 0            ; 51           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; SW[6]    ; AA14  ; 4A       ; 34           ; 0            ; 51           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
@@ -522,9 +522,9 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ; LEDR[7]   ; U1    ; 2A       ; 0            ; 19           ; 20           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off                               ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
 ; LEDR[8]   ; L2    ; 2A       ; 0            ; 20           ; 37           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off                               ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
 ; LEDR[9]   ; L1    ; 2A       ; 0            ; 20           ; 54           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off                               ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; PC_OUT[0] ; P9    ; 3B       ; 29           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; PC_OUT[1] ; AA12  ; 3B       ; 29           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; PC_OUT[2] ; N9    ; 3B       ; 29           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; PC_OUT[0] ; R6    ; 3A       ; 10           ; 0            ; 57           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; PC_OUT[1] ; R5    ; 3A       ; 10           ; 0            ; 40           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; PC_OUT[2] ; R21   ; 5A       ; 54           ; 16           ; 37           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
 +-----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -534,10 +534,10 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ; VCCPD Voltage ;
 +----------+------------------+---------------+--------------+---------------+
 ; 2A       ; 10 / 16 ( 63 % ) ; 3.3V          ; --           ; 3.3V          ;
-; 3A       ; 4 / 16 ( 25 % )  ; 3.3V          ; --           ; 3.3V          ;
-; 3B       ; 4 / 32 ( 13 % )  ; 2.5V          ; --           ; 2.5V          ;
-; 4A       ; 10 / 48 ( 21 % ) ; 2.5V          ; --           ; 2.5V          ;
-; 5A       ; 0 / 16 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
+; 3A       ; 6 / 16 ( 38 % )  ; 2.5V          ; --           ; 2.5V          ;
+; 3B       ; 1 / 32 ( 3 % )   ; 3.3V          ; --           ; 3.3V          ;
+; 4A       ; 10 / 48 ( 21 % ) ; 3.3V          ; --           ; 3.3V          ;
+; 5A       ; 1 / 16 ( 6 % )   ; 2.5V          ; --           ; 2.5V          ;
 ; 5B       ; 0 / 16 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
 ; 7A       ; 0 / 48 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
 ; 8A       ; 0 / 32 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
@@ -582,16 +582,16 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ; AA9      ; 89         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AA10     ; 87         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AA11     ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AA12     ; 105        ; 3B       ; PC_OUT[1]                       ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AA12     ; 105        ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AA13     ; 113        ; 4A       ; SW[7]                           ; input  ; 3.3-V LVTTL  ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; AA14     ; 111        ; 4A       ; SW[6]                           ; input  ; 3.3-V LVTTL  ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; AA15     ; 116        ; 4A       ; SW[4]                           ; input  ; 3.3-V LVTTL  ;                     ; Column I/O   ; Y               ; no       ; Off          ;
-; AA16     ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
+; AA16     ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
 ; AA17     ; 127        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AA18     ; 129        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AA19     ; 130        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AA20     ; 132        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AA21     ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
+; AA21     ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
 ; AA22     ; 137        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AB1      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AB2      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -865,7 +865,7 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ; N6       ; 64         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; N7       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; N8       ; 80         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; N9       ; 104        ; 3B       ; PC_OUT[2]                       ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; N9       ; 104        ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; N10      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
 ; N11      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; N12      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
@@ -887,7 +887,7 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ; P6       ; 62         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; P7       ; 73         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; P8       ; 78         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; P9       ; 102        ; 3B       ; PC_OUT[0]                       ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; P9       ; 102        ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; P10      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; P11      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
 ; P12      ; 97         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -905,10 +905,10 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ; R2       ;            ; 1A, 2A   ; VCCPD1A2A                       ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
 ; R3       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; R4       ; 49         ; 3A       ; ^nCSO, DATA4                    ;        ;              ;                     ; Weak Pull Up ;                 ; --       ; On           ;
-; R5       ; 60         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; R6       ; 58         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; R5       ; 60         ; 3A       ; PC_OUT[1]                       ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; R6       ; 58         ; 3A       ; PC_OUT[0]                       ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; R7       ; 71         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; R8       ;            ; 3B       ; VCCIO3B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
+; R8       ;            ; 3B       ; VCCIO3B                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
 ; R9       ; 93         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; R10      ; 99         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; R11      ; 101        ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -921,19 +921,19 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ; R18      ;            ; 5A       ; VCCIO5A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; R19      ;            ; --       ; VCCPGM                          ; power  ;              ; 1.8V/2.5V/3.0V/3.3V ; --           ;                 ; --       ; --           ;
 ; R20      ;            ; 5A       ; VREFB5AN0                       ; power  ;              ;                     ; --           ;                 ; --       ; --           ;
-; R21      ; 162        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; R21      ; 162        ; 5A       ; PC_OUT[2]                       ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; R22      ; 160        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; T1       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; T2       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; T3       ;            ; --       ; VCCA_FPLL                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; T4       ; 51         ; 3A       ; ^AS_DATA3, DATA3                ;        ;              ;                     ; Weak Pull Up ;                 ; --       ; On           ;
 ; T5       ;            ; --       ; VCCA_FPLL                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; T6       ;            ; 3A       ; VCCIO3A                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
+; T6       ;            ; 3A       ; VCCIO3A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; T7       ; 66         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; T8       ; 68         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; T9       ; 83         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; T10      ; 91         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; T11      ;            ; 3B       ; VCCIO3B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
+; T11      ;            ; 3B       ; VCCIO3B                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
 ; T12      ; 110        ; 4A       ; SW[3]                           ; input  ; 3.3-V LVTTL  ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; T13      ; 112        ; 4A       ; SW[2]                           ; input  ; 3.3-V LVTTL  ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; T14      ; 126        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -958,12 +958,12 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ; U11      ; 94         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; U12      ; 96         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; U13      ; 109        ; 4A       ; SW[0]                           ; input  ; 3.3-V LVTTL  ;                     ; Column I/O   ; Y               ; no       ; Off          ;
-; U14      ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
+; U14      ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
 ; U15      ; 128        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; U16      ; 150        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; U17      ; 152        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; U18      ;            ; --       ; VCCA_FPLL                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; U19      ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
+; U19      ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
 ; U20      ; 153        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; U21      ; 151        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; U22      ; 146        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -994,21 +994,21 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ; W3       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; W4       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; W5       ; 54         ; 3A       ; #TDI                            ; input  ;              ;                     ; --           ;                 ; --       ; --           ;
-; W6       ;            ; 3A       ; VCCPD3A                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
+; W6       ;            ; 3A       ; VCCPD3A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; W7       ;            ; --       ; VCC_AUX                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; W8       ; 63         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; W9       ; 65         ; 3A       ; KEY[1]                          ; input  ; 3.3-V LVTTL  ;                     ; Column I/O   ; Y               ; no       ; Off          ;
-; W10      ;            ; 3B       ; VCCIO3B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; W11      ;            ; 3B, 4A   ; VCCPD3B4A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; W12      ;            ; 3B, 4A   ; VCCPD3B4A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
+; W10      ;            ; 3B       ; VCCIO3B                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
+; W11      ;            ; 3B, 4A   ; VCCPD3B4A                       ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
+; W12      ;            ; 3B, 4A   ; VCCPD3B4A                       ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
 ; W13      ;            ; --       ; VCC_AUX                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; W14      ;            ; 3B, 4A   ; VCCPD3B4A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; W15      ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
+; W14      ;            ; 3B, 4A   ; VCCPD3B4A                       ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
+; W15      ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
 ; W16      ; 136        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; W17      ;            ; 3B, 4A   ; VCCPD3B4A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
+; W17      ;            ; 3B, 4A   ; VCCPD3B4A                       ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
 ; W18      ;            ; --       ; VCC_AUX                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; W19      ; 133        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; W20      ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
+; W20      ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
 ; W21      ; 145        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; W22      ; 140        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; Y1       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -1018,12 +1018,12 @@ The pin-out file can be found in C:/DesComp/Aula3/output_files/Aula3.pin.
 ; Y5       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; Y6       ;            ;          ; NC                              ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; Y7       ;            ; 3A       ; VREFB3AN0                       ; power  ;              ;                     ; --           ;                 ; --       ; --           ;
-; Y8       ;            ; 3A       ; VCCIO3A                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
+; Y8       ;            ; 3A       ; VCCIO3A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; Y9       ; 92         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; Y10      ; 90         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; Y11      ; 103        ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; Y12      ;            ; 3B       ; VREFB3BN0                       ; power  ;              ;                     ; --           ;                 ; --       ; --           ;
-; Y13      ;            ; 3B       ; VCCIO3B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
+; Y13      ;            ; 3B       ; VCCIO3B                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
 ; Y14      ; 115        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; Y15      ; 117        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; Y16      ; 123        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -1056,11 +1056,10 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-----------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node        ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name         ; Library Name ;
 +-----------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-------------------------------------+---------------------+--------------+
-; |Aula3                            ; 7.0 (0.5)            ; 7.0 (0.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 13 (1)              ; 10 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 28   ; 0            ; |Aula3                              ; Aula3               ; work         ;
+; |Aula3                            ; 6.5 (0.5)            ; 6.5 (0.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 12 (1)              ; 10 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 28   ; 0            ; |Aula3                              ; Aula3               ; work         ;
 ;    |ULASomaSub:ULA1|              ; 1.8 (1.8)            ; 1.8 (1.8)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Aula3|ULASomaSub:ULA1              ; ULASomaSub          ; work         ;
 ;    |decoderInstru:decoderInstru1| ; 1.3 (1.3)            ; 1.3 (1.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 3 (3)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Aula3|decoderInstru:decoderInstru1 ; decoderInstru       ; work         ;
-;    |muxGenerico2x1:MUX1|          ; 0.5 (0.5)            ; 0.5 (0.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Aula3|muxGenerico2x1:MUX1          ; muxGenerico2x1      ; work         ;
-;    |registradorGenerico:PC|       ; 1.7 (1.7)            ; 1.8 (1.8)                        ; 0.1 (0.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 3 (3)               ; 6 (6)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Aula3|registradorGenerico:PC       ; registradorGenerico ; work         ;
+;    |registradorGenerico:PC|       ; 1.7 (1.7)            ; 1.7 (1.7)                        ; 0.1 (0.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 3 (3)               ; 6 (6)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Aula3|registradorGenerico:PC       ; registradorGenerico ; work         ;
 ;    |registradorGenerico:REGA|     ; 1.2 (1.2)            ; 1.2 (1.2)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Aula3|registradorGenerico:REGA     ; registradorGenerico ; work         ;
 +-----------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -1091,59 +1090,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[8]   ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; LEDR[9]   ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; KEY[0]    ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[0]     ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[1]     ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[2]     ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[3]     ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[6]     ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[0]     ; Input    ; -- ; --   ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[1]     ; Input    ; -- ; --   ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[2]     ; Input    ; -- ; --   ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[3]     ; Input    ; -- ; --   ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[6]     ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[7]     ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[8]     ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[8]     ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[9]     ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +-----------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
 
-+-----------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                        ;
-+-----------------------------------------+-------------------+---------+
-; Source Pin / Fanout                     ; Pad To Core Index ; Setting ;
-+-----------------------------------------+-------------------+---------+
-; CLOCK_50                                ;                   ;         ;
-; KEY[1]                                  ;                   ;         ;
-; KEY[2]                                  ;                   ;         ;
-; KEY[3]                                  ;                   ;         ;
-; SW[4]                                   ;                   ;         ;
-; SW[5]                                   ;                   ;         ;
-; KEY[0]                                  ;                   ;         ;
-;      - KEY[0]~inputCLKENA0              ; 1                 ; 0       ;
-; SW[0]                                   ;                   ;         ;
-;      - registradorGenerico:REGA|DOUT[0] ; 0                 ; 0       ;
-; SW[1]                                   ;                   ;         ;
-;      - registradorGenerico:REGA|DOUT[1] ; 1                 ; 0       ;
-; SW[2]                                   ;                   ;         ;
-;      - registradorGenerico:REGA|DOUT[2] ; 0                 ; 0       ;
-; SW[3]                                   ;                   ;         ;
-;      - registradorGenerico:REGA|DOUT[3] ; 0                 ; 0       ;
-; SW[6]                                   ;                   ;         ;
-;      - ULASomaSub:ULA1|Add0~1           ; 0                 ; 0       ;
-; SW[7]                                   ;                   ;         ;
-;      - ULASomaSub:ULA1|Add0~5           ; 0                 ; 0       ;
-; SW[8]                                   ;                   ;         ;
-;      - ULASomaSub:ULA1|Add0~9           ; 0                 ; 0       ;
-; SW[9]                                   ;                   ;         ;
-;      - ULASomaSub:ULA1|Add0~13          ; 0                 ; 0       ;
-+-----------------------------------------+-------------------+---------+
++--------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                               ;
++--------------------------------+-------------------+---------+
+; Source Pin / Fanout            ; Pad To Core Index ; Setting ;
++--------------------------------+-------------------+---------+
+; CLOCK_50                       ;                   ;         ;
+; KEY[1]                         ;                   ;         ;
+; KEY[2]                         ;                   ;         ;
+; KEY[3]                         ;                   ;         ;
+; SW[4]                          ;                   ;         ;
+; SW[5]                          ;                   ;         ;
+; KEY[0]                         ;                   ;         ;
+;      - KEY[0]~inputCLKENA0     ; 1                 ; 0       ;
+; SW[0]                          ;                   ;         ;
+; SW[1]                          ;                   ;         ;
+; SW[2]                          ;                   ;         ;
+; SW[3]                          ;                   ;         ;
+; SW[6]                          ;                   ;         ;
+;      - ULASomaSub:ULA1|Add0~1  ; 1                 ; 0       ;
+; SW[7]                          ;                   ;         ;
+;      - ULASomaSub:ULA1|Add0~5  ; 0                 ; 0       ;
+; SW[8]                          ;                   ;         ;
+;      - ULASomaSub:ULA1|Add0~9  ; 1                 ; 0       ;
+; SW[9]                          ;                   ;         ;
+;      - ULASomaSub:ULA1|Add0~13 ; 0                 ; 0       ;
++--------------------------------+-------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                       ;
-+-----------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                                    ; Location            ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-----------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; KEY[0]                                  ; PIN_U7              ; 10      ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; decoderInstru:decoderInstru1|saida[1]~1 ; MLABCELL_X28_Y4_N6  ; 5       ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; decoderInstru:decoderInstru1|saida[2]~2 ; MLABCELL_X28_Y4_N27 ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; muxGenerico2x1:MUX1|saida_MUX[3]~0      ; MLABCELL_X28_Y4_N54 ; 4       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-+-----------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                      ;
++-----------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                                    ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; KEY[0]                                  ; PIN_U7             ; 10      ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; decoderInstru:decoderInstru1|saida[1]~1 ; LABCELL_X6_Y16_N6  ; 5       ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; decoderInstru:decoderInstru1|saida[2]~2 ; LABCELL_X6_Y16_N54 ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
++-----------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -1160,21 +1154,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------+------------------------+
 ; Routing Resource Type        ; Usage                  ;
 +------------------------------+------------------------+
-; Block interconnects          ; 26 / 140,056 ( < 1 % ) ;
-; C12 interconnects            ; 1 / 6,048 ( < 1 % )    ;
-; C2 interconnects             ; 10 / 54,648 ( < 1 % )  ;
-; C4 interconnects             ; 36 / 25,920 ( < 1 % )  ;
+; Block interconnects          ; 20 / 140,056 ( < 1 % ) ;
+; C12 interconnects            ; 9 / 6,048 ( < 1 % )    ;
+; C2 interconnects             ; 13 / 54,648 ( < 1 % )  ;
+; C4 interconnects             ; 4 / 25,920 ( < 1 % )   ;
 ; DQS bus muxes                ; 0 / 17 ( 0 % )         ;
 ; DQS-18 I/O buses             ; 0 / 17 ( 0 % )         ;
 ; DQS-9 I/O buses              ; 0 / 17 ( 0 % )         ;
-; Direct links                 ; 3 / 140,056 ( < 1 % )  ;
+; Direct links                 ; 2 / 140,056 ( < 1 % )  ;
 ; Global clocks                ; 1 / 16 ( 6 % )         ;
-; Local interconnects          ; 6 / 36,960 ( < 1 % )   ;
+; Local interconnects          ; 5 / 36,960 ( < 1 % )   ;
 ; Quadrant clocks              ; 0 / 88 ( 0 % )         ;
-; R14 interconnects            ; 14 / 5,984 ( < 1 % )   ;
-; R14/C12 interconnect drivers ; 14 / 9,504 ( < 1 % )   ;
-; R3 interconnects             ; 15 / 60,192 ( < 1 % )  ;
-; R6 interconnects             ; 23 / 127,072 ( < 1 % ) ;
+; R14 interconnects            ; 9 / 5,984 ( < 1 % )    ;
+; R14/C12 interconnect drivers ; 13 / 9,504 ( < 1 % )   ;
+; R3 interconnects             ; 9 / 60,192 ( < 1 % )   ;
+; R6 interconnects             ; 18 / 127,072 ( < 1 % ) ;
 ; Spine clocks                 ; 1 / 120 ( < 1 % )      ;
 ; Wire stub REs                ; 0 / 7,344 ( 0 % )      ;
 +------------------------------+------------------------+
@@ -1327,8 +1321,8 @@ This will disable optimization of problematic paths and expose them for further 
 +--------------------------------+--------------------------------+-------------------+
 ; Source Register                ; Destination Register           ; Delay Added in ns ;
 +--------------------------------+--------------------------------+-------------------+
-; registradorGenerico:PC|DOUT[0] ; registradorGenerico:PC|DOUT[2] ; 0.296             ;
-; registradorGenerico:PC|DOUT[1] ; registradorGenerico:PC|DOUT[2] ; 0.263             ;
+; registradorGenerico:PC|DOUT[0] ; registradorGenerico:PC|DOUT[2] ; 0.287             ;
+; registradorGenerico:PC|DOUT[1] ; registradorGenerico:PC|DOUT[2] ; 0.261             ;
 +--------------------------------+--------------------------------+-------------------+
 Note: This table only shows the top 2 path(s) that have the largest delay added for hold.
 
@@ -1414,11 +1408,11 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X22_Y0 to location X32_Y10
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X0_Y11 to location X10_Y22
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.22 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.21 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1427,10 +1421,10 @@ Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/DesComp/Aula3/output_files/Aula3.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 52 warnings
-    Info: Peak virtual memory: 6252 megabytes
-    Info: Processing ended: Sat Aug 27 16:11:14 2022
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Peak virtual memory: 6204 megabytes
+    Info: Processing ended: Tue Aug 30 15:16:38 2022
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:27
 
 
 +----------------------------+

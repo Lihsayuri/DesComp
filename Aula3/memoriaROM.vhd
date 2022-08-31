@@ -19,17 +19,26 @@ architecture assincrona of memoriaROM is
 
   function initMemory
         return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
+		  
+		  
+  constant NOP  : std_logic_vector(3 downto 0) := "0000";
+  constant LDA  : std_logic_vector(3 downto 0) := "0001";
+  constant SOMA : std_logic_vector(3 downto 0) := "0010";
+  constant SUB  : std_logic_vector(3 downto 0) := "0011";
+  constant CLRA : std_logic_vector(3 downto 0) := "1111";
+  
+  
   begin
       -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
       -- Inicializa os endereços:
-        tmp(0)  := "1111";   -- primeiro dá clear (valor do decoder)
-        tmp(1)  := "0010";   -- depois começam as somas
-        tmp(2)  := "0010";
-        tmp(3)  := "0010";
-        tmp(4)  := "0011"; -- coloca no X o valor pra subtrair
-        tmp(5)  := "0000";
-        tmp(6)  := "0000";
-        tmp(7)  := "0000";
+        tmp(0)  := CLRA;   -- primeiro dá clear (valor do decoder)
+        tmp(1)  := SOMA;   -- depois começam as somas
+        tmp(2)  := SOMA;
+        tmp(3)  := SOMA;
+        tmp(4)  := SUB; -- coloca no X o valor pra subtrair
+        tmp(5)  := NOP;
+        tmp(6)  := NOP;
+        tmp(7)  := NOP;
         return tmp;
     end initMemory;
 

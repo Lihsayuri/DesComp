@@ -17,9 +17,9 @@ architecture comportamento of decoderInstru is
 
   begin
 saida <= "0000" when opcode = NOP else  -- SelMUX HabilitaA Reset Operacao
-         "1101" when opcode = LDA else  
+         "010X" when opcode = LDA else  -- operação final não importa/ carrega Y: A
          "1101" when opcode = SOMA else
          "1100" when opcode = SUB else
-         "0010" when opcode = CLRA else
+         "XX1X" when opcode = CLRA else
          "0000";  -- NOP para os opcodes Indefinidos
 end architecture;

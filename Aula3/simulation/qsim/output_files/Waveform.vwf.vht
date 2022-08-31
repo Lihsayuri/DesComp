@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "08/27/2022 17:14:02"
+-- Generated on "08/30/2022 15:26:00"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          Aula3
 -- 
@@ -43,8 +43,8 @@ COMPONENT Aula3
 	PORT (
 	CLOCK_50 : IN STD_LOGIC;
 	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	LEDR : BUFFER STD_LOGIC_VECTOR(9 DOWNTO 0);
-	PC_OUT : BUFFER STD_LOGIC_VECTOR(2 DOWNTO 0);
+	LEDR : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+	PC_OUT : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
 	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0)
 	);
 END COMPONENT;
