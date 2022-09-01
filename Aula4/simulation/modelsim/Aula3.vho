@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
--- DATE "09/01/2022 15:03:50"
+-- DATE "09/01/2022 15:03:39"
 
 -- 
 -- Device: Altera 5CEBA4F23C7 Package FBGA484
@@ -120,15 +120,15 @@ LEDR <= ww_LEDR;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
-\PC|ALT_INV_DOUT\(0) <= NOT \PC|DOUT\(0);
-\PC|ALT_INV_DOUT\(2) <= NOT \PC|DOUT\(2);
-\PC|ALT_INV_DOUT\(1) <= NOT \PC|DOUT\(1);
-\PC|ALT_INV_DOUT\(3) <= NOT \PC|DOUT\(3);
-\PC|ALT_INV_DOUT\(4) <= NOT \PC|DOUT\(4);
+\PC|ALT_INV_DOUT\(8) <= NOT \PC|DOUT\(8);
+\PC|ALT_INV_DOUT\(7) <= NOT \PC|DOUT\(7);
 \PC|ALT_INV_DOUT\(6) <= NOT \PC|DOUT\(6);
 \PC|ALT_INV_DOUT\(5) <= NOT \PC|DOUT\(5);
-\PC|ALT_INV_DOUT\(7) <= NOT \PC|DOUT\(7);
-\PC|ALT_INV_DOUT\(8) <= NOT \PC|DOUT\(8);
+\PC|ALT_INV_DOUT\(4) <= NOT \PC|DOUT\(4);
+\PC|ALT_INV_DOUT\(3) <= NOT \PC|DOUT\(3);
+\PC|ALT_INV_DOUT\(2) <= NOT \PC|DOUT\(2);
+\PC|ALT_INV_DOUT\(1) <= NOT \PC|DOUT\(1);
+\PC|ALT_INV_DOUT\(0) <= NOT \PC|DOUT\(0);
 
 -- Location: IOOBUF_X54_Y18_N79
 \PC_OUT[0]~output\ : cyclonev_io_obuf
