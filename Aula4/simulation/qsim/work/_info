@@ -20,7 +20,7 @@ Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z9 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 18
+!i122 20
 Z10 dC:/DesComp/Aula4/simulation/qsim
 Z11 8Aula3.vho
 Z12 FAula3.vho
@@ -30,9 +30,9 @@ V2NT_2ZhFoo>^2gP`=k7K@2
 !s100 SZ@f;iaWB1f=Z]b>6Nd6R0
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1662055432
+Z14 !s110 1662069410
 !i10b 1
-Z15 !s108 1662055432.000000
+Z15 !s108 1662069410.000000
 Z16 !s90 -work|work|Aula3.vho|
 Z17 !s107 Aula3.vho|
 !i113 1
@@ -49,7 +49,7 @@ R7
 R8
 R9
 DEx4 work 5 aula3 0 22 2NT_2ZhFoo>^2gP`=k7K@2
-!i122 18
+!i122 20
 l142
 L80 799
 VeP^8H4Q>H`_gWT=RoomL03
@@ -68,7 +68,7 @@ Eaula3_vhd_vec_tst
 Z20 w1661883960
 R7
 R8
-!i122 19
+!i122 21
 R10
 Z21 8output_files/Waveform.vwf.vht
 Z22 Foutput_files/Waveform.vwf.vht
@@ -90,7 +90,7 @@ Aaula3_arch
 R7
 R8
 Z25 DEx4 work 17 aula3_vhd_vec_tst 0 22 lB6Abc2HDL?XlOc55`[BT3
-!i122 19
+!i122 21
 l51
 Z26 L34 112
 Z27 VnC_GC8Ggo:34P=SHV3nN^1

@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "09/01/2022 15:03:49"
+-- Generated on "09/01/2022 18:56:47"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          Aula3
 -- 
@@ -35,15 +35,31 @@ ARCHITECTURE Aula3_arch OF Aula3_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL CLOCK_50 : STD_LOGIC;
+SIGNAL HEX0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX2 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX3 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX4 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX5 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL KEY : STD_LOGIC_VECTOR(3 DOWNTO 0);
-SIGNAL LEDR : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL PC_OUT : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL LEDR : STD_LOGIC_VECTOR(9 DOWNTO 0);
+SIGNAL PC_OUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL REG_OUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL SW : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT Aula3
 	PORT (
 	CLOCK_50 : IN STD_LOGIC;
+	HEX0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX2 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX3 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX4 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX5 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	LEDR : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	PC_OUT : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
+	LEDR : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+	PC_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+	REG_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -51,9 +67,17 @@ BEGIN
 	PORT MAP (
 -- list connections between master ports and signals
 	CLOCK_50 => CLOCK_50,
+	HEX0 => HEX0,
+	HEX1 => HEX1,
+	HEX2 => HEX2,
+	HEX3 => HEX3,
+	HEX4 => HEX4,
+	HEX5 => HEX5,
 	KEY => KEY,
 	LEDR => LEDR,
-	PC_OUT => PC_OUT
+	PC_OUT => PC_OUT,
+	REG_OUT => REG_OUT,
+	SW => SW
 	);
 
 -- KEY[0]
@@ -71,4 +95,72 @@ BEGIN
 	KEY(0) <= '0';
 WAIT;
 END PROCESS t_prcs_KEY_0;
+
+-- SW[9]
+t_prcs_SW_9: PROCESS
+BEGIN
+	SW(9) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_9;
+
+-- SW[8]
+t_prcs_SW_8: PROCESS
+BEGIN
+	SW(8) <= '0';
+	WAIT FOR 160000 ps;
+	SW(8) <= '1';
+	WAIT FOR 40000 ps;
+	SW(8) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_8;
+
+-- SW[7]
+t_prcs_SW_7: PROCESS
+BEGIN
+	SW(7) <= '0';
+	WAIT FOR 40000 ps;
+	SW(7) <= '1';
+	WAIT FOR 120000 ps;
+	SW(7) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_7;
+
+-- SW[6]
+t_prcs_SW_6: PROCESS
+BEGIN
+	SW(6) <= '0';
+	WAIT FOR 40000 ps;
+	SW(6) <= '1';
+	WAIT FOR 120000 ps;
+	SW(6) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_6;
+
+-- SW[3]
+t_prcs_SW_3: PROCESS
+BEGIN
+	SW(3) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_3;
+
+-- SW[2]
+t_prcs_SW_2: PROCESS
+BEGIN
+	SW(2) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_2;
+
+-- SW[1]
+t_prcs_SW_1: PROCESS
+BEGIN
+	SW(1) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_1;
+
+-- SW[0]
+t_prcs_SW_0: PROCESS
+BEGIN
+	SW(0) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_0;
 END Aula3_arch;

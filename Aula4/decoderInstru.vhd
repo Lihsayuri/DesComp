@@ -26,6 +26,6 @@ saida <= "0000" when opcode = NOP and ler = '0' and escrever = '0' else  -- SelM
          "0101" when opcode = SOMA and ler = '1' and escrever = '0' else -- soma valor da mem com acumulador
          "0100" when opcode = SUB and ler = '1' and escrever = '0' else
 			"1110" when opcode = LDI and ler = '0' and escrever = '0' else
-			"0000" when opcode = STA and ler = '0' and escrever = '1' else
-         "0000";  -- NOP para os opcodes Indefinidos
+			"X1XX" when opcode = STA and ler = '0' and escrever = '1' else
+         "0000" when opcode = NOP and ler = '0' and escrever = '0';  -- NOP para os opcodes Indefinidos
 end architecture;
