@@ -1,48 +1,3 @@
-/*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Aula4 -c Aula4 --vector_source="C:/DesComp/Aula4_RAM/output_files/Waveform.vwf" --testbench_file="C:/DesComp/Aula4_RAM/simulation/qsim/output_files/Waveform.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Aula4 -c Aula4 --vector_source="C:/DesComp/Aula4_RAM/output_files/Waveform.vwf" --testbench_file="C:/DesComp/Aula4_RAM/simulation/qsim/output_files/Waveform.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/DesComp/Aula4_RAM/simulation/qsim/" Aula4 -c Aula4</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/DesComp/Aula4_RAM/simulation/qsim/" Aula4 -c Aula4</tnetlist_cmd>
-<modelsim_script>onerror {exit -code 1}
-vlib work
-vcom -work work Aula4.vho
-vcom -work work output_files/Waveform.vwf.vht
-vsim  -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Aula4_vhd_vec_tst
-vcd file -direction Aula4.msim.vcd
-vcd add -internal Aula4_vhd_vec_tst/*
-vcd add -internal Aula4_vhd_vec_tst/i1/*
-proc simTimestamp {} {
-    echo "Simulation time: $::now ps"
-    if { [string equal running [runStatus]] } {
-        after 2500 simTimestamp
-    }
-}
-after 2500 simTimestamp
-run -all
-quit -f
-
-</modelsim_script>
-<modelsim_script_timing>onerror {exit -code 1}
-vlib work
-vcom -work work Aula4.vho
-vcom -work work output_files/Waveform.vwf.vht
-vsim -novopt -c -t 1ps -sdfmax Aula4_vhd_vec_tst/i1=Aula4_vhd.sdo -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Aula4_vhd_vec_tst
-vcd file -direction Aula4.msim.vcd
-vcd add -internal Aula4_vhd_vec_tst/*
-vcd add -internal Aula4_vhd_vec_tst/i1/*
-proc simTimestamp {} {
-    echo "Simulation time: $::now ps"
-    if { [string equal running [runStatus]] } {
-        after 2500 simTimestamp
-    }
-}
-after 2500 simTimestamp
-run -all
-quit -f
-
-</modelsim_script_timing>
-<hdl_lang>vhdl</hdl_lang>
-</simulation_settings>*/
 /*
 WARNING: Do NOT edit the input and output ports in this file in a text
 editor if you plan to continue editing the block that represents it in
@@ -363,14 +318,30 @@ TRANSITION_LIST("KEY[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 20.0;
 		NODE
 		{
-			REPEAT = 9;
+			REPEAT = 1;
+			LEVEL 1 FOR 20.0;
 			LEVEL 0 FOR 20.0;
 			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 20.0;
 		}
-		LEVEL 0 FOR 20.0;
 	}
 }
 
@@ -379,7 +350,11 @@ TRANSITION_LIST("LEDR[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 400.0;
+		}
 	}
 }
 
@@ -388,7 +363,11 @@ TRANSITION_LIST("LEDR[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 400.0;
+		}
 	}
 }
 
@@ -397,7 +376,13 @@ TRANSITION_LIST("LEDR[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 220.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 140.0;
+		}
 	}
 }
 
@@ -406,7 +391,14 @@ TRANSITION_LIST("LEDR[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 180.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 140.0;
+		}
 	}
 }
 
@@ -415,7 +407,14 @@ TRANSITION_LIST("LEDR[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 140.0;
+		}
 	}
 }
 
@@ -424,7 +423,16 @@ TRANSITION_LIST("LEDR[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 140.0;
+		}
 	}
 }
 
@@ -433,7 +441,13 @@ TRANSITION_LIST("LEDR[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 180.0;
+		}
 	}
 }
 
@@ -442,7 +456,14 @@ TRANSITION_LIST("LEDR[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 180.0;
+		}
 	}
 }
 
@@ -451,7 +472,11 @@ TRANSITION_LIST("PC_OUT[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 400.0;
+		}
 	}
 }
 
@@ -460,7 +485,11 @@ TRANSITION_LIST("PC_OUT[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 400.0;
+		}
 	}
 }
 
@@ -469,7 +498,11 @@ TRANSITION_LIST("PC_OUT[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 400.0;
+		}
 	}
 }
 
@@ -478,7 +511,11 @@ TRANSITION_LIST("PC_OUT[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 400.0;
+		}
 	}
 }
 
@@ -487,7 +524,12 @@ TRANSITION_LIST("PC_OUT[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 300.0;
+			LEVEL 1 FOR 100.0;
+		}
 	}
 }
 
@@ -496,7 +538,13 @@ TRANSITION_LIST("PC_OUT[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 140.0;
+			LEVEL 1 FOR 160.0;
+			LEVEL 0 FOR 100.0;
+		}
 	}
 }
 
@@ -505,7 +553,16 @@ TRANSITION_LIST("PC_OUT[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 20.0;
+		}
 	}
 }
 
@@ -514,7 +571,21 @@ TRANSITION_LIST("PC_OUT[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 20.0;
+		}
 	}
 }
 
@@ -523,7 +594,11 @@ TRANSITION_LIST("REG_OUT[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 400.0;
+		}
 	}
 }
 
@@ -532,7 +607,11 @@ TRANSITION_LIST("REG_OUT[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 400.0;
+		}
 	}
 }
 
@@ -541,7 +620,13 @@ TRANSITION_LIST("REG_OUT[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 220.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 140.0;
+		}
 	}
 }
 
@@ -550,7 +635,14 @@ TRANSITION_LIST("REG_OUT[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 180.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 140.0;
+		}
 	}
 }
 
@@ -559,7 +651,14 @@ TRANSITION_LIST("REG_OUT[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 140.0;
+		}
 	}
 }
 
@@ -568,7 +667,16 @@ TRANSITION_LIST("REG_OUT[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 140.0;
+		}
 	}
 }
 
@@ -577,7 +685,13 @@ TRANSITION_LIST("REG_OUT[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 180.0;
+		}
 	}
 }
 
@@ -586,7 +700,14 @@ TRANSITION_LIST("REG_OUT[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 400.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 180.0;
+		}
 	}
 }
 
