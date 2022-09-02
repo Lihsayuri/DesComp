@@ -24,6 +24,6 @@ saida <= "000000" when opcode = NOP else  -- SelMUX HabilitaA Reset Operacao
          "010110" when opcode = SOMA else -- soma valor da mem com acumulador
          "010010" when opcode = SUB else
 			"111000" when opcode = LDI else
-			"X1XX01" when opcode = STA else
+			"X0XX01" when opcode = STA else
          "000000";  -- NOP para os opcodes Indefinidos
 end architecture;

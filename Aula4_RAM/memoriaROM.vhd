@@ -33,11 +33,11 @@ architecture assincrona of memoriaROM is
 		  tmp(0) := LDI & '0' & x"04";
         tmp(1) := STA & '1' & x"02";
         tmp(2) := LDI & '0' & x"0B";
-        tmp(3) := STA & '1' & x"01";
-        tmp(4) := SOMA & '1' & x"01";
-        tmp(5) := SOMA & '1' & x"01";
-        tmp(6) := SUB & '1' & x"02";
-		  tmp(7) := NOP & '1' & x"00";
+        tmp(3) := STA & '1' & x"01"; -- só habilita em operações no registrador.
+        tmp(4) := SOMA & '0' & x"01";
+        tmp(5) := SOMA & '0' & x"01";
+        tmp(6) := SUB & '0' & x"02";
+		  tmp(7) := NOP & '0' & x"00";
 		  
         return tmp;
     end initMemory;
