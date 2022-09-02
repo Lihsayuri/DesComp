@@ -31,16 +31,16 @@ architecture assincrona of memoriaROM is
       -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
       -- Inicializa os endereços:
 		  tmp(0)  := LDI & '0' & x"00"; -- A = 0, reset
-        tmp(1)  := LDI & '0' & x"02";   -- agora, A = 2
-        tmp(2)  := STA & '1' & x"00"; -- MEM[0] = 2
-        tmp(3)  := SOMA & '1' & x"00"; -- A = A + MEM[0] = 4
-        tmp(4)  := SOMA & '1' & x"00"; -- A = A + MEM[0] = 6
-        tmp(5)  := STA & '1' & x"01" ; -- MEM[1] = 6
+        tmp(1)  := LDI & '0' & x"0A";   -- agora, A = 10
+        tmp(2)  := STA & '1' & x"00"; -- MEM[0] = 10
+        tmp(3)  := SOMA & '1' & x"00"; -- A = A + MEM[0] = 20
+        tmp(4)  := SOMA & '1' & x"00"; -- A = A + MEM[0] = 30
+        tmp(5)  := STA & '1' & x"01" ; -- MEM[1] = 30
         tmp(6)  := LDI & '0' & x"04"; -- A = 4
         tmp(7)  := STA & '1' & x"02"; -- MEM[2] = 4
-        tmp(8)  := LDA & '1' & x"01"; -- A = MEM[1] = 6
-        tmp(9)  := SUB & '1' & x"02"; -- A = A - B = 6 - MEM[2] = 6 - 4 = 2
-        tmp(10)  := STA & '1' & x"03"; -- MEM[3] = 2
+        tmp(8)  := LDA & '1' & x"01"; -- A = MEM[1] = 30
+        tmp(9)  := SUB & '1' & x"02"; -- A = A - B = 30 - MEM[2] = 30 - 4 = 26
+        tmp(10)  := STA & '1' & x"03"; -- MEM[3] = 26
 		  tmp(11)  := NOP & '0' & x"00";
         return tmp;
     end initMemory;
