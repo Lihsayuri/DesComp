@@ -20,6 +20,9 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
+
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -38,6 +41,9 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
+
+
 </modelsim_script_timing>
 <hdl_lang>vhdl</hdl_lang>
 </simulation_settings>*/
@@ -69,11 +75,41 @@ HEADER
 	VERSION = 1;
 	TIME_UNIT = ns;
 	DATA_OFFSET = 0.0;
-	DATA_DURATION = 320.0;
+	DATA_DURATION = 640.0;
 	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
 	GRID_PERIOD = 10.0;
 	GRID_DUTY_CYCLE = 50;
+}
+
+SIGNAL("EQUAL_FLAG")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("JEQ_FLAG")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("JMP_FLAG")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
 }
 
 SIGNAL("KEY[0]")
@@ -83,7 +119,7 @@ SIGNAL("KEY[0]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "KEY";
+	PARENT = "";
 }
 
 SIGNAL("PC_OUT")
@@ -266,6 +302,43 @@ SIGNAL("REG_OUT[0]")
 	PARENT = "REG_OUT";
 }
 
+SIGNAL("SEL_MUX_PC")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+TRANSITION_LIST("EQUAL_FLAG")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 640.0;
+	}
+}
+
+TRANSITION_LIST("JEQ_FLAG")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 640.0;
+	}
+}
+
+TRANSITION_LIST("JMP_FLAG")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 640.0;
+	}
+}
+
 TRANSITION_LIST("KEY[0]")
 {
 	NODE
@@ -274,7 +347,7 @@ TRANSITION_LIST("KEY[0]")
 		LEVEL 1 FOR 20.0;
 		NODE
 		{
-			REPEAT = 7;
+			REPEAT = 15;
 			LEVEL 0 FOR 20.0;
 			LEVEL 1 FOR 20.0;
 		}
@@ -287,7 +360,7 @@ TRANSITION_LIST("PC_OUT[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -296,7 +369,7 @@ TRANSITION_LIST("PC_OUT[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -305,7 +378,7 @@ TRANSITION_LIST("PC_OUT[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -314,7 +387,7 @@ TRANSITION_LIST("PC_OUT[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -323,7 +396,7 @@ TRANSITION_LIST("PC_OUT[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -332,7 +405,7 @@ TRANSITION_LIST("PC_OUT[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -341,7 +414,7 @@ TRANSITION_LIST("PC_OUT[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -350,7 +423,7 @@ TRANSITION_LIST("PC_OUT[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -359,7 +432,7 @@ TRANSITION_LIST("REG_OUT[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -368,7 +441,7 @@ TRANSITION_LIST("REG_OUT[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -377,7 +450,7 @@ TRANSITION_LIST("REG_OUT[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -386,7 +459,7 @@ TRANSITION_LIST("REG_OUT[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -395,7 +468,7 @@ TRANSITION_LIST("REG_OUT[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -404,7 +477,7 @@ TRANSITION_LIST("REG_OUT[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -413,7 +486,7 @@ TRANSITION_LIST("REG_OUT[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -422,7 +495,16 @@ TRANSITION_LIST("REG_OUT[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 320.0;
+		LEVEL X FOR 640.0;
+	}
+}
+
+TRANSITION_LIST("SEL_MUX_PC")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 640.0;
 	}
 }
 
@@ -613,6 +695,42 @@ DISPLAY_LINE
 	TREE_INDEX = 18;
 	TREE_LEVEL = 1;
 	PARENT = 10;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "EQUAL_FLAG";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 19;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "JEQ_FLAG";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 20;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "JMP_FLAG";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 21;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "SEL_MUX_PC";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 22;
+	TREE_LEVEL = 0;
 }
 
 TIME_BAR

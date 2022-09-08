@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "09/06/2022 15:14:16"
+-- Generated on "09/08/2022 11:01:17"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          Aula5
 -- 
@@ -35,17 +35,25 @@ ARCHITECTURE Aula5_arch OF Aula5_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL CLOCK_50 : STD_LOGIC;
+SIGNAL EQUAL_FLAG : STD_LOGIC;
+SIGNAL JEQ_FLAG : STD_LOGIC;
+SIGNAL JMP_FLAG : STD_LOGIC;
 SIGNAL KEY : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL LEDR : STD_LOGIC_VECTOR(9 DOWNTO 0);
 SIGNAL PC_OUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL REG_OUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL SEL_MUX_PC : STD_LOGIC;
 COMPONENT Aula5
 	PORT (
 	CLOCK_50 : IN STD_LOGIC;
+	EQUAL_FLAG : OUT STD_LOGIC;
+	JEQ_FLAG : OUT STD_LOGIC;
+	JMP_FLAG : OUT STD_LOGIC;
 	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 	LEDR : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
 	PC_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	REG_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	REG_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+	SEL_MUX_PC : OUT STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
@@ -53,10 +61,14 @@ BEGIN
 	PORT MAP (
 -- list connections between master ports and signals
 	CLOCK_50 => CLOCK_50,
+	EQUAL_FLAG => EQUAL_FLAG,
+	JEQ_FLAG => JEQ_FLAG,
+	JMP_FLAG => JMP_FLAG,
 	KEY => KEY,
 	LEDR => LEDR,
 	PC_OUT => PC_OUT,
-	REG_OUT => REG_OUT
+	REG_OUT => REG_OUT,
+	SEL_MUX_PC => SEL_MUX_PC
 	);
 
 -- KEY[0]
@@ -64,7 +76,7 @@ t_prcs_KEY_0: PROCESS
 BEGIN
 	KEY(0) <= '1';
 	WAIT FOR 20000 ps;
-	FOR i IN 1 TO 7
+	FOR i IN 1 TO 15
 	LOOP
 		KEY(0) <= '0';
 		WAIT FOR 20000 ps;

@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity decoderInstru is
   port ( opcode : in std_logic_vector(3 downto 0);
-         saida : out std_logic_vector(6 downto 0)
+         saida : out std_logic_vector(8 downto 0)
   );
 end entity;
 
@@ -22,12 +22,14 @@ architecture comportamento of decoderInstru is
   begin
   
   -- MUX HABILITA OPERACAO // DECODER : LER ESCREVER
-saida <= "0000000" when opcode = NOP else  -- SelMUX HabilitaA Reset Operacao
-         "0011010" when opcode = LDA else  -- operação final não importa/ carrega Y: A
-         "0010110" when opcode = SOMA else -- soma valor da mem com acumulador
-         "0010010" when opcode = SUB else
-			"0111000" when opcode = LDI else
-			"0X0XX01" when opcode = STA else
-			"1X0XX00" when opcode = JMP else
-         "0000000";  -- NOP para os opcodes Indefinidos
+saida <= "00X0XX000" when opcode = NOP else  -- SelMUX HabilitaA Reset Operacao
+         "000110010" when opcode = LDA else  -- operação final não importa/ carrega Y: A
+         "000101010" when opcode = SOMA else -- soma valor da mem com acumulador
+         "000100010" when opcode = SUB else
+			"001110000" when opcode = LDI else
+			"0000XX001" when opcode = STA else
+			"10X0XX000" when opcode = JMP else
+			"01X0XX000" when opcode = JEQ else
+			"000000110" when opcode = CEQ else
+         "00X0XX000";  -- NOP para os opcodes Indefinidos
 end architecture;
