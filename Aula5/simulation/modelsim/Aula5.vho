@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
--- DATE "09/08/2022 11:01:11"
+-- DATE "09/12/2022 19:30:15"
 
 -- 
 -- Device: Altera 5CEBA4F23C7 Package FBGA484
@@ -40,13 +40,13 @@ ENTITY 	Aula5 IS
     PORT (
 	CLOCK_50 : IN std_logic;
 	KEY : IN std_logic_vector(3 DOWNTO 0);
-	PC_OUT : OUT std_logic_vector(7 DOWNTO 0);
-	LEDR : OUT std_logic_vector(9 DOWNTO 0);
-	REG_OUT : OUT std_logic_vector(7 DOWNTO 0);
-	SEL_MUX_PC : OUT std_logic;
-	JMP_FLAG : OUT std_logic;
-	JEQ_FLAG : OUT std_logic;
-	EQUAL_FLAG : OUT std_logic
+	PC_OUT : BUFFER std_logic_vector(7 DOWNTO 0);
+	LEDR : BUFFER std_logic_vector(9 DOWNTO 0);
+	REG_OUT : BUFFER std_logic_vector(7 DOWNTO 0);
+	SEL_MUX_PC : BUFFER std_logic;
+	JMP_FLAG : BUFFER std_logic;
+	JEQ_FLAG : BUFFER std_logic;
+	EQUAL_FLAG : BUFFER std_logic
 	);
 END Aula5;
 
@@ -240,6 +240,14 @@ SIGNAL \decoderInstru1|saida~0_combout\ : std_logic;
 SIGNAL \decoderInstru1|saida~1_combout\ : std_logic;
 SIGNAL \REGA|DOUT\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \PC|DOUT\ : std_logic_vector(8 DOWNTO 0);
+SIGNAL \incrementaPC|ALT_INV_Add0~21_sumout\ : std_logic;
+SIGNAL \incrementaPC|ALT_INV_Add0~17_sumout\ : std_logic;
+SIGNAL \incrementaPC|ALT_INV_Add0~13_sumout\ : std_logic;
+SIGNAL \incrementaPC|ALT_INV_Add0~9_sumout\ : std_logic;
+SIGNAL \incrementaPC|ALT_INV_Add0~5_sumout\ : std_logic;
+SIGNAL \incrementaPC|ALT_INV_Add0~1_sumout\ : std_logic;
+SIGNAL \REGA|ALT_INV_DOUT\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \PC|ALT_INV_DOUT\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \FLAG|ALT_INV_DOUT~DUPLICATE_q\ : std_logic;
 SIGNAL \REGA|ALT_INV_DOUT[7]~DUPLICATE_q\ : std_logic;
 SIGNAL \REGA|ALT_INV_DOUT[4]~DUPLICATE_q\ : std_logic;
@@ -302,14 +310,6 @@ SIGNAL \ULA1|ALT_INV_Add1~1_sumout\ : std_logic;
 SIGNAL \ULA1|ALT_INV_Add0~1_sumout\ : std_logic;
 SIGNAL \incrementaPC|ALT_INV_Add0~29_sumout\ : std_logic;
 SIGNAL \incrementaPC|ALT_INV_Add0~25_sumout\ : std_logic;
-SIGNAL \incrementaPC|ALT_INV_Add0~21_sumout\ : std_logic;
-SIGNAL \incrementaPC|ALT_INV_Add0~17_sumout\ : std_logic;
-SIGNAL \incrementaPC|ALT_INV_Add0~13_sumout\ : std_logic;
-SIGNAL \incrementaPC|ALT_INV_Add0~9_sumout\ : std_logic;
-SIGNAL \incrementaPC|ALT_INV_Add0~5_sumout\ : std_logic;
-SIGNAL \incrementaPC|ALT_INV_Add0~1_sumout\ : std_logic;
-SIGNAL \REGA|ALT_INV_DOUT\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \PC|ALT_INV_DOUT\ : std_logic_vector(7 DOWNTO 0);
 
 BEGIN
 
@@ -325,6 +325,27 @@ EQUAL_FLAG <= ww_EQUAL_FLAG;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
+\incrementaPC|ALT_INV_Add0~21_sumout\ <= NOT \incrementaPC|Add0~21_sumout\;
+\incrementaPC|ALT_INV_Add0~17_sumout\ <= NOT \incrementaPC|Add0~17_sumout\;
+\incrementaPC|ALT_INV_Add0~13_sumout\ <= NOT \incrementaPC|Add0~13_sumout\;
+\incrementaPC|ALT_INV_Add0~9_sumout\ <= NOT \incrementaPC|Add0~9_sumout\;
+\incrementaPC|ALT_INV_Add0~5_sumout\ <= NOT \incrementaPC|Add0~5_sumout\;
+\incrementaPC|ALT_INV_Add0~1_sumout\ <= NOT \incrementaPC|Add0~1_sumout\;
+\REGA|ALT_INV_DOUT\(7) <= NOT \REGA|DOUT\(7);
+\REGA|ALT_INV_DOUT\(6) <= NOT \REGA|DOUT\(6);
+\REGA|ALT_INV_DOUT\(5) <= NOT \REGA|DOUT\(5);
+\REGA|ALT_INV_DOUT\(3) <= NOT \REGA|DOUT\(3);
+\REGA|ALT_INV_DOUT\(2) <= NOT \REGA|DOUT\(2);
+\REGA|ALT_INV_DOUT\(1) <= NOT \REGA|DOUT\(1);
+\REGA|ALT_INV_DOUT\(0) <= NOT \REGA|DOUT\(0);
+\PC|ALT_INV_DOUT\(7) <= NOT \PC|DOUT\(7);
+\PC|ALT_INV_DOUT\(6) <= NOT \PC|DOUT\(6);
+\PC|ALT_INV_DOUT\(5) <= NOT \PC|DOUT\(5);
+\PC|ALT_INV_DOUT\(4) <= NOT \PC|DOUT\(4);
+\PC|ALT_INV_DOUT\(3) <= NOT \PC|DOUT\(3);
+\PC|ALT_INV_DOUT\(2) <= NOT \PC|DOUT\(2);
+\PC|ALT_INV_DOUT\(1) <= NOT \PC|DOUT\(1);
+\PC|ALT_INV_DOUT\(0) <= NOT \PC|DOUT\(0);
 \FLAG|ALT_INV_DOUT~DUPLICATE_q\ <= NOT \FLAG|DOUT~DUPLICATE_q\;
 \REGA|ALT_INV_DOUT[7]~DUPLICATE_q\ <= NOT \REGA|DOUT[7]~DUPLICATE_q\;
 \REGA|ALT_INV_DOUT[4]~DUPLICATE_q\ <= NOT \REGA|DOUT[4]~DUPLICATE_q\;
@@ -387,27 +408,6 @@ ww_devpor <= devpor;
 \ULA1|ALT_INV_Add0~1_sumout\ <= NOT \ULA1|Add0~1_sumout\;
 \incrementaPC|ALT_INV_Add0~29_sumout\ <= NOT \incrementaPC|Add0~29_sumout\;
 \incrementaPC|ALT_INV_Add0~25_sumout\ <= NOT \incrementaPC|Add0~25_sumout\;
-\incrementaPC|ALT_INV_Add0~21_sumout\ <= NOT \incrementaPC|Add0~21_sumout\;
-\incrementaPC|ALT_INV_Add0~17_sumout\ <= NOT \incrementaPC|Add0~17_sumout\;
-\incrementaPC|ALT_INV_Add0~13_sumout\ <= NOT \incrementaPC|Add0~13_sumout\;
-\incrementaPC|ALT_INV_Add0~9_sumout\ <= NOT \incrementaPC|Add0~9_sumout\;
-\incrementaPC|ALT_INV_Add0~5_sumout\ <= NOT \incrementaPC|Add0~5_sumout\;
-\incrementaPC|ALT_INV_Add0~1_sumout\ <= NOT \incrementaPC|Add0~1_sumout\;
-\REGA|ALT_INV_DOUT\(7) <= NOT \REGA|DOUT\(7);
-\REGA|ALT_INV_DOUT\(6) <= NOT \REGA|DOUT\(6);
-\REGA|ALT_INV_DOUT\(5) <= NOT \REGA|DOUT\(5);
-\REGA|ALT_INV_DOUT\(3) <= NOT \REGA|DOUT\(3);
-\REGA|ALT_INV_DOUT\(2) <= NOT \REGA|DOUT\(2);
-\REGA|ALT_INV_DOUT\(1) <= NOT \REGA|DOUT\(1);
-\REGA|ALT_INV_DOUT\(0) <= NOT \REGA|DOUT\(0);
-\PC|ALT_INV_DOUT\(7) <= NOT \PC|DOUT\(7);
-\PC|ALT_INV_DOUT\(6) <= NOT \PC|DOUT\(6);
-\PC|ALT_INV_DOUT\(5) <= NOT \PC|DOUT\(5);
-\PC|ALT_INV_DOUT\(4) <= NOT \PC|DOUT\(4);
-\PC|ALT_INV_DOUT\(3) <= NOT \PC|DOUT\(3);
-\PC|ALT_INV_DOUT\(2) <= NOT \PC|DOUT\(2);
-\PC|ALT_INV_DOUT\(1) <= NOT \PC|DOUT\(1);
-\PC|ALT_INV_DOUT\(0) <= NOT \PC|DOUT\(0);
 
 -- Location: IOOBUF_X19_Y0_N2
 \PC_OUT[0]~output\ : cyclonev_io_obuf

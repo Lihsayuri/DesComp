@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "09/08/2022 11:01:17"
+-- Generated on "09/12/2022 19:30:52"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          Aula5
 -- 
@@ -46,14 +46,14 @@ SIGNAL SEL_MUX_PC : STD_LOGIC;
 COMPONENT Aula5
 	PORT (
 	CLOCK_50 : IN STD_LOGIC;
-	EQUAL_FLAG : OUT STD_LOGIC;
-	JEQ_FLAG : OUT STD_LOGIC;
-	JMP_FLAG : OUT STD_LOGIC;
+	EQUAL_FLAG : BUFFER STD_LOGIC;
+	JEQ_FLAG : BUFFER STD_LOGIC;
+	JMP_FLAG : BUFFER STD_LOGIC;
 	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	LEDR : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
-	PC_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	REG_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	SEL_MUX_PC : OUT STD_LOGIC
+	LEDR : BUFFER STD_LOGIC_VECTOR(9 DOWNTO 0);
+	PC_OUT : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
+	REG_OUT : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
+	SEL_MUX_PC : BUFFER STD_LOGIC
 	);
 END COMPONENT;
 BEGIN

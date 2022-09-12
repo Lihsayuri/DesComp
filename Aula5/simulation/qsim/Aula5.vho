@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
--- DATE "09/08/2022 11:01:18"
+-- DATE "09/12/2022 19:30:53"
 
 -- 
 -- Device: Altera 5CEBA4F23C7 Package FBGA484
@@ -40,13 +40,13 @@ ENTITY 	Aula5 IS
     PORT (
 	CLOCK_50 : IN std_logic;
 	KEY : IN std_logic_vector(3 DOWNTO 0);
-	PC_OUT : OUT std_logic_vector(7 DOWNTO 0);
-	LEDR : OUT std_logic_vector(9 DOWNTO 0);
-	REG_OUT : OUT std_logic_vector(7 DOWNTO 0);
-	SEL_MUX_PC : OUT std_logic;
-	JMP_FLAG : OUT std_logic;
-	JEQ_FLAG : OUT std_logic;
-	EQUAL_FLAG : OUT std_logic
+	PC_OUT : BUFFER std_logic_vector(7 DOWNTO 0);
+	LEDR : BUFFER std_logic_vector(9 DOWNTO 0);
+	REG_OUT : BUFFER std_logic_vector(7 DOWNTO 0);
+	SEL_MUX_PC : BUFFER std_logic;
+	JMP_FLAG : BUFFER std_logic;
+	JEQ_FLAG : BUFFER std_logic;
+	EQUAL_FLAG : BUFFER std_logic
 	);
 END Aula5;
 
