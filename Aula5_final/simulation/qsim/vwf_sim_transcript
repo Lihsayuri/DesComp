@@ -26,7 +26,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Mon Sep 12 19:26:47 2022
+    Info: Processing started: Tue Sep 13 15:01:41 2022
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Aula5final -c Aula5final --vector_source=C:/DesComp/Aula5_final/Waveform.vwf --testbench_file=C:/DesComp/Aula5_final/simulation/qsim/Waveform.vwf.vht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
@@ -55,13 +55,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Mon Sep 12 19:26:48 2022
+    Info: Processing started: Tue Sep 13 15:01:43 2022
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/DesComp/Aula5_final/simulation/qsim/ Aula5final -c Aula5final
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file Aula5final.vho in folder "C:/DesComp/Aula5_final/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4719 megabytes
-    Info: Processing ended: Mon Sep 12 19:26:49 2022
+    Info: Peak virtual memory: 4717 megabytes
+    Info: Processing ended: Tue Sep 13 15:01:44 2022
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -81,14 +81,17 @@ Reading pref.tcl
 
 # 2020.1
 
+
 # do Aula5final.do
 
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:26:50 on Sep 12,2022
+
+# Start time: 15:01:45 on Sep 13,2022
 # vcom -work work Aula5final.vho 
 
 # -- Loading package STANDARD
+
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package VITAL_Timing
@@ -96,27 +99,28 @@ Reading pref.tcl
 # -- Loading package dffeas_pack
 # -- Loading package altera_primitives_components
 # -- Loading package altera_lnsim_components
+
 # -- Loading package cyclonev_atom_pack
 # -- Loading package cyclonev_components
 # -- Compiling entity Aula5final
 # -- Compiling architecture structure of Aula5final
 
-# End time: 19:26:50 on Sep 12,2022, Elapsed time: 0:00:00
+# End time: 15:01:46 on Sep 13,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:26:50 on Sep 12,2022
+# Start time: 15:01:46 on Sep 13,2022
 # vcom -work work Waveform.vwf.vht 
-# -- Loading package STANDARD
 
+# -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity Aula5final_vhd_vec_tst
 # -- Compiling architecture Aula5final_arch of Aula5final_vhd_vec_tst
-# End time: 19:26:50 on Sep 12,2022, Elapsed time: 0:00:00
+# End time: 15:01:46 on Sep 13,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Aula5final_vhd_vec_tst 
-# Start time: 19:26:50 on Sep 12,2022
+# Start time: 15:01:46 on Sep 13,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -134,11 +138,11 @@ Reading pref.tcl
 # Loading cyclonev.cyclonev_io_ibuf(arch)
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
 # Loading altera.dffeas(vital_dffeas)
-# ** Warning: Design size of 28184 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 29604 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#34
 
-# End time: 19:26:51 on Sep 12,2022, Elapsed time: 0:00:01
+# End time: 15:01:47 on Sep 13,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
@@ -151,7 +155,7 @@ Reading C:/DesComp/Aula5_final/simulation/qsim/Aula5final.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/DesComp/Aula5_final/simulation/qsim/Aula5final_20220912192651.sim.vwf
+Writing the resulting VWF to C:/DesComp/Aula5_final/simulation/qsim/Aula5final_20220913150147.sim.vwf
 
 Finished VCD to VWF conversion.
 
