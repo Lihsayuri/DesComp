@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dC:/DesComp/Aula5_final/simulation/qsim
 Eaula5final
-Z1 w1663092104
+Z1 w1663543401
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,19 +20,19 @@ Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z10 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 10
+!i122 12
 R0
 Z11 8Aula5final.vho
 Z12 FAula5final.vho
 l0
 L39 1
-VTZATQ[Da8mUh;h0JI8DY11
-!s100 lYc3e1F9E:onG0<JMn72C2
+VXNf@JZ1MG>zJMCA9f34KL1
+!s100 :<1E4kQ?`>kB6z7__QEzH3
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1663092106
+Z14 !s110 1663543403
 !i10b 1
-Z15 !s108 1663092105.000000
+Z15 !s108 1663543403.000000
 Z16 !s90 -work|work|Aula5final.vho|
 Z17 !s107 Aula5final.vho|
 !i113 1
@@ -48,12 +48,12 @@ R7
 R8
 R9
 R10
-DEx4 work 10 aula5final 0 22 TZATQ[Da8mUh;h0JI8DY11
-!i122 10
-l337
-L96 3209
-V0[KMk]>eBcf`I2_0liB;40
-!s100 Fj:dJf<Z11z4Qo2WZ1bnW2
+DEx4 work 10 aula5final 0 22 XNf@JZ1MG>zJMCA9f34KL1
+!i122 12
+l505
+L109 5040
+VO528zA59X0R7^B8S5YY5I2
+!s100 HONkRbmJF2Ccg@:@oDMZW2
 R13
 32
 R14
@@ -65,10 +65,10 @@ R17
 R18
 R19
 Eaula5final_vhd_vec_tst
-Z20 w1663092102
+Z20 w1663543400
 R8
 R9
-!i122 11
+!i122 13
 R0
 Z21 8Waveform.vwf.vht
 Z22 FWaveform.vwf.vht
@@ -80,28 +80,28 @@ R13
 32
 R14
 !i10b 1
-Z23 !s108 1663092106.000000
-Z24 !s90 -work|work|Waveform.vwf.vht|
-Z25 !s107 Waveform.vwf.vht|
+R15
+Z23 !s90 -work|work|Waveform.vwf.vht|
+Z24 !s107 Waveform.vwf.vht|
 !i113 1
 R18
 R19
 Aaula5final_arch
 R8
 R9
-Z26 DEx4 work 22 aula5final_vhd_vec_tst 0 22 G1O@Q^TC?7gOQQWe?<f272
-!i122 11
-l63
-Z27 L34 62
-Z28 VN`>6nM]b6@1Sl8;UQFEB:0
-Z29 !s100 eTN]a:5WfLf15fK@^IQOh3
+Z25 DEx4 work 22 aula5final_vhd_vec_tst 0 22 G1O@Q^TC?7gOQQWe?<f272
+!i122 13
+l65
+L34 65
+VBgZNBh4MfRA2Lh@B@Wo@91
+!s100 H?oNKQ9`lAnRnO945H22=1
 R13
 32
 R14
 !i10b 1
+R15
 R23
 R24
-R25
 !i113 1
 R18
 R19

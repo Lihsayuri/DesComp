@@ -108,6 +108,54 @@
 					"strict" : false
 				},
 				{
+					"name" : "Palavra[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[11]",
+					"strict" : false
+				},
+				{
 					"name" : "JMP_FLAG",
 					"strict" : false
 				},

@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "09/13/2022 15:01:42"
+-- Generated on "09/18/2022 20:23:20"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          Aula5final
 -- 
@@ -41,6 +41,7 @@ SIGNAL JMP_FLAG : STD_LOGIC;
 SIGNAL JSR_FLAG : STD_LOGIC;
 SIGNAL KEY : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL LEDR : STD_LOGIC_VECTOR(9 DOWNTO 0);
+SIGNAL Palavra : STD_LOGIC_VECTOR(11 DOWNTO 0);
 SIGNAL PC_OUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL REG_OUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL RET_FLAG : STD_LOGIC;
@@ -54,6 +55,7 @@ COMPONENT Aula5final
 	JSR_FLAG : OUT STD_LOGIC;
 	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 	LEDR : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+	Palavra : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
 	PC_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	REG_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	RET_FLAG : OUT STD_LOGIC;
@@ -71,6 +73,7 @@ BEGIN
 	JSR_FLAG => JSR_FLAG,
 	KEY => KEY,
 	LEDR => LEDR,
+	Palavra => Palavra,
 	PC_OUT => PC_OUT,
 	REG_OUT => REG_OUT,
 	RET_FLAG => RET_FLAG,

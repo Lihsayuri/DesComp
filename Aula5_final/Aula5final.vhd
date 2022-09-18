@@ -14,6 +14,7 @@ entity Aula5final is
     LEDR  : out std_logic_vector(9 downto 0);
 	 REG_OUT: out std_logic_vector(larguraDados-1 downto 0);
 	 SEL_MUX_PC : out std_logic_vector (1 downto 0);
+	 Palavra : out std_logic_vector(11 downto 0);
 	 JMP_FLAG: out std_logic;
 	 JEQ_FLAG: out std_logic;
 	 JSR_FLAG: out std_logic;
@@ -213,5 +214,6 @@ begin
 	JSR_FLAG <= jsr;
 	RET_FLAG <= ret;	
 	EQUAL_FLAG <= FLAG_EQ;	
+	Palavra <= decoder_OUT;
 	
 end architecture;
