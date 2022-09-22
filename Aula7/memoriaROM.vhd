@@ -41,12 +41,12 @@ architecture assincrona of memoriaROM is
         tmp(3) := NOP & '0' & x"00";
         tmp(4) := NOP & '0' & x"00";
         tmp(5) := LDI & '0' & x"05"; -- A = 5
-        tmp(6) := STA & '0' & x"00"; -- MEM[255] = 5 STA ERA 1
-        tmp(7) := CEQ & '0' & x"00";  --CEQ era 1
+        tmp(6) := STA & '0' & x"3F"; -- MEM[63] = 5 STA ERA 1
+        tmp(7) := CEQ & '0' & x"3F";  --CEQ era 1
 		  tmp(8) := JMP & '0' & x"02";
         tmp(9) := NOP & '0' & x"00";
         tmp(10) := LDI & '0' & x"04"; -- A = 4
-        tmp(11) := CEQ & '0' & x"00"; -- CEQ era 1
+        tmp(11) := CEQ & '0' & x"3F"; -- CEQ era 1
 		  tmp(12):= JEQ & '0' & x"03";
 		  tmp(13) := JMP & '0' & x"0D";
         tmp(14) := NOP & '0' & x"00";

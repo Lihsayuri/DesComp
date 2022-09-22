@@ -5,12 +5,12 @@ entity Aula5final is
   -- Total de bits das entradas e saidas
   generic ( larguraDados : natural := 8;
           larguraEnderecos : natural := 8;
-        simulacao : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
+        simulacao : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
     CLOCK_50 : in std_logic;
     KEY: in std_logic_vector(3 downto 0);
-    PC_OUT: out std_logic_vector(larguraEnderecos - 1 downto 0);
+    PC_OUT: out std_logic_vector(larguraEnderecos downto 0);
     LEDR  : out std_logic_vector(9 downto 0);
 	 REG_OUT: out std_logic_vector(larguraDados-1 downto 0);
 	 SEL_MUX_PC : out std_logic_vector (1 downto 0);
@@ -204,7 +204,7 @@ begin
 						 dado_out => MEM_OUT,
 						 clk => CLK);				
 
-	PC_OUT <= Endereco (7 downto 0);
+	PC_OUT <= Endereco (8 downto 0);
 	REG_OUT <= REGA_OUT;
 	LEDR(larguraDados - 1 downto 0) <= REGA_OUT;
 	LEDR(9 downto 8) <= "00";

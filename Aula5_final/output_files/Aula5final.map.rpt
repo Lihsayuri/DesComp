@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Aula5final
-Sun Sep 18 20:20:34 2022
+Wed Sep 21 20:49:32 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -14,27 +14,26 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |Aula5final
- 13. Parameter Settings for User Entity Instance: registradorGenerico:PC
- 14. Parameter Settings for User Entity Instance: somaConstante:incrementaPC
- 15. Parameter Settings for User Entity Instance: registradorGenerico:REG_RET
- 16. Parameter Settings for User Entity Instance: muxGenerico4x1:MUX2
- 17. Parameter Settings for User Entity Instance: memoriaROM:ROM1
- 18. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX1
- 19. Parameter Settings for User Entity Instance: ULASomaSub:ULA1
- 20. Parameter Settings for User Entity Instance: registradorGenerico:REGA
- 21. Parameter Settings for User Entity Instance: memoriaRAM:RAM1
- 22. Port Connectivity Checks: "flipflopGenerico:FLAG"
- 23. Port Connectivity Checks: "registradorGenerico:REGA"
- 24. Port Connectivity Checks: "muxGenerico4x1:MUX2"
- 25. Port Connectivity Checks: "registradorGenerico:REG_RET"
- 26. Port Connectivity Checks: "registradorGenerico:PC"
- 27. Post-Synthesis Netlist Statistics for Top Partition
- 28. Elapsed Time Per Partition
- 29. Analysis & Synthesis Messages
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |Aula5final
+ 12. Parameter Settings for User Entity Instance: registradorGenerico:PC
+ 13. Parameter Settings for User Entity Instance: somaConstante:incrementaPC
+ 14. Parameter Settings for User Entity Instance: registradorGenerico:REG_RET
+ 15. Parameter Settings for User Entity Instance: muxGenerico4x1:MUX2
+ 16. Parameter Settings for User Entity Instance: memoriaROM:ROM1
+ 17. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX1
+ 18. Parameter Settings for User Entity Instance: ULASomaSub:ULA1
+ 19. Parameter Settings for User Entity Instance: registradorGenerico:REGA
+ 20. Parameter Settings for User Entity Instance: memoriaRAM:RAM1
+ 21. Port Connectivity Checks: "flipflopGenerico:FLAG"
+ 22. Port Connectivity Checks: "registradorGenerico:REGA"
+ 23. Port Connectivity Checks: "muxGenerico4x1:MUX2"
+ 24. Port Connectivity Checks: "registradorGenerico:REG_RET"
+ 25. Port Connectivity Checks: "registradorGenerico:PC"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
 
 
 
@@ -61,14 +60,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Sep 18 20:20:34 2022       ;
+; Analysis & Synthesis Status     ; Successful - Wed Sep 21 20:49:32 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Aula5final                                  ;
 ; Top-level Entity Name           ; Aula5final                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 90                                          ;
-; Total pins                      ; 50                                          ;
+; Total registers                 ; 91                                          ;
+; Total pins                      ; 51                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -199,59 +198,57 @@ https://fpgasoftware.intel.com/eula.
 ; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; C:/DesComp/Aula5_final/memoriaRAM.vhd          ;         ;
 ; logica_desvio.vhd                ; yes             ; User VHDL File  ; C:/DesComp/Aula5_final/logica_desvio.vhd       ;         ;
 ; flipflopGenerico.vhd             ; yes             ; User VHDL File  ; C:/DesComp/Aula5_final/flipflopGenerico.vhd    ;         ;
-; edgeDetector.vhd                 ; yes             ; User VHDL File  ; C:/DesComp/Aula5_final/edgeDetector.vhd        ;         ;
 ; decoderInstru.vhd                ; yes             ; User VHDL File  ; C:/DesComp/Aula5_final/decoderInstru.vhd       ;         ;
 ; Aula5final.vhd                   ; yes             ; User VHDL File  ; C:/DesComp/Aula5_final/Aula5final.vhd          ;         ;
 ; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; C:/DesComp/Aula5_final/muxGenerico4x1.vhd      ;         ;
 +----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                           ;
-+---------------------------------------------+-----------------------------------------+
-; Resource                                    ; Usage                                   ;
-+---------------------------------------------+-----------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 70                                      ;
-;                                             ;                                         ;
-; Combinational ALUT usage for logic          ; 108                                     ;
-;     -- 7 input functions                    ; 0                                       ;
-;     -- 6 input functions                    ; 14                                      ;
-;     -- 5 input functions                    ; 24                                      ;
-;     -- 4 input functions                    ; 57                                      ;
-;     -- <=3 input functions                  ; 13                                      ;
-;                                             ;                                         ;
-; Dedicated logic registers                   ; 90                                      ;
-;                                             ;                                         ;
-; I/O pins                                    ; 50                                      ;
-;                                             ;                                         ;
-; Total DSP Blocks                            ; 0                                       ;
-;                                             ;                                         ;
-; Maximum fan-out node                        ; edgeDetector:\gravar:detectorSub0|saida ;
-; Maximum fan-out                             ; 89                                      ;
-; Total fan-out                               ; 839                                     ;
-; Average fan-out                             ; 2.82                                    ;
-+---------------------------------------------+-----------------------------------------+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimate of Logic utilization (ALMs needed) ; 70           ;
+;                                             ;              ;
+; Combinational ALUT usage for logic          ; 108          ;
+;     -- 7 input functions                    ; 1            ;
+;     -- 6 input functions                    ; 14           ;
+;     -- 5 input functions                    ; 24           ;
+;     -- 4 input functions                    ; 57           ;
+;     -- <=3 input functions                  ; 12           ;
+;                                             ;              ;
+; Dedicated logic registers                   ; 91           ;
+;                                             ;              ;
+; I/O pins                                    ; 51           ;
+;                                             ;              ;
+; Total DSP Blocks                            ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[0]~input ;
+; Maximum fan-out                             ; 91           ;
+; Total fan-out                               ; 850          ;
+; Average fan-out                             ; 2.82         ;
++---------------------------------------------+--------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                  ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Entity Name         ; Library Name ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+---------------------+--------------+
-; |Aula5final                            ; 108 (0)             ; 90 (0)                    ; 0                 ; 0          ; 50   ; 0            ; |Aula5final                                   ; Aula5final          ; work         ;
-;    |ULASomaSub:ULA1|                   ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|ULASomaSub:ULA1                   ; ULASomaSub          ; work         ;
-;    |decoderInstru:decoderInstru1|      ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|decoderInstru:decoderInstru1      ; decoderInstru       ; work         ;
-;    |edgeDetector:\gravar:detectorSub0| ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|edgeDetector:\gravar:detectorSub0 ; edgeDetector        ; work         ;
-;    |flipflopGenerico:FLAG|             ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|flipflopGenerico:FLAG             ; flipflopGenerico    ; work         ;
-;    |logica_desvio:LOG_DESVIO|          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|logica_desvio:LOG_DESVIO          ; logica_desvio       ; work         ;
-;    |memoriaRAM:RAM1|                   ; 41 (41)             ; 64 (64)                   ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|memoriaRAM:RAM1                   ; memoriaRAM          ; work         ;
-;    |memoriaROM:ROM1|                   ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|memoriaROM:ROM1                   ; memoriaROM          ; work         ;
-;    |muxGenerico4x1:MUX2|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|muxGenerico4x1:MUX2               ; muxGenerico4x1      ; work         ;
-;    |registradorGenerico:PC|            ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|registradorGenerico:PC            ; registradorGenerico ; work         ;
-;    |registradorGenerico:REGA|          ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|registradorGenerico:REGA          ; registradorGenerico ; work         ;
-;    |registradorGenerico:REG_RET|       ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|registradorGenerico:REG_RET       ; registradorGenerico ; work         ;
-;    |somaConstante:incrementaPC|        ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|somaConstante:incrementaPC        ; somaConstante       ; work         ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                        ;
++-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Entity Name         ; Library Name ;
++-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+---------------------+--------------+
+; |Aula5final                       ; 108 (0)             ; 91 (0)                    ; 0                 ; 0          ; 51   ; 0            ; |Aula5final                              ; Aula5final          ; work         ;
+;    |ULASomaSub:ULA1|              ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|ULASomaSub:ULA1              ; ULASomaSub          ; work         ;
+;    |decoderInstru:decoderInstru1| ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|decoderInstru:decoderInstru1 ; decoderInstru       ; work         ;
+;    |flipflopGenerico:FLAG|        ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|flipflopGenerico:FLAG        ; flipflopGenerico    ; work         ;
+;    |logica_desvio:LOG_DESVIO|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|logica_desvio:LOG_DESVIO     ; logica_desvio       ; work         ;
+;    |memoriaRAM:RAM1|              ; 41 (41)             ; 64 (64)                   ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|memoriaRAM:RAM1              ; memoriaRAM          ; work         ;
+;    |memoriaROM:ROM1|              ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|memoriaROM:ROM1              ; memoriaROM          ; work         ;
+;    |muxGenerico4x1:MUX2|          ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|muxGenerico4x1:MUX2          ; muxGenerico4x1      ; work         ;
+;    |registradorGenerico:PC|       ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|registradorGenerico:PC       ; registradorGenerico ; work         ;
+;    |registradorGenerico:REGA|     ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|registradorGenerico:REGA     ; registradorGenerico ; work         ;
+;    |registradorGenerico:REG_RET|  ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|registradorGenerico:REG_RET  ; registradorGenerico ; work         ;
+;    |somaConstante:incrementaPC|   ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5final|somaConstante:incrementaPC   ; somaConstante       ; work         ;
++-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -260,8 +257,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------------------------------------------+
 ; Register name                          ; Reason for Removal                          ;
 +----------------------------------------+---------------------------------------------+
-; registradorGenerico:PC|DOUT[8]         ; Lost fanout                                 ;
-; registradorGenerico:REG_RET|DOUT[8]    ; Lost fanout                                 ;
 ; memoriaRAM:RAM1|ram~137                ; Stuck at GND due to stuck port clock_enable ;
 ; memoriaRAM:RAM1|ram~105                ; Stuck at GND due to stuck port clock_enable ;
 ; memoriaRAM:RAM1|ram~73                 ; Stuck at GND due to stuck port clock_enable ;
@@ -326,17 +321,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; memoriaRAM:RAM1|ram~64                 ; Stuck at GND due to stuck port clock_enable ;
 ; memoriaRAM:RAM1|ram~48                 ; Stuck at GND due to stuck port clock_enable ;
 ; memoriaRAM:RAM1|ram~32                 ; Stuck at GND due to stuck port clock_enable ;
-; Total Number of Removed Registers = 66 ;                                             ;
+; Total Number of Removed Registers = 64 ;                                             ;
 +----------------------------------------+---------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                  ;
-+--------------------------------+--------------------+----------------------------------------+
-; Register name                  ; Reason for Removal ; Registers Removed due to This Register ;
-+--------------------------------+--------------------+----------------------------------------+
-; registradorGenerico:PC|DOUT[8] ; Lost Fanouts       ; registradorGenerico:REG_RET|DOUT[8]    ;
-+--------------------------------+--------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -344,12 +330,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 90    ;
+; Total registers                              ; 91    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 80    ;
+; Number of registers using Clock Enable       ; 81    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -359,9 +345,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Aula5final|registradorGenerico:REGA|DOUT[1]     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Aula5final|registradorGenerico:REGA|DOUT[0]     ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Aula5final|registradorGenerico:PC|DOUT[4]       ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Aula5final|registradorGenerico:PC|DOUT[8]       ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Aula5final|registradorGenerico:PC|DOUT[0]       ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Aula5final|logica_desvio:LOG_DESVIO|SelMuxPC[0] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 
@@ -373,7 +359,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------+-------+-------------------------------------------------+
 ; larguraDados     ; 8     ; Signed Integer                                  ;
 ; larguraEnderecos ; 8     ; Signed Integer                                  ;
-; simulacao        ; false ; Enumerated                                      ;
+; simulacao        ; true  ; Enumerated                                      ;
 +------------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -522,28 +508,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 90                          ;
-;     ENA               ; 72                          ;
+; arriav_ff             ; 91                          ;
+;     ENA               ; 73                          ;
 ;     ENA SLD           ; 8                           ;
 ;     plain             ; 10                          ;
 ; arriav_lcell_comb     ; 110                         ;
-;     arith             ; 25                          ;
+;     arith             ; 26                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 8                           ;
+;         1 data inputs ; 9                           ;
 ;         4 data inputs ; 1                           ;
 ;         5 data inputs ; 15                          ;
-;     normal            ; 85                          ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 83                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 1                           ;
 ;         3 data inputs ; 1                           ;
 ;         4 data inputs ; 56                          ;
 ;         5 data inputs ; 9                           ;
 ;         6 data inputs ; 14                          ;
-; boundary_port         ; 50                          ;
+; boundary_port         ; 51                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.30                        ;
-; Average LUT depth     ; 4.16                        ;
+; Average LUT depth     ; 4.18                        ;
 +-----------------------+-----------------------------+
 
 
@@ -562,7 +550,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Sep 18 20:20:23 2022
+    Info: Processing started: Wed Sep 21 20:49:22 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Aula5final -c Aula5final
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -607,7 +595,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file muxgene
     Info (12022): Found design unit 1: muxGenerico4x1-arch_name File: C:/DesComp/Aula5_final/muxGenerico4x1.vhd Line: 13
     Info (12023): Found entity 1: muxGenerico4x1 File: C:/DesComp/Aula5_final/muxGenerico4x1.vhd Line: 4
 Info (12127): Elaborating entity "Aula5final" for the top level hierarchy
-Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:\gravar:detectorSub0" File: C:/DesComp/Aula5_final/Aula5final.vhd Line: 96
 Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: C:/DesComp/Aula5_final/Aula5final.vhd Line: 104
 Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:incrementaPC" File: C:/DesComp/Aula5_final/Aula5final.vhd Line: 112
 Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "muxGenerico4x1:MUX2" File: C:/DesComp/Aula5_final/Aula5final.vhd Line: 125
@@ -637,21 +624,21 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/DesComp/Aula5_final/Aula5final.vhd Line: 14
     Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/DesComp/Aula5_final/Aula5final.vhd Line: 14
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/DesComp/Aula5_final/Aula5final.vhd Line: 11
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/DesComp/Aula5_final/Aula5final.vhd Line: 12
     Warning (15610): No output dependent on input pin "KEY[2]" File: C:/DesComp/Aula5_final/Aula5final.vhd Line: 12
     Warning (15610): No output dependent on input pin "KEY[3]" File: C:/DesComp/Aula5_final/Aula5final.vhd Line: 12
-Info (21057): Implemented 230 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 232 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 45 output pins
-    Info (21061): Implemented 180 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 4839 megabytes
-    Info: Processing ended: Sun Sep 18 20:20:34 2022
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:23
+    Info (21059): Implemented 46 output pins
+    Info (21061): Implemented 181 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 4847 megabytes
+    Info: Processing ended: Wed Sep 21 20:49:32 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:21
 
 

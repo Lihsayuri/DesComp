@@ -1,6 +1,10 @@
 |Aula5final
-CLOCK_50 => edgedetector:gravar:detectorSub0.clk
-KEY[0] => edgedetector:gravar:detectorSub0.entrada
+CLOCK_50 => ~NO_FANOUT~
+KEY[0] => registradorgenerico:PC.CLK
+KEY[0] => registradorgenerico:REG_RET.CLK
+KEY[0] => registradorgenerico:REGA.CLK
+KEY[0] => flipflopgenerico:FLAG.CLK
+KEY[0] => memoriaram:RAM1.clk
 KEY[1] => ~NO_FANOUT~
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
@@ -12,6 +16,7 @@ PC_OUT[4] <= registradorgenerico:PC.DOUT[4]
 PC_OUT[5] <= registradorgenerico:PC.DOUT[5]
 PC_OUT[6] <= registradorgenerico:PC.DOUT[6]
 PC_OUT[7] <= registradorgenerico:PC.DOUT[7]
+PC_OUT[8] <= registradorgenerico:PC.DOUT[8]
 LEDR[0] <= registradorgenerico:REGA.DOUT[0]
 LEDR[1] <= registradorgenerico:REGA.DOUT[1]
 LEDR[2] <= registradorgenerico:REGA.DOUT[2]
@@ -49,13 +54,6 @@ JEQ_FLAG <= decoderinstru:decoderInstru1.saida[7]
 JSR_FLAG <= decoderinstru:decoderInstru1.saida[8]
 RET_FLAG <= decoderinstru:decoderInstru1.saida[9]
 EQUAL_FLAG <= flipflopgenerico:FLAG.DOUT
-
-
-|Aula5final|edgeDetector:\gravar:detectorSub0
-clk => saidaQ.CLK
-entrada => saida.IN1
-entrada => saidaQ.DATAIN
-saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Aula5final|registradorGenerico:PC

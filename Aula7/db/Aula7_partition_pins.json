@@ -36,6 +36,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "PC_OUT[8]",
+					"strict" : false
+				},
+				{
 					"name" : "LEDR[0]",
 					"strict" : false
 				},
@@ -68,43 +72,35 @@
 					"strict" : false
 				},
 				{
-					"name" : "REG_OUT[0]",
+					"name" : "REGA_OUT[0]",
 					"strict" : false
 				},
 				{
-					"name" : "REG_OUT[1]",
+					"name" : "REGA_OUT[1]",
 					"strict" : false
 				},
 				{
-					"name" : "REG_OUT[2]",
+					"name" : "REGA_OUT[2]",
 					"strict" : false
 				},
 				{
-					"name" : "REG_OUT[3]",
+					"name" : "REGA_OUT[3]",
 					"strict" : false
 				},
 				{
-					"name" : "REG_OUT[4]",
+					"name" : "REGA_OUT[4]",
 					"strict" : false
 				},
 				{
-					"name" : "REG_OUT[5]",
+					"name" : "REGA_OUT[5]",
 					"strict" : false
 				},
 				{
-					"name" : "REG_OUT[6]",
+					"name" : "REGA_OUT[6]",
 					"strict" : false
 				},
 				{
-					"name" : "REG_OUT[7]",
-					"strict" : false
-				},
-				{
-					"name" : "SEL_MUX_PC[0]",
-					"strict" : false
-				},
-				{
-					"name" : "SEL_MUX_PC[1]",
+					"name" : "REGA_OUT[7]",
 					"strict" : false
 				},
 				{
@@ -156,23 +152,63 @@
 					"strict" : false
 				},
 				{
-					"name" : "JMP_FLAG",
-					"strict" : false
-				},
-				{
-					"name" : "JEQ_FLAG",
-					"strict" : false
-				},
-				{
-					"name" : "JSR_FLAG",
-					"strict" : false
-				},
-				{
-					"name" : "RET_FLAG",
-					"strict" : false
-				},
-				{
 					"name" : "EQUAL_FLAG",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_ADDRESS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_ADDRESS[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_ADDRESS[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_ADDRESS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_ADDRESS[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_ADDRESS[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[7]",
 					"strict" : false
 				},
 				{

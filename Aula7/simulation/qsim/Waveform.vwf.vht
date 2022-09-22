@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "09/20/2022 15:37:26"
+-- Generated on "09/22/2022 16:13:04"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          Aula7
 -- 
@@ -34,50 +34,44 @@ END Aula7_vhd_vec_tst;
 ARCHITECTURE Aula7_arch OF Aula7_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
+SIGNAL ADD_OUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL CLOCK_50 : STD_LOGIC;
 SIGNAL EQUAL_FLAG : STD_LOGIC;
-SIGNAL JEQ_FLAG : STD_LOGIC;
-SIGNAL JMP_FLAG : STD_LOGIC;
-SIGNAL JSR_FLAG : STD_LOGIC;
+SIGNAL HabilitaRAM : STD_LOGIC;
 SIGNAL KEY : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL LEDR : STD_LOGIC_VECTOR(9 DOWNTO 0);
+SIGNAL MEM_ADDRESS : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL Palavra : STD_LOGIC_VECTOR(11 DOWNTO 0);
-SIGNAL PC_OUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL REG_OUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL RET_FLAG : STD_LOGIC;
-SIGNAL SEL_MUX_PC : STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL PC_OUT : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL REGA_OUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
 COMPONENT Aula7
 	PORT (
+	ADD_OUT : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
 	CLOCK_50 : IN STD_LOGIC;
-	EQUAL_FLAG : OUT STD_LOGIC;
-	JEQ_FLAG : OUT STD_LOGIC;
-	JMP_FLAG : OUT STD_LOGIC;
-	JSR_FLAG : OUT STD_LOGIC;
+	EQUAL_FLAG : BUFFER STD_LOGIC;
+	HabilitaRAM : BUFFER STD_LOGIC;
 	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	LEDR : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
-	Palavra : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-	PC_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	REG_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	RET_FLAG : OUT STD_LOGIC;
-	SEL_MUX_PC : OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
+	LEDR : BUFFER STD_LOGIC_VECTOR(9 DOWNTO 0);
+	MEM_ADDRESS : BUFFER STD_LOGIC_VECTOR(5 DOWNTO 0);
+	Palavra : BUFFER STD_LOGIC_VECTOR(11 DOWNTO 0);
+	PC_OUT : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
+	REGA_OUT : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
 	i1 : Aula7
 	PORT MAP (
 -- list connections between master ports and signals
+	ADD_OUT => ADD_OUT,
 	CLOCK_50 => CLOCK_50,
 	EQUAL_FLAG => EQUAL_FLAG,
-	JEQ_FLAG => JEQ_FLAG,
-	JMP_FLAG => JMP_FLAG,
-	JSR_FLAG => JSR_FLAG,
+	HabilitaRAM => HabilitaRAM,
 	KEY => KEY,
 	LEDR => LEDR,
+	MEM_ADDRESS => MEM_ADDRESS,
 	Palavra => Palavra,
 	PC_OUT => PC_OUT,
-	REG_OUT => REG_OUT,
-	RET_FLAG => RET_FLAG,
-	SEL_MUX_PC => SEL_MUX_PC
+	REGA_OUT => REGA_OUT
 	);
 
 -- KEY[0]

@@ -32,7 +32,7 @@ saida <= "00000X0XX000" when opcode = NOP else  -- SelMUX HabilitaA Reset Operac
 			"0000000XX001" when opcode = STA else
 			"01000X0XX000" when opcode = JMP else
 			"00001X0XX000" when opcode = JEQ else
-			"000000000100" when opcode = CEQ else
+			"000000000110" when opcode = CEQ else
 			"10010X0XX000" when opcode = JSR else
 			"00100X0XX000" when opcode = RET else
          "00000X0XX000";  -- NOP para os opcodes Indefinidos
