@@ -27,23 +27,24 @@ end entity;
 architecture arquitetura of Aula7 is
 
   signal CLK : std_logic;
-  signal RA_OUT: std_logic_vector(larguraDados-1 downto 0);
   signal MEM_Read : std_logic;
   signal MEM_Write: std_logic;
-  signal decoder_Habilita_OUT: std_logic_vector(7 downto 0);
-  signal instruction_ROM: std_logic_vector(12 downto 0);  
   signal MEM_OUT: std_logic_vector(larguraDados - 1 downto 0);
+  signal MEM_ADD: std_logic_vector(5 downto 0);
+  signal decoder_Habilita_OUT: std_logic_vector(7 downto 0);
+  signal decoder_Posicao_OUT: std_logic_vector(7 downto 0);
+  signal instruction_ROM: std_logic_vector(12 downto 0);  
   signal PC_OUT_processador : std_logic_vector(larguraDados downto 0);
   signal Palavra_processador : std_logic_vector(11 downto 0);
-
+  signal Reg_A : std_logic_vector(larguraDados - 1 downto 0);
   
   alias Endereco : std_logic_vector (larguraDados downto 0) is PC_OUT_processador(larguraDados downto 0);
+  alias DecoderBloco_IN : std_logic_vector (2 downto 0) is instruction_ROM(8 downto 6);
+  alias DecoderPosicao_IN : std_logic_vector (2 downto 0) is MEM_ADD(2 downto 0);
 
-  alias Decoder_IN : std_logic_vector (2 downto 0) is instruction_ROM(8 downto 6);
-  
-  alias MEM_ADD: std_logic_vector(5 downto 0) is instruction_ROM(5 downto 0);
   alias MEM_Habilita: std_logic is decoder_Habilita_OUT(0); 
-  alias MEM_IN: std_logic_vector(larguraDados - 1 downto 0) is RA_OUT;  
+  
+  alias MEM_IN: std_logic_vector(larguraDados - 1 downto 0) is Reg_A;  
 
 
 begin
@@ -73,36 +74,55 @@ begin
 				 port map (
 					 CLK => CLK,   -- in
 					 instruction => instruction_ROM,
-					 MEM_OUT => MEM_OUT,
-					 PC_OUT => PC_OUT_processador,
-					 REG_OUT => RA_OUT,
+					 DATA_IN => MEM_OUT,
+					 ROM_Address => PC_OUT_processador,
+					 DATA_OUT => Reg_A,
+					 DATA_ADDRESS => MEM_ADD,
 					 Palavra => Palavra_processador,
 					 EQUAL_FLAG => EQUAL_FLAG,
 					 MEM_Read => MEM_Read,
 					 MEM_Write => MEM_Write
 				); 
 	
-	decoderHabilita :  entity work.decoder3x8
-        port map(entrada => Decoder_IN,
-                 saida => decoder_Habilita_OUT);
+	decoderBloco :  entity work.decoder3x8
+				port map(
+					 entrada => DecoderBloco_IN,
+                saida => decoder_Habilita_OUT);
+					  
+	decoderPosicao :  entity work.decoder3x8
+				port map(
+					 entrada => DecoderPosicao_IN,
+					 saida => decoder_Posicao_OUT);
+	
+	logica_LED: entity work.logica_LED
+				port map(
+					 CLK => CLK,
+					 endereco_LED => decoder_Posicao_OUT(2 downto 0),
+					 saida_bloco4 => decoder_Habilita_OUT(4),
+					 escrita => MEM_Write,
+					 DATA_OUT => Reg_A,
+					 conjunto_LED => LEDR(7 downto 0),
+					 LED_endereco1 => LEDR(8),
+					 LED_endereco2 => LEDR(9)
+				);
 					  
 	
 	RAM1 : entity work.memoriaRAM generic map (dataWidth => larguraDados, addrWidth => 6)
 			 port map (
-					 addr => MEM_ADD(5 downto 0),
+					 addr => MEM_ADD,
 					 we => MEM_Write,
 					 re => MEM_Read,
 					 habilita => MEM_Habilita,
-					 dado_in => RA_OUT,
+					 dado_in => MEM_IN,
 					 dado_out => MEM_OUT,
 					 clk => CLK);	
 					 
+					 
 	PC_OUT <= PC_OUT_processador; 	 
-	REGA_OUT <= RA_OUT;
 	Palavra <= Palavra_processador;
 	HabilitaRAM <= MEM_Habilita;
 	ADD_OUT <= MEM_OUT;
 	MEM_ADDRESS <= MEM_ADD; 
-	LEDR(7 downto 0) <= MEM_OUT;
+	REGA_OUT <= Reg_A;
 
 end architecture;

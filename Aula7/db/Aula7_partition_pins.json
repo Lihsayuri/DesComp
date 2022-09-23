@@ -72,6 +72,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[9]",
+					"strict" : false
+				},
+				{
 					"name" : "REGA_OUT[0]",
 					"strict" : false
 				},
@@ -112,10 +120,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "Palavra[2]",
-					"strict" : false
-				},
-				{
 					"name" : "Palavra[3]",
 					"strict" : false
 				},
@@ -136,23 +140,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "Palavra[8]",
-					"strict" : false
-				},
-				{
-					"name" : "Palavra[9]",
-					"strict" : false
-				},
-				{
 					"name" : "Palavra[10]",
 					"strict" : false
 				},
 				{
-					"name" : "Palavra[11]",
-					"strict" : false
-				},
-				{
-					"name" : "EQUAL_FLAG",
+					"name" : "HabilitaRAM",
 					"strict" : false
 				},
 				{

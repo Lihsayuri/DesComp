@@ -10,10 +10,11 @@ entity processador is
   port   (
     CLK : in std_logic;
 	 instruction: in std_logic_vector(12 downto 0);
-	 MEM_OUT: in std_logic_vector(larguraDados - 1 downto 0);
+	 DATA_IN: in std_logic_vector(larguraDados - 1 downto 0);
 	 ----------------------------------------------------------
-    PC_OUT: out std_logic_vector(larguraEnderecos downto 0);
-	 REG_OUT: out std_logic_vector(larguraDados-1 downto 0);
+    ROM_Address: out std_logic_vector(larguraEnderecos downto 0);
+	 DATA_OUT: out std_logic_vector(larguraDados-1 downto 0);
+	 DATA_ADDRESS: out std_logic_vector(5 downto 0);
 	 Palavra : out std_logic_vector(11 downto 0);
 	 EQUAL_FLAG: out std_logic;
 	 MEM_Read: out std_logic;
@@ -42,7 +43,7 @@ architecture arquitetura of processador is
   signal saidaRET : std_logic_vector(larguraDados downto 0);
 
 -- Aliases para facilitar a leitura do código: MUX 
-  alias MUX_A: std_logic_vector(larguraDados - 1 downto 0) is MEM_OUT; -- MUX0
+  alias MUX_A: std_logic_vector(larguraDados - 1 downto 0) is DATA_IN; -- MUX0
   alias MUX_B: std_logic_vector(larguraDados - 1 downto 0) is instruction(larguraDados - 1 downto 0); -- MUX1
   alias MUX_PC_0 : std_logic_vector(larguraDados downto 0) is saidaSomador;
   alias MUX_PC_1 : std_logic_vector(larguraDados downto 0) is instruction(8 downto 0);
@@ -166,11 +167,12 @@ begin
 					  
 
 
-	PC_OUT <= Endereco;
-	REG_OUT <= REGA_OUT;
+	ROM_Address <= Endereco;
+	DATA_OUT <= REGA_OUT;
 	EQUAL_FLAG <= FLAG_EQ;	
 	Palavra <= decoder_OUT;
 	MEM_Write <= decoder_OUT(0);
    MEM_Read <= decoder_OUT(1);
+	DATA_ADDRESS <= instruction(5 downto 0);
 	
 end architecture;

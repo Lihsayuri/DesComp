@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "09/22/2022 16:13:04"
+-- Generated on "09/22/2022 21:50:34"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          Aula7
 -- 
@@ -46,16 +46,16 @@ SIGNAL PC_OUT : STD_LOGIC_VECTOR(8 DOWNTO 0);
 SIGNAL REGA_OUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
 COMPONENT Aula7
 	PORT (
-	ADD_OUT : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
+	ADD_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	CLOCK_50 : IN STD_LOGIC;
-	EQUAL_FLAG : BUFFER STD_LOGIC;
-	HabilitaRAM : BUFFER STD_LOGIC;
+	EQUAL_FLAG : OUT STD_LOGIC;
+	HabilitaRAM : OUT STD_LOGIC;
 	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	LEDR : BUFFER STD_LOGIC_VECTOR(9 DOWNTO 0);
-	MEM_ADDRESS : BUFFER STD_LOGIC_VECTOR(5 DOWNTO 0);
-	Palavra : BUFFER STD_LOGIC_VECTOR(11 DOWNTO 0);
-	PC_OUT : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
-	REGA_OUT : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0)
+	LEDR : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+	MEM_ADDRESS : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+	Palavra : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
+	PC_OUT : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+	REGA_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
