@@ -5,7 +5,7 @@ entity Aula8 is
   -- Total de bits das entradas e saidas
   generic ( larguraDados : natural := 8;
           larguraEnderecos : natural := 8;
-        simulacao : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
+        simulacao : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
 
@@ -20,12 +20,12 @@ entity Aula8 is
 	 MEM_ADDRESS: out std_logic_vector(8 downto 0);
 	 ADD_OUT: out std_logic_vector(larguraDados - 1 downto 0);
 	 
-	 HEX_0			: out std_logic_vector	(6 downto 0);
-	 HEX_1			: out std_logic_vector	(6 downto 0);
-    HEX_2			: out std_logic_vector	(6 downto 0);
-    HEX_3			: out std_logic_vector	(6 downto 0);
-    HEX_4			: out std_logic_vector	(6 downto 0);
-    HEX_5			: out std_logic_vector	(6 downto 0)
+	 HEX0			: out std_logic_vector	(6 downto 0);
+	 HEX1			: out std_logic_vector	(6 downto 0);
+    HEX2			: out std_logic_vector	(6 downto 0);
+    HEX3			: out std_logic_vector	(6 downto 0);
+    HEX4			: out std_logic_vector	(6 downto 0);
+    HEX5			: out std_logic_vector	(6 downto 0)
 
 
 );
@@ -125,12 +125,12 @@ begin
 					DecoderPosicao => decoder_Posicao_OUT,
 					saida_bloco4 => decoder_Habilita_OUT(4),
 					escrita => MEM_Write,
-					HEX0 => HEX_0,
-					HEX1 => HEX_1,
-					HEX2 => HEX_2,
-					HEX3 => HEX_3,
-					HEX4 => HEX_4,
-					HEX5 => HEX_5
+					HEX0 => HEX0,
+					HEX1 => HEX1,
+					HEX2 => HEX2,
+					HEX3 => HEX3,
+					HEX4 => HEX4,
+					HEX5 => HEX5
 	);
 	
 			  

@@ -26,10 +26,10 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sat Sep 24 09:56:08 2022
+    Info: Processing started: Sat Sep 24 10:45:29 2022
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Aula8 -c Aula8 --vector_source=C:/DesComp/Aula8/Waveform.vwf --testbench_file=C:/DesComp/Aula8/simulation/qsim/Waveform.vwf.vht
 
-in vector source file when writing test bench files
+les
 
 Completed successfully. 
 
@@ -54,13 +54,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sat Sep 24 09:56:10 2022
+    Info: Processing started: Sat Sep 24 10:45:31 2022
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/DesComp/Aula8/simulation/qsim/ Aula8 -c Aula8
 Info (204019): Generated file Aula8.vho in folder "C:/DesComp/Aula8/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4718 megabytes
-    Info: Processing ended: Sat Sep 24 09:56:10 2022
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 4719 megabytes
+    Info: Processing ended: Sat Sep 24 10:45:32 2022
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
@@ -83,13 +83,13 @@ Reading pref.tcl
 
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 09:56:11 on Sep 24,2022
+# Start time: 10:45:33 on Sep 24,2022
 # vcom -work work Aula8.vho 
-
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package VITAL_Timing
+
 # -- Loading package VITAL_Primitives
 # -- Loading package dffeas_pack
 # -- Loading package altera_primitives_components
@@ -99,10 +99,10 @@ Reading pref.tcl
 # -- Compiling entity Aula8
 # -- Compiling architecture structure of Aula8
 
-# End time: 09:56:12 on Sep 24,2022, Elapsed time: 0:00:01
+# End time: 10:45:33 on Sep 24,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 09:56:12 on Sep 24,2022
+# Start time: 10:45:33 on Sep 24,2022
 # vcom -work work Waveform.vwf.vht 
 
 # -- Loading package STANDARD
@@ -110,12 +110,11 @@ Reading pref.tcl
 # -- Loading package std_logic_1164
 # -- Compiling entity Aula8_vhd_vec_tst
 # -- Compiling architecture Aula8_arch of Aula8_vhd_vec_tst
-
-# End time: 09:56:12 on Sep 24,2022, Elapsed time: 0:00:00
+# End time: 10:45:33 on Sep 24,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Aula8_vhd_vec_tst 
-# Start time: 09:56:12 on Sep 24,2022
+# Start time: 10:45:33 on Sep 24,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -134,11 +133,11 @@ Reading pref.tcl
 # Loading cyclonev.cyclonev_clkena(behavior)
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
 # Loading altera.dffeas(vital_dffeas)
-# ** Warning: Design size of 38257 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 43280 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#34
 
-# End time: 09:56:13 on Sep 24,2022, Elapsed time: 0:00:01
+# End time: 10:45:34 on Sep 24,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
@@ -151,7 +150,7 @@ Reading C:/DesComp/Aula8/simulation/qsim/Aula8.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/DesComp/Aula8/simulation/qsim/Aula8_20220924095613.sim.vwf
+Writing the resulting VWF to C:/DesComp/Aula8/simulation/qsim/Aula8_20220924104534.sim.vwf
 
 Finished VCD to VWF conversion.
 
