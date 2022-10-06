@@ -64,15 +64,15 @@ begin
 
 
 	-- Instanciando os componentes:
-
+	-- DEPOIS VAMOS USAR A KEY 3 COMO CLK
 	-- Para simular, fica mais simples tirar o edgeDetector
 	gravar:  if simulacao generate
-	CLK <= KEY(3);
+	CLK <= KEY(0);
 	else generate
 	detectorSub0: work.edgeDetector(bordaSubida)
 			  port map (
 						clk => CLOCK_50,
-						entrada => (not KEY(3)),
+						entrada => (not KEY(0)),
 						saida => CLK);
 	end generate;
 						 
@@ -86,18 +86,18 @@ begin
 						saida => MEM_OUT
 				);
 				
-	SW_8: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
+	SW_8: entity work.buffer_3_state_8portas generic map(dataWidth => 8)
 				port map(
-						entrada(0) => SW(8),
+						entrada => "0000000" & SW(8),
 						habilita => (MEM_Read AND NOT(Data_Address_5) AND decoder_Posicao_OUT(1) AND  decoder_Habilita_OUT(5)),
-						saida(0) => MEM_OUT(0)
+						saida => MEM_OUT
 				);
 				
-	SW_9: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
+	SW_9: entity work.buffer_3_state_8portas generic map(dataWidth => 8)
 			port map(
-					entrada(0) => SW(9),
+					entrada => "0000000" & SW(9),
 					habilita => (MEM_Read AND NOT(Data_Address_5) AND decoder_Posicao_OUT(2) AND  decoder_Habilita_OUT(5)),
-					saida(0) => MEM_OUT(0)
+					saida => MEM_OUT
 			);
 			
 	RESET_511 <= MEM_ADD(8) AND MEM_ADD(7) AND MEM_ADD(6) AND
@@ -114,43 +114,43 @@ begin
 	);
 					 
 	
-	KEY_0: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
+	KEY_0: entity work.buffer_3_state_8portas generic map(dataWidth => 8)
 			port map(
-					entrada(0) => DEBOUNCER_OUT,
+					entrada => "0000000" & DEBOUNCER_OUT,
 					habilita => (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(0) AND  decoder_Habilita_OUT(5)),
-					saida(0) => MEM_OUT(0)
+					saida => MEM_OUT
 			);
 			
 
-	KEY_1: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
+	KEY_1: entity work.buffer_3_state_8portas generic map(dataWidth => 8)
 			port map(
-					entrada(0) => KEY(1),
+					entrada => "0000000" & KEY(1),
 					habilita => (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(1) AND  decoder_Habilita_OUT(5)),
-					saida(0) => MEM_OUT(0)
+					saida => MEM_OUT
 			);
 
 
-	KEY_2: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
+	KEY_2: entity work.buffer_3_state_8portas generic map(dataWidth => 8)
 			port map(
-					entrada(0) => KEY(2),
+					entrada => "0000000" & KEY(2),
 					habilita => (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(2) AND  decoder_Habilita_OUT(5)),
-					saida(0) => MEM_OUT(0)
+					saida => MEM_OUT
 			);
 
 
 
-	KEY_3: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
+	KEY_3: entity work.buffer_3_state_8portas generic map(dataWidth => 8)
 			port map(
-					entrada(0) => KEY(3),
+					entrada => "0000000" & KEY(3),
 					habilita => (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(3) AND  decoder_Habilita_OUT(5)),
-					saida(0) => MEM_OUT(0)
+					saida => MEM_OUT
 			);	
 	
-	FPGA_RESET: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
+	FPGA_RESET: entity work.buffer_3_state_8portas generic map(dataWidth => 8)
 			port map(
-					entrada(0) => FPGA_RESET_N,
+					entrada => "0000000" & FPGA_RESET_N,
 					habilita	=> (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(4) AND  decoder_Habilita_OUT(5)),
-					saida(0)=> MEM_OUT(0)
+					saida=> MEM_OUT
 	);	
 	
 	

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Aula8
-Sat Sep 24 12:50:07 2022
+Thu Oct 06 18:32:22 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -62,10 +62,17 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  54. Port Connectivity Checks: "processador:processador|muxGenerico4x1:MUX2"
  55. Port Connectivity Checks: "processador:processador|registradorGenerico:REG_RET"
  56. Port Connectivity Checks: "processador:processador|registradorGenerico:PC"
- 57. Port Connectivity Checks: "flipflopGenerico:FF_DEBOUNCER"
- 58. Post-Synthesis Netlist Statistics for Top Partition
- 59. Elapsed Time Per Partition
- 60. Analysis & Synthesis Messages
+ 57. Port Connectivity Checks: "buffer_3_state_8portas:FPGA_RESET"
+ 58. Port Connectivity Checks: "buffer_3_state_8portas:KEY_3"
+ 59. Port Connectivity Checks: "buffer_3_state_8portas:KEY_2"
+ 60. Port Connectivity Checks: "buffer_3_state_8portas:KEY_1"
+ 61. Port Connectivity Checks: "buffer_3_state_8portas:KEY_0"
+ 62. Port Connectivity Checks: "flipflopGenerico:FF_DEBOUNCER"
+ 63. Port Connectivity Checks: "buffer_3_state_8portas:SW_9"
+ 64. Port Connectivity Checks: "buffer_3_state_8portas:SW_8"
+ 65. Post-Synthesis Netlist Statistics for Top Partition
+ 66. Elapsed Time Per Partition
+ 67. Analysis & Synthesis Messages
 
 
 
@@ -92,7 +99,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Sep 24 12:50:07 2022       ;
+; Analysis & Synthesis Status     ; Successful - Thu Oct 06 18:32:22 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Aula8                                       ;
 ; Top-level Entity Name           ; Aula8                                       ;
@@ -251,13 +258,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------------------------------------+
 ; Resource                                    ; Usage                                   ;
 +---------------------------------------------+-----------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 457                                     ;
+; Estimate of Logic utilization (ALMs needed) ; 459                                     ;
 ;                                             ;                                         ;
-; Combinational ALUT usage for logic          ; 464                                     ;
+; Combinational ALUT usage for logic          ; 462                                     ;
 ;     -- 7 input functions                    ; 0                                       ;
 ;     -- 6 input functions                    ; 266                                     ;
-;     -- 5 input functions                    ; 41                                      ;
-;     -- 4 input functions                    ; 69                                      ;
+;     -- 5 input functions                    ; 48                                      ;
+;     -- 4 input functions                    ; 60                                      ;
 ;     -- <=3 input functions                  ; 88                                      ;
 ;                                             ;                                         ;
 ; Dedicated logic registers                   ; 575                                     ;
@@ -268,8 +275,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                         ;
 ; Maximum fan-out node                        ; edgeDetector:\gravar:detectorSub0|saida ;
 ; Maximum fan-out                             ; 574                                     ;
-; Total fan-out                               ; 4286                                    ;
-; Average fan-out                             ; 3.37                                    ;
+; Total fan-out                               ; 4287                                    ;
+; Average fan-out                             ; 3.38                                    ;
 +---------------------------------------------+-----------------------------------------+
 
 
@@ -278,11 +285,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                          ; Entity Name            ; Library Name ;
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------+------------------------+--------------+
-; |Aula8                                 ; 464 (4)             ; 575 (0)                   ; 0                 ; 0          ; 116  ; 0            ; |Aula8                                                       ; Aula8                  ; work         ;
-;    |buffer_3_state_8portas:KEY_1|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|buffer_3_state_8portas:KEY_1                          ; buffer_3_state_8portas ; work         ;
-;    |buffer_3_state_8portas:KEY_3|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|buffer_3_state_8portas:KEY_3                          ; buffer_3_state_8portas ; work         ;
-;    |buffer_3_state_8portas:SW_0_7|     ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|buffer_3_state_8portas:SW_0_7                         ; buffer_3_state_8portas ; work         ;
-;    |buffer_3_state_8portas:SW_8|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|buffer_3_state_8portas:SW_8                           ; buffer_3_state_8portas ; work         ;
+; |Aula8                                 ; 462 (6)             ; 575 (0)                   ; 0                 ; 0          ; 116  ; 0            ; |Aula8                                                       ; Aula8                  ; work         ;
+;    |buffer_3_state_8portas:SW_0_7|     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|buffer_3_state_8portas:SW_0_7                         ; buffer_3_state_8portas ; work         ;
+;    |buffer_3_state_8portas:SW_8|       ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|buffer_3_state_8portas:SW_8                           ; buffer_3_state_8portas ; work         ;
 ;    |decoder3x8:decoderBloco|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|decoder3x8:decoderBloco                               ; decoder3x8             ; work         ;
 ;    |edgeDetector:\gravar:detectorSub0| ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|edgeDetector:\gravar:detectorSub0                     ; edgeDetector           ; work         ;
 ;    |flipflopGenerico:FF_DEBOUNCER|     ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|flipflopGenerico:FF_DEBOUNCER                         ; flipflopGenerico       ; work         ;
@@ -372,7 +377,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------------------+
 ; Parameter Name ; Value ; Type                                            ;
 +----------------+-------+-------------------------------------------------+
-; datawidth      ; 1     ; Signed Integer                                  ;
+; datawidth      ; 8     ; Signed Integer                                  ;
 +----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -382,7 +387,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------------------+
 ; Parameter Name ; Value ; Type                                            ;
 +----------------+-------+-------------------------------------------------+
-; datawidth      ; 1     ; Signed Integer                                  ;
+; datawidth      ; 8     ; Signed Integer                                  ;
 +----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -392,7 +397,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------------------------+
 ; Parameter Name ; Value ; Type                                             ;
 +----------------+-------+--------------------------------------------------+
-; datawidth      ; 1     ; Signed Integer                                   ;
+; datawidth      ; 8     ; Signed Integer                                   ;
 +----------------+-------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -402,7 +407,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------------------------+
 ; Parameter Name ; Value ; Type                                             ;
 +----------------+-------+--------------------------------------------------+
-; datawidth      ; 1     ; Signed Integer                                   ;
+; datawidth      ; 8     ; Signed Integer                                   ;
 +----------------+-------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -412,7 +417,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------------------------+
 ; Parameter Name ; Value ; Type                                             ;
 +----------------+-------+--------------------------------------------------+
-; datawidth      ; 1     ; Signed Integer                                   ;
+; datawidth      ; 8     ; Signed Integer                                   ;
 +----------------+-------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -422,7 +427,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------------------------+
 ; Parameter Name ; Value ; Type                                             ;
 +----------------+-------+--------------------------------------------------+
-; datawidth      ; 1     ; Signed Integer                                   ;
+; datawidth      ; 8     ; Signed Integer                                   ;
 +----------------+-------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -432,7 +437,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                  ;
 +----------------+-------+-------------------------------------------------------+
-; datawidth      ; 1     ; Signed Integer                                        ;
+; datawidth      ; 8     ; Signed Integer                                        ;
 +----------------+-------+-------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -815,6 +820,51 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+------------------------------------------------+
 
 
++---------------------------------------------------------------+
+; Port Connectivity Checks: "buffer_3_state_8portas:FPGA_RESET" ;
++---------------+-------+----------+----------------------------+
+; Port          ; Type  ; Severity ; Details                    ;
++---------------+-------+----------+----------------------------+
+; entrada[7..1] ; Input ; Info     ; Stuck at GND               ;
++---------------+-------+----------+----------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "buffer_3_state_8portas:KEY_3" ;
++---------------+-------+----------+-----------------------+
+; Port          ; Type  ; Severity ; Details               ;
++---------------+-------+----------+-----------------------+
+; entrada[7..1] ; Input ; Info     ; Stuck at GND          ;
++---------------+-------+----------+-----------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "buffer_3_state_8portas:KEY_2" ;
++---------------+-------+----------+-----------------------+
+; Port          ; Type  ; Severity ; Details               ;
++---------------+-------+----------+-----------------------+
+; entrada[7..1] ; Input ; Info     ; Stuck at GND          ;
++---------------+-------+----------+-----------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "buffer_3_state_8portas:KEY_1" ;
++---------------+-------+----------+-----------------------+
+; Port          ; Type  ; Severity ; Details               ;
++---------------+-------+----------+-----------------------+
+; entrada[7..1] ; Input ; Info     ; Stuck at GND          ;
++---------------+-------+----------+-----------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "buffer_3_state_8portas:KEY_0" ;
++---------------+-------+----------+-----------------------+
+; Port          ; Type  ; Severity ; Details               ;
++---------------+-------+----------+-----------------------+
+; entrada[7..1] ; Input ; Info     ; Stuck at GND          ;
++---------------+-------+----------+-----------------------+
+
+
 +-----------------------------------------------------------+
 ; Port Connectivity Checks: "flipflopGenerico:FF_DEBOUNCER" ;
 +--------+-------+----------+-------------------------------+
@@ -823,6 +873,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; din    ; Input ; Info     ; Stuck at VCC                  ;
 ; enable ; Input ; Info     ; Stuck at VCC                  ;
 +--------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "buffer_3_state_8portas:SW_9" ;
++---------------+-------+----------+----------------------+
+; Port          ; Type  ; Severity ; Details              ;
++---------------+-------+----------+----------------------+
+; entrada[7..1] ; Input ; Info     ; Stuck at GND         ;
++---------------+-------+----------+----------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "buffer_3_state_8portas:SW_8" ;
++---------------+-------+----------+----------------------+
+; Port          ; Type  ; Severity ; Details              ;
++---------------+-------+----------+----------------------+
+; entrada[7..1] ; Input ; Info     ; Stuck at GND         ;
++---------------+-------+----------+----------------------+
 
 
 +-----------------------------------------------------+
@@ -836,22 +904,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 8                           ;
 ;     plain             ; 13                          ;
 ; arriav_io_obuf        ; 8                           ;
-; arriav_lcell_comb     ; 465                         ;
+; arriav_lcell_comb     ; 463                         ;
 ;     arith             ; 26                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 9                           ;
 ;         5 data inputs ; 16                          ;
-;     normal            ; 439                         ;
+;     normal            ; 437                         ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 6                           ;
-;         3 data inputs ; 71                          ;
-;         4 data inputs ; 69                          ;
-;         5 data inputs ; 25                          ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 73                          ;
+;         4 data inputs ; 60                          ;
+;         5 data inputs ; 32                          ;
 ;         6 data inputs ; 266                         ;
 ; boundary_port         ; 116                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 9.30                        ;
-; Average LUT depth     ; 6.01                        ;
+; Average LUT depth     ; 6.02                        ;
 +-----------------------+-----------------------------+
 
 
@@ -870,7 +938,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Sep 24 12:49:57 2022
+    Info: Processing started: Thu Oct 06 18:32:09 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Aula8 -c Aula8
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file memoriarom.vhd
@@ -931,7 +999,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file buffer_
 Info (12127): Elaborating entity "Aula8" for the top level hierarchy
 Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:\gravar:detectorSub0" File: C:/DesComp/Aula8_chaves_botoes/Aula8.vhd Line: 72
 Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:SW_0_7" File: C:/DesComp/Aula8_chaves_botoes/Aula8.vhd Line: 82
-Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:SW_8" File: C:/DesComp/Aula8_chaves_botoes/Aula8.vhd Line: 89
 Info (12128): Elaborating entity "flipflopGenerico" for hierarchy "flipflopGenerico:FF_DEBOUNCER" File: C:/DesComp/Aula8_chaves_botoes/Aula8.vhd Line: 107
 Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/DesComp/Aula8_chaves_botoes/Aula8.vhd Line: 161
 Info (12128): Elaborating entity "processador" for hierarchy "processador:processador" File: C:/DesComp/Aula8_chaves_botoes/Aula8.vhd Line: 166
@@ -955,24 +1022,24 @@ Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "memoriaRAM:RAM1|ram" is uninferred due to asynchronous read logic File: C:/DesComp/Aula8_chaves_botoes/memoriaRAM.vhd Line: 28
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8portas:SW_0_7|saida[0]" to the node "processador:processador|ULASomaSub:ULA1|Add1" into an OR gate File: C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd Line: 12
-    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8portas:SW_0_7|saida[1]" to the node "processador:processador|ULASomaSub:ULA1|Add1" into an OR gate File: C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd Line: 12
-    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8portas:SW_0_7|saida[2]" to the node "processador:processador|ULASomaSub:ULA1|Add1" into an OR gate File: C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd Line: 12
-    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8portas:SW_0_7|saida[3]" to the node "processador:processador|ULASomaSub:ULA1|Add1" into an OR gate File: C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd Line: 12
-    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8portas:SW_0_7|saida[4]" to the node "processador:processador|ULASomaSub:ULA1|Add1" into an OR gate File: C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd Line: 12
-    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8portas:SW_0_7|saida[5]" to the node "processador:processador|ULASomaSub:ULA1|Add1" into an OR gate File: C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd Line: 12
-    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8portas:SW_0_7|saida[6]" to the node "processador:processador|ULASomaSub:ULA1|Add1" into an OR gate File: C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd Line: 12
-    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8portas:SW_0_7|saida[7]" to the node "processador:processador|ULASomaSub:ULA1|Add1" into an OR gate File: C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd Line: 12
+    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8portas:SW_8|saida[1]" to the node "processador:processador|ULASomaSub:ULA1|Add1" into an OR gate File: C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd Line: 12
+    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8portas:SW_8|saida[2]" to the node "processador:processador|ULASomaSub:ULA1|Add1" into an OR gate File: C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd Line: 12
+    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8portas:SW_8|saida[3]" to the node "processador:processador|ULASomaSub:ULA1|Add1" into an OR gate File: C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd Line: 12
+    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8portas:SW_8|saida[4]" to the node "processador:processador|ULASomaSub:ULA1|Add1" into an OR gate File: C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd Line: 12
+    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8portas:SW_8|saida[5]" to the node "processador:processador|ULASomaSub:ULA1|Add1" into an OR gate File: C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd Line: 12
+    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8portas:SW_8|saida[6]" to the node "processador:processador|ULASomaSub:ULA1|Add1" into an OR gate File: C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd Line: 12
+    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8portas:SW_8|saida[7]" to the node "processador:processador|ULASomaSub:ULA1|Add1" into an OR gate File: C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd Line: 12
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1134 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1132 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 100 output pins
-    Info (21061): Implemented 1018 logic cells
+    Info (21061): Implemented 1016 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4854 megabytes
-    Info: Processing ended: Sat Sep 24 12:50:07 2022
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Peak virtual memory: 4846 megabytes
+    Info: Processing ended: Thu Oct 06 18:32:22 2022
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:29
 
 

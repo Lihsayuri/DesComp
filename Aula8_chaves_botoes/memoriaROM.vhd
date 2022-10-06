@@ -55,7 +55,7 @@ architecture assincrona of memoriaROM is
 		tmp(35):=  STA     & '0' &     x"02";       --           Salva o incremento em MEM[2] (contador)
 		tmp(36):=  STA     & '1' &     x"02";       --         Armazena o valor do bit0 do acumulador no LDR9
 		tmp(37):=  RET     & '0' &     x"00";       --       Retorna da sub-rotina
-		  
+		
 		  return tmp;
 		  
     end initMemory;
