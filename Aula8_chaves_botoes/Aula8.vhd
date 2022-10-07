@@ -36,6 +36,7 @@ end entity;
 architecture arquitetura of Aula8 is
 
   signal CLK : std_logic;
+  signal KEY_0_tratado : std_logic;
   signal MEM_Read : std_logic;
   signal MEM_Write: std_logic;
   signal MEM_OUT: std_logic_vector(larguraDados - 1 downto 0);
@@ -67,13 +68,20 @@ begin
 	-- DEPOIS VAMOS USAR A KEY 3 COMO CLK
 	-- Para simular, fica mais simples tirar o edgeDetector
 	gravar:  if simulacao generate
-	CLK <= KEY(0);
+	CLK <= KEY(3);
+	KEY_0_tratado <= KEY(0);
+	--CLK <= CLOCK_50;
 	else generate
 	detectorSub0: work.edgeDetector(bordaSubida)
 			  port map (
 						clk => CLOCK_50,
 						entrada => (not KEY(0)),
-						saida => CLK);
+						saida => KEY_0_tratado);
+	detectorSub3: work.edgeDetector(bordaSubida)
+		  port map (
+					clk => CLOCK_50,
+					entrada => (not KEY(3)),
+					saida => CLK);
 	end generate;
 						 
 						 
@@ -109,7 +117,7 @@ begin
 			DIN 		=> '1',
 			DOUT 		=> DEBOUNCER_OUT,
 			ENABLE 	=> '1',
-			CLK		=> CLK,
+			CLK		=> KEY_0_tratado,
 			RST		=> RESET_511
 	);
 					 

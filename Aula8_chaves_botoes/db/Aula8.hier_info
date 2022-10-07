@@ -1,9 +1,11 @@
 |Aula8
 CLOCK_50 => edgedetector:gravar:detectorSub0.clk
+CLOCK_50 => edgedetector:gravar:detectorSub3.clk
 KEY[0] => edgedetector:gravar:detectorSub0.entrada
 KEY[1] => buffer_3_state_8portas:KEY_1.entrada[0]
 KEY[2] => buffer_3_state_8portas:KEY_2.entrada[0]
 KEY[3] => buffer_3_state_8portas:KEY_3.entrada[0]
+KEY[3] => edgedetector:gravar:detectorSub3.entrada
 SW[0] => buffer_3_state_8portas:SW_0_7.entrada[0]
 SW[1] => buffer_3_state_8portas:SW_0_7.entrada[1]
 SW[2] => buffer_3_state_8portas:SW_0_7.entrada[2]
@@ -119,6 +121,13 @@ HEX5[6] <= logica_7seg:logica_Seven_Seg.HEX5[6]
 
 
 |Aula8|edgeDetector:\gravar:detectorSub0
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Aula8|edgeDetector:\gravar:detectorSub3
 clk => saidaQ.CLK
 entrada => saida.IN1
 entrada => saidaQ.DATAIN
