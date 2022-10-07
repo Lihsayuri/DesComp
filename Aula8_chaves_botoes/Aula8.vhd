@@ -16,7 +16,7 @@ entity Aula8 is
     PC_OUT: out std_logic_vector(larguraEnderecos downto 0);
     LEDR  : out std_logic_vector(9 downto 0);
 	 REGA_OUT : out std_logic_vector(larguraDados - 1 downto 0);
-	 Palavra : out std_logic_vector(11 downto 0);
+	 Palavra : out std_logic_vector(12 downto 0);
 	 EQUAL_FLAG: out std_logic;
 	 HabilitaRAM: out std_logic;
 	 MEM_ADDRESS: out std_logic_vector(8 downto 0);
@@ -44,7 +44,7 @@ architecture arquitetura of Aula8 is
   signal decoder_Posicao_OUT: std_logic_vector(7 downto 0);
   signal instruction_ROM: std_logic_vector(12 downto 0);  
   signal PC_OUT_processador : std_logic_vector(larguraDados downto 0);
-  signal Palavra_processador : std_logic_vector(11 downto 0);
+  signal Palavra_processador : std_logic_vector(12 downto 0);
   signal Reg_A : std_logic_vector(larguraDados - 1 downto 0);
   signal RESET_511 : std_logic;
   signal DEBOUNCER_OUT : std_logic;

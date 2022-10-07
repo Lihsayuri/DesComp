@@ -15,7 +15,7 @@ entity processador is
     ROM_Address: out std_logic_vector(larguraEnderecos downto 0);
 	 DATA_OUT: out std_logic_vector(larguraDados-1 downto 0);
 	 DATA_ADDRESS: out std_logic_vector(8 downto 0);
-	 Palavra : out std_logic_vector(11 downto 0);
+	 Palavra : out std_logic_vector(12 downto 0);
 	 EQUAL_FLAG: out std_logic;
 	 MEM_Read: out std_logic;
 	 MEM_Write: out std_logic
@@ -39,7 +39,7 @@ architecture arquitetura of processador is
   signal MUX_OUT: std_logic_vector(larguraDados - 1 downto 0);
   signal REGA_OUT: std_logic_vector(larguraDados - 1 downto 0);
   signal ULA_OUT: std_logic_vector(larguraDados - 1 downto 0);
-  signal decoder_OUT : std_logic_vector(11 downto 0); -- sinais de controle e ler/escrever
+  signal decoder_OUT : std_logic_vector(12 downto 0); -- sinais de controle e ler/escrever
   signal saidaRET : std_logic_vector(larguraDados downto 0);
 
 -- Aliases para facilitar a leitura do código: MUX 
@@ -53,14 +53,14 @@ architecture arquitetura of processador is
   
   -- Aliases para os sinais de controle: DECODER_OUT
   alias habFlag: std_logic is decoder_OUT(2);
-  alias Operacao_ULA: std_logic_vector(1 downto 0) is decoder_OUT(4 downto 3);
-  alias Habilita_A: std_logic is decoder_OUT(5);  
-  alias SelMux: std_logic is decoder_OUT(6);
-  alias jeq : std_logic is decoder_OUT(7);
-  alias jsr : std_logic is decoder_OUT(8);
-  alias ret : std_logic is decoder_OUT(9);
-  alias jmp: std_logic is decoder_OUT(10);
-  alias habEscritaRet: std_logic is decoder_OUT(11);
+  alias Operacao_ULA: std_logic_vector(2 downto 0) is decoder_OUT(5 downto 3);
+  alias Habilita_A: std_logic is decoder_OUT(6);  
+  alias SelMux: std_logic is decoder_OUT(7);
+  alias jeq : std_logic is decoder_OUT(8);
+  alias jsr : std_logic is decoder_OUT(9);
+  alias ret : std_logic is decoder_OUT(10);
+  alias jmp: std_logic is decoder_OUT(11);
+  alias habEscritaRet: std_logic is decoder_OUT(12);
 
   
 -- Aliases para facilitar a leitura do código: REGA
