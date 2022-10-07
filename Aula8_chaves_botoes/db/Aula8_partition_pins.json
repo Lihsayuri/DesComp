@@ -40,46 +40,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "LEDR[0]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[1]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[2]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[3]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[4]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[5]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[6]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[7]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[8]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[9]",
-					"strict" : false
-				},
-				{
 					"name" : "REGA_OUT[0]",
 					"strict" : false
 				},
@@ -120,15 +80,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "Palavra[2]",
-					"strict" : false
-				},
-				{
-					"name" : "Palavra[3]",
-					"strict" : false
-				},
-				{
 					"name" : "Palavra[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[5]",
 					"strict" : false
 				},
 				{
@@ -140,23 +96,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "Palavra[8]",
-					"strict" : false
-				},
-				{
-					"name" : "Palavra[9]",
-					"strict" : false
-				},
-				{
-					"name" : "Palavra[10]",
-					"strict" : false
-				},
-				{
 					"name" : "Palavra[11]",
-					"strict" : false
-				},
-				{
-					"name" : "Palavra[12]",
 					"strict" : false
 				},
 				{
@@ -264,75 +204,31 @@
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[0]",
+					"name" : "HEX1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[1]",
+					"name" : "HEX1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[2]",
+					"name" : "HEX1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[3]",
+					"name" : "HEX1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[4]",
+					"name" : "HEX1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[5]",
+					"name" : "HEX1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[6]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX4[0]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX4[1]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX4[2]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX4[3]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX4[4]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX4[5]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX4[6]",
-					"strict" : false
-				},
-				{
-					"name" : "FPGA_RESET_N",
-					"strict" : false
-				},
-				{
-					"name" : "SW[8]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[0]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[9]",
+					"name" : "HEX1[6]",
 					"strict" : false
 				},
 				{
@@ -340,31 +236,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[1]",
+					"name" : "KEY[1]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[2]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[3]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[4]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[5]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[6]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[7]",
+					"name" : "KEY[2]",
 					"strict" : false
 				},
 				{

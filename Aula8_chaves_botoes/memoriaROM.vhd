@@ -37,25 +37,17 @@ architecture assincrona of memoriaROM is
       -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
       -- Inicializa os endereços:
 
-		tmp(0):=  LDI     & '0' &     x"00";       --           Carrega o acumulador com o valor 0
-		tmp(1):=  STA     & '0' &     x"00";       --           Armazena o valor do acumulador em MEM[0] (constante 0)
-		tmp(2):=  STA     & '0' &     x"02";       --           Armazena o valor do acumulador em MEM[2] (contador)
-		tmp(3):=  LDI     & '0' &     x"01";       --           Carrega o acumulador com o valor 1
-		tmp(4):=  STA     & '0' &     x"01";       --           Armazena o valor do acumulador em MEM[1] (constante 1)
-		tmp(5):=  NOP     & '0' &     x"00";       --
-		tmp(6):=  LDA     & '1' &     x"60";       --        Carrega o acumulador com a leitura do botão KEY0
-		tmp(7):=  STA     & '1' &     x"20";       --           Compara com o valor de MEM[0] (constante 0)
-		tmp(8):=  CEQ     & '0' &     x"00";       --           Compara com o valor de MEM[0] (constante 0)
-		tmp(9):=  JEQ     & '0' &     x"0a";       --          Desvia se igual a 0 (botão não foi pressionado)
-		tmp(10):=  JSR     & '0' &     x"20";       --          O botão foi pressionado, chama a sub-rotina de incremento
-		tmp(11):=  NOP     & '0' &     x"00";       --       Retorno da sub-rotina de incremento
-		tmp(12):=  JMP     & '0' &     x"05";       --           Fecha o laço principal, faz uma nova leitura de KEY0
-		tmp(32):=  STA     & '1' &     x"ff";       --         Limpa a leitura do botão
-		tmp(33):=  LDA     & '0' &     x"02";       --           Carrega o valor de MEM[2] (contador)
-		tmp(34):=  SOMA    & '0' &     x"01";       --          Soma com a constante em MEM[1]
-		tmp(35):=  STA     & '0' &     x"02";       --           Salva o incremento em MEM[2] (contador)
-		tmp(36):=  STA     & '1' &     x"20"; -- MEM[288] = HEX0 = A    --         Armazena o valor do bit0 do acumulador no LDR9
-		tmp(37):=  RET     & '0' &     x"00";       --       Retorna da sub-rotina
+		tmp(0):=  LDI     & '0' &     x"01";       --      Carrega o acumulador com o valor 1
+		tmp(1):=  STA     & '0' &     x"01";       --      Armazena o valor do acumulador em MEM[1] (constante 1)
+		tmp(2):=  NOP     & '0' &     x"00";       --
+		tmp(3):=  STA     & '1' &     x"ff";       --         Limpa a leitura do botão
+		tmp(4):=  LDA     & '1' &     x"60";       --      Carrega o acumulador com a leitura do botão KEY0
+		tmp(5):=  STA     & '1' &     x"20";       --      Armazena o valor lido em HEX0 (para verificar erros de leitura)
+		tmp(6):=  ANDX    & '0' &     x"01";       --		Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
+		tmp(7):=  STA     & '1' &     x"21"; 		 -- 	   Armazena o valor mascarado em HEX1  
+		tmp(8):=  NOP     & '0' &     x"00";       --
+		tmp(9):=  JMP     & '0' &     x"02";       --           Fecha o laço principal, faz uma nova leitura de KEY0	
+		
 		
 		  return tmp;
 		  
