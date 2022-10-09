@@ -1,0 +1,33 @@
+Quartus Prime Archive log --	C:/DesComp/Aula8_chaves_botoes/Aula8.qarlog
+
+Archive:	C:/DesComp/Aula8_chaves_botoes/Aula8.qar
+Date:		Sun Oct 09 16:48:51 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/DesComp/Aula8_chaves_botoes/Aula8.qpf
+C:/DesComp/Aula8_chaves_botoes/Aula8.qsf
+C:/DesComp/Aula8_chaves_botoes/Aula8.vhd
+C:/DesComp/Aula8_chaves_botoes/ULASomaSub.vhd
+C:/DesComp/Aula8_chaves_botoes/Waveform.vwf
+C:/DesComp/Aula8_chaves_botoes/buffer_3_state_8portas.vhd
+C:/DesComp/Aula8_chaves_botoes/conversorHex7Seg.vhd
+C:/DesComp/Aula8_chaves_botoes/decoder3x8.vhd
+C:/DesComp/Aula8_chaves_botoes/decoderInstru.vhd
+C:/DesComp/Aula8_chaves_botoes/edgeDetector.vhd
+C:/DesComp/Aula8_chaves_botoes/flipflopGenerico.vhd
+C:/DesComp/Aula8_chaves_botoes/logica_7Seg.vhd
+C:/DesComp/Aula8_chaves_botoes/logica_LED.vhd
+C:/DesComp/Aula8_chaves_botoes/logica_desvio.vhd
+C:/DesComp/Aula8_chaves_botoes/memoriaRAM.vhd
+C:/DesComp/Aula8_chaves_botoes/memoriaROM.vhd
+C:/DesComp/Aula8_chaves_botoes/muxGenerico2x1.vhd
+C:/DesComp/Aula8_chaves_botoes/muxGenerico4x1.vhd
+C:/DesComp/Aula8_chaves_botoes/processador.vhd
+C:/DesComp/Aula8_chaves_botoes/registradorGenerico.vhd
+C:/DesComp/Aula8_chaves_botoes/somaConstante.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 22 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

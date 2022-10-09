@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dC:/DesComp/Aula8_chaves_botoes/simulation/qsim
 Eaula8
-Z1 w1665344297
+Z1 w1665345327
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,7 +20,7 @@ Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z10 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 42
+!i122 44
 R0
 Z11 8Aula8.vho
 Z12 FAula8.vho
@@ -30,14 +30,14 @@ V<zjmcfm6:];``2T^;AOC^2
 !s100 T:]aO1:1SZAzfDIIfm=5P3
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1665344298
+!s110 1665345328
 !i10b 1
-Z15 !s108 1665344298.000000
-Z16 !s90 -work|work|Aula8.vho|
-Z17 !s107 Aula8.vho|
+Z14 !s108 1665345328.000000
+Z15 !s90 -work|work|Aula8.vho|
+Z16 !s107 Aula8.vho|
 !i113 1
-Z18 o-work work
-Z19 tExplicit 1 CvgOpt 0
+Z17 o-work work
+Z18 tExplicit 1 CvgOpt 0
 Astructure
 R2
 R3
@@ -49,26 +49,26 @@ R8
 R9
 R10
 DEx4 work 5 aula8 0 22 <zjmcfm6:];``2T^;AOC^2
-!i122 42
+!i122 44
 l2242
 L182 24824
 V62A;aDgYkOdBiH@DL378L1
 !s100 <JJgN64k8@155E]Zo9CmJ1
 R13
 32
-R14
+Z19 !s110 1665345329
 !i10b 1
+R14
 R15
 R16
-R17
 !i113 1
+R17
 R18
-R19
 Eaula8_vhd_vec_tst
-Z20 w1665344295
+Z20 w1665345326
 R8
 R9
-!i122 43
+!i122 45
 R0
 Z21 8Waveform.vwf.vht
 Z22 FWaveform.vwf.vht
@@ -78,30 +78,30 @@ VL?zeFMFBH222zJYjHHdIO2
 !s100 WMV=KT>7NooM`bd0@b8g;3
 R13
 32
-Z23 !s110 1665344299
-!i10b 1
-Z24 !s108 1665344299.000000
-Z25 !s90 -work|work|Waveform.vwf.vht|
-Z26 !s107 Waveform.vwf.vht|
-!i113 1
-R18
 R19
+!i10b 1
+Z23 !s108 1665345329.000000
+Z24 !s90 -work|work|Waveform.vwf.vht|
+Z25 !s107 Waveform.vwf.vht|
+!i113 1
+R17
+R18
 Aaula8_arch
 R8
 R9
-Z27 DEx4 work 17 aula8_vhd_vec_tst 0 22 L?zeFMFBH222zJYjHHdIO2
-!i122 43
+Z26 DEx4 work 17 aula8_vhd_vec_tst 0 22 L?zeFMFBH222zJYjHHdIO2
+!i122 45
 l77
-L34 185
-Vk=jn;554QYV0P[><5JfJH2
-!s100 ^oaQ4eD?cH9K`=_gYHgGG1
+Z27 L34 185
+Z28 Vk=jn;554QYV0P[><5JfJH2
+Z29 !s100 ^oaQ4eD?cH9K`=_gYHgGG1
 R13
 32
-R23
+R19
 !i10b 1
+R23
 R24
 R25
-R26
 !i113 1
+R17
 R18
-R19
