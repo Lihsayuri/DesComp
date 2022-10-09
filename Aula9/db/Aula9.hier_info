@@ -1,13 +1,11 @@
 |Aula9
-CLOCK_50 => ~NO_FANOUT~
-KEY[0] => flipflopgenerico:FF_DEBOUNCER.CLK
-KEY[0] => processador:processador.CLK
-KEY[0] => logica_led:logica_LED.CLK
-KEY[0] => logica_7seg:logica_Seven_Seg.CLK
-KEY[0] => memoriaram:RAM1.clk
+CLOCK_50 => edgedetector:gravar:detectorSub0.clk
+CLOCK_50 => edgedetector:gravar:detectorSub3.clk
+KEY[0] => edgedetector:gravar:detectorSub0.entrada
 KEY[1] => buffer_3_state_8portas:KEY_1.entrada[0]
 KEY[2] => buffer_3_state_8portas:KEY_2.entrada[0]
 KEY[3] => buffer_3_state_8portas:KEY_3.entrada[0]
+KEY[3] => edgedetector:gravar:detectorSub3.entrada
 SW[0] => buffer_3_state_8portas:SW_0_7.entrada[0]
 SW[1] => buffer_3_state_8portas:SW_0_7.entrada[1]
 SW[2] => buffer_3_state_8portas:SW_0_7.entrada[2]
@@ -120,6 +118,20 @@ HEX5[3] <= logica_7seg:logica_Seven_Seg.HEX5[3]
 HEX5[4] <= logica_7seg:logica_Seven_Seg.HEX5[4]
 HEX5[5] <= logica_7seg:logica_Seven_Seg.HEX5[5]
 HEX5[6] <= logica_7seg:logica_Seven_Seg.HEX5[6]
+
+
+|Aula9|edgeDetector:\gravar:detectorSub0
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Aula9|edgeDetector:\gravar:detectorSub3
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Aula9|buffer_3_state_8portas:SW_0_7

@@ -120,6 +120,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "Palavra[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[3]",
+					"strict" : false
+				},
+				{
 					"name" : "Palavra[4]",
 					"strict" : false
 				},
@@ -128,7 +136,31 @@
 					"strict" : false
 				},
 				{
+					"name" : "Palavra[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[10]",
+					"strict" : false
+				},
+				{
 					"name" : "Palavra[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[12]",
+					"strict" : false
+				},
+				{
+					"name" : "EQUAL_FLAG",
 					"strict" : false
 				},
 				{
@@ -148,11 +180,23 @@
 					"strict" : false
 				},
 				{
+					"name" : "MEM_ADDRESS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_ADDRESS[4]",
+					"strict" : false
+				},
+				{
 					"name" : "MEM_ADDRESS[5]",
 					"strict" : false
 				},
 				{
 					"name" : "MEM_ADDRESS[6]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_ADDRESS[7]",
 					"strict" : false
 				},
 				{
@@ -220,62 +264,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "HEX1[0]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX1[1]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX1[2]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX1[3]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX1[4]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX1[5]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX1[6]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX2[0]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX2[1]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX2[2]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX2[3]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX2[4]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX2[5]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX2[6]",
-					"strict" : false
-				},
-				{
 					"name" : "HEX3[0]",
 					"strict" : false
 				},
@@ -332,38 +320,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[0]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX5[1]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX5[2]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX5[3]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX5[4]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX5[5]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX5[6]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[0]",
-					"strict" : false
-				},
-				{
 					"name" : "FPGA_RESET_N",
 					"strict" : false
 				},
@@ -372,19 +328,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "KEY[1]",
-					"strict" : false
-				},
-				{
 					"name" : "SW[0]",
 					"strict" : false
 				},
 				{
 					"name" : "SW[9]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[2]",
 					"strict" : false
 				},
 				{
@@ -417,6 +365,14 @@
 				},
 				{
 					"name" : "SW[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
 					"strict" : false
 				}
 			]

@@ -3,147 +3,99 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'KEY[3]'
-Slack : -7.884
-TNS   : -273.030
-
-Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -3.029
-TNS   : -5.854
+Slack : -11.321
+TNS   : -3042.249
 
 Type  : Slow 1100mV 85C Model Hold 'KEY[3]'
-Slack : 0.440
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 1.046
+Slack : 0.469
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'KEY[0]'
-Slack : -4.308
-TNS   : -8.610
+Slack : -6.873
+TNS   : -6.873
 
 Type  : Slow 1100mV 85C Model Removal 'KEY[0]'
-Slack : 1.752
+Slack : 2.451
 TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[3]'
-Slack : -0.538
-TNS   : -52.357
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
-Slack : -0.538
-TNS   : -1.783
+Slack : -0.708
+TNS   : -1.246
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.538
-TNS   : -1.718
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[3]'
+Slack : -0.544
+TNS   : -620.513
 
 Type  : Slow 1100mV 0C Model Setup 'KEY[3]'
-Slack : -8.064
-TNS   : -272.232
-
-Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -2.806
-TNS   : -5.411
+Slack : -11.391
+TNS   : -2972.124
 
 Type  : Slow 1100mV 0C Model Hold 'KEY[3]'
-Slack : 0.454
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.744
+Slack : 0.503
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'KEY[0]'
-Slack : -4.284
-TNS   : -8.562
+Slack : -6.905
+TNS   : -6.905
 
 Type  : Slow 1100mV 0C Model Removal 'KEY[0]'
-Slack : 1.629
+Slack : 2.563
 TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.750
+TNS   : -1.331
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[3]'
 Slack : -0.538
-TNS   : -55.491
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
-Slack : -0.538
-TNS   : -1.837
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.538
-TNS   : -1.547
+TNS   : -575.819
 
 Type  : Fast 1100mV 85C Model Setup 'KEY[3]'
-Slack : -3.517
-TNS   : -110.750
-
-Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -2.134
-TNS   : -4.131
+Slack : -5.340
+TNS   : -1274.103
 
 Type  : Fast 1100mV 85C Model Hold 'KEY[3]'
-Slack : 0.135
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.373
+Slack : 0.184
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'KEY[0]'
-Slack : -1.743
-TNS   : -3.484
+Slack : -3.090
+TNS   : -3.090
 
 Type  : Fast 1100mV 85C Model Removal 'KEY[0]'
-Slack : 0.534
+Slack : 1.237
 TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[3]'
-Slack : -0.624
-TNS   : -45.560
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
-Slack : -0.471
-TNS   : -1.901
+Slack : -0.780
+TNS   : -1.372
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.402
-TNS   : -1.373
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[3]'
+Slack : -0.591
+TNS   : -478.168
 
 Type  : Fast 1100mV 0C Model Setup 'KEY[3]'
-Slack : -3.170
-TNS   : -97.393
-
-Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -1.910
-TNS   : -3.722
+Slack : -4.732
+TNS   : -1083.567
 
 Type  : Fast 1100mV 0C Model Hold 'KEY[3]'
-Slack : 0.056
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.198
+Slack : 0.174
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'KEY[0]'
-Slack : -1.526
-TNS   : -3.050
+Slack : -2.918
+TNS   : -2.918
 
 Type  : Fast 1100mV 0C Model Removal 'KEY[0]'
-Slack : 0.433
+Slack : 1.200
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[3]'
-Slack : -0.659
-TNS   : -51.404
-
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
-Slack : -0.539
-TNS   : -2.302
+Slack : -0.804
+TNS   : -1.480
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.441
-TNS   : -1.701
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[3]'
+Slack : -0.615
+TNS   : -514.402
 
 ------------------------------------------------------------

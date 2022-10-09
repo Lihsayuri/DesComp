@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/07/2022 09:46:51"
+-- Generated on "10/09/2022 16:38:15"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          Aula8
 -- 
@@ -98,28 +98,32 @@ BEGIN
 	SW => SW
 	);
 
--- KEY[0]
-t_prcs_KEY_0: PROCESS
+-- KEY[3]
+t_prcs_KEY_3: PROCESS
 BEGIN
-	KEY(0) <= '1';
+	KEY(3) <= '1';
 	WAIT FOR 20000 ps;
 	FOR i IN 1 TO 24
 	LOOP
-		KEY(0) <= '0';
+		KEY(3) <= '0';
 		WAIT FOR 20000 ps;
-		KEY(0) <= '1';
+		KEY(3) <= '1';
 		WAIT FOR 20000 ps;
 	END LOOP;
+	KEY(3) <= '0';
+WAIT;
+END PROCESS t_prcs_KEY_3;
+
+-- KEY[0]
+t_prcs_KEY_0: PROCESS
+BEGIN
+	KEY(0) <= '0';
+	WAIT FOR 240000 ps;
+	KEY(0) <= '1';
+	WAIT FOR 40000 ps;
 	KEY(0) <= '0';
 WAIT;
 END PROCESS t_prcs_KEY_0;
-
--- FPGA_RESET_N
-t_prcs_FPGA_RESET_N: PROCESS
-BEGIN
-	FPGA_RESET_N <= '0';
-WAIT;
-END PROCESS t_prcs_FPGA_RESET_N;
 
 -- KEY[1]
 t_prcs_KEY_1: PROCESS
@@ -135,70 +139,80 @@ BEGIN
 WAIT;
 END PROCESS t_prcs_KEY_2;
 
--- KEY[3]
-t_prcs_KEY_3: PROCESS
+-- FPGA_RESET_N
+t_prcs_FPGA_RESET_N: PROCESS
 BEGIN
-	KEY(3) <= '0';
+	FPGA_RESET_N <= '0';
 WAIT;
-END PROCESS t_prcs_KEY_3;
--- SW[9]
-t_prcs_SW_9: PROCESS
-BEGIN
-	SW(9) <= '0';
-WAIT;
-END PROCESS t_prcs_SW_9;
--- SW[8]
-t_prcs_SW_8: PROCESS
-BEGIN
-	SW(8) <= '0';
-WAIT;
-END PROCESS t_prcs_SW_8;
+END PROCESS t_prcs_FPGA_RESET_N;
+
 -- SW[7]
 t_prcs_SW_7: PROCESS
 BEGIN
 	SW(7) <= '0';
 WAIT;
 END PROCESS t_prcs_SW_7;
+
 -- SW[6]
 t_prcs_SW_6: PROCESS
 BEGIN
 	SW(6) <= '0';
 WAIT;
 END PROCESS t_prcs_SW_6;
+
 -- SW[5]
 t_prcs_SW_5: PROCESS
 BEGIN
 	SW(5) <= '0';
 WAIT;
 END PROCESS t_prcs_SW_5;
+
 -- SW[4]
 t_prcs_SW_4: PROCESS
 BEGIN
 	SW(4) <= '0';
 WAIT;
 END PROCESS t_prcs_SW_4;
+
 -- SW[3]
 t_prcs_SW_3: PROCESS
 BEGIN
 	SW(3) <= '0';
 WAIT;
 END PROCESS t_prcs_SW_3;
+
 -- SW[2]
 t_prcs_SW_2: PROCESS
 BEGIN
 	SW(2) <= '0';
 WAIT;
 END PROCESS t_prcs_SW_2;
+
 -- SW[1]
 t_prcs_SW_1: PROCESS
 BEGIN
 	SW(1) <= '0';
 WAIT;
 END PROCESS t_prcs_SW_1;
+
 -- SW[0]
 t_prcs_SW_0: PROCESS
 BEGIN
 	SW(0) <= '0';
 WAIT;
 END PROCESS t_prcs_SW_0;
+
+-- SW[8]
+t_prcs_SW_8: PROCESS
+BEGIN
+	SW(8) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_8;
+
+-- SW[9]
+t_prcs_SW_9: PROCESS
+BEGIN
+	SW(9) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_9;
 END Aula8_arch;

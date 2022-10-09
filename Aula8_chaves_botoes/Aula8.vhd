@@ -5,7 +5,7 @@ entity Aula8 is
   -- Total de bits das entradas e saidas
   generic ( larguraDados : natural := 8;
           larguraEnderecos : natural := 8;
-        simulacao : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
+        simulacao : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
 

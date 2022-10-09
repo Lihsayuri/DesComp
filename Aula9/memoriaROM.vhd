@@ -36,23 +36,25 @@ architecture assincrona of memoriaROM is
   begin
       -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
 					-- Inicializa os endereços:
-		tmp(0) := x"1"  &  '1'  &  x"40";	-- LDA @320				#Carrega o acumulador com a leitura das chaves SW0 até SW7
-		tmp(1) := x"5"  &  '1'  &  x"20";	-- STA @288				#Armazena o valor do acumulador no display HEX0
-		tmp(2) := x"1"  &  '1'  &  x"41";	-- LDA @321				#Carrega o acumulador com a leitura da chave SW8
-		tmp(3) := x"5"  &  '1'  &  x"21";	-- STA @289				#Armazena o valor do acumulador no display HEX1
-		tmp(4) := x"1"  &  '1'  &  x"42";	-- LDA @322				#Carrega o acumulador com a leitura da chave SW9
-		tmp(5) := x"5"  &  '1'  &  x"22";	-- STA @290				#Armazena o valor do acumulador no display HEX2
-		tmp(6) := x"1"  &  '1'  &  x"60";	-- LDA @352				#Carrega o acumulador com a leitura do botão KEY0
-		tmp(7) := x"5"  &  '1'  &  x"23";	-- STA @291				#Armazena o valor do acumulador no display HEX3
-		tmp(8) := x"1"  &  '1'  &  x"61";	-- LDA @353				#Carrega o acumulador com a leitura do botão KEY1
-		tmp(9) := x"5"  &  '1'  &  x"24";	-- STA @292				#Armazena o valor do acumulador no display HEX4
-		tmp(10) := x"1"  &  '1'  &  x"62";	-- LDA @354				#Carrega o acumulador com a leitura do botão KEY2
-		tmp(11) := x"5"  &  '1'  &  x"25";	-- STA @293				#Armazena o valor do acumulador no display HEX5
-		tmp(12) := x"1"  &  '1'  &  x"63";	-- LDA @355				#Carrega o acumulador com a leitura do botão KEY3
-		tmp(13) := x"5"  &  '1'  &  x"01";	-- STA @257				#Armazena o valor do bit0 do acumulador no LDR8
-		tmp(14) := x"1"  &  '1'  &  x"64";	-- LDA @356				#Carrega o acumulador com a leitura do botão FPGA_RESET
-		tmp(15) := x"5"  &  '1'  &  x"02";	-- STA @258				#Armazena o valor do bit0 do acumulador no LDR9
-		tmp(16) := x"6"  &  '0'  &  x"00";	-- JMP @0				#Desvia e continua atualizando os valores das entradas nas saídas
+		tmp(0):=  LDI     & '0' &     x"00";       --           Carrega o acumulador com o valor 0
+		tmp(1):=  STA     & '0' &     x"00";       --           Armazena o valor do acumulador em MEM[0] (constante 0)
+		tmp(2):=  STA     & '0' &     x"02";       --           Armazena o valor do acumulador em MEM[2] (contador)
+		tmp(3):=  LDI     & '0' &     x"01";       --           Carrega o acumulador com o valor 1
+		tmp(4):=  STA     & '0' &     x"01";       --           Armazena o valor do acumulador em MEM[1] (constante 1)
+		tmp(5):=  NOP     & '0' &     x"00";       --
+		tmp(6):=  LDA     & '1' &     x"60";       --        Carrega o acumulador com a leitura do botão KEY0
+		tmp(7):=  STA     & '1' &     x"20";       --           Compara com o valor de MEM[0] (constante 0)
+		tmp(8):=  CEQ     & '0' &     x"00";       --           Compara com o valor de MEM[0] (constante 0)
+		tmp(9):=  JEQ     & '0' &     x"0b";       --          Desvia se igual a 0 (botão não foi pressionado)
+		tmp(10):=  JSR     & '0' &     x"20";       --          O botão foi pressionado, chama a sub-rotina de incremento
+		tmp(11):=  NOP     & '0' &     x"00";       --       Retorno da sub-rotina de incremento
+		tmp(12):=  JMP     & '0' &     x"05";       --           Fecha o laço principal, faz uma nova leitura de KEY0
+		tmp(32):=  STA     & '1' &     x"ff";       --         Limpa a leitura do botão
+		tmp(33):=  LDA     & '0' &     x"02";       --           Carrega o valor de MEM[2] (contador)
+		tmp(34):=  SOMA    & '0' &     x"01";       --          Soma com a constante em MEM[1]
+		tmp(35):=  STA     & '0' &     x"02";       --           Salva o incremento em MEM[2] (contador)
+		tmp(36):=  STA     & '1' &     x"20"; -- MEM[288] = HEX0 = A    --         Armazena o valor do bit0 do acumulador no LDR9
+		tmp(37):=  RET     & '0' &     x"00";       --       Retorna da sub-rotina
 		
 		  return tmp;
 		  
