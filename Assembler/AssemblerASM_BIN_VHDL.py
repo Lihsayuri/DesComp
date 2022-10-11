@@ -150,8 +150,10 @@ def trataMnemonico(line):
     line = line.replace("\n", "") #Remove o caracter de final de linha
     line = line.replace("\t", "") #Remove o caracter de tabulacao
     line = line.split(' ')
-    line[0] = mne[line[0]]
+    if line[0] in mne:
+        line[0] = mne[line[0]]
     line = "".join(line)
+    print(line)
     return line
 
 with open(assembly, "r") as f: #Abre o arquivo ASM
@@ -159,6 +161,38 @@ with open(assembly, "r") as f: #Abre o arquivo ASM
     
     
 with open(destinoBIN, "w") as f:  #Abre o destino BIN
+
+    cont = 0 #Cria uma variável para contagem
+    label_dic = {}
+    
+    for line in lines:        
+        
+        #Verifica se a linha começa com alguns caracteres invalidos ('\n' ou ' ' ou '#')
+        if (line.startswith('\n') or line.startswith(' ') or line.startswith('#')):
+            line = line.replace("\n", "")
+            print("-- Sintaxe invalida" + ' na Linha: ' + ' --> (' + line + ')') #Print apenas para debug
+        
+        #Se a linha for válida para conversão, executa
+        else:
+            #label_linhas[]
+            
+            #Exemplo de linha => 1. JSR @14 #comentario1
+            comentarioLine = defineComentario(line).replace("\n","") #Define o comentário da linha. Ex: #comentario1
+            instrucaoLine = defineInstrucao(line).replace("\n","") #Define a instrução. Ex: JSR @14
+            
+            instrucaoLine = trataMnemonico(instrucaoLine) #Trata o mnemonico. Ex(JSR @14): x"9" @14
+                  
+            if ':' in instrucaoLine:
+                #print(line.split(':')[0])
+                label_dic[line.split(':')[0]] = cont
+                del lines[cont]
+                
+ 
+                            
+            cont+=1 #Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
+
+    #print(label_dic)
+    #print(lines[13])
 
     cont = 0 #Cria uma variável para contagem
     
@@ -177,13 +211,27 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
             instrucaoLine = defineInstrucao(line).replace("\n","") #Define a instrução. Ex: JSR @14
             
             instrucaoLine = trataMnemonico(instrucaoLine) #Trata o mnemonico. Ex(JSR @14): x"9" @14
-                  
+                              
             if '@' in instrucaoLine: #Se encontrar o caractere arroba '@' 
                 comando_hexa, A8, numero_hexa = converteArroba(instrucaoLine) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
                     
             elif '$' in instrucaoLine: #Se encontrar o caractere cifrao '$' 
                 comando_hexa, A8, numero_hexa = converteCifrao(instrucaoLine) #converte o número após o caractere Ex(LDI $5): x"4" x"05"
-                
+
+            elif '@' not in instrucaoLine and '$' not in instrucaoLine:
+                for label in label_dic:
+                    label_ = instrucaoLine.split(label)
+                    #print("AQUIIII: ", label_)
+                    if (len(label_) > 1) and label_[0] in instrucaoLine:
+                        comando_hexa = label_[0]
+                        numero = label_dic[label]
+                        if numero > 255:
+                            numero = 256 - numero
+                        
+                        numero_hexa = hex(numero)[2:].upper().zfill(2)
+
+
+
             else: #Senão, se a instrução nao possuir nenhum imediator, ou seja, nao conter '@' ou '$'
                 instrucaoLine = instrucaoLine.replace("\n", "") #Remove a quebra de linha
                 #instrucaoLine = instrucaoLine + '00' #Acrescenta o valor x"00". Ex(RET): x"A" x"00"
@@ -200,4 +248,3 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
             f.write(line) #Escreve no arquivo BIN.txt
             
             print(line,end = '') #Print apenas para debug
-
