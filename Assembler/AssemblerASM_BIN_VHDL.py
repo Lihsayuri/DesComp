@@ -69,7 +69,7 @@ Regras:
 
 """
 
-
+import re
 
 assembly = 'ASM.txt' #Arquivo de entrada de contem o assembly
 destinoBIN = 'BIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
@@ -92,6 +92,8 @@ mne =	{
 
 #Converte o valor após o caractere arroba '@'
 #em um valor hexadecimal de 2 dígitos (8 bits)
+
+
 def  converteArroba(line):
     line = line.split('@')
     numero = int(line[1])
@@ -156,7 +158,7 @@ def trataMnemonico(line):
     print(line)
     return line
 
-with open(assembly, "r") as f: #Abre o arquivo ASM
+with open(assembly, "r", encoding='utf8') as f: #Abre o arquivo ASM
     lines = f.readlines() #Verifica a quantidade de linhas
     
     
@@ -211,6 +213,8 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
             instrucaoLine = defineInstrucao(line).replace("\n","") #Define a instrução. Ex: JSR @14
             
             instrucaoLine = trataMnemonico(instrucaoLine) #Trata o mnemonico. Ex(JSR @14): x"9" @14
+
+            print("AQUII : ", instrucaoLine)
                               
             if '@' in instrucaoLine: #Se encontrar o caractere arroba '@' 
                 comando_hexa, A8, numero_hexa = converteArroba(instrucaoLine) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
@@ -218,7 +222,9 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
             elif '$' in instrucaoLine: #Se encontrar o caractere cifrao '$' 
                 comando_hexa, A8, numero_hexa = converteCifrao(instrucaoLine) #converte o número após o caractere Ex(LDI $5): x"4" x"05"
 
-            elif '@' not in instrucaoLine and '$' not in instrucaoLine:
+
+
+            elif '@' not in instrucaoLine and '$' not in instrucaoLine and instrucaoLine != '0' and instrucaoLine != 'A':
                 for label in label_dic:
                     label_ = instrucaoLine.split(label)
                     #print("AQUIIII: ", label_)
@@ -239,10 +245,16 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
                 A8 = '0'
                 numero_hexa = '00'
 
+            comando_string = str({i for i in mne if mne[i] == comando_hexa})
+
+            apenas_o_comando = comando_string.split('\'')[1]
+
+            #print("AQUIIIII: ", apenas_o_comando)
+            
             #line = 'tmp(' + str(cont) + ') := x"' + comando_hexa + '";\t-- ' + comentarioLine + '\n'  #Formata para o arquivo BIN
                                                                                                        #Entrada => 1. JSR @14 #comentario1
                                                                                                        #Saída =>   1. tmp(0) := x"90E";	-- JSR @14 	#comentario1
-            line = 'tmp(' + str(cont) + ') := x"' + comando_hexa + '"' + '  &  ' + '\''+ A8 + '\'' + '  &  ' + 'x"' + numero_hexa + '"' + ';\t-- ' + comentarioLine + '\n'  
+            line = 'tmp(' + str(cont) + ') := ' + apenas_o_comando + '' + '  &  ' + '\''+ A8 + '\'' + '  &  ' + 'x"' + numero_hexa + '"' + ';\t-- ' + comentarioLine + '\n'  
                             
             cont+=1 #Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
             f.write(line) #Escreve no arquivo BIN.txt

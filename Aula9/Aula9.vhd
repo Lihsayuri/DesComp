@@ -37,6 +37,9 @@ architecture arquitetura of Aula9 is
 
   signal CLK : std_logic;
   signal KEY_0_tratado : std_logic;
+  signal KEY_1_tratado : std_logic;
+  signal KEY_3_tratado : std_logic;
+  
   signal MEM_Read : std_logic;
   signal MEM_Write: std_logic;
   signal MEM_OUT: std_logic_vector(larguraDados - 1 downto 0);
@@ -48,7 +51,10 @@ architecture arquitetura of Aula9 is
   signal Palavra_processador : std_logic_vector(12 downto 0);
   signal Reg_A : std_logic_vector(larguraDados - 1 downto 0);
   signal RESET_511 : std_logic;
-  signal DEBOUNCER_OUT : std_logic;
+  signal RESET_510 : std_logic;  
+  signal DEBOUNCER_OUT_0 : std_logic;
+  signal DEBOUNCER_OUT_1 : std_logic;
+  
 
   
   alias Endereco : std_logic_vector (larguraDados downto 0) is PC_OUT_processador(larguraDados downto 0);
@@ -67,22 +73,31 @@ begin
 	-- Instanciando os componentes:
 	-- DEPOIS VAMOS USAR A KEY 3 COMO CLK
 	-- Para simular, fica mais simples tirar o edgeDetector
-	gravar:  if simulacao generate
-	CLK <= KEY(3);
-	KEY_0_tratado <= KEY(0);
+	--gravar:  if simulacao generate
+	--CLK <= KEY(3);
+	
+	--KEY_0_tratado <= KEY(0);
+	--KEY_1_tratado <= KEY(1);
+	--CLK <= CLOCK_50; 
 	--CLK <= CLOCK_50;
-	else generate
+	--else generate
+	CLK <= CLOCK_50; 
 	detectorSub0: work.edgeDetector(bordaSubida)
 			  port map (
-						clk => CLOCK_50,
+						clk => CLK,
 						entrada => (not KEY(0)),
 						saida => KEY_0_tratado);
-	detectorSub3: work.edgeDetector(bordaSubida)
+	detectorSub1: work.edgeDetector(bordaSubida)
 		  port map (
-					clk => CLOCK_50,
-					entrada => (not KEY(3)),
-					saida => CLK);
-	end generate;
+					clk => CLK,
+					entrada => (not KEY(1)),
+					saida => KEY_1_tratado);
+--	detectorSub3: work.edgeDetector(bordaSubida)
+--		  port map (
+--					clk => CLOCK_50,
+--					entrada => (not KEY(3)),
+--					saida => CLK);
+--	end generate;
 						 
 						 
 	-------------------- TODOS OS DADOS DE ENTRADA: ------------------------------------------------------					 
@@ -110,21 +125,35 @@ begin
 			
 	RESET_511 <= MEM_ADD(8) AND MEM_ADD(7) AND MEM_ADD(6) AND
 					 MEM_ADD(5) AND MEM_ADD(4) AND MEM_ADD(3) AND
-					 MEM_ADD(2) AND MEM_ADD(1) AND MEM_ADD(0);
+					 MEM_ADD(2) AND MEM_ADD(1) AND MEM_ADD(0) AND MEM_Write; 
+
+	RESET_510 <= MEM_ADD(8) AND MEM_ADD(7) AND MEM_ADD(6) AND
+					 MEM_ADD(5) AND MEM_ADD(4) AND MEM_ADD(3) AND
+					 MEM_ADD(2) AND MEM_ADD(1) AND NOT(MEM_ADD(0)) AND MEM_Write; 
 					 
-	FF_DEBOUNCER: entity work.flipflopGenerico
+	FF_DEBOUNCER_0: entity work.flipflopGenerico
 		port map(
 			DIN 		=> '1',
-			DOUT 		=> DEBOUNCER_OUT,
+			DOUT 		=> DEBOUNCER_OUT_0,
 			ENABLE 	=> '1',
 			CLK		=> KEY_0_tratado,
 			RST		=> RESET_511
 	);
+	
+	
+	FF_DEBOUNCER_1: entity work.flipflopGenerico
+		port map(
+			DIN 		=> '1',
+			DOUT 		=> DEBOUNCER_OUT_1,
+			ENABLE 	=> '1',
+			CLK		=> KEY_1_tratado,
+			RST		=> RESET_510
+	);	
 					 
 	
 	KEY_0: entity work.buffer_3_state_8portas generic map(dataWidth => 8)
 			port map(
-					entrada => "0000000" & DEBOUNCER_OUT,
+					entrada => "0000000" & DEBOUNCER_OUT_0,
 					habilita => (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(0) AND  decoder_Habilita_OUT(5)),
 					saida => MEM_OUT
 			);
@@ -132,7 +161,7 @@ begin
 
 	KEY_1: entity work.buffer_3_state_8portas generic map(dataWidth => 8)
 			port map(
-					entrada => "0000000" & KEY(1),
+					entrada => "0000000" & DEBOUNCER_OUT_1,
 					habilita => (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(1) AND  decoder_Habilita_OUT(5)),
 					saida => MEM_OUT
 			);

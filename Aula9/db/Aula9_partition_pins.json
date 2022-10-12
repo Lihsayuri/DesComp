@@ -132,6 +132,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "Palavra[5]",
+					"strict" : false
+				},
+				{
 					"name" : "Palavra[6]",
 					"strict" : false
 				},
@@ -264,6 +268,62 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEX1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[6]",
+					"strict" : false
+				},
+				{
 					"name" : "HEX3[0]",
 					"strict" : false
 				},
@@ -320,11 +380,43 @@
 					"strict" : false
 				},
 				{
-					"name" : "FPGA_RESET_N",
+					"name" : "HEX5[0]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[8]",
+					"name" : "HEX5[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[6]",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[3]",
+					"strict" : false
+				},
+				{
+					"name" : "FPGA_RESET_N",
 					"strict" : false
 				},
 				{
@@ -332,11 +424,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "SW[8]",
+					"strict" : false
+				},
+				{
 					"name" : "SW[9]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[3]",
+					"name" : "KEY[2]",
 					"strict" : false
 				},
 				{
@@ -368,11 +464,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[0]",
+					"name" : "KEY[1]",
 					"strict" : false
 				}
 			]
