@@ -33,22 +33,31 @@ LOOP_PRINCIPAL:
 NOP # LOOP PRINCIPAL
 LDA @6 # Carregando o acumulador com o valor da flag de inibir
 CEQ @8 # Compara com 1 para ver se a flag está ativada
-JEQ @40 # Se for igual, pula pra leitura de config limite
+JEQ @41 # Se for igual, pula pra leitura de config limite
 LDA @352 # Carrega o acumulador com a leitura do botão KEY0
+ANDI @1 #Máscara na leitura do botão
 CEQ @7 # Compara com 0, se igual 0 -> botão não apertado. igual a 1 -> vai pra contagem
-JEQ @40 # Se for 0, vai ler a proxima chave
+JEQ @41 # Se for 0, vai ler a proxima chave
 JSR INCREMENTO    # Se for 1, vai pra sub-rotina de incremento
 NOP      # Aqui é onde o RET volta
 LDA @353  # Carrega o acumulador com a leitura do botão KEY1
+ANDI @1 #Máscara na leitura do botão
 CEQ @7 # Compara com 0, se igual 0 -> botão não apertado. igual a 1 -> vai pra configuracao do limite de contagem
-JEQ @45 # Se for 0, vai pro LIMITE - JSR DE BAIXO
+JEQ @47 # Se for 0, vai pro LIMITE - JSR DE BAIXO
 JSR CONFIG_LIMITE     # Se for 1, vai pra sub-rotina de configuracao
 NOP      # Onde o RET volta
 JSR VERIF_LIMITE    # Chama a sub rotina para verificar o limite
 NOP # Aqui é onde o RET volta
+LDA @354 # Carrega o acumulador com a leitura do botão KEY2
+ANDI @1 # Depois de fazer a leitura do botão aplica a máscara
+CEQ @7 # Compara com 0, se igual 0 -> botão não apertado. igual a 1 -> vai pra contagem
+JEQ @55 # Se for 0, vai ler a proxima chave
+JSR DECRESCE  # Se for 1, vai pra sub-rotina de incremento
+NOP      # Aqui é onde o RET volta
 LDA @356 # Carrega o acumulador com a leitura do botão FPGA_RESET 
+ANDI @1 #Máscara na leitura do botão
 CEQ @8    # Compara com 1
-JEQ @51  # Se for 1, daí vai pra subrotina pra reiniciar a contagem
+JEQ @60  # Se for 1, daí vai pra subrotina pra reiniciar a contagem
 JSR RESET_CONTAG
 JSR ATUALIZA_TELA
 JMP LOOP_PRINCIPAL
@@ -60,7 +69,7 @@ JEQ @113 #Vai pro RET final da funcao
 LDA @0 # [UNIDADES] Carrega o valor de MEM[0] no acumulador 
 SOMA @8 # Soma valor das unidades com 1 e guarda em REG 
 CEQ @9 # Compara o valor do REG com 10, se for igual a 10, vai pras dezenas
-JEQ @63 # Vai para Dezenas
+JEQ @72 # Vai para Dezenas
 STA @0 # Se não for igual, guarda soma nas unidades
 RET # E retorna
 LDA @7 #Carrega 0 no REG
@@ -68,7 +77,7 @@ STA @0 # Carrega 0 nas unidades
 LDA @1 # [DEZENAS] Carrega o valor de MEM[1] no acumulador
 SOMA @8 # Soma valor das dezenas com 1 e guarda em REG
 CEQ @9 # Compara o valor do REG com 10, se for igual a 10, vai pras centenas
-JEQ @71 # Vai para Centenas
+JEQ @80 # Vai para Centenas
 STA @1 # Se não for igual, guarda nas dezenas
 RET # E retorna
 LDA @7 #Carrega 0 no REG
@@ -76,7 +85,7 @@ STA @1 # Carrega 0 nas dezenas
 LDA @2 # [CENTENAS] Carrega o valor de MEM[2] no acumulador
 SOMA @8 # Soma valor das centenas com 1 e guarda em REG
 CEQ @9 # Compara o valor do REG com 10, se for igual a 10, vai pros milhares
-JEQ @79 # Vai para o Milhar
+JEQ @88 # Vai para o Milhar
 STA @2 # Se não for igual, guarda nas centenas
 RET # E retorna
 LDA @7 #Carrega 0 no REG
@@ -84,7 +93,7 @@ STA @2 # Carrega 0 nas centenas
 LDA @3 # Carrega o valor de MEM[3] (milhar) no acumulador
 SOMA @8 # Soma valor dos milhares com 1 e guarda em REG
 CEQ @9 # Compara o valor do REG com 10, se for igual a 10, vai pros dezenas de milhar
-JEQ @87 # Vai para o DezMilhar
+JEQ @96 # Vai para o DezMilhar
 STA @3 # Se não for igual, guarda nas centenas
 RET # E retorna
 LDA @7 #Carrega 0 no REG
@@ -92,7 +101,7 @@ STA @3 # Carrega 0 no milhar
 LDA @4 # Carrega o valor de MEM[4] (dezenas de milhar) no acumulador
 SOMA @8 # Soma valor dos milhares com 1 e guarda em REG
 CEQ @9 # Compara o valor do REG com 10, se for igual a 10, vai pros centenas de milhar
-JEQ @95 # Vai pro CentMilhar
+JEQ @104 # Vai pro CentMilhar
 STA @4 # Se não for igual, guarda nas centenas
 RET # E retorna
 LDA @7 #Carrega 0 no REG
@@ -100,7 +109,7 @@ STA @4 # Carrega 0 nas dezenas de milhar
 LDA @5 # Carrega o valor de MEM[5] (centenas de milhar) no acumulador
 SOMA @8 # Soma valor dos milhares com 1 e guarda em REG
 CEQ @9 # Compara o valor do REG com 10, se for igual a 10, vai pro LIMITE
-JEQ @103 # Vai ativar flag e acender LED
+JEQ @112 # Vai ativar flag e acender LED
 STA @5 # Se não for igual, guarda nas centenas
 RET # E retorna
 LDA @8 # Carrega a constante 1 no REG
@@ -119,49 +128,55 @@ STA @510 # Para limpar a leitura do botão 1
 LDA @8 # Carrega 1
 STA @256 # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades
 LDA @353 # Guarda a leitura de KEY1
+ANDI @1 # Depois de fazer a leitura do botão aplica a máscara
 CEQ @7 #Compara com o valor 0
 LDA @320 # Ler as chaves e jogar o valor no REG
-JEQ @115
+JEQ @124
 STA @10 # Guarda o valor limite nas unidades
 STA @510 # Para limpar a leitura do botão 1
 LDI $2 # Carrega 2
 STA @256 # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades
 LDA @353 # Guarda a leitura de KEY1
+ANDI @1 # Depois de fazer a leitura do botão aplica a máscara
 CEQ @7 #Compara com o valor 0
 LDA @320 # Lê de novo o valor das chaves e joga no REG
-JEQ @123 # Volta pro inicio desse bloco
+JEQ @133 # Volta pro inicio desse bloco
 STA @11 # Guarda o valor limite nas dezenas
 STA @510 # Para limpar a leitura do botão 1
 LDI $4 # Carrega 4
 STA @256 # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades
 LDA @353 # Guarda a leitura de KEY1
+ANDI @1 # Depois de fazer a leitura do botão aplica a máscara
 CEQ @7 #Compara com o valor 0
 LDA @320 # Lê de novo o valor das chaves e joga no REG
-JEQ @131  # Volta pro inicio desse bloco
+JEQ @142  # Volta pro inicio desse bloco
 STA @12 # Guarda o valor limite nas centenas
 STA @510 # Para limpar a leitura do botão 1
 LDI $8 # Carrega 8
 STA @256 # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades
 LDA @353 # Guarda a leitura de KEY1
+ANDI @1 # Depois de fazer a leitura do botão aplica a máscara
 CEQ @7 #Compara com o valor 0
 LDA @320 # Lê de novo o valor das chaves e joga no REG
-JEQ @139
+JEQ @151
 STA @13 # Guarda o valor limite nas milhar
 STA @510 # Para limpar a leitura do botão 1 
 LDI $16 # Carrega 16
 STA @256 # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades
 LDA @353 # Guarda a leitura de KEY1
+ANDI @1 # Depois de fazer a leitura do botão aplica a máscara
 CEQ @7 #Compara com o valor 0
 LDA @320 # Lê de novo o valor das chaves e joga no REG
-JEQ @147
+JEQ @160
 STA @14 # Guarda o valor limite nas dezena de milhar
 STA @510 # Para limpar a leitura do botão 1
 LDI $32 # Carrega 32
 STA @256 # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades
 LDA @353 # Guarda a leitura de KEY1
+ANDI @1 # Depois de fazer a leitura do botão aplica a máscara
 CEQ @7 #Compara com o valor 0
 LDA @320 # Lê de novo o valor das chaves e joga no REG
-JEQ @155
+JEQ @169
 STA @15 # Guarda o valor limite nas dezena de milhar
 STA @510 # Para limpar a leitura do botão 1
 LDA @7 # Carrega o 0 
@@ -170,27 +185,27 @@ RET
 VERIF_LIMITE:
 LDA @0 #Carrega as unidades
 CEQ @10 #Compara com o limite das unidades
-JEQ @170 # Pula para a próxima conferência
+JEQ @185 # Pula para a próxima conferência
 RET # Caso o contrário já Retorna
 LDA @1 #Carrega as dezenas
 CEQ @11 #Compara com o limite das dezenas
-JEQ @174 # Pula para a próxima conferência
+JEQ @189 # Pula para a próxima conferência
 RET # Caso o contrário já Retorna
 LDA @2 #Carrega as centenas
 CEQ @12 #Compara com o limite das centenas
-JEQ @178 # Pula para a próxima conferência
+JEQ @193 # Pula para a próxima conferência
 RET # Caso o contrário já Retorna
 LDA @3 #Carrega o milhar
 CEQ @13 #Compara com o limite dos milhares
-JEQ @182 # Pula para a próxima conferência
+JEQ @197 # Pula para a próxima conferência
 RET # Caso o contrário já Retorna
 LDA @4 #Carrega as dezenas de milhar
 CEQ @14 #Compara com o limite das dezenas de milhar
-JEQ @186 # Pula para a próxima conferência
+JEQ @201 # Pula para a próxima conferência
 RET # Caso o contrário já Retorna
 LDA @5 #Carrega as dezenas de centenas de milhar
 CEQ @15 #Compara com o limite das centenas de milhar
-JEQ @190 # Pula para a próxima linha de setar flag
+JEQ @205 # Pula para a próxima linha de setar flag
 RET # Caso o contrário já Retorna
 LDA @8
 STA @257 # Armazena o valor do acumulador no LEDR8
@@ -221,4 +236,59 @@ LDA @4 # Carrega o valor da dezena de milhar
 STA @292 # Guarda o valor das dezenas de milhar no HEX4
 LDA @5 # Carrega o valor da centena de milhar
 STA @293 # Guarda o valor das centenas de milhar no HEX5
+RET
+DECRESCE:
+STA @508 # Limpa a leitura do botão
+LDA @0 # Carrega o valor de MEM[0] (unidades) no acumulador
+CEQ @7 # Compara com o valor 0
+JEQ @240 # Se for 0, vai para as dezenas
+SUB @8 # Se não, faz substração de 1 das unidades
+STA @0 # Salva valor na MEM[0]
+RET
+LDI $9 # Carrega o valor 9 no imediato
+STA @0 # Salva na memória[0] - unidades
+LDA @1 # Carrega o valor de MEM[1] (dezenas) no acumulador
+CEQ @7 # Compara com o valor 0
+JEQ @248 # Se for 0, vai para as centenas
+SUB @8 # Se não, faz substração de 1 das dezenas
+STA @1 # Salva valor na MEM[1]
+RET
+LDI $9 # Carrega o valor 9 no imediato
+STA @1 # Salva na memória[1] - dezenas
+LDA @2 # Carrega o valor de MEM[1] (centenas) no acumulador
+CEQ @7 # Compara com o valor 0
+JEQ @256 # Se for 0, vai para as milhares
+SUB @8 # Se não, faz substração de 1 das dezenas
+STA @2 # Salva valor na MEM[1]
+RET
+LDI $9 # Carrega o valor 9 no imediato
+STA @2 # Salva na memória[2] - centenas
+LDA @3 # Carrega o valor de MEM[3] (centenas) no acumulador
+CEQ @7 # Compara com o valor 0
+JEQ @264 # Se for 0, vai para as dezenas milhares
+SUB @8 # Se não, faz substração de 1 das milhares
+STA @3 # Salva valor na MEM[3]
+RET
+LDI $9 # Carrega o valor 9 no imediato
+STA @3 # Salva na memória[3] - milhares
+LDA @4 # Carrega o valor de MEM[4] (dezenas de milhar) no acumulador
+CEQ @7 # Compara com o valor 0
+JEQ @272 # Se for 0, vai para as centenas de milhares
+SUB @8 # Se não, faz substração de 1 das dezenas de milhares
+STA @4 # Salva valor na MEM[3]
+RET
+LDI $9 # Carrega o valor 9 no imediato
+STA @4 # Salva na memória[4] - dezenas de milhares
+LDA @5 # Carrega o valor de MEM[5] (centenas de milhar) no acumulador
+CEQ @7 # Compara com o valor 0
+JEQ @279 # Se for 0, já deixa tudo 0
+SUB @8 # Se não, faz substração de 1 das centenas de milhares
+STA @5 # Salva valor na MEM[5]
+LDA @7 #Carrega o valor 0
+STA @0 #Zera as unidades
+STA @1 #Zera as dezenas
+STA @2 #Zera as centenas
+STA @3 #Zera os milhares
+STA @4 #Zera as dezenas de milhar
+STA @5 #Zera as centenas de milhar
 RET

@@ -88,6 +88,8 @@ mne =	{
        "CEQ":   "8",
        "JSR":   "9",
        "RET":   "A",
+       "ANDI":  "B",
+       "ADDI":  "C",
 }
 
 #Converte o valor após o caractere arroba '@'
@@ -108,7 +110,14 @@ def  converteArroba(line):
     #decimal_representation = int(tudo_junto, 2)
     #hexa_representation = hex(decimal_representation).upper()
 
-    comando_hexa = hex(int(line[0]))[2:].upper().zfill(1)
+    if (line[0] == 'A' or line[0] == 'B' or line[0] == 'C'):
+        print("ENTREI")
+        hex_string = "0x"+line[0]
+        an_integer = int(hex_string, 16)
+        comando_hexa = hex(an_integer)[2:].upper().zfill(1)
+    else:
+        comando_hexa = hex(int(line[0]))[2:].upper().zfill(1)
+
     numero_hexa = hex(numero)[2:].upper().zfill(2)
 
     return comando_hexa, str(A8), numero_hexa
@@ -124,7 +133,13 @@ def  converteCifrao(line):
         A8 = 1
         numero = numero - 256
 
-    comando_hexa = hex(int(line[0]))[2:].upper().zfill(1)
+    if (line[0] == 'A' or line[0] == 'B' or line[0] == 'C'):
+        hex_string = "0x"+line[0]
+        an_integer = int(hex_string, 16)
+        comando_hexa = hex(an_integer)[2:].upper().zfill(1)
+    else:
+        comando_hexa = hex(int(line[0]))[2:].upper().zfill(1)
+
     numero_hexa = hex(numero)[2:].upper().zfill(2)
 
     return comando_hexa, str(A8), numero_hexa
