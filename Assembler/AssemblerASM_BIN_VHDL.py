@@ -103,15 +103,8 @@ def  converteArroba(line):
     if numero > 255:
         A8 = 1
         numero = numero - 256
-    
-    #binario_numero = bin(numero)[2:].zfill(9)
-    #binario_comando = bin(int(line[0]))[2:].zfill(4)
-    #tudo_junto = ''.join([binario_comando, binario_numero])
-    #decimal_representation = int(tudo_junto, 2)
-    #hexa_representation = hex(decimal_representation).upper()
 
     if (line[0] == 'A' or line[0] == 'B' or line[0] == 'C'):
-        print("ENTREI")
         hex_string = "0x"+line[0]
         an_integer = int(hex_string, 16)
         comando_hexa = hex(an_integer)[2:].upper().zfill(1)
@@ -242,7 +235,6 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
             elif '@' not in instrucaoLine and '$' not in instrucaoLine and instrucaoLine != '0' and instrucaoLine != 'A':
                 for label in label_dic:
                     label_ = instrucaoLine.split(label)
-                    #print("AQUIIII: ", label_)
                     if (len(label_) > 1) and label_[0] in instrucaoLine:
                         comando_hexa = label_[0]
                         numero = label_dic[label]
@@ -255,7 +247,6 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
 
             else: #Senão, se a instrução nao possuir nenhum imediator, ou seja, nao conter '@' ou '$'
                 instrucaoLine = instrucaoLine.replace("\n", "") #Remove a quebra de linha
-                #instrucaoLine = instrucaoLine + '00' #Acrescenta o valor x"00". Ex(RET): x"A" x"00"
                 comando_hexa = instrucaoLine
                 A8 = '0'
                 numero_hexa = '00'
@@ -263,8 +254,6 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
             comando_string = str({i for i in mne if mne[i] == comando_hexa})
 
             apenas_o_comando = comando_string.split('\'')[1]
-
-            #print("AQUIIIII: ", apenas_o_comando)
             
             #line = 'tmp(' + str(cont) + ') := x"' + comando_hexa + '";\t-- ' + comentarioLine + '\n'  #Formata para o arquivo BIN
                                                                                                        #Entrada => 1. JSR @14 #comentario1
