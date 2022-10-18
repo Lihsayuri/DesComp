@@ -77,65 +77,65 @@ destinoBIN = 'BIN.txt' #Arquivo de saída que contem o binário formatado para V
 #definição dos mnemônicos e seus
 #respectivo OPCODEs (em Hexadecimal)
 mne =	{ 
-       "NOP":   "0",
-       "LDA":   "1",
-       "SOMA":  "2",
-       "SUB":   "3",
-       "LDI":   "4",
-       "STA":   "5",
-       "JMP":   "6",
-       "JEQ":   "7",
-       "CEQ":   "8",
-       "JSR":   "9",
-       "RET":   "A",
-       "ANDI":  "B",
-       "ADDI":  "C",
+       "0":   "NOP",
+       "1":   "LDA",
+       "2":  "SOMA",
+       "3":   "SUB",
+       "4":   "LDI",
+       "5":   "STA",
+       "6":   "JMP",
+       "7":   "JEQ",
+       "8":   "CEQ",
+       "9":   "JSR",
+       "A":   "RET",
+       "B":  "ANDI",
 }
 
-#Converte o valor após o caractere arroba '@'
-#em um valor hexadecimal de 2 dígitos (8 bits)
 
-
-def  converteArroba(line):
+def  converteArroba(line, label_dict):
     line = line.split('@')
-    numero = int(line[1])
-    A8 = 0
-    if numero > 255:
-        A8 = 1
-        numero = numero - 256
+    comando_hexa = line[0]
 
-    if (line[0] == 'A' or line[0] == 'B' or line[0] == 'C'):
-        hex_string = "0x"+line[0]
-        an_integer = int(hex_string, 16)
-        comando_hexa = hex(an_integer)[2:].upper().zfill(1)
+    if line[1] in label_dict:
+        numero = label_dict[line[1]]
     else:
-        comando_hexa = hex(int(line[0]))[2:].upper().zfill(1)
+        numero = int(line[1])
 
-    numero_hexa = hex(numero)[2:].upper().zfill(2)
+    numero_bin = bin(numero)[2:].zfill(11)
 
-    return comando_hexa, str(A8), numero_hexa
+    numero_bin_8 = numero_bin[3:]
+    numero_bin_2 = numero_bin[:3]
+
+    R0 = numero_bin_2[:2]
+    A8 = numero_bin_2[-1]
+
+    numero_hexa = hex(int(numero_bin_8, 2))[2:].zfill(2)
+
+    # print(numero_hexa, A8, R0)
+
+    return comando_hexa, numero_hexa, A8, R0
 
 #Converte o valor após o caractere cifrão'$'
 #em um valor hexadecimal de 2 dígitos (8 bits) 
 def  converteCifrao(line):
     line = line.split('$')
+    
+    comando_hexa = line[0]
+
     numero = int(line[1])
+    numero_bin = bin(numero)[2:].zfill(11)
 
-    A8 = 0
-    if numero > 255:
-        A8 = 1
-        numero = numero - 256
+    numero_bin_8 = numero_bin[3:]
+    numero_bin_2 = numero_bin[:3]
 
-    if (line[0] == 'A' or line[0] == 'B' or line[0] == 'C'):
-        hex_string = "0x"+line[0]
-        an_integer = int(hex_string, 16)
-        comando_hexa = hex(an_integer)[2:].upper().zfill(1)
-    else:
-        comando_hexa = hex(int(line[0]))[2:].upper().zfill(1)
+    R0 = numero_bin_2[:2]
+    A8 = numero_bin_2[-1]
 
-    numero_hexa = hex(numero)[2:].upper().zfill(2)
+    numero_hexa = hex(int(numero_bin_8, 2))[2:].zfill(2)
 
-    return comando_hexa, str(A8), numero_hexa
+    # print(numero_hexa, A8, R0)
+
+    return comando_hexa, numero_hexa, A8, R0
         
 #Define a string que representa o comentário
 #a partir do caractere cerquilha '#'
@@ -160,8 +160,8 @@ def trataMnemonico(line):
     line = line.replace("\n", "") #Remove o caracter de final de linha
     line = line.replace("\t", "") #Remove o caracter de tabulacao
     line = line.split(' ')
-    if line[0] in mne:
-        line[0] = mne[line[0]]
+    # if line[0] in mne:
+    #     line[0] = mne[line[0]]
     line = "".join(line)
     #print(line)
     return line
@@ -225,46 +225,24 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
             #print("AQUII : ", instrucaoLine)
                               
             if '@' in instrucaoLine: #Se encontrar o caractere arroba '@' 
-                comando_hexa, A8, numero_hexa = converteArroba(instrucaoLine) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
+                comando_hexa, numero_hexa, A8, R0 = converteArroba(instrucaoLine, label_dic) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
                     
             elif '$' in instrucaoLine: #Se encontrar o caractere cifrao '$' 
-                comando_hexa, A8, numero_hexa = converteCifrao(instrucaoLine) #converte o número após o caractere Ex(LDI $5): x"4" x"05"
-
-
-
-            elif '@' not in instrucaoLine and '$' not in instrucaoLine and instrucaoLine != '0' and instrucaoLine != 'A':
-                A8 = 0
-                for label in label_dic:
-                    label_ = instrucaoLine.split(label)
-                    if (len(label_) > 1) and label_[0] in instrucaoLine:
-                        comando_hexa = label_[0]
-                        numero = int(label_dic[label])
-                        if numero > 255:
-                            numero = 256 - numero
-                            A8 = 1
-                            numero_hexa = hex(numero)[3:].upper().zfill(2)
-                        else:
-                            numero_hexa = hex(numero)[2:].upper().zfill(2)
-
-                        #print("AQUIII:" , numero)
-                        #print(numero_hexa)
-
+                comando_hexa, numero_hexa, A8, R0 = converteCifrao(instrucaoLine) #converte o número após o caractere Ex(LDI $5): x"4" x"05"
 
 
             else: #Senão, se a instrução nao possuir nenhum imediator, ou seja, nao conter '@' ou '$'
                 instrucaoLine = instrucaoLine.replace("\n", "") #Remove a quebra de linha
                 comando_hexa = instrucaoLine
                 A8 = '0'
+                R0 = '00'
                 numero_hexa = '00'
 
-            comando_string = str({i for i in mne if mne[i] == comando_hexa})
-
-            apenas_o_comando = comando_string.split('\'')[1]
             
             #line = 'tmp(' + str(cont) + ') := x"' + comando_hexa + '";\t-- ' + comentarioLine + '\n'  #Formata para o arquivo BIN
                                                                                                        #Entrada => 1. JSR @14 #comentario1
                                                                                                        #Saída =>   1. tmp(0) := x"90E";	-- JSR @14 	#comentario1
-            line = 'tmp(' + str(cont) + ') := ' + apenas_o_comando + '' + '  &  ' + '\''+ str(A8) + '\'' + '  &  ' + 'x"' + numero_hexa + '"' + ';\t-- ' + comentarioLine + '\n'  
+            line = 'tmp(' + str(cont) + ') := ' + comando_hexa + '' + '  &  ' + '\"'+ str(R0) + '\"' + '  &  ' +  '\''+ str(A8) + '\'' +   '  &  ' + 'x"' + numero_hexa + '"' + ';\t-- ' + comentarioLine + '\n'  
                             
             cont+=1 #Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
             f.write(line) #Escreve no arquivo BIN.txt

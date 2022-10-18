@@ -1,5 +1,5 @@
 Fitter report for contador
-Mon Oct 17 21:25:09 2022
+Mon Oct 17 21:37:18 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -62,7 +62,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Mon Oct 17 21:25:09 2022       ;
+; Fitter Status                   ; Successful - Mon Oct 17 21:37:18 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; contador                                    ;
 ; Top-level Entity Name           ; contador                                    ;
@@ -158,9 +158,9 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   4.1%      ;
-;     Processor 3            ;   3.8%      ;
-;     Processor 4            ;   3.8%      ;
+;     Processor 2            ;   4.3%      ;
+;     Processor 3            ;   4.0%      ;
+;     Processor 4            ;   3.9%      ;
 +----------------------------+-------------+
 
 
@@ -1606,7 +1606,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 1.52 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 1.66 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1614,10 +1614,10 @@ Info (334004): Delay annotation completed successfully
 Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:07
 Info (144001): Generated suppressed messages file C:/DesComp/EntregaIntermediaria/output_files/contador.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 6281 megabytes
-    Info: Processing ended: Mon Oct 17 21:25:10 2022
-    Info: Elapsed time: 00:00:34
-    Info: Total CPU time (on all processors): 00:01:18
+    Info: Peak virtual memory: 6285 megabytes
+    Info: Processing ended: Mon Oct 17 21:37:19 2022
+    Info: Elapsed time: 00:00:37
+    Info: Total CPU time (on all processors): 00:01:23
 
 
 +----------------------------+
