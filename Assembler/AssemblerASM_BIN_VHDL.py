@@ -163,7 +163,7 @@ def trataMnemonico(line):
     if line[0] in mne:
         line[0] = mne[line[0]]
     line = "".join(line)
-    print(line)
+    #print(line)
     return line
 
 with open(assembly, "r", encoding='utf8') as f: #Abre o arquivo ASM
@@ -222,7 +222,7 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
             
             instrucaoLine = trataMnemonico(instrucaoLine) #Trata o mnemonico. Ex(JSR @14): x"9" @14
 
-            print("AQUII : ", instrucaoLine)
+            #print("AQUII : ", instrucaoLine)
                               
             if '@' in instrucaoLine: #Se encontrar o caractere arroba '@' 
                 comando_hexa, A8, numero_hexa = converteArroba(instrucaoLine) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
@@ -233,15 +233,21 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
 
 
             elif '@' not in instrucaoLine and '$' not in instrucaoLine and instrucaoLine != '0' and instrucaoLine != 'A':
+                A8 = 0
                 for label in label_dic:
                     label_ = instrucaoLine.split(label)
                     if (len(label_) > 1) and label_[0] in instrucaoLine:
                         comando_hexa = label_[0]
-                        numero = label_dic[label]
+                        numero = int(label_dic[label])
                         if numero > 255:
                             numero = 256 - numero
-                        
-                        numero_hexa = hex(numero)[2:].upper().zfill(2)
+                            A8 = 1
+                            numero_hexa = hex(numero)[3:].upper().zfill(2)
+                        else:
+                            numero_hexa = hex(numero)[2:].upper().zfill(2)
+
+                        #print("AQUIII:" , numero)
+                        #print(numero_hexa)
 
 
 
@@ -258,7 +264,7 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
             #line = 'tmp(' + str(cont) + ') := x"' + comando_hexa + '";\t-- ' + comentarioLine + '\n'  #Formata para o arquivo BIN
                                                                                                        #Entrada => 1. JSR @14 #comentario1
                                                                                                        #Saída =>   1. tmp(0) := x"90E";	-- JSR @14 	#comentario1
-            line = 'tmp(' + str(cont) + ') := ' + apenas_o_comando + '' + '  &  ' + '\''+ A8 + '\'' + '  &  ' + 'x"' + numero_hexa + '"' + ';\t-- ' + comentarioLine + '\n'  
+            line = 'tmp(' + str(cont) + ') := ' + apenas_o_comando + '' + '  &  ' + '\''+ str(A8) + '\'' + '  &  ' + 'x"' + numero_hexa + '"' + ';\t-- ' + comentarioLine + '\n'  
                             
             cont+=1 #Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
             f.write(line) #Escreve no arquivo BIN.txt
