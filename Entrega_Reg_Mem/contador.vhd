@@ -57,6 +57,7 @@ architecture arquitetura of contador is
   signal DEBOUNCER_OUT_0 : std_logic;
   signal DEBOUNCER_OUT_1 : std_logic;
   signal DEBOUNCER_OUT_2 : std_logic;
+  signal DEBOUNCER_OUT_3 : std_logic;
 
   
   alias Endereco : std_logic_vector (larguraDados downto 0) is PC_OUT_processador(larguraDados downto 0);
@@ -72,42 +73,42 @@ architecture arquitetura of contador is
 begin
 
 
-	-- Instanciando os componentes:
-	-- DEPOIS VAMOS USAR A KEY 3 COMO CLK
-	-- Para simular, fica mais simples tirar o edgeDetector
-	--gravar:  if simulacao generate
-	--CLK <= KEY(3);
-	
-	--KEY_0_tratado <= KEY(0);
-	--KEY_1_tratado <= KEY(1);
-	--CLK <= CLOCK_50; 
-	--CLK <= CLOCK_50;
-	--else generate
-	CLK <= CLOCK_50; 
-	detectorSub0: work.edgeDetector(bordaSubida)
-			  port map (
-						clk => CLK,
-						entrada => (not KEY(0)),
-						saida => KEY_0_tratado);
-	detectorSub1: work.edgeDetector(bordaSubida)
-		  port map (
-					clk => CLK,
-					entrada => (not KEY(1)),
-					saida => KEY_1_tratado);
-					
-	detectorSub2: work.edgeDetector(bordaSubida)
-		  port map (
-					clk => CLK,
-					entrada => (not KEY(2)),
-					saida => KEY_2_tratado);
-					
---	detectorSub3: work.edgeDetector(bordaSubida)
---		  port map (
---					clk => CLOCK_50,
---					entrada => (not KEY(3)),
---					saida => CLK);
---	end generate;
-						 
+gravar:  if simulacao generate
+				CLK 				<= CLOCK_50;
+				KEY_0_tratado 	<= KEY(0);
+				KEY_1_tratado 	<= KEY(1);
+				KEY_2_tratado 	<= KEY(2);
+				KEY_3_tratado 	<= KEY(3);
+			else generate
+				CLK 				<= CLOCK_50;
+				
+				detectorSub0: work.edgeDetector(bordaSubida)
+					port map(	clk 		=> CLOCK_50,
+									entrada 	=> (not KEY(0)),
+									saida 	=> KEY_0_tratado
+								);
+			
+				detectorSub1: work.edgeDetector(bordaSubida)
+					port map(	clk 		=> CLOCK_50,
+									entrada 	=> (not KEY(1)),
+									saida 	=> KEY_1_tratado
+								);
+								
+				detectorSub2: work.edgeDetector(bordaSubida)
+					port map(	clk 		=> CLOCK_50,
+									entrada 	=> (not KEY(2)),
+									saida 	=> KEY_2_tratado
+								);
+								
+				detectorSub3: work.edgeDetector(bordaSubida)
+					port map(	clk 		=> CLOCK_50,
+									entrada 	=> (not KEY(3)),
+									saida 	=> KEY_3_tratado
+								);
+end generate;
+
+
+				 
 						 
 	-------------------- TODOS OS DADOS DE ENTRADA: ------------------------------------------------------					 
 						 
@@ -201,7 +202,7 @@ begin
 
 	KEY_3: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
 			port map(
-					entrada(0) => KEY(3),
+					entrada(0) => DEBOUNCER_OUT_3,
 					habilita => (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(3) AND  decoder_Habilita_OUT(5)),
 					saida(0) => MEM_OUT(0)
 			);	

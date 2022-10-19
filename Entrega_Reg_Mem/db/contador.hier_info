@@ -1,15 +1,16 @@
 |contador
-CLOCK_50 => edgedetector:detectorSub0.clk
-CLOCK_50 => edgedetector:detectorSub1.clk
-CLOCK_50 => edgedetector:detectorSub2.clk
+CLOCK_50 => edgedetector:gravar:detectorSub0.clk
+CLOCK_50 => edgedetector:gravar:detectorSub1.clk
+CLOCK_50 => edgedetector:gravar:detectorSub2.clk
+CLOCK_50 => edgedetector:gravar:detectorSub3.clk
 CLOCK_50 => processador:processador.CLK
 CLOCK_50 => logica_led:logica_LED.CLK
 CLOCK_50 => logica_7seg:logica_Seven_Seg.CLK
 CLOCK_50 => memoriaram:RAM1.clk
-KEY[0] => edgedetector:detectorSub0.entrada
-KEY[1] => edgedetector:detectorSub1.entrada
-KEY[2] => edgedetector:detectorSub2.entrada
-KEY[3] => buffer_3_state_8portas:KEY_3.entrada[0]
+KEY[0] => edgedetector:gravar:detectorSub0.entrada
+KEY[1] => edgedetector:gravar:detectorSub1.entrada
+KEY[2] => edgedetector:gravar:detectorSub2.entrada
+KEY[3] => edgedetector:gravar:detectorSub3.entrada
 SW[0] => buffer_3_state_8portas:SW_0_7.entrada[0]
 SW[1] => buffer_3_state_8portas:SW_0_7.entrada[1]
 SW[2] => buffer_3_state_8portas:SW_0_7.entrada[2]
@@ -75,21 +76,28 @@ HEX5[5] <= logica_7seg:logica_Seven_Seg.HEX5[5]
 HEX5[6] <= logica_7seg:logica_Seven_Seg.HEX5[6]
 
 
-|contador|edgeDetector:detectorSub0
+|contador|edgeDetector:\gravar:detectorSub0
 clk => saidaQ.CLK
 entrada => saida.IN1
 entrada => saidaQ.DATAIN
 saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|contador|edgeDetector:detectorSub1
+|contador|edgeDetector:\gravar:detectorSub1
 clk => saidaQ.CLK
 entrada => saida.IN1
 entrada => saidaQ.DATAIN
 saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|contador|edgeDetector:detectorSub2
+|contador|edgeDetector:\gravar:detectorSub2
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|edgeDetector:\gravar:detectorSub3
 clk => saidaQ.CLK
 entrada => saida.IN1
 entrada => saidaQ.DATAIN

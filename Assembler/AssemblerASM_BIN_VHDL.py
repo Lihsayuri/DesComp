@@ -93,7 +93,14 @@ mne =	{
 
 
 def  converteArroba(line, label_dict):
-    line = line.split('@')
+    Reg = "R0"
+    if ',' in line:
+        line = line.split(',')
+        Reg = line[1]
+        line = line[0].split('@')
+    else:
+        line = line.split('@')
+
     comando_hexa = line[0]
 
     if line[1] in label_dict:
@@ -101,41 +108,43 @@ def  converteArroba(line, label_dict):
     else:
         numero = int(line[1])
 
-    numero_bin = bin(numero)[2:].zfill(11)
+    numero_bin = bin(numero)[2:].zfill(9)
 
-    numero_bin_8 = numero_bin[3:]
-    numero_bin_2 = numero_bin[:3]
-
-    R0 = numero_bin_2[:2]
-    A8 = numero_bin_2[-1]
+    numero_bin_8 = numero_bin[1:]
+    A8 = numero_bin[:1]
 
     numero_hexa = hex(int(numero_bin_8, 2))[2:].zfill(2)
 
-    # print(numero_hexa, A8, R0)
+    # print(comando_hexa, numero_hexa, A8, Reg)
 
-    return comando_hexa, numero_hexa, A8, R0
+    return comando_hexa, numero_hexa, A8, Reg
 
 #Converte o valor após o caractere cifrão'$'
 #em um valor hexadecimal de 2 dígitos (8 bits) 
 def  converteCifrao(line):
-    line = line.split('$')
-    
+    Reg = "R0"
+    if ',' in line:
+        line = line.split(',')
+        Reg = line[1]
+        line = line[0].split('$')
+    else:
+        line = line.split('$')
+
     comando_hexa = line[0]
 
     numero = int(line[1])
-    numero_bin = bin(numero)[2:].zfill(11)
+    numero_bin = bin(numero)[2:].zfill(9)
 
-    numero_bin_8 = numero_bin[3:]
-    numero_bin_2 = numero_bin[:3]
+    numero_bin_8 = numero_bin[1:]
+    A8 = numero_bin[:1]
 
-    R0 = numero_bin_2[:2]
-    A8 = numero_bin_2[-1]
 
     numero_hexa = hex(int(numero_bin_8, 2))[2:].zfill(2)
 
-    # print(numero_hexa, A8, R0)
+    # print(comando_hexa, numero_hexa, A8, Reg)
 
-    return comando_hexa, numero_hexa, A8, R0
+    return comando_hexa, numero_hexa, A8, Reg
+
         
 #Define a string que representa o comentário
 #a partir do caractere cerquilha '#'
@@ -225,24 +234,24 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
             #print("AQUII : ", instrucaoLine)
                               
             if '@' in instrucaoLine: #Se encontrar o caractere arroba '@' 
-                comando_hexa, numero_hexa, A8, R0 = converteArroba(instrucaoLine, label_dic) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
+                comando_hexa, numero_hexa, A8, Reg = converteArroba(instrucaoLine, label_dic) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
                     
             elif '$' in instrucaoLine: #Se encontrar o caractere cifrao '$' 
-                comando_hexa, numero_hexa, A8, R0 = converteCifrao(instrucaoLine) #converte o número após o caractere Ex(LDI $5): x"4" x"05"
+                comando_hexa, numero_hexa, A8, Reg = converteCifrao(instrucaoLine) #converte o número após o caractere Ex(LDI $5): x"4" x"05"
 
 
             else: #Senão, se a instrução nao possuir nenhum imediator, ou seja, nao conter '@' ou '$'
                 instrucaoLine = instrucaoLine.replace("\n", "") #Remove a quebra de linha
                 comando_hexa = instrucaoLine
                 A8 = '0'
-                R0 = '00'
+                Reg = "R0"
                 numero_hexa = '00'
 
             
             #line = 'tmp(' + str(cont) + ') := x"' + comando_hexa + '";\t-- ' + comentarioLine + '\n'  #Formata para o arquivo BIN
                                                                                                        #Entrada => 1. JSR @14 #comentario1
                                                                                                        #Saída =>   1. tmp(0) := x"90E";	-- JSR @14 	#comentario1
-            line = 'tmp(' + str(cont) + ') := ' + comando_hexa + '' + '  &  ' + '\"'+ str(R0) + '\"' + '  &  ' +  '\''+ str(A8) + '\'' +   '  &  ' + 'x"' + numero_hexa + '"' + ';\t-- ' + comentarioLine + '\n'  
+            line = 'tmp(' + str(cont) + ') := ' + comando_hexa + '' + '  &  ' + str(Reg) +  '  &  ' +  '\''+ str(A8) + '\'' +   '  &  ' + 'x"' + numero_hexa + '"' + ';\t-- ' + comentarioLine + '\n'  
                             
             cont+=1 #Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
             f.write(line) #Escreve no arquivo BIN.txt
