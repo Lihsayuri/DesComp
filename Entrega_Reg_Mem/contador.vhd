@@ -5,7 +5,7 @@ entity contador is
   -- Total de bits das entradas e saidas
   generic ( larguraDados : natural := 8;
           larguraEnderecos : natural := 9;
-        simulacao : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
+        simulacao : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
 
@@ -49,7 +49,7 @@ architecture arquitetura of contador is
   signal decoder_Habilita_OUT: std_logic_vector(7 downto 0);
   signal decoder_Posicao_OUT: std_logic_vector(7 downto 0);
   signal instruction_ROM: std_logic_vector(14 downto 0);  
-  signal PC_OUT_processador : std_logic_vector(larguraDados downto 0);
+  signal PC_OUT_processador : std_logic_vector(larguraEnderecos-1 downto 0);
   signal Palavra_processador : std_logic_vector(11 downto 0);
   signal Reg_A : std_logic_vector(larguraDados - 1 downto 0);
   signal RESET_511 : std_logic;
@@ -61,7 +61,7 @@ architecture arquitetura of contador is
   signal DEBOUNCER_OUT_3 : std_logic;
 
   
-  alias Endereco : std_logic_vector (larguraDados downto 0) is PC_OUT_processador(larguraDados downto 0);
+  alias Endereco : std_logic_vector (larguraEnderecos-1 downto 0) is PC_OUT_processador(larguraEnderecos-1 downto 0);
 --  alias DecoderBloco_IN : std_logic_vector (2 downto 0) is instruction_ROM(8 downto 6);
   alias DecoderBloco_IN : std_logic_vector (2 downto 0) is MEM_ADD(8 downto 6);
 

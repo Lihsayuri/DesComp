@@ -62,7 +62,9 @@ architecture arquitetura of processador is
   alias ret : std_logic is decoder_OUT(9);
   alias jmp: std_logic is decoder_OUT(10);
   alias habEscritaRet: std_logic is decoder_OUT(11);
+  
   alias enderecoReg : std_logic_vector(1 downto 0) is instruction(10 downto 9);
+  alias OP_CODE: std_logic_vector(3 downto 0) is instruction(14 downto 11); 
 
   
 -- Aliases para facilitar a leitura do código: REGA
@@ -73,8 +75,6 @@ architecture arquitetura of processador is
   alias ULA_B_IN: std_logic_vector(larguraDados - 1 downto 0) is MUX_OUT;
 
 -- Aliases para facilitar a leitura do código: Memória
-
-  alias OP_CODE: std_logic_vector(3 downto 0) is instruction(14 downto 11); 
 
 begin
 

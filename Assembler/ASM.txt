@@ -31,17 +31,17 @@ LOOP_PRINCIPAL:
 NOP # LOOP PRINCIPAL
 LDA @6, R0 # Carregando o acumulador com o valor da flag de inibir
 CEQ @8, R0 # Compara com 1 para ver se a flag está ativada
-JEQ @41, R0 # Se for igual, pula pra leitura de config limite
+JEQ @39, R0 # Se for igual, pula pra leitura de config limite
 LDA @352, R0 # Carrega o acumulador com a leitura do botão KEY0
 ANDI @1, R0 #Máscara na leitura do botão
 CEQ @7, R0 # Compara com 0, se igual 0 -> botão não apertado. igual a 1 -> vai pra contagem
-JEQ @41  # Se for 0, vai ler a proxima chave
+JEQ @39  # Se for 0, vai ler a proxima chave
 JSR @INCREMENTO    # Se for 1, vai pra sub-rotina de incremento
 NOP      # Aqui é onde o RET volta
 LDA @353, R1  # Carrega o acumulador com a leitura do botão KEY1
 ANDI @1, R1 #Máscara na leitura do botão
 CEQ @7, R1 # Compara com 0, se igual 0 -> botão não apertado. igual a 1 -> vai pra configuracao do limite de contagem
-JEQ @47 # Se for 0, vai pro LIMITE - JSR DE BAIXO
+JEQ @45 # Se for 0, vai pro LIMITE - JSR DE BAIXO
 JSR @CONFIG_LIMITE     # Se for 1, vai pra sub-rotina de configuracao
 NOP      # Onde o RET volta
 JSR @CONFERE_LIMITE    # Chama a sub rotina para verificar o limite
@@ -49,13 +49,13 @@ NOP # Aqui é onde o RET volta
 LDA @354, R1 # Carrega o acumulador com a leitura do botão KEY2
 ANDI @1, R1 # Depois de fazer a leitura do botão aplica a máscara
 CEQ @7, R1 # Compara com 0, se igual 0 -> botão não apertado. igual a 1 -> vai pra contagem
-JEQ @55  # Se for 0, vai ler a proxima chave
+JEQ @53  # Se for 0, vai ler a proxima chave
 JSR @DECREMENTO  # Se for 1, vai pra sub-rotina de incremento
 NOP      # Aqui é onde o RET volta
 LDA @356, R3 # Carrega o acumulador com a leitura do botão FPGA_RESET 
 ANDI @1, R3 #Máscara na leitura do botão
 CEQ @8, R3    # Compara com 1
-JEQ @60  # Se for 1, daí vai pra subrotina pra reiniciar a contagem
+JEQ @58  # Se for 1, daí vai pra subrotina pra reiniciar a contagem
 JSR @REINICIAR_CONTAGEM
 JSR @ATUALIZA_SEVEN_SEG
 JMP @LOOP_PRINCIPAL
@@ -63,7 +63,7 @@ INCREMENTO:
 STA @511, R0 # Limpa a leitura do botão
 LDA @6, R1 # Carrega o valor da flag de inibir contagem
 CEQ @8, R1 # Compara com 1 para ver se a flag está ativada
-JEQ @113 #Se for 1, não incrementa e vai pro RET
+JEQ @120 #Se for 1, não incrementa e vai pro RET
 INC_UNIDADE:
 LDA @0, R0 # Carrega o valor das unidades
 SOMA @8, R0 # Soma com 1
