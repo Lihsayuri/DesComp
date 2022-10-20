@@ -4,18 +4,19 @@ use ieee.std_logic_1164.all;
 entity processador is
   -- Total de bits das entradas e saidas
   generic ( larguraDados : natural := 8;
-          larguraEnderecos : natural := 8;
-        simulacao : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
+          larguraEnderecos : natural := 9;
+			 simulacao : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
     CLK : in std_logic;
 	 instruction: in std_logic_vector(14 downto 0); -- acrescentei mais 2 bits para endereçar os registradores novos
 	 DATA_IN: in std_logic_vector(larguraDados - 1 downto 0);
 	 ----------------------------------------------------------
-    ROM_Address: out std_logic_vector(larguraEnderecos downto 0);
+    ROM_Address: out std_logic_vector(larguraEnderecos-1 downto 0);
 	 DATA_OUT: out std_logic_vector(larguraDados-1 downto 0);
 	 DATA_ADDRESS: out std_logic_vector(8 downto 0);
 	 Palavra : out std_logic_vector(11 downto 0);
+	 enderecoRG : out std_logic_vector (1 downto 0);
 --	 EQUAL_FLAG: out std_logic;
 	 MEM_Read: out std_logic;
 	 MEM_Write: out std_logic
@@ -73,14 +74,14 @@ architecture arquitetura of processador is
 
 -- Aliases para facilitar a leitura do código: Memória
 
-  alias OP_CODE: std_logic_vector(3 downto 0) is instruction(12 downto 9); 
+  alias OP_CODE: std_logic_vector(3 downto 0) is instruction(14 downto 11); 
 
 begin
 
 
 	
 	-- O port map completo do Program Counter.
-	PC : entity work.registradorGenerico generic map (larguraDados => larguraEnderecos+1)
+	PC : entity work.registradorGenerico generic map (larguraDados => larguraEnderecos)
 				 port map (
 							DIN => proxPC,
 							DOUT => Endereco,
@@ -88,7 +89,7 @@ begin
 							CLK => CLK,
 							RST => '0');
 
-	incrementaPC :  entity work.somaConstante generic map (larguraDados => larguraEnderecos+1, constante => 1)
+	incrementaPC :  entity work.somaConstante generic map (larguraDados => larguraEnderecos, constante => 1)
 			  port map( 
 						entrada => Endereco,
 						saida => saidaSomador);
@@ -184,5 +185,6 @@ begin
 	MEM_Write <= decoder_OUT(0);
    MEM_Read <= decoder_OUT(1);
 	DATA_ADDRESS <= instruction(8 downto 0);
+	enderecoRG <= enderecoReg;
 	
 end architecture;

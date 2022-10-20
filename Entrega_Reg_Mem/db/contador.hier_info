@@ -1,16 +1,12 @@
 |contador
-CLOCK_50 => edgedetector:gravar:detectorSub0.clk
-CLOCK_50 => edgedetector:gravar:detectorSub1.clk
-CLOCK_50 => edgedetector:gravar:detectorSub2.clk
-CLOCK_50 => edgedetector:gravar:detectorSub3.clk
 CLOCK_50 => processador:processador.CLK
 CLOCK_50 => logica_led:logica_LED.CLK
 CLOCK_50 => logica_7seg:logica_Seven_Seg.CLK
 CLOCK_50 => memoriaram:RAM1.clk
-KEY[0] => edgedetector:gravar:detectorSub0.entrada
-KEY[1] => edgedetector:gravar:detectorSub1.entrada
-KEY[2] => edgedetector:gravar:detectorSub2.entrada
-KEY[3] => edgedetector:gravar:detectorSub3.entrada
+KEY[0] => flipflopgenerico:FF_DEBOUNCER_0.CLK
+KEY[1] => flipflopgenerico:FF_DEBOUNCER_1.CLK
+KEY[2] => flipflopgenerico:FF_DEBOUNCER_2.CLK
+KEY[3] => ~NO_FANOUT~
 SW[0] => buffer_3_state_8portas:SW_0_7.entrada[0]
 SW[1] => buffer_3_state_8portas:SW_0_7.entrada[1]
 SW[2] => buffer_3_state_8portas:SW_0_7.entrada[2]
@@ -22,6 +18,15 @@ SW[7] => buffer_3_state_8portas:SW_0_7.entrada[7]
 SW[8] => buffer_3_state_8portas:SW_8.entrada[0]
 SW[9] => buffer_3_state_8portas:SW_9.entrada[0]
 FPGA_RESET_N => buffer_3_state_8portas:FPGA_RESET.entrada[0]
+PC_OUT[0] <= processador:processador.ROM_Address[0]
+PC_OUT[1] <= processador:processador.ROM_Address[1]
+PC_OUT[2] <= processador:processador.ROM_Address[2]
+PC_OUT[3] <= processador:processador.ROM_Address[3]
+PC_OUT[4] <= processador:processador.ROM_Address[4]
+PC_OUT[5] <= processador:processador.ROM_Address[5]
+PC_OUT[6] <= processador:processador.ROM_Address[6]
+PC_OUT[7] <= processador:processador.ROM_Address[7]
+PC_OUT[8] <= processador:processador.ROM_Address[8]
 LEDR[0] <= logica_led:logica_LED.conjunto_LED[0]
 LEDR[1] <= logica_led:logica_LED.conjunto_LED[1]
 LEDR[2] <= logica_led:logica_LED.conjunto_LED[2]
@@ -32,6 +37,34 @@ LEDR[6] <= logica_led:logica_LED.conjunto_LED[6]
 LEDR[7] <= logica_led:logica_LED.conjunto_LED[7]
 LEDR[8] <= logica_led:logica_LED.LED_endereco1
 LEDR[9] <= logica_led:logica_LED.LED_endereco2
+REGA_OUT[0] <= processador:processador.DATA_OUT[0]
+REGA_OUT[1] <= processador:processador.DATA_OUT[1]
+REGA_OUT[2] <= processador:processador.DATA_OUT[2]
+REGA_OUT[3] <= processador:processador.DATA_OUT[3]
+REGA_OUT[4] <= processador:processador.DATA_OUT[4]
+REGA_OUT[5] <= processador:processador.DATA_OUT[5]
+REGA_OUT[6] <= processador:processador.DATA_OUT[6]
+REGA_OUT[7] <= processador:processador.DATA_OUT[7]
+HabilitaRAM <= decoder3x8:decoderBloco.saida[0]
+MEM_ADDRESS[0] <= processador:processador.DATA_ADDRESS[0]
+MEM_ADDRESS[1] <= processador:processador.DATA_ADDRESS[1]
+MEM_ADDRESS[2] <= processador:processador.DATA_ADDRESS[2]
+MEM_ADDRESS[3] <= processador:processador.DATA_ADDRESS[3]
+MEM_ADDRESS[4] <= processador:processador.DATA_ADDRESS[4]
+MEM_ADDRESS[5] <= processador:processador.DATA_ADDRESS[5]
+MEM_ADDRESS[6] <= processador:processador.DATA_ADDRESS[6]
+MEM_ADDRESS[7] <= processador:processador.DATA_ADDRESS[7]
+MEM_ADDRESS[8] <= processador:processador.DATA_ADDRESS[8]
+MEM_OUTT[0] <= MEM_OUT[0].DB_MAX_OUTPUT_PORT_TYPE
+MEM_OUTT[1] <= MEM_OUT[1].DB_MAX_OUTPUT_PORT_TYPE
+MEM_OUTT[2] <= MEM_OUT[2].DB_MAX_OUTPUT_PORT_TYPE
+MEM_OUTT[3] <= MEM_OUT[3].DB_MAX_OUTPUT_PORT_TYPE
+MEM_OUTT[4] <= MEM_OUT[4].DB_MAX_OUTPUT_PORT_TYPE
+MEM_OUTT[5] <= MEM_OUT[5].DB_MAX_OUTPUT_PORT_TYPE
+MEM_OUTT[6] <= MEM_OUT[6].DB_MAX_OUTPUT_PORT_TYPE
+MEM_OUTT[7] <= MEM_OUT[7].DB_MAX_OUTPUT_PORT_TYPE
+enderecoR[0] <= processador:processador.enderecoRG[0]
+enderecoR[1] <= processador:processador.enderecoRG[1]
 HEX0[0] <= logica_7seg:logica_Seven_Seg.HEX0[0]
 HEX0[1] <= logica_7seg:logica_Seven_Seg.HEX0[1]
 HEX0[2] <= logica_7seg:logica_Seven_Seg.HEX0[2]
@@ -74,34 +107,6 @@ HEX5[3] <= logica_7seg:logica_Seven_Seg.HEX5[3]
 HEX5[4] <= logica_7seg:logica_Seven_Seg.HEX5[4]
 HEX5[5] <= logica_7seg:logica_Seven_Seg.HEX5[5]
 HEX5[6] <= logica_7seg:logica_Seven_Seg.HEX5[6]
-
-
-|contador|edgeDetector:\gravar:detectorSub0
-clk => saidaQ.CLK
-entrada => saida.IN1
-entrada => saidaQ.DATAIN
-saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|contador|edgeDetector:\gravar:detectorSub1
-clk => saidaQ.CLK
-entrada => saida.IN1
-entrada => saidaQ.DATAIN
-saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|contador|edgeDetector:\gravar:detectorSub2
-clk => saidaQ.CLK
-entrada => saida.IN1
-entrada => saidaQ.DATAIN
-saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|contador|edgeDetector:\gravar:detectorSub3
-clk => saidaQ.CLK
-entrada => saida.IN1
-entrada => saidaQ.DATAIN
-saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |contador|buffer_3_state_8portas:SW_0_7
@@ -256,13 +261,13 @@ instruction[7] => DATA_ADDRESS[7].DATAIN
 instruction[8] => muxgenerico4x1:MUX2.E1[8]
 instruction[8] => DATA_ADDRESS[8].DATAIN
 instruction[9] => bancoregistradoresarqregmem:BANCO_REGISTRADORES.endereco[0]
-instruction[9] => decoderinstru:decoderInstru1.opcode[0]
+instruction[9] => enderecoRG[0].DATAIN
 instruction[10] => bancoregistradoresarqregmem:BANCO_REGISTRADORES.endereco[1]
-instruction[10] => decoderinstru:decoderInstru1.opcode[1]
-instruction[11] => decoderinstru:decoderInstru1.opcode[2]
-instruction[12] => decoderinstru:decoderInstru1.opcode[3]
-instruction[13] => ~NO_FANOUT~
-instruction[14] => ~NO_FANOUT~
+instruction[10] => enderecoRG[1].DATAIN
+instruction[11] => decoderinstru:decoderInstru1.opcode[0]
+instruction[12] => decoderinstru:decoderInstru1.opcode[1]
+instruction[13] => decoderinstru:decoderInstru1.opcode[2]
+instruction[14] => decoderinstru:decoderInstru1.opcode[3]
 DATA_IN[0] => muxgenerico2x1:MUX1.entradaA_MUX[0]
 DATA_IN[1] => muxgenerico2x1:MUX1.entradaA_MUX[1]
 DATA_IN[2] => muxgenerico2x1:MUX1.entradaA_MUX[2]
@@ -309,6 +314,8 @@ Palavra[8] <= decoderinstru:decoderInstru1.saida[8]
 Palavra[9] <= decoderinstru:decoderInstru1.saida[9]
 Palavra[10] <= decoderinstru:decoderInstru1.saida[10]
 Palavra[11] <= decoderinstru:decoderInstru1.saida[11]
+enderecoRG[0] <= instruction[9].DB_MAX_OUTPUT_PORT_TYPE
+enderecoRG[1] <= instruction[10].DB_MAX_OUTPUT_PORT_TYPE
 MEM_Read <= decoderinstru:decoderInstru1.saida[1]
 MEM_Write <= decoderinstru:decoderInstru1.saida[0]
 

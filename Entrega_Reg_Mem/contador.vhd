@@ -4,8 +4,8 @@ use ieee.std_logic_1164.all;
 entity contador is
   -- Total de bits das entradas e saidas
   generic ( larguraDados : natural := 8;
-          larguraEnderecos : natural := 8;
-        simulacao : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
+          larguraEnderecos : natural := 9;
+        simulacao : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
 
@@ -13,14 +13,15 @@ entity contador is
     KEY: in std_logic_vector(3 downto 0);	 
 	 SW: in std_logic_vector(9 downto 0);
 	 FPGA_RESET_N: in 	std_logic;
---    PC_OUT: out std_logic_vector(larguraEnderecos downto 0);
+	 PC_OUT: out std_logic_vector(larguraEnderecos-1 downto 0);
     LEDR  : out std_logic_vector(9 downto 0);
---	 REGA_OUT : out std_logic_vector(larguraDados - 1 downto 0);
+	 REGA_OUT : out std_logic_vector(larguraDados - 1 downto 0);
 --	 Palavra : out std_logic_vector(12 downto 0);
 --	 EQUAL_FLAG: out std_logic;
---	 HabilitaRAM: out std_logic;
---	 MEM_ADDRESS: out std_logic_vector(8 downto 0);
---	 ADD_OUT: out std_logic_vector(larguraDados - 1 downto 0);
+	 HabilitaRAM: out std_logic;
+	 MEM_ADDRESS: out std_logic_vector(8 downto 0);
+	 MEM_OUTT: out std_logic_vector(larguraDados - 1 downto 0);
+	 enderecoR : out std_logic_vector (1 downto 0);
 	 HEX0			: out std_logic_vector	(6 downto 0);
 	 HEX1			: out std_logic_vector	(6 downto 0);
     HEX2			: out std_logic_vector	(6 downto 0);
@@ -61,7 +62,9 @@ architecture arquitetura of contador is
 
   
   alias Endereco : std_logic_vector (larguraDados downto 0) is PC_OUT_processador(larguraDados downto 0);
-  alias DecoderBloco_IN : std_logic_vector (2 downto 0) is instruction_ROM(8 downto 6);
+--  alias DecoderBloco_IN : std_logic_vector (2 downto 0) is instruction_ROM(8 downto 6);
+  alias DecoderBloco_IN : std_logic_vector (2 downto 0) is MEM_ADD(8 downto 6);
+
   alias Data_Address_5 : std_logic is MEM_ADD(5);
   alias DecoderPosicao_IN : std_logic_vector (2 downto 0) is MEM_ADD(2 downto 0);
 
@@ -235,7 +238,8 @@ end generate;
 					 Palavra => Palavra_processador,
 --					 EQUAL_FLAG => EQUAL_FLAG,
 					 MEM_Read => MEM_Read,
-					 MEM_Write => MEM_Write
+					 MEM_Write => MEM_Write,
+					 enderecoRG => enderecoR
 				); 
 	
 	decoderBloco :  entity work.decoder3x8
@@ -290,11 +294,11 @@ end generate;
 					 clk => CLK);	
 					 
 					 
---	PC_OUT <= PC_OUT_processador; 	 
+	PC_OUT <= PC_OUT_processador; 	 
 --	Palavra <= Palavra_processador;
---	HabilitaRAM <= MEM_Habilita;
---	ADD_OUT <= MEM_OUT;
---	MEM_ADDRESS <= MEM_ADD; 
---	REGA_OUT <= Reg_A;
+	HabilitaRAM <= MEM_Habilita;
+	MEM_OUTT <= MEM_OUT;
+   MEM_ADDRESS <= MEM_ADD; 
+   REGA_OUT <= Reg_A;
 
 end architecture;
