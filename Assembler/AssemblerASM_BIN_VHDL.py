@@ -179,7 +179,7 @@ with open(assembly, "r", encoding='utf8') as f: #Abre o arquivo ASM
     lines = f.readlines() #Verifica a quantidade de linhas
     
     
-with open(destinoBIN, "w") as f:  #Abre o destino BIN
+with open(destinoBIN, "w", encoding='utf8') as f:  #Abre o destino BIN
 
     cont = 0 #Cria uma variável para contagem
     label_dic = {}
