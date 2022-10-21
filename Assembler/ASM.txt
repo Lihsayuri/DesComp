@@ -130,6 +130,11 @@ STA @5, R3      #Guarda 9 nas centenas de milhar
 RET
 CONFIG_LIMITE:
 STA @510, R0    # Para limpar a leitura do botão 1
+STA @6, R3      # Carrega a flag de inibir contagem em R3
+CEQ @7, R3      # Compara a flag de inibir com 0
+JEQ @LIM_UNIDADE # Se for 0, então começa a configurar
+LDA @7, R3      # Se for 1, tem que voltar para 0
+STA @6, R3      # Guardo 0 na flag de inibir contagem
 LIM_UNIDADE:
 LDA @8, R1      # Carrega 1 em R1
 STA @256, R1    # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades
