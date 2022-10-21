@@ -31,31 +31,27 @@ LOOP_PRINCIPAL:
 NOP              # LOOP PRINCIPAL
 LDA @6, R0       # Carregando o R0 com o valor da flag de inibir
 CEQ @8, R0       # Compara com 1 para ver se a flag está ativada
-JEQ @39          # Se for igual, pula pra leitura de KEY1
+JEQ @LEITURA_KEY1 # Se for igual, pula pra leitura de KEY1
 LDA @352, R0     # Carrega o R0 com a leitura do botão KEY0
 ANDI @1, R0      # Aplica máscara na leitura do botão
 CEQ @7, R0       # Compara com 0
-JEQ @39          # Se for 0, vai ler a proxima chave
+JEQ @LEITURA_KEY1 # Se for 0, vai ler a proxima chave
 JSR @INCREMENTO  # Se for 1, vai pra sub-rotina de incremento
 NOP              # Aqui é onde o RET volta
+LEITURA_KEY1:
 LDA @353, R1     # Carrega o R1 com a leitura do botão KEY1
 ANDI @1, R1      # Aplica máscara na leitura do botão
 CEQ @7, R1       # Compara com 0
-JEQ @45          # Se for 0, vai conferir o limite 
+JEQ @CHAMA_CONFERE_LIMITE # Se for 0, vai conferir o limite 
 JSR @CONFIG_LIMITE   # Se for 1, vai pra sub-rotina de configuração de limite
 NOP              # Aqui é onde o RET volta
+CHAMA_CONFERE_LIMITE:
 JSR @CONFERE_LIMITE  # Chama a sub-rotina para verificar o limite
 NOP              # Aqui é onde o RET volta
-LDA @354, R1     # Carrega o R1 com a leitura do botão KEY2
-ANDI @1, R1      # Depois de fazer a leitura do botão aplica a máscara
-CEQ @7, R1       # Compara com 0
-JEQ @53          # Se for 0, vai ler a próxima chave
-JSR @DECREMENTO  # Se for 1, vai pra sub-rotina de decremento
-NOP              # Aqui é onde o RET volta
 LDA @356, R3     # Carrega o R3 com a leitura do botão FPGA_RESET 
-ANDI @1, R3      # Aplica ,áscara na leitura do botão
+ANDI @1, R3      # Aplica máscara na leitura do botão
 CEQ @8, R3       # Compara com 1
-JEQ @58          # Se for 1, vai pra subrotina pra reiniciar a contagem
+JEQ @52          # Se for 1, vai pra subrotina pra reiniciar a contagem
 JSR @REINICIAR_CONTAGEM  # Chama sub-rotina de reiniciar a contagem
 JSR @ATUALIZA_SEVEN_SEG  # Chama sub-rotina de atualizar o display de sete segmentos
 JMP @LOOP_PRINCIPAL      # Volta para o início do loop principal
@@ -135,6 +131,7 @@ CEQ @7, R3      # Compara a flag de inibir com 0
 JEQ @LIM_UNIDADE # Se for 0, então começa a configurar
 LDA @7, R3      # Se for 1, tem que voltar para 0
 STA @6, R3      # Guardo 0 na flag de inibir contagem
+STA @257, R3    # Guardo 0 no LED8
 LIM_UNIDADE:
 LDA @8, R1      # Carrega 1 em R1
 STA @256, R1    # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades
@@ -260,71 +257,4 @@ LDA @4, R0      # Carrega o valor das dezenas de milhar em R0
 STA @292, R0    # Guarda o valor das dezenas de milhar no HEX4
 LDA @5, R0      # Carrega o valor das centenas de milhar em R0
 STA @293, R0    # Guarda o valor das centenas de milhar no HEX5
-RET
-DECREMENTO:
-STA @508, R0    # Limpa a leitura do botão
-LDA @7, R1      # Carrega o 0 no R1
-STA @6, R1      # Armazena o valor 0 na flag de inibir contagem
-STA @257, R1    # Armazena o valor 0 no LED8
-DEC_UNIDADE:
-LDA @0, R2      # Carrega o valor das unidades em R2
-CEQ @7, R2      # Compara com 0
-JEQ @DEC_DEZENA # Se for 0, vai para a dezenas
-SUB @8, R2      # Se não, subtrai 1
-STA @0, R2      # Armazena o valor das unidades
-RET
-DEC_DEZENA:
-LDI $9, R3      # Carrega o valor 9 no imediato em R3
-STA @0, R3      # Armazena o valor 9 nas unidades
-LDA @1, R0      # Carrega o valor das dezenas em R0
-CEQ @7, R0      # Compara com 0
-JEQ @DEC_CENTENA # Se for 0, vai para as centenas
-SUB @8, R0      # Se não, subtrai 1
-STA @1, R0      # Armazena o valor das dezenas
-RET
-DEC_CENTENA:
-LDI $9, R0      # Carrega o valor 9 no imediato em R0
-STA @1, R0      # Armazena o valor 9 nas dezenas
-LDA @2, R1      # Carrega o valor das centenas em R1
-CEQ @7, R1      # Compara com 0
-JEQ @DEC_MILHAR # Se for 0, vai para os milhares
-SUB @8, R1      # Se não, subtrai 1
-STA @2, R1      # Armazena o valor das centenas
-RET
-DEC_MILHAR:
-LDI $9, R2      # Carrega o valor 9 no imediato em R2
-STA @2, R2      #  Armazena o valor 9 nas centenas
-LDA @3, R3      # Carrega o valor dos milhares em R3
-CEQ @7, R3      # Compara com 0
-JEQ @DEC_DEZMILHAR # Se for 0, vai para as dezenas de milhar
-SUB @8, R3      # Se não, subtrai 1
-STA @3, R3      # Armazena o valor dos milhares
-RET
-DEC_DEZMILHAR:
-LDI $9, R1      # Carrega o valor 9 no imediato em R1
-STA @3, R1      # Armazena o valor 9 nos milhares
-LDA @4, R0      # Carrega o valor das dezenas de milhar em R0
-CEQ @7, R0      # Compara com o 0
-JEQ @DEC_CENTMILHAR # Se for 0, vai para as centenas de milhares
-SUB @8, R0      # Se não, subtrai 1 
-STA @4, R0      # Armazena o valor das dezenas de milhar
-RET
-DEC_CENTMILHAR:
-LDI $9, R1      # Carrega o valor 9 no imediato em R1
-STA @4, R1      # Armazena o valor 9 nas centenas de milhar
-LDA @5, R2      # Carrega o valor das centenas de milhar em R2
-CEQ @7, R2      # Compara com 0
-JEQ @TUDO_ZERO # Se for 0, já deixa tudo 0
-SUB @8, R2      # Se não, subtrai 1
-STA @5, R2      # Armazena o valor das centenas de milhar
-TUDO_ZERO:
-LDA @7, R3      # Carrega o valor 0 em R3
-STA @0, R3      # Zera as unidades
-STA @1, R3      # Zera as dezenas
-STA @2, R3      # Zera as centenas
-STA @3, R3      # Zera os milhares
-STA @4, R3      # Zera as dezenas de milhar
-STA @5, R3      # Zera as centenas de milhar
-STA @258, R3    # Armazena o valor 0 no LED9
-STA @257, R3    # Armazena o valor 0 no LED8
 RET
