@@ -4,18 +4,19 @@ use ieee.std_logic_1164.all;
 entity processador is
   -- Total de bits das entradas e saidas
   generic ( larguraDados : natural := 8;
-          larguraEnderecos : natural := 8;
-        simulacao : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
+          larguraEnderecos : natural := 9;
+			 simulacao : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
     CLK : in std_logic;
-	 instruction: in std_logic_vector(12 downto 0);
+	 instruction: in std_logic_vector(14 downto 0); -- acrescentei mais 2 bits para endereçar os registradores novos
 	 DATA_IN: in std_logic_vector(larguraDados - 1 downto 0);
 	 ----------------------------------------------------------
-    ROM_Address: out std_logic_vector(larguraEnderecos downto 0);
+    ROM_Address: out std_logic_vector(larguraEnderecos-1 downto 0);
 	 DATA_OUT: out std_logic_vector(larguraDados-1 downto 0);
 	 DATA_ADDRESS: out std_logic_vector(8 downto 0);
-	 Palavra : out std_logic_vector(12 downto 0);
+	 Palavra : out std_logic_vector(11 downto 0);
+	 enderecoRG : out std_logic_vector (1 downto 0);
 --	 EQUAL_FLAG: out std_logic;
 	 MEM_Read: out std_logic;
 	 MEM_Write: out std_logic
@@ -39,7 +40,7 @@ architecture arquitetura of processador is
   signal MUX_OUT: std_logic_vector(larguraDados - 1 downto 0);
   signal REGA_OUT: std_logic_vector(larguraDados - 1 downto 0);
   signal ULA_OUT: std_logic_vector(larguraDados - 1 downto 0);
-  signal decoder_OUT : std_logic_vector(12 downto 0); -- sinais de controle e ler/escrever
+  signal decoder_OUT : std_logic_vector(11 downto 0); -- sinais de controle e ler/escrever
   signal saidaRET : std_logic_vector(larguraDados downto 0);
 
 -- Aliases para facilitar a leitura do código: MUX 
@@ -53,14 +54,17 @@ architecture arquitetura of processador is
   
   -- Aliases para os sinais de controle: DECODER_OUT
   alias habFlag: std_logic is decoder_OUT(2);
-  alias Operacao_ULA: std_logic_vector(2 downto 0) is decoder_OUT(5 downto 3);
-  alias Habilita_A: std_logic is decoder_OUT(6);  
-  alias SelMux: std_logic is decoder_OUT(7);
-  alias jeq : std_logic is decoder_OUT(8);
-  alias jsr : std_logic is decoder_OUT(9);
-  alias ret : std_logic is decoder_OUT(10);
-  alias jmp: std_logic is decoder_OUT(11);
-  alias habEscritaRet: std_logic is decoder_OUT(12);
+  alias Operacao_ULA: std_logic_vector(1 downto 0) is decoder_OUT(4 downto 3);
+  alias Habilita_A: std_logic is decoder_OUT(5);  
+  alias SelMux: std_logic is decoder_OUT(6);
+  alias jeq : std_logic is decoder_OUT(7);
+  alias jsr : std_logic is decoder_OUT(8);
+  alias ret : std_logic is decoder_OUT(9);
+  alias jmp: std_logic is decoder_OUT(10);
+  alias habEscritaRet: std_logic is decoder_OUT(11);
+  
+  alias enderecoReg : std_logic_vector(1 downto 0) is instruction(10 downto 9);
+  alias OP_CODE: std_logic_vector(3 downto 0) is instruction(14 downto 11); 
 
   
 -- Aliases para facilitar a leitura do código: REGA
@@ -72,14 +76,12 @@ architecture arquitetura of processador is
 
 -- Aliases para facilitar a leitura do código: Memória
 
-  alias OP_CODE: std_logic_vector(3 downto 0) is instruction(12 downto 9); 
-
 begin
 
 
 	
 	-- O port map completo do Program Counter.
-	PC : entity work.registradorGenerico generic map (larguraDados => larguraEnderecos+1)
+	PC : entity work.registradorGenerico generic map (larguraDados => larguraEnderecos)
 				 port map (
 							DIN => proxPC,
 							DOUT => Endereco,
@@ -87,7 +89,7 @@ begin
 							CLK => CLK,
 							RST => '0');
 
-	incrementaPC :  entity work.somaConstante generic map (larguraDados => larguraEnderecos+1, constante => 1)
+	incrementaPC :  entity work.somaConstante generic map (larguraDados => larguraEnderecos, constante => 1)
 			  port map( 
 						entrada => Endereco,
 						saida => saidaSomador);
@@ -125,17 +127,26 @@ begin
 						 entradaB => ULA_B_IN,
 						 saida => ULA_OUT,
 						 seletor => Operacao_ULA,
-						 flagEqual => ULA_FLAG);	 
-						 
+						 flagEqual => ULA_FLAG);	
+						
+					
+	BANCO_REGISTRADORES: entity work.bancoRegistradoresArqRegMem generic map (larguraDados => larguraDados, larguraEndBancoRegs => 2) 	
+				port map ( 
+							clk => CLK,
+							endereco => enderecoReg,
+							dadoEscrita => REGA_IN,
+							habilitaEscrita => Habilita_A,
+							saida  => REGA_OUT);
+							
 	-- O port map completo do Acumulador.
-	REGA : entity work.registradorGenerico generic map (larguraDados => larguraDados)
-				 port map (
-						 DIN => REGA_IN,
-						 DOUT => REGA_OUT,
-						 ENABLE => Habilita_A,
-						 CLK => CLK,
-						 RST => '0');
-						 
+	--REGA : entity work.registradorGenerico generic map (larguraDados => larguraDados)
+	--			 port map (
+	--					 DIN => REGA_IN,
+	--					 DOUT => REGA_OUT,
+	--					 ENABLE => Habilita_A,
+	--					 CLK => CLK,
+	--					 RST => '0');
+							
 						 
 	-- port map do flip flop da flag de comparacao
 	FLAG:
@@ -174,5 +185,6 @@ begin
 	MEM_Write <= decoder_OUT(0);
    MEM_Read <= decoder_OUT(1);
 	DATA_ADDRESS <= instruction(8 downto 0);
+	enderecoRG <= enderecoReg;
 	
 end architecture;

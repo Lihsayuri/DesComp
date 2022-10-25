@@ -1,6 +1,6 @@
 LDI $0, R0      # Inicializando algumas variáveis importantes : R0 = 0
 LDI $1, R1      # R1 = 1
-LDI $9, R2      # R2 = 9
+LDI $6, R2      # R2 = 6
 LDI $10, R3     # R3 = 10
 STA @256, R0    # Armazena o valor do R0 no LEDR0 ~ LEDR7
 STA @257, R0    # Armazena o valor do R0 no LEDR8
@@ -27,6 +27,11 @@ STA @12, R2     # Armazena o valor do R2 em MEM[12] (valor limite para CENTENA)
 STA @13, R2     # Armazena o valor do R2 em MEM[13] (valor limite para MILHAR)
 STA @14, R2     # Armazena o valor do R2 em MEM[14] (valor limite para DEZENA DE MILHAR)
 STA @15, R2     # Armazena o valor do R2 em MEM[15] (valor limite para CENTENA DE MILHAR )
+STA @16, R2     # Armazena o valor do R2 em MEM[16] (constante 6)
+LDI $2, R0      # Carrega 2 no registrador R0
+STA @17, R0     # Armazena o valor do R0 em MEM[17] (constante 2)
+LDI $4, R0      # Carrega 4 no registrador R0
+STA @18, R0     # Armazena o valor do R0 em MEM[18] (constante 4)
 LOOP_PRINCIPAL:
 NOP              # LOOP PRINCIPAL
 LDA @6, R0       # Carregando o R0 com o valor da flag de inibir
@@ -51,7 +56,7 @@ NOP              # Aqui é onde o RET volta
 LDA @356, R3     # Carrega o R3 com a leitura do botão FPGA_RESET 
 ANDI @1, R3      # Aplica máscara na leitura do botão
 CEQ @8, R3       # Compara com 1
-JEQ @52          # Se for 1, vai pra subrotina pra reiniciar a contagem
+JEQ @57          # Se for 1, vai pra subrotina pra reiniciar a contagem
 JSR @REINICIAR_CONTAGEM  # Chama sub-rotina de reiniciar a contagem
 JSR @ATUALIZA_SEVEN_SEG  # Chama sub-rotina de atualizar o display de sete segmentos
 JMP @LOOP_PRINCIPAL      # Volta para o início do loop principal
@@ -59,7 +64,7 @@ INCREMENTO:
 STA @511, R0     # Limpa a leitura do botão KEY0
 LDA @6, R1       # Carrega o valor da flag de inibir contagem no R1
 CEQ @8, R1       # Compara com 1 para ver se a flag está ativada
-JEQ @120         #Se for 1, não incrementa e vai pro RET
+JEQ @125         #Se for 1, não incrementa e vai pro RET
 INC_UNIDADE:
 LDA @0, R0       # Carrega o valor das unidades em R0
 SOMA @8, R0      # Soma com 1 e guarda resultado em R0
@@ -72,7 +77,7 @@ LDA @7, R0      # Carrega 0 no R0
 STA @0, R0      # Carrega 0 nas unidades
 LDA @1, R0      # Carrega o valor das dezenas em R0
 SOMA @8, R0     # Soma com 1 e guarda resultado em R0
-CEQ @9, R0      # Compara com 10
+CEQ @16, R0      # Compara com 6
 JEQ @INC_CENTENA # Se for 10, vai para as centenas
 STA @1, R0      # Se não, armazena o valor das dezenas
 RET             # E retorna
@@ -90,7 +95,7 @@ LDA @7, R0      # Carrega 0 no R0
 STA @2, R0      # Carrega 0 nas centenas
 LDA @3, R0      # Carrega o valor dos milhares em R0
 SOMA @8, R0     # Soma com 1 e guarda resultado em R0
-CEQ @9, R0      # Compara com 10
+CEQ @16, R0      # Compara com 6
 JEQ @INC_DEZMILHAR  # Se for 10, vai para as dezenas de milhar
 STA @3, R0      # Se não, armazena o valor dos milhares
 RET             # E retorna
@@ -99,8 +104,8 @@ LDA @7, R0      # Carrega 0 no R0
 STA @3, R0      # Carrega 0 no milhar
 LDA @4, R0      # Carrega o valor das dezenas de milhar
 SOMA @8, R0     # Soma com 1 e guarda resultado em R0
-CEQ @9, R0      # Compara com 10
-JEQ @INC_CENTMILHAR # Se for 10, vai para a centena de milhar
+CEQ @18, R0      # Compara com 4
+JEQ @INC_CENTMILHAR # Se for 4, vai para a centena de milhar
 STA @4, R0      # Armazena o valor das dezena de milhar
 RET             # E retorna
 INC_CENTMILHAR:
@@ -108,8 +113,8 @@ LDA @7, R0      # Carrega 0 no R0
 STA @4, R0      # Carrega 0 nas dezenas de milhar
 LDA @5, R0      #Carrega o valor das centenas de milhar
 SOMA @8, R0     # Soma com 1 e guarda resultado em R0
-CEQ @9, R0      # Compara com 10
-JEQ @OVERFLOW   # Se for 10, vai para o overflow
+CEQ @17, R0      # Compara com 2
+JEQ @OVERFLOW   # Se for 2, vai para o overflow
 STA @5, R0      # Se não, armazena o valor das centena de milhar
 RET             # E retorna
 OVERFLOW:
@@ -117,12 +122,15 @@ LDA @8, R2      # Carrega o valor 1 em R2
 STA @6, R2      # Armazena o valor 1 na flag de inibir contagem
 STA @258, R2    # Armazena o valor 1 no LEDR9 indicando OVERFLOW
 LDI $9, R3      # Não deixar somar, volta pro máximo permitido - Carrega 9 em R3
-STA @0, R3      #Guarda 9 nas unidades
-STA @1, R3      #Guarda 9 nas dezenas
-STA @2, R3      #Guarda 9 nas centenas
-STA @3, R3      #Guarda 9 nos milhares
-STA @4, R3      #Guarda 9 nas dezenas de milhar
-STA @5, R3      #Guarda 9 nas centenas de milhar
+LDA @7, R0      # Armazena o valor 0 em R0
+LDA @17, R1     # Armazena o valor 2 em R1
+LDA @18, R2     # Armazena o valor 4 em R2 
+STA @0, R0      #Guarda 9 nas unidades
+STA @1, R0      #Guarda 9 nas dezenas
+STA @2, R0      #Guarda 9 nas centenas
+STA @3, R0      #Guarda 9 nos milhares
+STA @4, R2      #Guarda 9 nas dezenas de milhar
+STA @5, R1      #Guarda 9 nas centenas de milhar
 RET
 CONFIG_LIMITE:
 STA @510, R0    # Para limpar a leitura do botão 1
