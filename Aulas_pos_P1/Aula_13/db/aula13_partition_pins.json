@@ -416,11 +416,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "PC_OUT[0]",
-					"strict" : false
-				},
-				{
-					"name" : "PC_OUT[1]",
+					"name" : "Rd_End[3]",
 					"strict" : false
 				},
 				{

@@ -19,6 +19,7 @@ entity aula13 is
 	 RT_OUT : out std_logic_vector(larguraDados-1 downto 0);
 	 Rs_End : out std_logic_vector(4 downto 0);
 	 Rt_End : out std_logic_vector(4 downto 0);
+	 Rd_End : out std_logic_vector(4 downto 0);
 	 PC_OUT : out std_logic_vector(larguraEnderecos-1 downto 0)
 );
   
@@ -65,7 +66,7 @@ end generate;
 				 CLK => CLK,
 				 RST => '0');
 				 
-	somador :  entity work.somaConstante  generic map (larguraDados => larguraEnderecos, constante => 1)
+	somador :  entity work.somaConstante  generic map (larguraDados => larguraEnderecos, constante => 4)
         port map( entrada => PC, saida => PC_constante);
 	
 		-- Falta acertar o conteudo da ROM (no arquivo memoriaROM.vhd)
@@ -101,5 +102,6 @@ end generate;
 	PC_OUT <= PC;
 	Rs_End <= RsAddr;
 	Rt_End <= RtAddr;
+	Rd_End <= RdAddr;
 	
 end architecture;

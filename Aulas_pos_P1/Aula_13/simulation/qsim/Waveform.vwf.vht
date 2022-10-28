@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/26/2022 19:09:20"
+-- Generated on "10/27/2022 17:23:27"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          aula13
 -- 
@@ -39,6 +39,7 @@ SIGNAL Ctrl_write : STD_LOGIC;
 SIGNAL Funct : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL Instru_opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL PC_OUT : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL Rd_End : STD_LOGIC_VECTOR(4 DOWNTO 0);
 SIGNAL Rs_End : STD_LOGIC_VECTOR(4 DOWNTO 0);
 SIGNAL RS_OUT : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL Rt_End : STD_LOGIC_VECTOR(4 DOWNTO 0);
@@ -52,6 +53,7 @@ COMPONENT aula13
 	Funct : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
 	Instru_opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
 	PC_OUT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	Rd_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 	Rs_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 	RS_OUT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	Rt_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
@@ -69,6 +71,7 @@ BEGIN
 	Funct => Funct,
 	Instru_opcode => Instru_opcode,
 	PC_OUT => PC_OUT,
+	Rd_End => Rd_End,
 	Rs_End => Rs_End,
 	RS_OUT => RS_OUT,
 	Rt_End => Rt_End,
@@ -82,7 +85,7 @@ t_prcs_CLOCK_50: PROCESS
 BEGIN
 	CLOCK_50 <= '1';
 	WAIT FOR 20000 ps;
-	FOR i IN 1 TO 24
+	FOR i IN 1 TO 5
 	LOOP
 		CLOCK_50 <= '0';
 		WAIT FOR 20000 ps;
@@ -105,8 +108,10 @@ END PROCESS t_prcs_Ctrl_write;
 -- Sel_ULA[1]
 t_prcs_Sel_ULA_1: PROCESS
 BEGIN
+	Sel_ULA(1) <= '0';
+	WAIT FOR 40000 ps;
 	Sel_ULA(1) <= '1';
-	WAIT FOR 80000 ps;
+	WAIT FOR 40000 ps;
 	Sel_ULA(1) <= '0';
 WAIT;
 END PROCESS t_prcs_Sel_ULA_1;
@@ -114,10 +119,8 @@ END PROCESS t_prcs_Sel_ULA_1;
 -- Sel_ULA[0]
 t_prcs_Sel_ULA_0: PROCESS
 BEGIN
-	Sel_ULA(0) <= '0';
-	WAIT FOR 40000 ps;
 	Sel_ULA(0) <= '1';
-	WAIT FOR 40000 ps;
+	WAIT FOR 80000 ps;
 	Sel_ULA(0) <= '0';
 WAIT;
 END PROCESS t_prcs_Sel_ULA_0;

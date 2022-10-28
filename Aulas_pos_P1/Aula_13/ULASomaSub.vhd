@@ -28,5 +28,5 @@ architecture comportamento of ULASomaSub is
 					passa when (seletor = "10") else
 					and_op when (seletor = "11") else
 					entradaB;
-		flagEqual <= '1' when (subtracao = x"00") else '0';
+		flagEqual <= '1' when (subtracao = 32x"00") else '0';
 end architecture;
