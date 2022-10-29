@@ -8,10 +8,15 @@ entity aula13 is
         simulacao : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
+  
+	 -- input ports
 
     CLOCK_50 : in std_logic;
 	 Ctrl_write : in std_logic; 
 	 Sel_ULA : in std_logic_vector(1 downto 0);
+	 
+	 -- output ports
+	 
 	 Instru_opcode : out std_logic_vector(5 downto 0); 
 	 Funct : out std_logic_vector(5 downto 0);
 	 ULAA_OUT : out std_logic_vector(larguraDados-1 downto 0);
@@ -48,17 +53,14 @@ architecture arquitetura of aula13 is
 begin
 
 
-gravar:  if simulacao generate
-				CLK 				<= CLOCK_50;
+	CLK <= CLOCK_50;
 
-			else generate
-				CLK 				<= CLOCK_50;
-				
-                  
-end generate;
+
+	Somador :  entity work.somaConstante  generic map (larguraDados => larguraEnderecos, constante => 4)
+        port map( entrada => PC, saida => PC_constante);
 	
 	
-	REG_PC : entity work.registradorGenerico   generic map (larguraDados => larguraEnderecos)
+	PC_REG : entity work.registradorGenerico   generic map (larguraDados => larguraEnderecos)
           port map (
 				 DIN => PC_constante,
 				 DOUT => PC,
@@ -66,12 +68,11 @@ end generate;
 				 CLK => CLK,
 				 RST => '0');
 				 
-	somador :  entity work.somaConstante  generic map (larguraDados => larguraEnderecos, constante => 4)
-        port map( entrada => PC, saida => PC_constante);
 	
 		-- Falta acertar o conteudo da ROM (no arquivo memoriaROM.vhd)
 	ROM1 : entity work.memoriaROM generic map (dataWidth => larguraDados, addrWidth => larguraEnderecos, memoryAddrWidth => 6) -- POR QUE 4?
 				 port map (
+						 clk => CLK,
 						 Endereco => ROM_IN,
 						 Dado => ROM_OUT);
 						 

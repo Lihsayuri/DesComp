@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
--- DATE "10/27/2022 17:23:28"
+-- DATE "10/29/2022 10:03:31"
 
 -- 
 -- Device: Altera 5CEBA4F23C7 Package FBGA484
@@ -231,448 +231,414 @@ SIGNAL \PC_OUT[29]~output_o\ : std_logic;
 SIGNAL \PC_OUT[30]~output_o\ : std_logic;
 SIGNAL \PC_OUT[31]~output_o\ : std_logic;
 SIGNAL \CLOCK_50~input_o\ : std_logic;
-SIGNAL \REG_PC|DOUT[2]~0_combout\ : std_logic;
-SIGNAL \somador|Add0~1_sumout\ : std_logic;
-SIGNAL \somador|Add0~2\ : std_logic;
-SIGNAL \somador|Add0~9_sumout\ : std_logic;
-SIGNAL \somador|Add0~10\ : std_logic;
-SIGNAL \somador|Add0~5_sumout\ : std_logic;
-SIGNAL \somador|Add0~6\ : std_logic;
-SIGNAL \somador|Add0~17_sumout\ : std_logic;
-SIGNAL \somador|Add0~18\ : std_logic;
-SIGNAL \somador|Add0~13_sumout\ : std_logic;
+SIGNAL \PC_REG|DOUT[2]~0_combout\ : std_logic;
+SIGNAL \Somador|Add0~17_sumout\ : std_logic;
+SIGNAL \Somador|Add0~18\ : std_logic;
+SIGNAL \Somador|Add0~5_sumout\ : std_logic;
+SIGNAL \Somador|Add0~6\ : std_logic;
+SIGNAL \Somador|Add0~1_sumout\ : std_logic;
+SIGNAL \Somador|Add0~2\ : std_logic;
+SIGNAL \Somador|Add0~13_sumout\ : std_logic;
+SIGNAL \Somador|Add0~14\ : std_logic;
+SIGNAL \Somador|Add0~9_sumout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[0]~0_combout\ : std_logic;
 SIGNAL \ROM1|memROM~0_combout\ : std_logic;
-SIGNAL \ROM1|memROM~1_combout\ : std_logic;
-SIGNAL \ROM1|memROM~2_combout\ : std_logic;
-SIGNAL \ROM1|memROM~3_combout\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[1]~0_combout\ : std_logic;
 SIGNAL \Sel_ULA[1]~input_o\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1062_combout\ : std_logic;
-SIGNAL \ROM1|memROM~4_combout\ : std_logic;
 SIGNAL \Sel_ULA[0]~input_o\ : std_logic;
+SIGNAL \BANCO_REG|Equal0~0_combout\ : std_logic;
 SIGNAL \Ctrl_write~input_o\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1089_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1090_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~294_q\ : std_logic;
 SIGNAL \BANCO_REG|saidaA[0]~1_combout\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[0]~2_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1063_combout\ : std_logic;
+SIGNAL \ROM1|memROM~1_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1062_combout\ : std_logic;
 SIGNAL \ULA1|Add0~130_cout\ : std_logic;
 SIGNAL \ULA1|Add0~1_sumout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1088_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1089_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~38_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[0]~0_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[0]~31_combout\ : std_logic;
 SIGNAL \ULA1|saida[0]~0_combout\ : std_logic;
 SIGNAL \ULA1|saida[0]~1_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~295_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[1]~3_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1064_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[1]~2_combout\ : std_logic;
 SIGNAL \ULA1|Add0~2\ : std_logic;
 SIGNAL \ULA1|Add0~5_sumout\ : std_logic;
 SIGNAL \ULA1|Add0~5_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[1]~2_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~39_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[1]~1_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1063_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[1]~0_combout\ : std_logic;
 SIGNAL \ULA1|saida[1]~2_combout\ : std_logic;
 SIGNAL \ULA1|saida[1]~3_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~296_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[2]~4_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1065_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[2]~3_combout\ : std_logic;
 SIGNAL \ULA1|Add0~6\ : std_logic;
 SIGNAL \ULA1|Add0~9_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~40_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[2]~2_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1064_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[2]~1_combout\ : std_logic;
 SIGNAL \ULA1|saida[2]~4_combout\ : std_logic;
 SIGNAL \ULA1|saida[2]~5_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~297_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[3]~5_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1066_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[3]~4_combout\ : std_logic;
 SIGNAL \ULA1|Add0~10\ : std_logic;
 SIGNAL \ULA1|Add0~13_sumout\ : std_logic;
 SIGNAL \ULA1|Add0~13_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[3]~6_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~41_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[3]~3_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1065_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[3]~2_combout\ : std_logic;
 SIGNAL \ULA1|saida[3]~6_combout\ : std_logic;
 SIGNAL \ULA1|saida[3]~7_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~298_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[4]~6_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1067_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[4]~5_combout\ : std_logic;
 SIGNAL \ULA1|Add0~14\ : std_logic;
 SIGNAL \ULA1|Add0~17_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~42_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[4]~4_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1066_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[4]~3_combout\ : std_logic;
 SIGNAL \ULA1|saida[4]~8_combout\ : std_logic;
 SIGNAL \ULA1|saida[4]~9_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~299_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[5]~7_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1068_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[5]~6_combout\ : std_logic;
 SIGNAL \ULA1|Add0~18\ : std_logic;
 SIGNAL \ULA1|Add0~21_sumout\ : std_logic;
 SIGNAL \ULA1|Add0~21_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[5]~10_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~43_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[5]~5_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1067_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[5]~4_combout\ : std_logic;
 SIGNAL \ULA1|saida[5]~10_combout\ : std_logic;
 SIGNAL \ULA1|saida[5]~11_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~300_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[6]~8_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1069_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[6]~7_combout\ : std_logic;
 SIGNAL \ULA1|Add0~22\ : std_logic;
 SIGNAL \ULA1|Add0~25_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~44_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[6]~6_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1068_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[6]~5_combout\ : std_logic;
 SIGNAL \ULA1|saida[6]~12_combout\ : std_logic;
 SIGNAL \ULA1|saida[6]~13_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~301_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[7]~9_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1070_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[7]~8_combout\ : std_logic;
 SIGNAL \ULA1|Add0~26\ : std_logic;
 SIGNAL \ULA1|Add0~29_sumout\ : std_logic;
 SIGNAL \ULA1|Add0~29_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[7]~14_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~45_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[7]~7_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1069_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[7]~6_combout\ : std_logic;
 SIGNAL \ULA1|saida[7]~14_combout\ : std_logic;
 SIGNAL \ULA1|saida[7]~15_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~302_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[8]~10_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1071_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[8]~9_combout\ : std_logic;
 SIGNAL \ULA1|Add0~30\ : std_logic;
 SIGNAL \ULA1|Add0~33_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~46_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[8]~8_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1070_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[8]~7_combout\ : std_logic;
 SIGNAL \ULA1|saida[8]~16_combout\ : std_logic;
 SIGNAL \ULA1|saida[8]~17_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~303_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[9]~11_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1072_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[9]~10_combout\ : std_logic;
 SIGNAL \ULA1|Add0~34\ : std_logic;
 SIGNAL \ULA1|Add0~37_sumout\ : std_logic;
 SIGNAL \ULA1|Add0~37_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[9]~18_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~47_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[9]~9_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1071_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[9]~8_combout\ : std_logic;
 SIGNAL \ULA1|saida[9]~18_combout\ : std_logic;
 SIGNAL \ULA1|saida[9]~19_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~304_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[10]~12_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1073_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[10]~11_combout\ : std_logic;
 SIGNAL \ULA1|Add0~38\ : std_logic;
 SIGNAL \ULA1|Add0~41_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~48_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[10]~10_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1072_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[10]~9_combout\ : std_logic;
 SIGNAL \ULA1|saida[10]~20_combout\ : std_logic;
 SIGNAL \ULA1|saida[10]~21_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~305_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[11]~13_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1074_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[11]~12_combout\ : std_logic;
 SIGNAL \ULA1|Add0~42\ : std_logic;
 SIGNAL \ULA1|Add0~45_sumout\ : std_logic;
 SIGNAL \ULA1|Add0~45_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[11]~22_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~49_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[11]~11_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1073_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[11]~10_combout\ : std_logic;
 SIGNAL \ULA1|saida[11]~22_combout\ : std_logic;
 SIGNAL \ULA1|saida[11]~23_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~306_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[12]~14_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1075_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[12]~13_combout\ : std_logic;
 SIGNAL \ULA1|Add0~46\ : std_logic;
 SIGNAL \ULA1|Add0~49_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~50_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[12]~12_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1074_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[12]~11_combout\ : std_logic;
 SIGNAL \ULA1|saida[12]~24_combout\ : std_logic;
 SIGNAL \ULA1|saida[12]~25_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~307_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[13]~15_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1076_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[13]~14_combout\ : std_logic;
 SIGNAL \ULA1|Add0~50\ : std_logic;
 SIGNAL \ULA1|Add0~53_sumout\ : std_logic;
 SIGNAL \ULA1|Add0~53_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[13]~26_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~51_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[13]~13_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1075_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[13]~12_combout\ : std_logic;
 SIGNAL \ULA1|saida[13]~26_combout\ : std_logic;
 SIGNAL \ULA1|saida[13]~27_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~308_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[14]~16_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1077_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[14]~15_combout\ : std_logic;
 SIGNAL \ULA1|Add0~54\ : std_logic;
 SIGNAL \ULA1|Add0~57_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~52_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[14]~14_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1076_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[14]~13_combout\ : std_logic;
 SIGNAL \ULA1|saida[14]~28_combout\ : std_logic;
 SIGNAL \ULA1|saida[14]~29_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~309_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[15]~17_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1078_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[15]~16_combout\ : std_logic;
 SIGNAL \ULA1|Add0~58\ : std_logic;
 SIGNAL \ULA1|Add0~61_sumout\ : std_logic;
 SIGNAL \ULA1|Add0~61_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[15]~30_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~53_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[15]~15_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1077_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[15]~14_combout\ : std_logic;
 SIGNAL \ULA1|saida[15]~30_combout\ : std_logic;
 SIGNAL \ULA1|saida[15]~31_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~310_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[16]~18_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1079_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[16]~17_combout\ : std_logic;
 SIGNAL \ULA1|Add0~62\ : std_logic;
 SIGNAL \ULA1|Add0~65_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~54_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[16]~16_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1078_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[16]~15_combout\ : std_logic;
 SIGNAL \ULA1|saida[16]~32_combout\ : std_logic;
 SIGNAL \ULA1|saida[16]~33_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~311_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[17]~19_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1080_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[17]~18_combout\ : std_logic;
 SIGNAL \ULA1|Add0~66\ : std_logic;
 SIGNAL \ULA1|Add0~69_sumout\ : std_logic;
 SIGNAL \ULA1|Add0~69_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[17]~34_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~55_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[17]~17_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1079_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[17]~16_combout\ : std_logic;
 SIGNAL \ULA1|saida[17]~34_combout\ : std_logic;
 SIGNAL \ULA1|saida[17]~35_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~312_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[18]~20_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1081_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[18]~19_combout\ : std_logic;
 SIGNAL \ULA1|Add0~70\ : std_logic;
 SIGNAL \ULA1|Add0~73_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~56_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[18]~18_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1080_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[18]~17_combout\ : std_logic;
 SIGNAL \ULA1|saida[18]~36_combout\ : std_logic;
 SIGNAL \ULA1|saida[18]~37_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~313_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[19]~21_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1082_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[19]~20_combout\ : std_logic;
 SIGNAL \ULA1|Add0~74\ : std_logic;
 SIGNAL \ULA1|Add0~77_sumout\ : std_logic;
 SIGNAL \ULA1|Add0~77_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[19]~38_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~57_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[19]~19_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1081_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[19]~18_combout\ : std_logic;
 SIGNAL \ULA1|saida[19]~38_combout\ : std_logic;
 SIGNAL \ULA1|saida[19]~39_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~314_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[20]~22_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1083_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[20]~21_combout\ : std_logic;
 SIGNAL \ULA1|Add0~78\ : std_logic;
 SIGNAL \ULA1|Add0~81_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~58_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[20]~20_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1082_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[20]~19_combout\ : std_logic;
 SIGNAL \ULA1|saida[20]~40_combout\ : std_logic;
 SIGNAL \ULA1|saida[20]~41_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~315_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[21]~23_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1084_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[21]~22_combout\ : std_logic;
 SIGNAL \ULA1|Add0~82\ : std_logic;
 SIGNAL \ULA1|Add0~85_sumout\ : std_logic;
 SIGNAL \ULA1|Add0~85_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[21]~42_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~59_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[21]~21_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1083_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[21]~20_combout\ : std_logic;
 SIGNAL \ULA1|saida[21]~42_combout\ : std_logic;
 SIGNAL \ULA1|saida[21]~43_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~316_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[22]~24_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1085_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[22]~23_combout\ : std_logic;
 SIGNAL \ULA1|Add0~86\ : std_logic;
 SIGNAL \ULA1|Add0~89_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~60_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[22]~22_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1084_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[22]~21_combout\ : std_logic;
 SIGNAL \ULA1|saida[22]~44_combout\ : std_logic;
 SIGNAL \ULA1|saida[22]~45_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~317_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[23]~25_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1086_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[23]~24_combout\ : std_logic;
 SIGNAL \ULA1|Add0~90\ : std_logic;
 SIGNAL \ULA1|Add0~93_sumout\ : std_logic;
 SIGNAL \ULA1|Add0~93_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[23]~46_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~61_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[23]~23_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1085_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[23]~22_combout\ : std_logic;
 SIGNAL \ULA1|saida[23]~46_combout\ : std_logic;
 SIGNAL \ULA1|saida[23]~47_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~318_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[24]~26_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1087_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[24]~25_combout\ : std_logic;
 SIGNAL \ULA1|Add0~94\ : std_logic;
 SIGNAL \ULA1|Add0~97_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~62_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[24]~24_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1086_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[24]~23_combout\ : std_logic;
 SIGNAL \ULA1|saida[24]~48_combout\ : std_logic;
 SIGNAL \ULA1|saida[24]~49_combout\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[25]~27_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~319_q\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[25]~26_combout\ : std_logic;
+SIGNAL \ULA1|Add0~98\ : std_logic;
+SIGNAL \ULA1|Add0~101_sumout\ : std_logic;
 SIGNAL \ULA1|Add0~101_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[25]~50_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~63_q\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1090_combout\ : std_logic;
-SIGNAL \ULA1|Add0~98\ : std_logic;
-SIGNAL \ULA1|Add0~101_sumout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~319_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[25]~25_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1087_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[25]~24_combout\ : std_logic;
 SIGNAL \ULA1|saida[25]~50_combout\ : std_logic;
 SIGNAL \ULA1|saida[25]~51_combout\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[26]~28_combout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~64_q\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1091_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~320_q\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[26]~27_combout\ : std_logic;
 SIGNAL \ULA1|Add0~102\ : std_logic;
 SIGNAL \ULA1|Add0~105_sumout\ : std_logic;
-SIGNAL \BANCO_REG|registrador~320_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[26]~26_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~64_q\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1088_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[26]~25_combout\ : std_logic;
 SIGNAL \ULA1|saida[26]~52_combout\ : std_logic;
 SIGNAL \ULA1|saida[26]~53_combout\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[27]~29_combout\ : std_logic;
+SIGNAL \ROM1|memROM~2_combout\ : std_logic;
+SIGNAL \BANCO_REG|Equal0~1_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[27]~28_combout\ : std_logic;
 SIGNAL \ULA1|Add0~109_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[27]~54_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~65_q\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1092_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1091_combout\ : std_logic;
 SIGNAL \ULA1|Add0~106\ : std_logic;
 SIGNAL \ULA1|Add0~109_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~321_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[27]~27_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[27]~26_combout\ : std_logic;
 SIGNAL \ULA1|saida[27]~54_combout\ : std_logic;
 SIGNAL \ULA1|saida[27]~55_combout\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[28]~30_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[28]~29_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~66_q\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1093_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1092_combout\ : std_logic;
 SIGNAL \ULA1|Add0~110\ : std_logic;
 SIGNAL \ULA1|Add0~113_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~322_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[28]~28_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[28]~27_combout\ : std_logic;
 SIGNAL \ULA1|saida[28]~56_combout\ : std_logic;
 SIGNAL \ULA1|saida[28]~57_combout\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[29]~31_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[29]~30_combout\ : std_logic;
 SIGNAL \ULA1|Add0~117_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[29]~58_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~67_q\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1094_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1093_combout\ : std_logic;
 SIGNAL \ULA1|Add0~114\ : std_logic;
 SIGNAL \ULA1|Add0~117_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~323_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[29]~29_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[29]~28_combout\ : std_logic;
 SIGNAL \ULA1|saida[29]~58_combout\ : std_logic;
 SIGNAL \ULA1|saida[29]~59_combout\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[30]~32_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[30]~31_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~68_q\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1095_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1094_combout\ : std_logic;
 SIGNAL \ULA1|Add0~118\ : std_logic;
 SIGNAL \ULA1|Add0~121_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~324_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[30]~30_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[30]~29_combout\ : std_logic;
 SIGNAL \ULA1|saida[30]~60_combout\ : std_logic;
 SIGNAL \ULA1|saida[30]~61_combout\ : std_logic;
-SIGNAL \BANCO_REG|saidaA[31]~33_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaA[31]~32_combout\ : std_logic;
 SIGNAL \ULA1|Add0~125_wirecell_combout\ : std_logic;
 SIGNAL \ULA1|saida[31]~62_wirecell_combout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~69_q\ : std_logic;
-SIGNAL \BANCO_REG|registrador~1096_combout\ : std_logic;
+SIGNAL \BANCO_REG|registrador~1095_combout\ : std_logic;
 SIGNAL \ULA1|Add0~122\ : std_logic;
 SIGNAL \ULA1|Add0~125_sumout\ : std_logic;
 SIGNAL \BANCO_REG|registrador~325_q\ : std_logic;
-SIGNAL \BANCO_REG|saidaB[31]~31_combout\ : std_logic;
+SIGNAL \BANCO_REG|saidaB[31]~30_combout\ : std_logic;
 SIGNAL \ULA1|saida[31]~62_combout\ : std_logic;
 SIGNAL \ULA1|saida[31]~63_combout\ : std_logic;
-SIGNAL \ROM1|memROM~5_combout\ : std_logic;
-SIGNAL \somador|Add0~14\ : std_logic;
-SIGNAL \somador|Add0~21_sumout\ : std_logic;
-SIGNAL \somador|Add0~22\ : std_logic;
-SIGNAL \somador|Add0~25_sumout\ : std_logic;
-SIGNAL \somador|Add0~26\ : std_logic;
-SIGNAL \somador|Add0~29_sumout\ : std_logic;
-SIGNAL \somador|Add0~30\ : std_logic;
-SIGNAL \somador|Add0~33_sumout\ : std_logic;
-SIGNAL \somador|Add0~34\ : std_logic;
-SIGNAL \somador|Add0~37_sumout\ : std_logic;
-SIGNAL \somador|Add0~38\ : std_logic;
-SIGNAL \somador|Add0~41_sumout\ : std_logic;
-SIGNAL \somador|Add0~42\ : std_logic;
-SIGNAL \somador|Add0~45_sumout\ : std_logic;
-SIGNAL \somador|Add0~46\ : std_logic;
-SIGNAL \somador|Add0~49_sumout\ : std_logic;
-SIGNAL \somador|Add0~50\ : std_logic;
-SIGNAL \somador|Add0~53_sumout\ : std_logic;
-SIGNAL \somador|Add0~54\ : std_logic;
-SIGNAL \somador|Add0~57_sumout\ : std_logic;
-SIGNAL \somador|Add0~58\ : std_logic;
-SIGNAL \somador|Add0~61_sumout\ : std_logic;
-SIGNAL \somador|Add0~62\ : std_logic;
-SIGNAL \somador|Add0~65_sumout\ : std_logic;
-SIGNAL \somador|Add0~66\ : std_logic;
-SIGNAL \somador|Add0~69_sumout\ : std_logic;
-SIGNAL \somador|Add0~70\ : std_logic;
-SIGNAL \somador|Add0~73_sumout\ : std_logic;
-SIGNAL \somador|Add0~74\ : std_logic;
-SIGNAL \somador|Add0~77_sumout\ : std_logic;
-SIGNAL \somador|Add0~78\ : std_logic;
-SIGNAL \somador|Add0~81_sumout\ : std_logic;
-SIGNAL \somador|Add0~82\ : std_logic;
-SIGNAL \somador|Add0~85_sumout\ : std_logic;
-SIGNAL \somador|Add0~86\ : std_logic;
-SIGNAL \somador|Add0~89_sumout\ : std_logic;
-SIGNAL \somador|Add0~90\ : std_logic;
-SIGNAL \somador|Add0~93_sumout\ : std_logic;
-SIGNAL \somador|Add0~94\ : std_logic;
-SIGNAL \somador|Add0~97_sumout\ : std_logic;
-SIGNAL \somador|Add0~98\ : std_logic;
-SIGNAL \somador|Add0~101_sumout\ : std_logic;
-SIGNAL \somador|Add0~102\ : std_logic;
-SIGNAL \somador|Add0~105_sumout\ : std_logic;
-SIGNAL \somador|Add0~106\ : std_logic;
-SIGNAL \somador|Add0~109_sumout\ : std_logic;
-SIGNAL \somador|Add0~110\ : std_logic;
-SIGNAL \somador|Add0~113_sumout\ : std_logic;
-SIGNAL \REG_PC|DOUT\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \ALT_INV_Ctrl_write~input_o\ : std_logic;
-SIGNAL \ALT_INV_CLOCK_50~input_o\ : std_logic;
-SIGNAL \ALT_INV_Sel_ULA[0]~input_o\ : std_logic;
-SIGNAL \ALT_INV_Sel_ULA[1]~input_o\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_registrador~1096_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_registrador~1095_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_registrador~1094_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_registrador~1093_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_registrador~1092_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_registrador~1091_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_registrador~1090_combout\ : std_logic;
-SIGNAL \REG_PC|ALT_INV_DOUT\ : std_logic_vector(31 DOWNTO 2);
-SIGNAL \ULA1|ALT_INV_saida[31]~62_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[31]~33_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[31]~31_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[30]~60_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[30]~32_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[30]~30_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[29]~58_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[29]~31_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[29]~29_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[28]~56_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[28]~30_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[28]~28_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[27]~54_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[27]~29_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[27]~27_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[26]~52_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[26]~28_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[26]~26_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[25]~50_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[25]~27_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[25]~25_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[24]~48_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[24]~26_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[24]~24_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_registrador~1087_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[23]~46_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[23]~25_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[23]~23_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_registrador~1086_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[22]~44_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[22]~24_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[22]~22_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_registrador~1085_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[21]~42_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[21]~23_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[21]~21_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_registrador~1084_combout\ : std_logic;
+SIGNAL \ROM1|memROM~4_combout\ : std_logic;
+SIGNAL \ROM1|memROM~3_combout\ : std_logic;
+SIGNAL \Somador|Add0~10\ : std_logic;
+SIGNAL \Somador|Add0~21_sumout\ : std_logic;
+SIGNAL \Somador|Add0~22\ : std_logic;
+SIGNAL \Somador|Add0~25_sumout\ : std_logic;
+SIGNAL \Somador|Add0~26\ : std_logic;
+SIGNAL \Somador|Add0~29_sumout\ : std_logic;
+SIGNAL \Somador|Add0~30\ : std_logic;
+SIGNAL \Somador|Add0~33_sumout\ : std_logic;
+SIGNAL \Somador|Add0~34\ : std_logic;
+SIGNAL \Somador|Add0~37_sumout\ : std_logic;
+SIGNAL \Somador|Add0~38\ : std_logic;
+SIGNAL \Somador|Add0~41_sumout\ : std_logic;
+SIGNAL \Somador|Add0~42\ : std_logic;
+SIGNAL \Somador|Add0~45_sumout\ : std_logic;
+SIGNAL \Somador|Add0~46\ : std_logic;
+SIGNAL \Somador|Add0~49_sumout\ : std_logic;
+SIGNAL \Somador|Add0~50\ : std_logic;
+SIGNAL \Somador|Add0~53_sumout\ : std_logic;
+SIGNAL \Somador|Add0~54\ : std_logic;
+SIGNAL \Somador|Add0~57_sumout\ : std_logic;
+SIGNAL \Somador|Add0~58\ : std_logic;
+SIGNAL \Somador|Add0~61_sumout\ : std_logic;
+SIGNAL \Somador|Add0~62\ : std_logic;
+SIGNAL \Somador|Add0~65_sumout\ : std_logic;
+SIGNAL \Somador|Add0~66\ : std_logic;
+SIGNAL \Somador|Add0~69_sumout\ : std_logic;
+SIGNAL \Somador|Add0~70\ : std_logic;
+SIGNAL \Somador|Add0~73_sumout\ : std_logic;
+SIGNAL \Somador|Add0~74\ : std_logic;
+SIGNAL \Somador|Add0~77_sumout\ : std_logic;
+SIGNAL \Somador|Add0~78\ : std_logic;
+SIGNAL \Somador|Add0~81_sumout\ : std_logic;
+SIGNAL \Somador|Add0~82\ : std_logic;
+SIGNAL \Somador|Add0~85_sumout\ : std_logic;
+SIGNAL \Somador|Add0~86\ : std_logic;
+SIGNAL \Somador|Add0~89_sumout\ : std_logic;
+SIGNAL \Somador|Add0~90\ : std_logic;
+SIGNAL \Somador|Add0~93_sumout\ : std_logic;
+SIGNAL \Somador|Add0~94\ : std_logic;
+SIGNAL \Somador|Add0~97_sumout\ : std_logic;
+SIGNAL \Somador|Add0~98\ : std_logic;
+SIGNAL \Somador|Add0~101_sumout\ : std_logic;
+SIGNAL \Somador|Add0~102\ : std_logic;
+SIGNAL \Somador|Add0~105_sumout\ : std_logic;
+SIGNAL \Somador|Add0~106\ : std_logic;
+SIGNAL \Somador|Add0~109_sumout\ : std_logic;
+SIGNAL \Somador|Add0~110\ : std_logic;
+SIGNAL \Somador|Add0~113_sumout\ : std_logic;
+SIGNAL \PC_REG|DOUT\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \ULA1|ALT_INV_saida[2]~4_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[2]~3_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[2]~1_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_registrador~1064_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[1]~2_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[1]~2_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[1]~0_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_registrador~1063_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[0]~0_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[0]~1_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_registrador~1062_combout\ : std_logic;
+SIGNAL \ROM1|ALT_INV_memROM~1_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_Equal0~0_combout\ : std_logic;
+SIGNAL \PC_REG|ALT_INV_DOUT\ : std_logic_vector(31 DOWNTO 2);
+SIGNAL \BANCO_REG|ALT_INV_saidaA[0]~0_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[0]~31_combout\ : std_logic;
 SIGNAL \ULA1|ALT_INV_Add0~125_sumout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~325_q\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~69_q\ : std_logic;
@@ -758,8 +724,8 @@ SIGNAL \ULA1|ALT_INV_Add0~17_sumout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~298_q\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~42_q\ : std_logic;
 SIGNAL \ULA1|ALT_INV_Add0~13_sumout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_registrador~297_q\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~41_q\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_registrador~297_q\ : std_logic;
 SIGNAL \ULA1|ALT_INV_Add0~9_sumout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~296_q\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~40_q\ : std_logic;
@@ -769,96 +735,127 @@ SIGNAL \BANCO_REG|ALT_INV_registrador~39_q\ : std_logic;
 SIGNAL \ULA1|ALT_INV_Add0~1_sumout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~294_q\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~38_q\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[20]~40_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[20]~22_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[20]~20_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[27]~54_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[27]~28_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[27]~26_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[26]~52_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[26]~27_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[26]~25_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_registrador~1088_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[25]~50_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[25]~26_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[25]~24_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_registrador~1087_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[24]~48_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[24]~25_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[24]~23_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_registrador~1086_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[23]~46_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[23]~24_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[23]~22_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_registrador~1085_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[22]~44_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[22]~23_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[22]~21_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_registrador~1084_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[21]~42_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[21]~22_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[21]~20_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1083_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[19]~38_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[19]~21_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[19]~19_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[20]~40_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[20]~21_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[20]~19_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1082_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[18]~36_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[18]~20_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[18]~18_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[19]~38_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[19]~20_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[19]~18_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1081_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[17]~34_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[17]~19_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[17]~17_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[18]~36_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[18]~19_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[18]~17_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1080_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[16]~32_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[16]~18_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[16]~16_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[17]~34_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[17]~18_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[17]~16_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1079_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[15]~30_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[15]~17_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[15]~15_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[16]~32_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[16]~17_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[16]~15_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1078_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[14]~28_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[14]~16_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[14]~14_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[15]~30_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[15]~16_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[15]~14_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1077_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[13]~26_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[13]~15_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[13]~13_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[14]~28_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[14]~15_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[14]~13_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1076_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[12]~24_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[12]~14_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[12]~12_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[13]~26_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[13]~14_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[13]~12_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1075_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[11]~22_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[11]~13_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[11]~11_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[12]~24_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[12]~13_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[12]~11_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1074_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[10]~20_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[10]~12_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[10]~10_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[11]~22_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[11]~12_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[11]~10_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1073_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[9]~18_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[9]~11_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[9]~9_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[10]~20_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[10]~11_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[10]~9_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1072_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[8]~16_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[8]~10_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[8]~8_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[9]~18_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[9]~10_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[9]~8_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1071_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[7]~14_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[7]~9_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[7]~7_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[8]~16_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[8]~9_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[8]~7_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1070_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[6]~12_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[6]~8_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[6]~6_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[7]~14_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[7]~8_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[7]~6_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1069_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[5]~10_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[5]~7_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[5]~5_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[6]~12_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[6]~7_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[6]~5_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1068_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[4]~8_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[4]~6_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[4]~4_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[5]~10_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[5]~6_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[5]~4_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1067_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[3]~6_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[3]~5_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[3]~3_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[4]~8_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[4]~5_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[4]~3_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1066_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[2]~4_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[2]~4_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[2]~2_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[3]~6_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[3]~4_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[3]~2_combout\ : std_logic;
 SIGNAL \BANCO_REG|ALT_INV_registrador~1065_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[1]~2_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[1]~3_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[1]~1_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_registrador~1064_combout\ : std_logic;
-SIGNAL \ULA1|ALT_INV_saida[0]~0_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[0]~2_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[0]~1_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaB[0]~0_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_registrador~1063_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_registrador~1062_combout\ : std_logic;
-SIGNAL \BANCO_REG|ALT_INV_saidaA[1]~0_combout\ : std_logic;
-SIGNAL \ROM1|ALT_INV_memROM~4_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_Equal0~1_combout\ : std_logic;
 SIGNAL \ROM1|ALT_INV_memROM~2_combout\ : std_logic;
-SIGNAL \ROM1|ALT_INV_memROM~0_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_registrador~1095_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_registrador~1094_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_registrador~1093_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_registrador~1092_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_registrador~1091_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[31]~62_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[31]~32_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[31]~30_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[30]~60_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[30]~31_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[30]~29_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[29]~58_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[29]~30_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[29]~28_combout\ : std_logic;
+SIGNAL \ULA1|ALT_INV_saida[28]~56_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaA[28]~29_combout\ : std_logic;
+SIGNAL \BANCO_REG|ALT_INV_saidaB[28]~27_combout\ : std_logic;
+SIGNAL \ALT_INV_Ctrl_write~input_o\ : std_logic;
+SIGNAL \ALT_INV_Sel_ULA[0]~input_o\ : std_logic;
+SIGNAL \ALT_INV_Sel_ULA[1]~input_o\ : std_logic;
 
 BEGIN
 
@@ -877,78 +874,27 @@ PC_OUT <= ww_PC_OUT;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
-\ALT_INV_Ctrl_write~input_o\ <= NOT \Ctrl_write~input_o\;
-\ALT_INV_CLOCK_50~input_o\ <= NOT \CLOCK_50~input_o\;
-\ALT_INV_Sel_ULA[0]~input_o\ <= NOT \Sel_ULA[0]~input_o\;
-\ALT_INV_Sel_ULA[1]~input_o\ <= NOT \Sel_ULA[1]~input_o\;
-\BANCO_REG|ALT_INV_registrador~1096_combout\ <= NOT \BANCO_REG|registrador~1096_combout\;
-\BANCO_REG|ALT_INV_registrador~1095_combout\ <= NOT \BANCO_REG|registrador~1095_combout\;
-\BANCO_REG|ALT_INV_registrador~1094_combout\ <= NOT \BANCO_REG|registrador~1094_combout\;
-\BANCO_REG|ALT_INV_registrador~1093_combout\ <= NOT \BANCO_REG|registrador~1093_combout\;
-\BANCO_REG|ALT_INV_registrador~1092_combout\ <= NOT \BANCO_REG|registrador~1092_combout\;
-\BANCO_REG|ALT_INV_registrador~1091_combout\ <= NOT \BANCO_REG|registrador~1091_combout\;
-\BANCO_REG|ALT_INV_registrador~1090_combout\ <= NOT \BANCO_REG|registrador~1090_combout\;
-\REG_PC|ALT_INV_DOUT\(31) <= NOT \REG_PC|DOUT\(31);
-\REG_PC|ALT_INV_DOUT\(30) <= NOT \REG_PC|DOUT\(30);
-\REG_PC|ALT_INV_DOUT\(29) <= NOT \REG_PC|DOUT\(29);
-\REG_PC|ALT_INV_DOUT\(28) <= NOT \REG_PC|DOUT\(28);
-\REG_PC|ALT_INV_DOUT\(27) <= NOT \REG_PC|DOUT\(27);
-\REG_PC|ALT_INV_DOUT\(26) <= NOT \REG_PC|DOUT\(26);
-\REG_PC|ALT_INV_DOUT\(25) <= NOT \REG_PC|DOUT\(25);
-\REG_PC|ALT_INV_DOUT\(24) <= NOT \REG_PC|DOUT\(24);
-\REG_PC|ALT_INV_DOUT\(23) <= NOT \REG_PC|DOUT\(23);
-\REG_PC|ALT_INV_DOUT\(22) <= NOT \REG_PC|DOUT\(22);
-\REG_PC|ALT_INV_DOUT\(21) <= NOT \REG_PC|DOUT\(21);
-\REG_PC|ALT_INV_DOUT\(20) <= NOT \REG_PC|DOUT\(20);
-\REG_PC|ALT_INV_DOUT\(19) <= NOT \REG_PC|DOUT\(19);
-\REG_PC|ALT_INV_DOUT\(18) <= NOT \REG_PC|DOUT\(18);
-\REG_PC|ALT_INV_DOUT\(17) <= NOT \REG_PC|DOUT\(17);
-\REG_PC|ALT_INV_DOUT\(16) <= NOT \REG_PC|DOUT\(16);
-\REG_PC|ALT_INV_DOUT\(15) <= NOT \REG_PC|DOUT\(15);
-\REG_PC|ALT_INV_DOUT\(14) <= NOT \REG_PC|DOUT\(14);
-\REG_PC|ALT_INV_DOUT\(13) <= NOT \REG_PC|DOUT\(13);
-\REG_PC|ALT_INV_DOUT\(12) <= NOT \REG_PC|DOUT\(12);
-\REG_PC|ALT_INV_DOUT\(11) <= NOT \REG_PC|DOUT\(11);
-\REG_PC|ALT_INV_DOUT\(10) <= NOT \REG_PC|DOUT\(10);
-\REG_PC|ALT_INV_DOUT\(9) <= NOT \REG_PC|DOUT\(9);
-\REG_PC|ALT_INV_DOUT\(8) <= NOT \REG_PC|DOUT\(8);
-\ULA1|ALT_INV_saida[31]~62_combout\ <= NOT \ULA1|saida[31]~62_combout\;
-\BANCO_REG|ALT_INV_saidaA[31]~33_combout\ <= NOT \BANCO_REG|saidaA[31]~33_combout\;
-\BANCO_REG|ALT_INV_saidaB[31]~31_combout\ <= NOT \BANCO_REG|saidaB[31]~31_combout\;
-\ULA1|ALT_INV_saida[30]~60_combout\ <= NOT \ULA1|saida[30]~60_combout\;
-\BANCO_REG|ALT_INV_saidaA[30]~32_combout\ <= NOT \BANCO_REG|saidaA[30]~32_combout\;
-\BANCO_REG|ALT_INV_saidaB[30]~30_combout\ <= NOT \BANCO_REG|saidaB[30]~30_combout\;
-\ULA1|ALT_INV_saida[29]~58_combout\ <= NOT \ULA1|saida[29]~58_combout\;
-\BANCO_REG|ALT_INV_saidaA[29]~31_combout\ <= NOT \BANCO_REG|saidaA[29]~31_combout\;
-\BANCO_REG|ALT_INV_saidaB[29]~29_combout\ <= NOT \BANCO_REG|saidaB[29]~29_combout\;
-\ULA1|ALT_INV_saida[28]~56_combout\ <= NOT \ULA1|saida[28]~56_combout\;
-\BANCO_REG|ALT_INV_saidaA[28]~30_combout\ <= NOT \BANCO_REG|saidaA[28]~30_combout\;
-\BANCO_REG|ALT_INV_saidaB[28]~28_combout\ <= NOT \BANCO_REG|saidaB[28]~28_combout\;
-\ULA1|ALT_INV_saida[27]~54_combout\ <= NOT \ULA1|saida[27]~54_combout\;
-\BANCO_REG|ALT_INV_saidaA[27]~29_combout\ <= NOT \BANCO_REG|saidaA[27]~29_combout\;
-\BANCO_REG|ALT_INV_saidaB[27]~27_combout\ <= NOT \BANCO_REG|saidaB[27]~27_combout\;
-\ULA1|ALT_INV_saida[26]~52_combout\ <= NOT \ULA1|saida[26]~52_combout\;
-\BANCO_REG|ALT_INV_saidaA[26]~28_combout\ <= NOT \BANCO_REG|saidaA[26]~28_combout\;
-\BANCO_REG|ALT_INV_saidaB[26]~26_combout\ <= NOT \BANCO_REG|saidaB[26]~26_combout\;
-\ULA1|ALT_INV_saida[25]~50_combout\ <= NOT \ULA1|saida[25]~50_combout\;
-\BANCO_REG|ALT_INV_saidaA[25]~27_combout\ <= NOT \BANCO_REG|saidaA[25]~27_combout\;
-\BANCO_REG|ALT_INV_saidaB[25]~25_combout\ <= NOT \BANCO_REG|saidaB[25]~25_combout\;
-\ULA1|ALT_INV_saida[24]~48_combout\ <= NOT \ULA1|saida[24]~48_combout\;
-\BANCO_REG|ALT_INV_saidaA[24]~26_combout\ <= NOT \BANCO_REG|saidaA[24]~26_combout\;
-\BANCO_REG|ALT_INV_saidaB[24]~24_combout\ <= NOT \BANCO_REG|saidaB[24]~24_combout\;
-\BANCO_REG|ALT_INV_registrador~1087_combout\ <= NOT \BANCO_REG|registrador~1087_combout\;
-\ULA1|ALT_INV_saida[23]~46_combout\ <= NOT \ULA1|saida[23]~46_combout\;
-\BANCO_REG|ALT_INV_saidaA[23]~25_combout\ <= NOT \BANCO_REG|saidaA[23]~25_combout\;
-\BANCO_REG|ALT_INV_saidaB[23]~23_combout\ <= NOT \BANCO_REG|saidaB[23]~23_combout\;
-\BANCO_REG|ALT_INV_registrador~1086_combout\ <= NOT \BANCO_REG|registrador~1086_combout\;
-\ULA1|ALT_INV_saida[22]~44_combout\ <= NOT \ULA1|saida[22]~44_combout\;
-\BANCO_REG|ALT_INV_saidaA[22]~24_combout\ <= NOT \BANCO_REG|saidaA[22]~24_combout\;
-\BANCO_REG|ALT_INV_saidaB[22]~22_combout\ <= NOT \BANCO_REG|saidaB[22]~22_combout\;
-\BANCO_REG|ALT_INV_registrador~1085_combout\ <= NOT \BANCO_REG|registrador~1085_combout\;
-\ULA1|ALT_INV_saida[21]~42_combout\ <= NOT \ULA1|saida[21]~42_combout\;
-\BANCO_REG|ALT_INV_saidaA[21]~23_combout\ <= NOT \BANCO_REG|saidaA[21]~23_combout\;
-\BANCO_REG|ALT_INV_saidaB[21]~21_combout\ <= NOT \BANCO_REG|saidaB[21]~21_combout\;
-\BANCO_REG|ALT_INV_registrador~1084_combout\ <= NOT \BANCO_REG|registrador~1084_combout\;
+\ULA1|ALT_INV_saida[2]~4_combout\ <= NOT \ULA1|saida[2]~4_combout\;
+\BANCO_REG|ALT_INV_saidaA[2]~3_combout\ <= NOT \BANCO_REG|saidaA[2]~3_combout\;
+\BANCO_REG|ALT_INV_saidaB[2]~1_combout\ <= NOT \BANCO_REG|saidaB[2]~1_combout\;
+\BANCO_REG|ALT_INV_registrador~1064_combout\ <= NOT \BANCO_REG|registrador~1064_combout\;
+\ULA1|ALT_INV_saida[1]~2_combout\ <= NOT \ULA1|saida[1]~2_combout\;
+\BANCO_REG|ALT_INV_saidaA[1]~2_combout\ <= NOT \BANCO_REG|saidaA[1]~2_combout\;
+\BANCO_REG|ALT_INV_saidaB[1]~0_combout\ <= NOT \BANCO_REG|saidaB[1]~0_combout\;
+\BANCO_REG|ALT_INV_registrador~1063_combout\ <= NOT \BANCO_REG|registrador~1063_combout\;
+\ULA1|ALT_INV_saida[0]~0_combout\ <= NOT \ULA1|saida[0]~0_combout\;
+\BANCO_REG|ALT_INV_saidaA[0]~1_combout\ <= NOT \BANCO_REG|saidaA[0]~1_combout\;
+\BANCO_REG|ALT_INV_registrador~1062_combout\ <= NOT \BANCO_REG|registrador~1062_combout\;
+\ROM1|ALT_INV_memROM~1_combout\ <= NOT \ROM1|memROM~1_combout\;
+\BANCO_REG|ALT_INV_Equal0~0_combout\ <= NOT \BANCO_REG|Equal0~0_combout\;
+\PC_REG|ALT_INV_DOUT\(3) <= NOT \PC_REG|DOUT\(3);
+\BANCO_REG|ALT_INV_saidaA[0]~0_combout\ <= NOT \BANCO_REG|saidaA[0]~0_combout\;
+\PC_REG|ALT_INV_DOUT\(6) <= NOT \PC_REG|DOUT\(6);
+\PC_REG|ALT_INV_DOUT\(7) <= NOT \PC_REG|DOUT\(7);
+\PC_REG|ALT_INV_DOUT\(4) <= NOT \PC_REG|DOUT\(4);
+\PC_REG|ALT_INV_DOUT\(5) <= NOT \PC_REG|DOUT\(5);
+\PC_REG|ALT_INV_DOUT\(2) <= NOT \PC_REG|DOUT\(2);
+\BANCO_REG|ALT_INV_saidaB[0]~31_combout\ <= NOT \BANCO_REG|saidaB[0]~31_combout\;
 \ULA1|ALT_INV_Add0~125_sumout\ <= NOT \ULA1|Add0~125_sumout\;
 \BANCO_REG|ALT_INV_registrador~325_q\ <= NOT \BANCO_REG|registrador~325_q\;
 \BANCO_REG|ALT_INV_registrador~69_q\ <= NOT \BANCO_REG|registrador~69_q\;
@@ -1034,8 +980,8 @@ ww_devpor <= devpor;
 \BANCO_REG|ALT_INV_registrador~298_q\ <= NOT \BANCO_REG|registrador~298_q\;
 \BANCO_REG|ALT_INV_registrador~42_q\ <= NOT \BANCO_REG|registrador~42_q\;
 \ULA1|ALT_INV_Add0~13_sumout\ <= NOT \ULA1|Add0~13_sumout\;
-\BANCO_REG|ALT_INV_registrador~297_q\ <= NOT \BANCO_REG|registrador~297_q\;
 \BANCO_REG|ALT_INV_registrador~41_q\ <= NOT \BANCO_REG|registrador~41_q\;
+\BANCO_REG|ALT_INV_registrador~297_q\ <= NOT \BANCO_REG|registrador~297_q\;
 \ULA1|ALT_INV_Add0~9_sumout\ <= NOT \ULA1|Add0~9_sumout\;
 \BANCO_REG|ALT_INV_registrador~296_q\ <= NOT \BANCO_REG|registrador~296_q\;
 \BANCO_REG|ALT_INV_registrador~40_q\ <= NOT \BANCO_REG|registrador~40_q\;
@@ -1045,102 +991,151 @@ ww_devpor <= devpor;
 \ULA1|ALT_INV_Add0~1_sumout\ <= NOT \ULA1|Add0~1_sumout\;
 \BANCO_REG|ALT_INV_registrador~294_q\ <= NOT \BANCO_REG|registrador~294_q\;
 \BANCO_REG|ALT_INV_registrador~38_q\ <= NOT \BANCO_REG|registrador~38_q\;
-\ULA1|ALT_INV_saida[20]~40_combout\ <= NOT \ULA1|saida[20]~40_combout\;
-\BANCO_REG|ALT_INV_saidaA[20]~22_combout\ <= NOT \BANCO_REG|saidaA[20]~22_combout\;
-\BANCO_REG|ALT_INV_saidaB[20]~20_combout\ <= NOT \BANCO_REG|saidaB[20]~20_combout\;
+\ULA1|ALT_INV_saida[27]~54_combout\ <= NOT \ULA1|saida[27]~54_combout\;
+\BANCO_REG|ALT_INV_saidaA[27]~28_combout\ <= NOT \BANCO_REG|saidaA[27]~28_combout\;
+\BANCO_REG|ALT_INV_saidaB[27]~26_combout\ <= NOT \BANCO_REG|saidaB[27]~26_combout\;
+\ULA1|ALT_INV_saida[26]~52_combout\ <= NOT \ULA1|saida[26]~52_combout\;
+\BANCO_REG|ALT_INV_saidaA[26]~27_combout\ <= NOT \BANCO_REG|saidaA[26]~27_combout\;
+\BANCO_REG|ALT_INV_saidaB[26]~25_combout\ <= NOT \BANCO_REG|saidaB[26]~25_combout\;
+\BANCO_REG|ALT_INV_registrador~1088_combout\ <= NOT \BANCO_REG|registrador~1088_combout\;
+\ULA1|ALT_INV_saida[25]~50_combout\ <= NOT \ULA1|saida[25]~50_combout\;
+\BANCO_REG|ALT_INV_saidaA[25]~26_combout\ <= NOT \BANCO_REG|saidaA[25]~26_combout\;
+\BANCO_REG|ALT_INV_saidaB[25]~24_combout\ <= NOT \BANCO_REG|saidaB[25]~24_combout\;
+\BANCO_REG|ALT_INV_registrador~1087_combout\ <= NOT \BANCO_REG|registrador~1087_combout\;
+\ULA1|ALT_INV_saida[24]~48_combout\ <= NOT \ULA1|saida[24]~48_combout\;
+\BANCO_REG|ALT_INV_saidaA[24]~25_combout\ <= NOT \BANCO_REG|saidaA[24]~25_combout\;
+\BANCO_REG|ALT_INV_saidaB[24]~23_combout\ <= NOT \BANCO_REG|saidaB[24]~23_combout\;
+\BANCO_REG|ALT_INV_registrador~1086_combout\ <= NOT \BANCO_REG|registrador~1086_combout\;
+\ULA1|ALT_INV_saida[23]~46_combout\ <= NOT \ULA1|saida[23]~46_combout\;
+\BANCO_REG|ALT_INV_saidaA[23]~24_combout\ <= NOT \BANCO_REG|saidaA[23]~24_combout\;
+\BANCO_REG|ALT_INV_saidaB[23]~22_combout\ <= NOT \BANCO_REG|saidaB[23]~22_combout\;
+\BANCO_REG|ALT_INV_registrador~1085_combout\ <= NOT \BANCO_REG|registrador~1085_combout\;
+\ULA1|ALT_INV_saida[22]~44_combout\ <= NOT \ULA1|saida[22]~44_combout\;
+\BANCO_REG|ALT_INV_saidaA[22]~23_combout\ <= NOT \BANCO_REG|saidaA[22]~23_combout\;
+\BANCO_REG|ALT_INV_saidaB[22]~21_combout\ <= NOT \BANCO_REG|saidaB[22]~21_combout\;
+\BANCO_REG|ALT_INV_registrador~1084_combout\ <= NOT \BANCO_REG|registrador~1084_combout\;
+\ULA1|ALT_INV_saida[21]~42_combout\ <= NOT \ULA1|saida[21]~42_combout\;
+\BANCO_REG|ALT_INV_saidaA[21]~22_combout\ <= NOT \BANCO_REG|saidaA[21]~22_combout\;
+\BANCO_REG|ALT_INV_saidaB[21]~20_combout\ <= NOT \BANCO_REG|saidaB[21]~20_combout\;
 \BANCO_REG|ALT_INV_registrador~1083_combout\ <= NOT \BANCO_REG|registrador~1083_combout\;
-\ULA1|ALT_INV_saida[19]~38_combout\ <= NOT \ULA1|saida[19]~38_combout\;
-\BANCO_REG|ALT_INV_saidaA[19]~21_combout\ <= NOT \BANCO_REG|saidaA[19]~21_combout\;
-\BANCO_REG|ALT_INV_saidaB[19]~19_combout\ <= NOT \BANCO_REG|saidaB[19]~19_combout\;
+\ULA1|ALT_INV_saida[20]~40_combout\ <= NOT \ULA1|saida[20]~40_combout\;
+\BANCO_REG|ALT_INV_saidaA[20]~21_combout\ <= NOT \BANCO_REG|saidaA[20]~21_combout\;
+\BANCO_REG|ALT_INV_saidaB[20]~19_combout\ <= NOT \BANCO_REG|saidaB[20]~19_combout\;
 \BANCO_REG|ALT_INV_registrador~1082_combout\ <= NOT \BANCO_REG|registrador~1082_combout\;
-\ULA1|ALT_INV_saida[18]~36_combout\ <= NOT \ULA1|saida[18]~36_combout\;
-\BANCO_REG|ALT_INV_saidaA[18]~20_combout\ <= NOT \BANCO_REG|saidaA[18]~20_combout\;
-\BANCO_REG|ALT_INV_saidaB[18]~18_combout\ <= NOT \BANCO_REG|saidaB[18]~18_combout\;
+\ULA1|ALT_INV_saida[19]~38_combout\ <= NOT \ULA1|saida[19]~38_combout\;
+\BANCO_REG|ALT_INV_saidaA[19]~20_combout\ <= NOT \BANCO_REG|saidaA[19]~20_combout\;
+\BANCO_REG|ALT_INV_saidaB[19]~18_combout\ <= NOT \BANCO_REG|saidaB[19]~18_combout\;
 \BANCO_REG|ALT_INV_registrador~1081_combout\ <= NOT \BANCO_REG|registrador~1081_combout\;
-\ULA1|ALT_INV_saida[17]~34_combout\ <= NOT \ULA1|saida[17]~34_combout\;
-\BANCO_REG|ALT_INV_saidaA[17]~19_combout\ <= NOT \BANCO_REG|saidaA[17]~19_combout\;
-\BANCO_REG|ALT_INV_saidaB[17]~17_combout\ <= NOT \BANCO_REG|saidaB[17]~17_combout\;
+\ULA1|ALT_INV_saida[18]~36_combout\ <= NOT \ULA1|saida[18]~36_combout\;
+\BANCO_REG|ALT_INV_saidaA[18]~19_combout\ <= NOT \BANCO_REG|saidaA[18]~19_combout\;
+\BANCO_REG|ALT_INV_saidaB[18]~17_combout\ <= NOT \BANCO_REG|saidaB[18]~17_combout\;
 \BANCO_REG|ALT_INV_registrador~1080_combout\ <= NOT \BANCO_REG|registrador~1080_combout\;
-\ULA1|ALT_INV_saida[16]~32_combout\ <= NOT \ULA1|saida[16]~32_combout\;
-\BANCO_REG|ALT_INV_saidaA[16]~18_combout\ <= NOT \BANCO_REG|saidaA[16]~18_combout\;
-\BANCO_REG|ALT_INV_saidaB[16]~16_combout\ <= NOT \BANCO_REG|saidaB[16]~16_combout\;
+\ULA1|ALT_INV_saida[17]~34_combout\ <= NOT \ULA1|saida[17]~34_combout\;
+\BANCO_REG|ALT_INV_saidaA[17]~18_combout\ <= NOT \BANCO_REG|saidaA[17]~18_combout\;
+\BANCO_REG|ALT_INV_saidaB[17]~16_combout\ <= NOT \BANCO_REG|saidaB[17]~16_combout\;
 \BANCO_REG|ALT_INV_registrador~1079_combout\ <= NOT \BANCO_REG|registrador~1079_combout\;
-\ULA1|ALT_INV_saida[15]~30_combout\ <= NOT \ULA1|saida[15]~30_combout\;
-\BANCO_REG|ALT_INV_saidaA[15]~17_combout\ <= NOT \BANCO_REG|saidaA[15]~17_combout\;
-\BANCO_REG|ALT_INV_saidaB[15]~15_combout\ <= NOT \BANCO_REG|saidaB[15]~15_combout\;
+\ULA1|ALT_INV_saida[16]~32_combout\ <= NOT \ULA1|saida[16]~32_combout\;
+\BANCO_REG|ALT_INV_saidaA[16]~17_combout\ <= NOT \BANCO_REG|saidaA[16]~17_combout\;
+\BANCO_REG|ALT_INV_saidaB[16]~15_combout\ <= NOT \BANCO_REG|saidaB[16]~15_combout\;
 \BANCO_REG|ALT_INV_registrador~1078_combout\ <= NOT \BANCO_REG|registrador~1078_combout\;
-\ULA1|ALT_INV_saida[14]~28_combout\ <= NOT \ULA1|saida[14]~28_combout\;
-\BANCO_REG|ALT_INV_saidaA[14]~16_combout\ <= NOT \BANCO_REG|saidaA[14]~16_combout\;
-\BANCO_REG|ALT_INV_saidaB[14]~14_combout\ <= NOT \BANCO_REG|saidaB[14]~14_combout\;
+\ULA1|ALT_INV_saida[15]~30_combout\ <= NOT \ULA1|saida[15]~30_combout\;
+\BANCO_REG|ALT_INV_saidaA[15]~16_combout\ <= NOT \BANCO_REG|saidaA[15]~16_combout\;
+\BANCO_REG|ALT_INV_saidaB[15]~14_combout\ <= NOT \BANCO_REG|saidaB[15]~14_combout\;
 \BANCO_REG|ALT_INV_registrador~1077_combout\ <= NOT \BANCO_REG|registrador~1077_combout\;
-\ULA1|ALT_INV_saida[13]~26_combout\ <= NOT \ULA1|saida[13]~26_combout\;
-\BANCO_REG|ALT_INV_saidaA[13]~15_combout\ <= NOT \BANCO_REG|saidaA[13]~15_combout\;
-\BANCO_REG|ALT_INV_saidaB[13]~13_combout\ <= NOT \BANCO_REG|saidaB[13]~13_combout\;
+\ULA1|ALT_INV_saida[14]~28_combout\ <= NOT \ULA1|saida[14]~28_combout\;
+\BANCO_REG|ALT_INV_saidaA[14]~15_combout\ <= NOT \BANCO_REG|saidaA[14]~15_combout\;
+\BANCO_REG|ALT_INV_saidaB[14]~13_combout\ <= NOT \BANCO_REG|saidaB[14]~13_combout\;
 \BANCO_REG|ALT_INV_registrador~1076_combout\ <= NOT \BANCO_REG|registrador~1076_combout\;
-\ULA1|ALT_INV_saida[12]~24_combout\ <= NOT \ULA1|saida[12]~24_combout\;
-\BANCO_REG|ALT_INV_saidaA[12]~14_combout\ <= NOT \BANCO_REG|saidaA[12]~14_combout\;
-\BANCO_REG|ALT_INV_saidaB[12]~12_combout\ <= NOT \BANCO_REG|saidaB[12]~12_combout\;
+\ULA1|ALT_INV_saida[13]~26_combout\ <= NOT \ULA1|saida[13]~26_combout\;
+\BANCO_REG|ALT_INV_saidaA[13]~14_combout\ <= NOT \BANCO_REG|saidaA[13]~14_combout\;
+\BANCO_REG|ALT_INV_saidaB[13]~12_combout\ <= NOT \BANCO_REG|saidaB[13]~12_combout\;
 \BANCO_REG|ALT_INV_registrador~1075_combout\ <= NOT \BANCO_REG|registrador~1075_combout\;
-\ULA1|ALT_INV_saida[11]~22_combout\ <= NOT \ULA1|saida[11]~22_combout\;
-\BANCO_REG|ALT_INV_saidaA[11]~13_combout\ <= NOT \BANCO_REG|saidaA[11]~13_combout\;
-\BANCO_REG|ALT_INV_saidaB[11]~11_combout\ <= NOT \BANCO_REG|saidaB[11]~11_combout\;
+\ULA1|ALT_INV_saida[12]~24_combout\ <= NOT \ULA1|saida[12]~24_combout\;
+\BANCO_REG|ALT_INV_saidaA[12]~13_combout\ <= NOT \BANCO_REG|saidaA[12]~13_combout\;
+\BANCO_REG|ALT_INV_saidaB[12]~11_combout\ <= NOT \BANCO_REG|saidaB[12]~11_combout\;
 \BANCO_REG|ALT_INV_registrador~1074_combout\ <= NOT \BANCO_REG|registrador~1074_combout\;
-\ULA1|ALT_INV_saida[10]~20_combout\ <= NOT \ULA1|saida[10]~20_combout\;
-\BANCO_REG|ALT_INV_saidaA[10]~12_combout\ <= NOT \BANCO_REG|saidaA[10]~12_combout\;
-\BANCO_REG|ALT_INV_saidaB[10]~10_combout\ <= NOT \BANCO_REG|saidaB[10]~10_combout\;
+\ULA1|ALT_INV_saida[11]~22_combout\ <= NOT \ULA1|saida[11]~22_combout\;
+\BANCO_REG|ALT_INV_saidaA[11]~12_combout\ <= NOT \BANCO_REG|saidaA[11]~12_combout\;
+\BANCO_REG|ALT_INV_saidaB[11]~10_combout\ <= NOT \BANCO_REG|saidaB[11]~10_combout\;
 \BANCO_REG|ALT_INV_registrador~1073_combout\ <= NOT \BANCO_REG|registrador~1073_combout\;
-\ULA1|ALT_INV_saida[9]~18_combout\ <= NOT \ULA1|saida[9]~18_combout\;
-\BANCO_REG|ALT_INV_saidaA[9]~11_combout\ <= NOT \BANCO_REG|saidaA[9]~11_combout\;
-\BANCO_REG|ALT_INV_saidaB[9]~9_combout\ <= NOT \BANCO_REG|saidaB[9]~9_combout\;
+\ULA1|ALT_INV_saida[10]~20_combout\ <= NOT \ULA1|saida[10]~20_combout\;
+\BANCO_REG|ALT_INV_saidaA[10]~11_combout\ <= NOT \BANCO_REG|saidaA[10]~11_combout\;
+\BANCO_REG|ALT_INV_saidaB[10]~9_combout\ <= NOT \BANCO_REG|saidaB[10]~9_combout\;
 \BANCO_REG|ALT_INV_registrador~1072_combout\ <= NOT \BANCO_REG|registrador~1072_combout\;
-\ULA1|ALT_INV_saida[8]~16_combout\ <= NOT \ULA1|saida[8]~16_combout\;
-\BANCO_REG|ALT_INV_saidaA[8]~10_combout\ <= NOT \BANCO_REG|saidaA[8]~10_combout\;
-\BANCO_REG|ALT_INV_saidaB[8]~8_combout\ <= NOT \BANCO_REG|saidaB[8]~8_combout\;
+\ULA1|ALT_INV_saida[9]~18_combout\ <= NOT \ULA1|saida[9]~18_combout\;
+\BANCO_REG|ALT_INV_saidaA[9]~10_combout\ <= NOT \BANCO_REG|saidaA[9]~10_combout\;
+\BANCO_REG|ALT_INV_saidaB[9]~8_combout\ <= NOT \BANCO_REG|saidaB[9]~8_combout\;
 \BANCO_REG|ALT_INV_registrador~1071_combout\ <= NOT \BANCO_REG|registrador~1071_combout\;
-\ULA1|ALT_INV_saida[7]~14_combout\ <= NOT \ULA1|saida[7]~14_combout\;
-\BANCO_REG|ALT_INV_saidaA[7]~9_combout\ <= NOT \BANCO_REG|saidaA[7]~9_combout\;
-\BANCO_REG|ALT_INV_saidaB[7]~7_combout\ <= NOT \BANCO_REG|saidaB[7]~7_combout\;
+\ULA1|ALT_INV_saida[8]~16_combout\ <= NOT \ULA1|saida[8]~16_combout\;
+\BANCO_REG|ALT_INV_saidaA[8]~9_combout\ <= NOT \BANCO_REG|saidaA[8]~9_combout\;
+\BANCO_REG|ALT_INV_saidaB[8]~7_combout\ <= NOT \BANCO_REG|saidaB[8]~7_combout\;
 \BANCO_REG|ALT_INV_registrador~1070_combout\ <= NOT \BANCO_REG|registrador~1070_combout\;
-\ULA1|ALT_INV_saida[6]~12_combout\ <= NOT \ULA1|saida[6]~12_combout\;
-\BANCO_REG|ALT_INV_saidaA[6]~8_combout\ <= NOT \BANCO_REG|saidaA[6]~8_combout\;
-\BANCO_REG|ALT_INV_saidaB[6]~6_combout\ <= NOT \BANCO_REG|saidaB[6]~6_combout\;
+\ULA1|ALT_INV_saida[7]~14_combout\ <= NOT \ULA1|saida[7]~14_combout\;
+\BANCO_REG|ALT_INV_saidaA[7]~8_combout\ <= NOT \BANCO_REG|saidaA[7]~8_combout\;
+\BANCO_REG|ALT_INV_saidaB[7]~6_combout\ <= NOT \BANCO_REG|saidaB[7]~6_combout\;
 \BANCO_REG|ALT_INV_registrador~1069_combout\ <= NOT \BANCO_REG|registrador~1069_combout\;
-\ULA1|ALT_INV_saida[5]~10_combout\ <= NOT \ULA1|saida[5]~10_combout\;
-\BANCO_REG|ALT_INV_saidaA[5]~7_combout\ <= NOT \BANCO_REG|saidaA[5]~7_combout\;
-\BANCO_REG|ALT_INV_saidaB[5]~5_combout\ <= NOT \BANCO_REG|saidaB[5]~5_combout\;
+\ULA1|ALT_INV_saida[6]~12_combout\ <= NOT \ULA1|saida[6]~12_combout\;
+\BANCO_REG|ALT_INV_saidaA[6]~7_combout\ <= NOT \BANCO_REG|saidaA[6]~7_combout\;
+\BANCO_REG|ALT_INV_saidaB[6]~5_combout\ <= NOT \BANCO_REG|saidaB[6]~5_combout\;
 \BANCO_REG|ALT_INV_registrador~1068_combout\ <= NOT \BANCO_REG|registrador~1068_combout\;
-\ULA1|ALT_INV_saida[4]~8_combout\ <= NOT \ULA1|saida[4]~8_combout\;
-\BANCO_REG|ALT_INV_saidaA[4]~6_combout\ <= NOT \BANCO_REG|saidaA[4]~6_combout\;
-\BANCO_REG|ALT_INV_saidaB[4]~4_combout\ <= NOT \BANCO_REG|saidaB[4]~4_combout\;
+\ULA1|ALT_INV_saida[5]~10_combout\ <= NOT \ULA1|saida[5]~10_combout\;
+\BANCO_REG|ALT_INV_saidaA[5]~6_combout\ <= NOT \BANCO_REG|saidaA[5]~6_combout\;
+\BANCO_REG|ALT_INV_saidaB[5]~4_combout\ <= NOT \BANCO_REG|saidaB[5]~4_combout\;
 \BANCO_REG|ALT_INV_registrador~1067_combout\ <= NOT \BANCO_REG|registrador~1067_combout\;
-\ULA1|ALT_INV_saida[3]~6_combout\ <= NOT \ULA1|saida[3]~6_combout\;
-\BANCO_REG|ALT_INV_saidaA[3]~5_combout\ <= NOT \BANCO_REG|saidaA[3]~5_combout\;
-\BANCO_REG|ALT_INV_saidaB[3]~3_combout\ <= NOT \BANCO_REG|saidaB[3]~3_combout\;
+\ULA1|ALT_INV_saida[4]~8_combout\ <= NOT \ULA1|saida[4]~8_combout\;
+\BANCO_REG|ALT_INV_saidaA[4]~5_combout\ <= NOT \BANCO_REG|saidaA[4]~5_combout\;
+\BANCO_REG|ALT_INV_saidaB[4]~3_combout\ <= NOT \BANCO_REG|saidaB[4]~3_combout\;
 \BANCO_REG|ALT_INV_registrador~1066_combout\ <= NOT \BANCO_REG|registrador~1066_combout\;
-\ULA1|ALT_INV_saida[2]~4_combout\ <= NOT \ULA1|saida[2]~4_combout\;
-\BANCO_REG|ALT_INV_saidaA[2]~4_combout\ <= NOT \BANCO_REG|saidaA[2]~4_combout\;
-\BANCO_REG|ALT_INV_saidaB[2]~2_combout\ <= NOT \BANCO_REG|saidaB[2]~2_combout\;
+\ULA1|ALT_INV_saida[3]~6_combout\ <= NOT \ULA1|saida[3]~6_combout\;
+\BANCO_REG|ALT_INV_saidaA[3]~4_combout\ <= NOT \BANCO_REG|saidaA[3]~4_combout\;
+\BANCO_REG|ALT_INV_saidaB[3]~2_combout\ <= NOT \BANCO_REG|saidaB[3]~2_combout\;
 \BANCO_REG|ALT_INV_registrador~1065_combout\ <= NOT \BANCO_REG|registrador~1065_combout\;
-\ULA1|ALT_INV_saida[1]~2_combout\ <= NOT \ULA1|saida[1]~2_combout\;
-\BANCO_REG|ALT_INV_saidaA[1]~3_combout\ <= NOT \BANCO_REG|saidaA[1]~3_combout\;
-\BANCO_REG|ALT_INV_saidaB[1]~1_combout\ <= NOT \BANCO_REG|saidaB[1]~1_combout\;
-\BANCO_REG|ALT_INV_registrador~1064_combout\ <= NOT \BANCO_REG|registrador~1064_combout\;
-\ULA1|ALT_INV_saida[0]~0_combout\ <= NOT \ULA1|saida[0]~0_combout\;
-\BANCO_REG|ALT_INV_saidaA[0]~2_combout\ <= NOT \BANCO_REG|saidaA[0]~2_combout\;
-\BANCO_REG|ALT_INV_saidaA[0]~1_combout\ <= NOT \BANCO_REG|saidaA[0]~1_combout\;
-\BANCO_REG|ALT_INV_saidaB[0]~0_combout\ <= NOT \BANCO_REG|saidaB[0]~0_combout\;
-\BANCO_REG|ALT_INV_registrador~1063_combout\ <= NOT \BANCO_REG|registrador~1063_combout\;
-\BANCO_REG|ALT_INV_registrador~1062_combout\ <= NOT \BANCO_REG|registrador~1062_combout\;
-\BANCO_REG|ALT_INV_saidaA[1]~0_combout\ <= NOT \BANCO_REG|saidaA[1]~0_combout\;
-\ROM1|ALT_INV_memROM~4_combout\ <= NOT \ROM1|memROM~4_combout\;
+\BANCO_REG|ALT_INV_Equal0~1_combout\ <= NOT \BANCO_REG|Equal0~1_combout\;
 \ROM1|ALT_INV_memROM~2_combout\ <= NOT \ROM1|memROM~2_combout\;
-\ROM1|ALT_INV_memROM~0_combout\ <= NOT \ROM1|memROM~0_combout\;
-\REG_PC|ALT_INV_DOUT\(6) <= NOT \REG_PC|DOUT\(6);
-\REG_PC|ALT_INV_DOUT\(7) <= NOT \REG_PC|DOUT\(7);
-\REG_PC|ALT_INV_DOUT\(4) <= NOT \REG_PC|DOUT\(4);
-\REG_PC|ALT_INV_DOUT\(5) <= NOT \REG_PC|DOUT\(5);
-\REG_PC|ALT_INV_DOUT\(2) <= NOT \REG_PC|DOUT\(2);
-\REG_PC|ALT_INV_DOUT\(3) <= NOT \REG_PC|DOUT\(3);
+\BANCO_REG|ALT_INV_registrador~1095_combout\ <= NOT \BANCO_REG|registrador~1095_combout\;
+\BANCO_REG|ALT_INV_registrador~1094_combout\ <= NOT \BANCO_REG|registrador~1094_combout\;
+\BANCO_REG|ALT_INV_registrador~1093_combout\ <= NOT \BANCO_REG|registrador~1093_combout\;
+\BANCO_REG|ALT_INV_registrador~1092_combout\ <= NOT \BANCO_REG|registrador~1092_combout\;
+\BANCO_REG|ALT_INV_registrador~1091_combout\ <= NOT \BANCO_REG|registrador~1091_combout\;
+\PC_REG|ALT_INV_DOUT\(31) <= NOT \PC_REG|DOUT\(31);
+\PC_REG|ALT_INV_DOUT\(30) <= NOT \PC_REG|DOUT\(30);
+\PC_REG|ALT_INV_DOUT\(29) <= NOT \PC_REG|DOUT\(29);
+\PC_REG|ALT_INV_DOUT\(28) <= NOT \PC_REG|DOUT\(28);
+\PC_REG|ALT_INV_DOUT\(27) <= NOT \PC_REG|DOUT\(27);
+\PC_REG|ALT_INV_DOUT\(26) <= NOT \PC_REG|DOUT\(26);
+\PC_REG|ALT_INV_DOUT\(25) <= NOT \PC_REG|DOUT\(25);
+\PC_REG|ALT_INV_DOUT\(24) <= NOT \PC_REG|DOUT\(24);
+\PC_REG|ALT_INV_DOUT\(23) <= NOT \PC_REG|DOUT\(23);
+\PC_REG|ALT_INV_DOUT\(22) <= NOT \PC_REG|DOUT\(22);
+\PC_REG|ALT_INV_DOUT\(21) <= NOT \PC_REG|DOUT\(21);
+\PC_REG|ALT_INV_DOUT\(20) <= NOT \PC_REG|DOUT\(20);
+\PC_REG|ALT_INV_DOUT\(19) <= NOT \PC_REG|DOUT\(19);
+\PC_REG|ALT_INV_DOUT\(18) <= NOT \PC_REG|DOUT\(18);
+\PC_REG|ALT_INV_DOUT\(17) <= NOT \PC_REG|DOUT\(17);
+\PC_REG|ALT_INV_DOUT\(16) <= NOT \PC_REG|DOUT\(16);
+\PC_REG|ALT_INV_DOUT\(15) <= NOT \PC_REG|DOUT\(15);
+\PC_REG|ALT_INV_DOUT\(14) <= NOT \PC_REG|DOUT\(14);
+\PC_REG|ALT_INV_DOUT\(13) <= NOT \PC_REG|DOUT\(13);
+\PC_REG|ALT_INV_DOUT\(12) <= NOT \PC_REG|DOUT\(12);
+\PC_REG|ALT_INV_DOUT\(11) <= NOT \PC_REG|DOUT\(11);
+\PC_REG|ALT_INV_DOUT\(10) <= NOT \PC_REG|DOUT\(10);
+\PC_REG|ALT_INV_DOUT\(9) <= NOT \PC_REG|DOUT\(9);
+\PC_REG|ALT_INV_DOUT\(8) <= NOT \PC_REG|DOUT\(8);
+\ULA1|ALT_INV_saida[31]~62_combout\ <= NOT \ULA1|saida[31]~62_combout\;
+\BANCO_REG|ALT_INV_saidaA[31]~32_combout\ <= NOT \BANCO_REG|saidaA[31]~32_combout\;
+\BANCO_REG|ALT_INV_saidaB[31]~30_combout\ <= NOT \BANCO_REG|saidaB[31]~30_combout\;
+\ULA1|ALT_INV_saida[30]~60_combout\ <= NOT \ULA1|saida[30]~60_combout\;
+\BANCO_REG|ALT_INV_saidaA[30]~31_combout\ <= NOT \BANCO_REG|saidaA[30]~31_combout\;
+\BANCO_REG|ALT_INV_saidaB[30]~29_combout\ <= NOT \BANCO_REG|saidaB[30]~29_combout\;
+\ULA1|ALT_INV_saida[29]~58_combout\ <= NOT \ULA1|saida[29]~58_combout\;
+\BANCO_REG|ALT_INV_saidaA[29]~30_combout\ <= NOT \BANCO_REG|saidaA[29]~30_combout\;
+\BANCO_REG|ALT_INV_saidaB[29]~28_combout\ <= NOT \BANCO_REG|saidaB[29]~28_combout\;
+\ULA1|ALT_INV_saida[28]~56_combout\ <= NOT \ULA1|saida[28]~56_combout\;
+\BANCO_REG|ALT_INV_saidaA[28]~29_combout\ <= NOT \BANCO_REG|saidaA[28]~29_combout\;
+\BANCO_REG|ALT_INV_saidaB[28]~27_combout\ <= NOT \BANCO_REG|saidaB[28]~27_combout\;
+\ALT_INV_Ctrl_write~input_o\ <= NOT \Ctrl_write~input_o\;
+\ALT_INV_Sel_ULA[0]~input_o\ <= NOT \Sel_ULA[0]~input_o\;
+\ALT_INV_Sel_ULA[1]~input_o\ <= NOT \Sel_ULA[1]~input_o\;
 
 \Instru_opcode[0]~output\ : cyclonev_io_obuf
 -- pragma translate_off
@@ -1222,7 +1217,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \ROM1|memROM~0_combout\,
 	devoe => ww_devoe,
 	o => \Funct[0]~output_o\);
 
@@ -1234,7 +1229,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \ROM1|memROM~1_combout\,
+	i => \ROM1|memROM~0_combout\,
 	devoe => ww_devoe,
 	o => \Funct[1]~output_o\);
 
@@ -1246,7 +1241,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \ROM1|memROM~3_combout\,
+	i => \ROM1|memROM~0_combout\,
 	devoe => ww_devoe,
 	o => \Funct[2]~output_o\);
 
@@ -1282,7 +1277,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[1]~0_combout\,
+	i => \BANCO_REG|saidaA[0]~0_combout\,
 	devoe => ww_devoe,
 	o => \Funct[5]~output_o\);
 
@@ -1678,7 +1673,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[0]~2_combout\,
+	i => \BANCO_REG|saidaA[0]~1_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[0]~output_o\);
 
@@ -1690,7 +1685,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[1]~3_combout\,
+	i => \BANCO_REG|saidaA[1]~2_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[1]~output_o\);
 
@@ -1702,7 +1697,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[2]~4_combout\,
+	i => \BANCO_REG|saidaA[2]~3_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[2]~output_o\);
 
@@ -1714,7 +1709,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[3]~5_combout\,
+	i => \BANCO_REG|saidaA[3]~4_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[3]~output_o\);
 
@@ -1726,7 +1721,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[4]~6_combout\,
+	i => \BANCO_REG|saidaA[4]~5_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[4]~output_o\);
 
@@ -1738,7 +1733,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[5]~7_combout\,
+	i => \BANCO_REG|saidaA[5]~6_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[5]~output_o\);
 
@@ -1750,7 +1745,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[6]~8_combout\,
+	i => \BANCO_REG|saidaA[6]~7_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[6]~output_o\);
 
@@ -1762,7 +1757,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[7]~9_combout\,
+	i => \BANCO_REG|saidaA[7]~8_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[7]~output_o\);
 
@@ -1774,7 +1769,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[8]~10_combout\,
+	i => \BANCO_REG|saidaA[8]~9_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[8]~output_o\);
 
@@ -1786,7 +1781,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[9]~11_combout\,
+	i => \BANCO_REG|saidaA[9]~10_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[9]~output_o\);
 
@@ -1798,7 +1793,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[10]~12_combout\,
+	i => \BANCO_REG|saidaA[10]~11_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[10]~output_o\);
 
@@ -1810,7 +1805,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[11]~13_combout\,
+	i => \BANCO_REG|saidaA[11]~12_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[11]~output_o\);
 
@@ -1822,7 +1817,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[12]~14_combout\,
+	i => \BANCO_REG|saidaA[12]~13_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[12]~output_o\);
 
@@ -1834,7 +1829,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[13]~15_combout\,
+	i => \BANCO_REG|saidaA[13]~14_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[13]~output_o\);
 
@@ -1846,7 +1841,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[14]~16_combout\,
+	i => \BANCO_REG|saidaA[14]~15_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[14]~output_o\);
 
@@ -1858,7 +1853,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[15]~17_combout\,
+	i => \BANCO_REG|saidaA[15]~16_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[15]~output_o\);
 
@@ -1870,7 +1865,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[16]~18_combout\,
+	i => \BANCO_REG|saidaA[16]~17_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[16]~output_o\);
 
@@ -1882,7 +1877,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[17]~19_combout\,
+	i => \BANCO_REG|saidaA[17]~18_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[17]~output_o\);
 
@@ -1894,7 +1889,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[18]~20_combout\,
+	i => \BANCO_REG|saidaA[18]~19_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[18]~output_o\);
 
@@ -1906,7 +1901,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[19]~21_combout\,
+	i => \BANCO_REG|saidaA[19]~20_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[19]~output_o\);
 
@@ -1918,7 +1913,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[20]~22_combout\,
+	i => \BANCO_REG|saidaA[20]~21_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[20]~output_o\);
 
@@ -1930,7 +1925,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[21]~23_combout\,
+	i => \BANCO_REG|saidaA[21]~22_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[21]~output_o\);
 
@@ -1942,7 +1937,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[22]~24_combout\,
+	i => \BANCO_REG|saidaA[22]~23_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[22]~output_o\);
 
@@ -1954,7 +1949,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[23]~25_combout\,
+	i => \BANCO_REG|saidaA[23]~24_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[23]~output_o\);
 
@@ -1966,7 +1961,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[24]~26_combout\,
+	i => \BANCO_REG|saidaA[24]~25_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[24]~output_o\);
 
@@ -1978,7 +1973,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[25]~27_combout\,
+	i => \BANCO_REG|saidaA[25]~26_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[25]~output_o\);
 
@@ -1990,7 +1985,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[26]~28_combout\,
+	i => \BANCO_REG|saidaA[26]~27_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[26]~output_o\);
 
@@ -2002,7 +1997,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[27]~29_combout\,
+	i => \BANCO_REG|saidaA[27]~28_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[27]~output_o\);
 
@@ -2014,7 +2009,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[28]~30_combout\,
+	i => \BANCO_REG|saidaA[28]~29_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[28]~output_o\);
 
@@ -2026,7 +2021,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[29]~31_combout\,
+	i => \BANCO_REG|saidaA[29]~30_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[29]~output_o\);
 
@@ -2038,7 +2033,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[30]~32_combout\,
+	i => \BANCO_REG|saidaA[30]~31_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[30]~output_o\);
 
@@ -2050,7 +2045,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[31]~33_combout\,
+	i => \BANCO_REG|saidaA[31]~32_combout\,
 	devoe => ww_devoe,
 	o => \RS_OUT[31]~output_o\);
 
@@ -2062,7 +2057,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[0]~0_combout\,
+	i => \BANCO_REG|saidaB[0]~31_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[0]~output_o\);
 
@@ -2074,7 +2069,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[1]~1_combout\,
+	i => \BANCO_REG|saidaB[1]~0_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[1]~output_o\);
 
@@ -2086,7 +2081,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[2]~2_combout\,
+	i => \BANCO_REG|saidaB[2]~1_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[2]~output_o\);
 
@@ -2098,7 +2093,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[3]~3_combout\,
+	i => \BANCO_REG|saidaB[3]~2_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[3]~output_o\);
 
@@ -2110,7 +2105,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[4]~4_combout\,
+	i => \BANCO_REG|saidaB[4]~3_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[4]~output_o\);
 
@@ -2122,7 +2117,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[5]~5_combout\,
+	i => \BANCO_REG|saidaB[5]~4_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[5]~output_o\);
 
@@ -2134,7 +2129,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[6]~6_combout\,
+	i => \BANCO_REG|saidaB[6]~5_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[6]~output_o\);
 
@@ -2146,7 +2141,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[7]~7_combout\,
+	i => \BANCO_REG|saidaB[7]~6_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[7]~output_o\);
 
@@ -2158,7 +2153,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[8]~8_combout\,
+	i => \BANCO_REG|saidaB[8]~7_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[8]~output_o\);
 
@@ -2170,7 +2165,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[9]~9_combout\,
+	i => \BANCO_REG|saidaB[9]~8_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[9]~output_o\);
 
@@ -2182,7 +2177,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[10]~10_combout\,
+	i => \BANCO_REG|saidaB[10]~9_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[10]~output_o\);
 
@@ -2194,7 +2189,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[11]~11_combout\,
+	i => \BANCO_REG|saidaB[11]~10_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[11]~output_o\);
 
@@ -2206,7 +2201,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[12]~12_combout\,
+	i => \BANCO_REG|saidaB[12]~11_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[12]~output_o\);
 
@@ -2218,7 +2213,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[13]~13_combout\,
+	i => \BANCO_REG|saidaB[13]~12_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[13]~output_o\);
 
@@ -2230,7 +2225,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[14]~14_combout\,
+	i => \BANCO_REG|saidaB[14]~13_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[14]~output_o\);
 
@@ -2242,7 +2237,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[15]~15_combout\,
+	i => \BANCO_REG|saidaB[15]~14_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[15]~output_o\);
 
@@ -2254,7 +2249,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[16]~16_combout\,
+	i => \BANCO_REG|saidaB[16]~15_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[16]~output_o\);
 
@@ -2266,7 +2261,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[17]~17_combout\,
+	i => \BANCO_REG|saidaB[17]~16_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[17]~output_o\);
 
@@ -2278,7 +2273,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[18]~18_combout\,
+	i => \BANCO_REG|saidaB[18]~17_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[18]~output_o\);
 
@@ -2290,7 +2285,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[19]~19_combout\,
+	i => \BANCO_REG|saidaB[19]~18_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[19]~output_o\);
 
@@ -2302,7 +2297,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[20]~20_combout\,
+	i => \BANCO_REG|saidaB[20]~19_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[20]~output_o\);
 
@@ -2314,7 +2309,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[21]~21_combout\,
+	i => \BANCO_REG|saidaB[21]~20_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[21]~output_o\);
 
@@ -2326,7 +2321,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[22]~22_combout\,
+	i => \BANCO_REG|saidaB[22]~21_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[22]~output_o\);
 
@@ -2338,7 +2333,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[23]~23_combout\,
+	i => \BANCO_REG|saidaB[23]~22_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[23]~output_o\);
 
@@ -2350,7 +2345,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[24]~24_combout\,
+	i => \BANCO_REG|saidaB[24]~23_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[24]~output_o\);
 
@@ -2362,7 +2357,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[25]~25_combout\,
+	i => \BANCO_REG|saidaB[25]~24_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[25]~output_o\);
 
@@ -2374,7 +2369,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[26]~26_combout\,
+	i => \BANCO_REG|saidaB[26]~25_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[26]~output_o\);
 
@@ -2386,7 +2381,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[27]~27_combout\,
+	i => \BANCO_REG|saidaB[27]~26_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[27]~output_o\);
 
@@ -2398,7 +2393,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[28]~28_combout\,
+	i => \BANCO_REG|saidaB[28]~27_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[28]~output_o\);
 
@@ -2410,7 +2405,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[29]~29_combout\,
+	i => \BANCO_REG|saidaB[29]~28_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[29]~output_o\);
 
@@ -2422,7 +2417,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[30]~30_combout\,
+	i => \BANCO_REG|saidaB[30]~29_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[30]~output_o\);
 
@@ -2434,7 +2429,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaB[31]~31_combout\,
+	i => \BANCO_REG|saidaB[31]~30_combout\,
 	devoe => ww_devoe,
 	o => \RT_OUT[31]~output_o\);
 
@@ -2446,7 +2441,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \ROM1|memROM~5_combout\,
+	i => \ROM1|memROM~4_combout\,
 	devoe => ww_devoe,
 	o => \Rs_End[0]~output_o\);
 
@@ -2482,7 +2477,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[1]~0_combout\,
+	i => \BANCO_REG|saidaA[0]~0_combout\,
 	devoe => ww_devoe,
 	o => \Rs_End[3]~output_o\);
 
@@ -2506,7 +2501,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \ROM1|memROM~3_combout\,
 	devoe => ww_devoe,
 	o => \Rt_End[0]~output_o\);
 
@@ -2518,7 +2513,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \ROM1|memROM~0_combout\,
+	i => \ROM1|ALT_INV_memROM~1_combout\,
 	devoe => ww_devoe,
 	o => \Rt_End[1]~output_o\);
 
@@ -2530,7 +2525,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \ROM1|memROM~2_combout\,
 	devoe => ww_devoe,
 	o => \Rt_End[2]~output_o\);
 
@@ -2542,7 +2537,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[1]~0_combout\,
+	i => \BANCO_REG|saidaA[0]~0_combout\,
 	devoe => ww_devoe,
 	o => \Rt_End[3]~output_o\);
 
@@ -2602,7 +2597,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \BANCO_REG|saidaA[1]~0_combout\,
+	i => \BANCO_REG|saidaA[0]~0_combout\,
 	devoe => ww_devoe,
 	o => \Rd_End[3]~output_o\);
 
@@ -2650,7 +2645,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(2),
+	i => \PC_REG|DOUT\(2),
 	devoe => ww_devoe,
 	o => \PC_OUT[2]~output_o\);
 
@@ -2662,7 +2657,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(3),
+	i => \PC_REG|DOUT\(3),
 	devoe => ww_devoe,
 	o => \PC_OUT[3]~output_o\);
 
@@ -2674,7 +2669,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(4),
+	i => \PC_REG|DOUT\(4),
 	devoe => ww_devoe,
 	o => \PC_OUT[4]~output_o\);
 
@@ -2686,7 +2681,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(5),
+	i => \PC_REG|DOUT\(5),
 	devoe => ww_devoe,
 	o => \PC_OUT[5]~output_o\);
 
@@ -2698,7 +2693,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(6),
+	i => \PC_REG|DOUT\(6),
 	devoe => ww_devoe,
 	o => \PC_OUT[6]~output_o\);
 
@@ -2710,7 +2705,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(7),
+	i => \PC_REG|DOUT\(7),
 	devoe => ww_devoe,
 	o => \PC_OUT[7]~output_o\);
 
@@ -2722,7 +2717,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(8),
+	i => \PC_REG|DOUT\(8),
 	devoe => ww_devoe,
 	o => \PC_OUT[8]~output_o\);
 
@@ -2734,7 +2729,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(9),
+	i => \PC_REG|DOUT\(9),
 	devoe => ww_devoe,
 	o => \PC_OUT[9]~output_o\);
 
@@ -2746,7 +2741,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(10),
+	i => \PC_REG|DOUT\(10),
 	devoe => ww_devoe,
 	o => \PC_OUT[10]~output_o\);
 
@@ -2758,7 +2753,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(11),
+	i => \PC_REG|DOUT\(11),
 	devoe => ww_devoe,
 	o => \PC_OUT[11]~output_o\);
 
@@ -2770,7 +2765,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(12),
+	i => \PC_REG|DOUT\(12),
 	devoe => ww_devoe,
 	o => \PC_OUT[12]~output_o\);
 
@@ -2782,7 +2777,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(13),
+	i => \PC_REG|DOUT\(13),
 	devoe => ww_devoe,
 	o => \PC_OUT[13]~output_o\);
 
@@ -2794,7 +2789,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(14),
+	i => \PC_REG|DOUT\(14),
 	devoe => ww_devoe,
 	o => \PC_OUT[14]~output_o\);
 
@@ -2806,7 +2801,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(15),
+	i => \PC_REG|DOUT\(15),
 	devoe => ww_devoe,
 	o => \PC_OUT[15]~output_o\);
 
@@ -2818,7 +2813,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(16),
+	i => \PC_REG|DOUT\(16),
 	devoe => ww_devoe,
 	o => \PC_OUT[16]~output_o\);
 
@@ -2830,7 +2825,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(17),
+	i => \PC_REG|DOUT\(17),
 	devoe => ww_devoe,
 	o => \PC_OUT[17]~output_o\);
 
@@ -2842,7 +2837,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(18),
+	i => \PC_REG|DOUT\(18),
 	devoe => ww_devoe,
 	o => \PC_OUT[18]~output_o\);
 
@@ -2854,7 +2849,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(19),
+	i => \PC_REG|DOUT\(19),
 	devoe => ww_devoe,
 	o => \PC_OUT[19]~output_o\);
 
@@ -2866,7 +2861,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(20),
+	i => \PC_REG|DOUT\(20),
 	devoe => ww_devoe,
 	o => \PC_OUT[20]~output_o\);
 
@@ -2878,7 +2873,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(21),
+	i => \PC_REG|DOUT\(21),
 	devoe => ww_devoe,
 	o => \PC_OUT[21]~output_o\);
 
@@ -2890,7 +2885,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(22),
+	i => \PC_REG|DOUT\(22),
 	devoe => ww_devoe,
 	o => \PC_OUT[22]~output_o\);
 
@@ -2902,7 +2897,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(23),
+	i => \PC_REG|DOUT\(23),
 	devoe => ww_devoe,
 	o => \PC_OUT[23]~output_o\);
 
@@ -2914,7 +2909,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(24),
+	i => \PC_REG|DOUT\(24),
 	devoe => ww_devoe,
 	o => \PC_OUT[24]~output_o\);
 
@@ -2926,7 +2921,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(25),
+	i => \PC_REG|DOUT\(25),
 	devoe => ww_devoe,
 	o => \PC_OUT[25]~output_o\);
 
@@ -2938,7 +2933,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(26),
+	i => \PC_REG|DOUT\(26),
 	devoe => ww_devoe,
 	o => \PC_OUT[26]~output_o\);
 
@@ -2950,7 +2945,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(27),
+	i => \PC_REG|DOUT\(27),
 	devoe => ww_devoe,
 	o => \PC_OUT[27]~output_o\);
 
@@ -2962,7 +2957,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(28),
+	i => \PC_REG|DOUT\(28),
 	devoe => ww_devoe,
 	o => \PC_OUT[28]~output_o\);
 
@@ -2974,7 +2969,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(29),
+	i => \PC_REG|DOUT\(29),
 	devoe => ww_devoe,
 	o => \PC_OUT[29]~output_o\);
 
@@ -2986,7 +2981,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(30),
+	i => \PC_REG|DOUT\(30),
 	devoe => ww_devoe,
 	o => \PC_OUT[30]~output_o\);
 
@@ -2998,7 +2993,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \REG_PC|DOUT\(31),
+	i => \PC_REG|DOUT\(31),
 	devoe => ww_devoe,
 	o => \PC_OUT[31]~output_o\);
 
@@ -3012,9 +3007,9 @@ PORT MAP (
 	i => ww_CLOCK_50,
 	o => \CLOCK_50~input_o\);
 
-\REG_PC|DOUT[2]~0\ : cyclonev_lcell_comb
+\PC_REG|DOUT[2]~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \REG_PC|DOUT[2]~0_combout\ = !\REG_PC|DOUT\(2)
+-- \PC_REG|DOUT[2]~0_combout\ = !\PC_REG|DOUT\(2)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3023,10 +3018,10 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \REG_PC|ALT_INV_DOUT\(2),
-	combout => \REG_PC|DOUT[2]~0_combout\);
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	combout => \PC_REG|DOUT[2]~0_combout\);
 
-\REG_PC|DOUT[2]\ : dffeas
+\PC_REG|DOUT[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -3034,15 +3029,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \REG_PC|DOUT[2]~0_combout\,
+	d => \PC_REG|DOUT[2]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(2));
+	q => \PC_REG|DOUT\(2));
 
-\somador|Add0~1\ : cyclonev_lcell_comb
+\Somador|Add0~17\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~1_sumout\ = SUM(( \REG_PC|DOUT\(2) ) + ( \REG_PC|DOUT\(3) ) + ( !VCC ))
--- \somador|Add0~2\ = CARRY(( \REG_PC|DOUT\(2) ) + ( \REG_PC|DOUT\(3) ) + ( !VCC ))
+-- \Somador|Add0~17_sumout\ = SUM(( \PC_REG|DOUT\(2) ) + ( \PC_REG|DOUT\(3) ) + ( !VCC ))
+-- \Somador|Add0~18\ = CARRY(( \PC_REG|DOUT\(2) ) + ( \PC_REG|DOUT\(3) ) + ( !VCC ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3051,13 +3046,13 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(2),
-	dataf => \REG_PC|ALT_INV_DOUT\(3),
+	datad => \PC_REG|ALT_INV_DOUT\(2),
+	dataf => \PC_REG|ALT_INV_DOUT\(3),
 	cin => GND,
-	sumout => \somador|Add0~1_sumout\,
-	cout => \somador|Add0~2\);
+	sumout => \Somador|Add0~17_sumout\,
+	cout => \Somador|Add0~18\);
 
-\REG_PC|DOUT[3]\ : dffeas
+\PC_REG|DOUT[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -3065,15 +3060,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~1_sumout\,
+	d => \Somador|Add0~17_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(3));
+	q => \PC_REG|DOUT\(3));
 
-\somador|Add0~9\ : cyclonev_lcell_comb
+\Somador|Add0~5\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~9_sumout\ = SUM(( \REG_PC|DOUT\(4) ) + ( GND ) + ( \somador|Add0~2\ ))
--- \somador|Add0~10\ = CARRY(( \REG_PC|DOUT\(4) ) + ( GND ) + ( \somador|Add0~2\ ))
+-- \Somador|Add0~5_sumout\ = SUM(( \PC_REG|DOUT\(4) ) + ( GND ) + ( \Somador|Add0~18\ ))
+-- \Somador|Add0~6\ = CARRY(( \PC_REG|DOUT\(4) ) + ( GND ) + ( \Somador|Add0~18\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3082,12 +3077,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(4),
-	cin => \somador|Add0~2\,
-	sumout => \somador|Add0~9_sumout\,
-	cout => \somador|Add0~10\);
+	datad => \PC_REG|ALT_INV_DOUT\(4),
+	cin => \Somador|Add0~18\,
+	sumout => \Somador|Add0~5_sumout\,
+	cout => \Somador|Add0~6\);
 
-\REG_PC|DOUT[4]\ : dffeas
+\PC_REG|DOUT[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -3095,15 +3090,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~9_sumout\,
+	d => \Somador|Add0~5_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(4));
+	q => \PC_REG|DOUT\(4));
 
-\somador|Add0~5\ : cyclonev_lcell_comb
+\Somador|Add0~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~5_sumout\ = SUM(( \REG_PC|DOUT\(5) ) + ( GND ) + ( \somador|Add0~10\ ))
--- \somador|Add0~6\ = CARRY(( \REG_PC|DOUT\(5) ) + ( GND ) + ( \somador|Add0~10\ ))
+-- \Somador|Add0~1_sumout\ = SUM(( \PC_REG|DOUT\(5) ) + ( GND ) + ( \Somador|Add0~6\ ))
+-- \Somador|Add0~2\ = CARRY(( \PC_REG|DOUT\(5) ) + ( GND ) + ( \Somador|Add0~6\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3112,12 +3107,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(5),
-	cin => \somador|Add0~10\,
-	sumout => \somador|Add0~5_sumout\,
-	cout => \somador|Add0~6\);
+	datad => \PC_REG|ALT_INV_DOUT\(5),
+	cin => \Somador|Add0~6\,
+	sumout => \Somador|Add0~1_sumout\,
+	cout => \Somador|Add0~2\);
 
-\REG_PC|DOUT[5]\ : dffeas
+\PC_REG|DOUT[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -3125,15 +3120,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~5_sumout\,
+	d => \Somador|Add0~1_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(5));
+	q => \PC_REG|DOUT\(5));
 
-\somador|Add0~17\ : cyclonev_lcell_comb
+\Somador|Add0~13\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~17_sumout\ = SUM(( \REG_PC|DOUT\(6) ) + ( GND ) + ( \somador|Add0~6\ ))
--- \somador|Add0~18\ = CARRY(( \REG_PC|DOUT\(6) ) + ( GND ) + ( \somador|Add0~6\ ))
+-- \Somador|Add0~13_sumout\ = SUM(( \PC_REG|DOUT\(6) ) + ( GND ) + ( \Somador|Add0~2\ ))
+-- \Somador|Add0~14\ = CARRY(( \PC_REG|DOUT\(6) ) + ( GND ) + ( \Somador|Add0~2\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3142,12 +3137,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(6),
-	cin => \somador|Add0~6\,
-	sumout => \somador|Add0~17_sumout\,
-	cout => \somador|Add0~18\);
+	datad => \PC_REG|ALT_INV_DOUT\(6),
+	cin => \Somador|Add0~2\,
+	sumout => \Somador|Add0~13_sumout\,
+	cout => \Somador|Add0~14\);
 
-\REG_PC|DOUT[6]\ : dffeas
+\PC_REG|DOUT[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -3155,15 +3150,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~17_sumout\,
+	d => \Somador|Add0~13_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(6));
+	q => \PC_REG|DOUT\(6));
 
-\somador|Add0~13\ : cyclonev_lcell_comb
+\Somador|Add0~9\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~13_sumout\ = SUM(( \REG_PC|DOUT\(7) ) + ( GND ) + ( \somador|Add0~18\ ))
--- \somador|Add0~14\ = CARRY(( \REG_PC|DOUT\(7) ) + ( GND ) + ( \somador|Add0~18\ ))
+-- \Somador|Add0~9_sumout\ = SUM(( \PC_REG|DOUT\(7) ) + ( GND ) + ( \Somador|Add0~14\ ))
+-- \Somador|Add0~10\ = CARRY(( \PC_REG|DOUT\(7) ) + ( GND ) + ( \Somador|Add0~14\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3172,12 +3167,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(7),
-	cin => \somador|Add0~18\,
-	sumout => \somador|Add0~13_sumout\,
-	cout => \somador|Add0~14\);
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	cin => \Somador|Add0~14\,
+	sumout => \Somador|Add0~9_sumout\,
+	cout => \Somador|Add0~10\);
 
-\REG_PC|DOUT[7]\ : dffeas
+\PC_REG|DOUT[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -3185,32 +3180,31 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~13_sumout\,
+	d => \Somador|Add0~9_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(7));
+	q => \PC_REG|DOUT\(7));
+
+\BANCO_REG|saidaA[0]~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaA[0]~0_combout\ = (!\PC_REG|DOUT\(5) & (!\PC_REG|DOUT\(4) & (!\PC_REG|DOUT\(7) & !\PC_REG|DOUT\(6))))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1000000000000000100000000000000010000000000000001000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \PC_REG|ALT_INV_DOUT\(5),
+	datab => \PC_REG|ALT_INV_DOUT\(4),
+	datac => \PC_REG|ALT_INV_DOUT\(7),
+	datad => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|saidaA[0]~0_combout\);
 
 \ROM1|memROM~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ROM1|memROM~0_combout\ = ( !\REG_PC|DOUT\(6) & ( (!\REG_PC|DOUT\(2) & (!\REG_PC|DOUT\(5) & (!\REG_PC|DOUT\(4) & !\REG_PC|DOUT\(7)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1000000000000000000000000000000010000000000000000000000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \REG_PC|ALT_INV_DOUT\(2),
-	datab => \REG_PC|ALT_INV_DOUT\(5),
-	datac => \REG_PC|ALT_INV_DOUT\(4),
-	datad => \REG_PC|ALT_INV_DOUT\(7),
-	datae => \REG_PC|ALT_INV_DOUT\(6),
-	combout => \ROM1|memROM~0_combout\);
-
-\ROM1|memROM~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \ROM1|memROM~1_combout\ = (\REG_PC|DOUT\(3) & \ROM1|memROM~0_combout\)
+-- \ROM1|memROM~0_combout\ = (\PC_REG|DOUT\(2) & \BANCO_REG|saidaA[0]~0_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3219,61 +3213,9 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \REG_PC|ALT_INV_DOUT\(3),
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	combout => \ROM1|memROM~1_combout\);
-
-\ROM1|memROM~2\ : cyclonev_lcell_comb
--- Equation(s):
--- \ROM1|memROM~2_combout\ = (!\REG_PC|DOUT\(7) & !\REG_PC|DOUT\(6))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000100010001000100010001000100010001000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \REG_PC|ALT_INV_DOUT\(7),
-	datab => \REG_PC|ALT_INV_DOUT\(6),
-	combout => \ROM1|memROM~2_combout\);
-
-\ROM1|memROM~3\ : cyclonev_lcell_comb
--- Equation(s):
--- \ROM1|memROM~3_combout\ = ( \ROM1|memROM~2_combout\ & ( (!\REG_PC|DOUT\(3) & (\REG_PC|DOUT\(2) & (!\REG_PC|DOUT\(5) & !\REG_PC|DOUT\(4)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000001000000000000000000000000000000010000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \REG_PC|ALT_INV_DOUT\(3),
-	datab => \REG_PC|ALT_INV_DOUT\(2),
-	datac => \REG_PC|ALT_INV_DOUT\(5),
-	datad => \REG_PC|ALT_INV_DOUT\(4),
-	datae => \ROM1|ALT_INV_memROM~2_combout\,
-	combout => \ROM1|memROM~3_combout\);
-
-\BANCO_REG|saidaA[1]~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|saidaA[1]~0_combout\ = ( !\REG_PC|DOUT\(4) & ( !\REG_PC|DOUT\(5) & ( (!\REG_PC|DOUT\(7) & (!\REG_PC|DOUT\(6) & ((!\REG_PC|DOUT\(2)) # (!\REG_PC|DOUT\(3))))) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1000100010000000000000000000000000000000000000000000000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \REG_PC|ALT_INV_DOUT\(7),
-	datab => \REG_PC|ALT_INV_DOUT\(6),
-	datac => \REG_PC|ALT_INV_DOUT\(2),
-	datad => \REG_PC|ALT_INV_DOUT\(3),
-	datae => \REG_PC|ALT_INV_DOUT\(4),
-	dataf => \REG_PC|ALT_INV_DOUT\(5),
-	combout => \BANCO_REG|saidaA[1]~0_combout\);
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	combout => \ROM1|memROM~0_combout\);
 
 \Sel_ULA[1]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
@@ -3285,43 +3227,6 @@ PORT MAP (
 	i => ww_Sel_ULA(1),
 	o => \Sel_ULA[1]~input_o\);
 
-\BANCO_REG|registrador~1062\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1062_combout\ = ( \REG_PC|DOUT\(4) & ( \REG_PC|DOUT\(3) ) ) # ( !\REG_PC|DOUT\(4) & ( \REG_PC|DOUT\(3) & ( (((\REG_PC|DOUT\(5)) # (\REG_PC|DOUT\(2))) # (\REG_PC|DOUT\(6))) # (\REG_PC|DOUT\(7)) ) ) ) # ( \REG_PC|DOUT\(4) & ( 
--- !\REG_PC|DOUT\(3) ) ) # ( !\REG_PC|DOUT\(4) & ( !\REG_PC|DOUT\(3) & ( ((\REG_PC|DOUT\(5)) # (\REG_PC|DOUT\(6))) # (\REG_PC|DOUT\(7)) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0111011111111111111111111111111101111111111111111111111111111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \REG_PC|ALT_INV_DOUT\(7),
-	datab => \REG_PC|ALT_INV_DOUT\(6),
-	datac => \REG_PC|ALT_INV_DOUT\(2),
-	datad => \REG_PC|ALT_INV_DOUT\(5),
-	datae => \REG_PC|ALT_INV_DOUT\(4),
-	dataf => \REG_PC|ALT_INV_DOUT\(3),
-	combout => \BANCO_REG|registrador~1062_combout\);
-
-\ROM1|memROM~4\ : cyclonev_lcell_comb
--- Equation(s):
--- \ROM1|memROM~4_combout\ = (!\REG_PC|DOUT\(4) & (!\REG_PC|DOUT\(5) & ((!\REG_PC|DOUT\(2)) # (!\REG_PC|DOUT\(3)))))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1110000000000000111000000000000011100000000000001110000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \REG_PC|ALT_INV_DOUT\(2),
-	datab => \REG_PC|ALT_INV_DOUT\(3),
-	datac => \REG_PC|ALT_INV_DOUT\(4),
-	datad => \REG_PC|ALT_INV_DOUT\(5),
-	combout => \ROM1|memROM~4_combout\);
-
 \Sel_ULA[0]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -3331,6 +3236,23 @@ GENERIC MAP (
 PORT MAP (
 	i => ww_Sel_ULA(0),
 	o => \Sel_ULA[0]~input_o\);
+
+\BANCO_REG|Equal0~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|Equal0~0_combout\ = (((\PC_REG|DOUT\(4)) # (\PC_REG|DOUT\(5))) # (\PC_REG|DOUT\(6))) # (\PC_REG|DOUT\(7))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0111111111111111011111111111111101111111111111110111111111111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \PC_REG|ALT_INV_DOUT\(7),
+	datab => \PC_REG|ALT_INV_DOUT\(6),
+	datac => \PC_REG|ALT_INV_DOUT\(5),
+	datad => \PC_REG|ALT_INV_DOUT\(4),
+	combout => \BANCO_REG|Equal0~0_combout\);
 
 \Ctrl_write~input\ : cyclonev_io_ibuf
 -- pragma translate_off
@@ -3342,9 +3264,9 @@ PORT MAP (
 	i => ww_Ctrl_write,
 	o => \Ctrl_write~input_o\);
 
-\BANCO_REG|registrador~1089\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1090\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|registrador~1089_combout\ = (\BANCO_REG|saidaA[1]~0_combout\ & \Ctrl_write~input_o\)
+-- \BANCO_REG|registrador~1090_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & \Ctrl_write~input_o\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3353,9 +3275,9 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
+	dataa => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
 	datab => \ALT_INV_Ctrl_write~input_o\,
-	combout => \BANCO_REG|registrador~1089_combout\);
+	combout => \BANCO_REG|registrador~1090_combout\);
 
 \BANCO_REG|registrador~294\ : dffeas
 -- pragma translate_off
@@ -3364,68 +3286,74 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~1_sumout\,
 	asdata => \ULA1|saida[0]~0_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~294_q\);
 
 \BANCO_REG|saidaA[0]~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[0]~1_combout\ = (!\REG_PC|DOUT\(3) & (!\REG_PC|DOUT\(2) & (!\REG_PC|DOUT\(5) & !\REG_PC|DOUT\(4))))
+-- \BANCO_REG|saidaA[0]~1_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~294_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000000000000000100000000000000010000000000000001000000000000000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \REG_PC|ALT_INV_DOUT\(3),
-	datab => \REG_PC|ALT_INV_DOUT\(2),
-	datac => \REG_PC|ALT_INV_DOUT\(5),
-	datad => \REG_PC|ALT_INV_DOUT\(4),
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
+	datad => \BANCO_REG|ALT_INV_registrador~294_q\,
 	combout => \BANCO_REG|saidaA[0]~1_combout\);
 
-\BANCO_REG|saidaA[0]~2\ : cyclonev_lcell_comb
+\ROM1|memROM~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[0]~2_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (\BANCO_REG|registrador~294_q\ & !\BANCO_REG|saidaA[0]~1_combout\)))
+-- \ROM1|memROM~1_combout\ = ( \PC_REG|DOUT\(4) & ( \PC_REG|DOUT\(5) ) ) # ( !\PC_REG|DOUT\(4) & ( \PC_REG|DOUT\(5) ) ) # ( \PC_REG|DOUT\(4) & ( !\PC_REG|DOUT\(5) ) ) # ( !\PC_REG|DOUT\(4) & ( !\PC_REG|DOUT\(5) & ( (((\PC_REG|DOUT\(2) & \PC_REG|DOUT\(3))) # 
+-- (\PC_REG|DOUT\(6))) # (\PC_REG|DOUT\(7)) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000100000000000000010000000000000001000000000000000100000000",
+	lut_mask => "0111011101111111111111111111111111111111111111111111111111111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_registrador~294_q\,
-	datad => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
-	combout => \BANCO_REG|saidaA[0]~2_combout\);
+	dataa => \PC_REG|ALT_INV_DOUT\(7),
+	datab => \PC_REG|ALT_INV_DOUT\(6),
+	datac => \PC_REG|ALT_INV_DOUT\(2),
+	datad => \PC_REG|ALT_INV_DOUT\(3),
+	datae => \PC_REG|ALT_INV_DOUT\(4),
+	dataf => \PC_REG|ALT_INV_DOUT\(5),
+	combout => \ROM1|memROM~1_combout\);
 
-\BANCO_REG|registrador~1063\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1062\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|registrador~1063_combout\ = ( \BANCO_REG|registrador~294_q\ & ( (!\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & ((\BANCO_REG|registrador~38_q\)))) # (\ROM1|memROM~2_combout\ & (((!\ROM1|memROM~0_combout\ & \BANCO_REG|registrador~38_q\)) 
--- # (\ROM1|memROM~4_combout\))) ) ) # ( !\BANCO_REG|registrador~294_q\ & ( (!\ROM1|memROM~0_combout\ & (\BANCO_REG|registrador~38_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) # (\ROM1|memROM~0_combout\ & (\ROM1|memROM~2_combout\ & 
--- (\ROM1|memROM~4_combout\))) ) )
+-- \BANCO_REG|registrador~1062_combout\ = ( \BANCO_REG|registrador~38_q\ & ( \BANCO_REG|registrador~294_q\ & ( (!\BANCO_REG|saidaA[0]~0_combout\ & (((\ROM1|memROM~1_combout\)))) # (\BANCO_REG|saidaA[0]~0_combout\ & ((!\PC_REG|DOUT\(3)) # ((\PC_REG|DOUT\(2) & 
+-- \ROM1|memROM~1_combout\)))) ) ) ) # ( !\BANCO_REG|registrador~38_q\ & ( \BANCO_REG|registrador~294_q\ & ( (\BANCO_REG|saidaA[0]~0_combout\ & ((!\PC_REG|DOUT\(3)) # ((\PC_REG|DOUT\(2) & \ROM1|memROM~1_combout\)))) ) ) ) # ( \BANCO_REG|registrador~38_q\ & ( 
+-- !\BANCO_REG|registrador~294_q\ & ( (!\BANCO_REG|saidaA[0]~0_combout\ & (((\ROM1|memROM~1_combout\)))) # (\BANCO_REG|saidaA[0]~0_combout\ & ((!\PC_REG|DOUT\(3) & ((!\ROM1|memROM~1_combout\))) # (\PC_REG|DOUT\(3) & (\PC_REG|DOUT\(2) & 
+-- \ROM1|memROM~1_combout\)))) ) ) ) # ( !\BANCO_REG|registrador~38_q\ & ( !\BANCO_REG|registrador~294_q\ & ( (\BANCO_REG|saidaA[0]~0_combout\ & ((!\PC_REG|DOUT\(3) & ((!\ROM1|memROM~1_combout\))) # (\PC_REG|DOUT\(3) & (\PC_REG|DOUT\(2) & 
+-- \ROM1|memROM~1_combout\)))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000111001001000001011100110100000001110010010000010111001101",
+	lut_mask => "0011000000000001001100001100110100110000001100010011000011111101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~38_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~294_q\,
-	combout => \BANCO_REG|registrador~1063_combout\);
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
+	datad => \ROM1|ALT_INV_memROM~1_combout\,
+	datae => \BANCO_REG|ALT_INV_registrador~38_q\,
+	dataf => \BANCO_REG|ALT_INV_registrador~294_q\,
+	combout => \BANCO_REG|registrador~1062_combout\);
 
 \ULA1|Add0~130\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -3445,10 +3373,10 @@ PORT MAP (
 
 \ULA1|Add0~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~1_sumout\ = SUM(( \BANCO_REG|saidaA[0]~2_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1063_combout\) # (\BANCO_REG|registrador~1062_combout\)))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1063_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~130_cout\ ))
--- \ULA1|Add0~2\ = CARRY(( \BANCO_REG|saidaA[0]~2_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1063_combout\) # (\BANCO_REG|registrador~1062_combout\)))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1063_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~130_cout\ ))
+-- \ULA1|Add0~1_sumout\ = SUM(( \BANCO_REG|saidaA[0]~1_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1062_combout\) # (\BANCO_REG|Equal0~0_combout\)))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1062_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~130_cout\ ))
+-- \ULA1|Add0~2\ = CARRY(( \BANCO_REG|saidaA[0]~1_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1062_combout\) # (\BANCO_REG|Equal0~0_combout\)))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1062_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~130_cout\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3459,16 +3387,16 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
 	datab => \ALT_INV_Sel_ULA[1]~input_o\,
-	datac => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[0]~2_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1063_combout\,
+	datac => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1062_combout\,
 	cin => \ULA1|Add0~130_cout\,
 	sumout => \ULA1|Add0~1_sumout\,
 	cout => \ULA1|Add0~2\);
 
-\BANCO_REG|registrador~1088\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1089\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|registrador~1088_combout\ = (!\BANCO_REG|saidaA[1]~0_combout\ & \Ctrl_write~input_o\)
+-- \BANCO_REG|registrador~1089_combout\ = (!\BANCO_REG|saidaA[0]~0_combout\ & \Ctrl_write~input_o\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3477,9 +3405,9 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
+	dataa => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
 	datab => \ALT_INV_Ctrl_write~input_o\,
-	combout => \BANCO_REG|registrador~1088_combout\);
+	combout => \BANCO_REG|registrador~1089_combout\);
 
 \BANCO_REG|registrador~38\ : dffeas
 -- pragma translate_off
@@ -3488,40 +3416,40 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~1_sumout\,
 	asdata => \ULA1|saida[0]~0_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~38_q\);
 
-\BANCO_REG|saidaB[0]~0\ : cyclonev_lcell_comb
+\BANCO_REG|saidaB[0]~31\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[0]~0_combout\ = ( \BANCO_REG|registrador~38_q\ & ( \BANCO_REG|registrador~294_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & ((!\ROM1|memROM~0_combout\) # ((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)))) ) ) ) # ( 
--- !\BANCO_REG|registrador~38_q\ & ( \BANCO_REG|registrador~294_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)) ) ) ) # ( \BANCO_REG|registrador~38_q\ & ( !\BANCO_REG|registrador~294_q\ & ( 
--- (!\BANCO_REG|registrador~1062_combout\ & (!\ROM1|memROM~0_combout\ $ (((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\))))) ) ) ) # ( !\BANCO_REG|registrador~38_q\ & ( !\BANCO_REG|registrador~294_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (\ROM1|memROM~2_combout\ & (\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) )
+-- \BANCO_REG|saidaB[0]~31_combout\ = ( !\PC_REG|DOUT\(3) & ( (!\BANCO_REG|Equal0~0_combout\ & ((!\ROM1|memROM~1_combout\ & (((\BANCO_REG|saidaA[0]~0_combout\)))) # (\ROM1|memROM~1_combout\ & ((!\BANCO_REG|saidaA[0]~0_combout\ & 
+-- (\BANCO_REG|registrador~38_q\)) # (\BANCO_REG|saidaA[0]~0_combout\ & ((\BANCO_REG|registrador~294_q\))))))) ) ) # ( \PC_REG|DOUT\(3) & ( (\ROM1|memROM~1_combout\ & (!\BANCO_REG|Equal0~0_combout\ & ((!\BANCO_REG|saidaA[0]~0_combout\ & 
+-- (\BANCO_REG|registrador~38_q\)) # (\BANCO_REG|saidaA[0]~0_combout\ & ((\PC_REG|DOUT\(2))))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000010101000001000001000000000001000101010000010100010",
+	extended_lut => "on",
+	lut_mask => "0001000111001111000100010000001100000000000000000000000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~38_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~294_q\,
-	combout => \BANCO_REG|saidaB[0]~0_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~38_q\,
+	datab => \ROM1|ALT_INV_memROM~1_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(2),
+	datad => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datae => \PC_REG|ALT_INV_DOUT\(3),
+	dataf => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datag => \BANCO_REG|ALT_INV_registrador~294_q\,
+	combout => \BANCO_REG|saidaB[0]~31_combout\);
 
 \ULA1|saida[0]~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[0]~0_combout\ = (\BANCO_REG|saidaB[0]~0_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[0]~2_combout\))))
+-- \ULA1|saida[0]~0_combout\ = (\BANCO_REG|saidaB[0]~31_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[0]~1_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3531,9 +3459,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
-	datab => \BANCO_REG|ALT_INV_saidaB[0]~0_combout\,
+	datab => \BANCO_REG|ALT_INV_saidaB[0]~31_combout\,
 	datac => \ALT_INV_Sel_ULA[0]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[0]~2_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
 	combout => \ULA1|saida[0]~0_combout\);
 
 \ULA1|saida[0]~1\ : cyclonev_lcell_comb
@@ -3559,58 +3487,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~5_sumout\,
 	asdata => \ULA1|saida[1]~2_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~295_q\);
 
-\BANCO_REG|saidaA[1]~3\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[1]~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[1]~3_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & ((\BANCO_REG|registrador~295_q\) # (\BANCO_REG|saidaA[0]~1_combout\))))
+-- \BANCO_REG|saidaA[1]~2_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (((!\PC_REG|DOUT\(2) & !\PC_REG|DOUT\(3))) # (\BANCO_REG|registrador~295_q\)))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000100010001000000010001000100000001000100010000000100010001",
+	lut_mask => "0010000000110011001000000011001100100000001100110010000000110011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~295_q\,
-	combout => \BANCO_REG|saidaA[1]~3_combout\);
-
-\BANCO_REG|registrador~1064\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1064_combout\ = ( \BANCO_REG|registrador~295_q\ & ( (!\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|registrador~39_q\)))) # (\ROM1|memROM~2_combout\ & (((!\ROM1|memROM~0_combout\ & 
--- !\BANCO_REG|registrador~39_q\)) # (\ROM1|memROM~4_combout\))) ) ) # ( !\BANCO_REG|registrador~295_q\ & ( (!\ROM1|memROM~0_combout\ & (!\BANCO_REG|registrador~39_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) # (\ROM1|memROM~0_combout\ & 
--- (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100100100000001110011010000010111001001000000011100110100000101",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~39_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~295_q\,
-	combout => \BANCO_REG|registrador~1064_combout\);
+	combout => \BANCO_REG|saidaA[1]~2_combout\);
 
 \ULA1|Add0~5\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~5_sumout\ = SUM(( \BANCO_REG|saidaA[1]~3_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1064_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1064_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~2\ ))
--- \ULA1|Add0~6\ = CARRY(( \BANCO_REG|saidaA[1]~3_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1064_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1064_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~2\ ))
+-- \ULA1|Add0~5_sumout\ = SUM(( \BANCO_REG|saidaA[1]~2_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1063_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1063_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~2\ ))
+-- \ULA1|Add0~6\ = CARRY(( \BANCO_REG|saidaA[1]~2_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1063_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1063_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~2\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3620,10 +3528,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[1]~3_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1064_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[1]~2_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1063_combout\,
 	cin => \ULA1|Add0~2\,
 	sumout => \ULA1|Add0~5_sumout\,
 	cout => \ULA1|Add0~6\);
@@ -3663,40 +3571,54 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~5_wirecell_combout\,
 	asdata => \ULA1|saida[1]~2_wirecell_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~39_q\);
 
-\BANCO_REG|saidaB[1]~1\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1063\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[1]~1_combout\ = ( \BANCO_REG|registrador~39_q\ & ( \BANCO_REG|registrador~295_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)) ) ) ) # ( !\BANCO_REG|registrador~39_q\ & ( 
--- \BANCO_REG|registrador~295_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & ((!\ROM1|memROM~0_combout\) # ((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)))) ) ) ) # ( \BANCO_REG|registrador~39_q\ & ( !\BANCO_REG|registrador~295_q\ & ( 
--- (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( !\BANCO_REG|registrador~39_q\ & ( !\BANCO_REG|registrador~295_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ $ (((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\))))) ) ) )
+-- \BANCO_REG|registrador~1063_combout\ = ( \PC_REG|DOUT\(7) & ( \PC_REG|DOUT\(6) & ( !\BANCO_REG|registrador~39_q\ ) ) ) # ( !\PC_REG|DOUT\(7) & ( \PC_REG|DOUT\(6) & ( !\BANCO_REG|registrador~39_q\ ) ) ) # ( \PC_REG|DOUT\(7) & ( !\PC_REG|DOUT\(6) & ( 
+-- !\BANCO_REG|registrador~39_q\ ) ) ) # ( !\PC_REG|DOUT\(7) & ( !\PC_REG|DOUT\(6) & ( (!\PC_REG|DOUT\(5) & ((!\PC_REG|DOUT\(4) & (!\PC_REG|DOUT\(3))) # (\PC_REG|DOUT\(4) & ((!\BANCO_REG|registrador~39_q\))))) # (\PC_REG|DOUT\(5) & 
+-- (((!\BANCO_REG|registrador~39_q\)))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1010000010000010000000000000001010100000101000100000000000100010",
+	lut_mask => "1010110011001100110011001100110011001100110011001100110011001100",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~39_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~295_q\,
-	combout => \BANCO_REG|saidaB[1]~1_combout\);
+	dataa => \PC_REG|ALT_INV_DOUT\(3),
+	datab => \BANCO_REG|ALT_INV_registrador~39_q\,
+	datac => \PC_REG|ALT_INV_DOUT\(5),
+	datad => \PC_REG|ALT_INV_DOUT\(4),
+	datae => \PC_REG|ALT_INV_DOUT\(7),
+	dataf => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1063_combout\);
+
+\BANCO_REG|saidaB[1]~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[1]~0_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1063_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1063_combout\,
+	combout => \BANCO_REG|saidaB[1]~0_combout\);
 
 \ULA1|saida[1]~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[1]~2_combout\ = (\BANCO_REG|saidaB[1]~1_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[1]~3_combout\))))
+-- \ULA1|saida[1]~2_combout\ = (\BANCO_REG|saidaB[1]~0_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[1]~2_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3707,8 +3629,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[1]~1_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[1]~3_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[1]~0_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[1]~2_combout\,
 	combout => \ULA1|saida[1]~2_combout\);
 
 \ULA1|saida[1]~3\ : cyclonev_lcell_comb
@@ -3734,57 +3656,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~9_sumout\,
 	asdata => \ULA1|saida[2]~4_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~296_q\);
 
-\BANCO_REG|saidaA[2]~4\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[2]~3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[2]~4_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~296_q\)))
+-- \BANCO_REG|saidaA[2]~3_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~296_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~296_q\,
-	combout => \BANCO_REG|saidaA[2]~4_combout\);
-
-\BANCO_REG|registrador~1065\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1065_combout\ = ( \BANCO_REG|registrador~296_q\ & ( (!\ROM1|memROM~0_combout\ & (((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)) # (\BANCO_REG|registrador~40_q\))) ) ) # ( !\BANCO_REG|registrador~296_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (\BANCO_REG|registrador~40_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000011001000000001001100110000000000110010000000010011001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~40_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~296_q\,
-	combout => \BANCO_REG|registrador~1065_combout\);
+	combout => \BANCO_REG|saidaA[2]~3_combout\);
 
 \ULA1|Add0~9\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~9_sumout\ = SUM(( \BANCO_REG|saidaA[2]~4_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1065_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1065_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~6\ ))
--- \ULA1|Add0~10\ = CARRY(( \BANCO_REG|saidaA[2]~4_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1065_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1065_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~6\ ))
+-- \ULA1|Add0~9_sumout\ = SUM(( \BANCO_REG|saidaA[2]~3_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1064_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1064_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~6\ ))
+-- \ULA1|Add0~10\ = CARRY(( \BANCO_REG|saidaA[2]~3_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1064_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1064_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~6\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3794,10 +3697,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[2]~4_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1065_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[2]~3_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1064_combout\,
 	cin => \ULA1|Add0~6\,
 	sumout => \ULA1|Add0~9_sumout\,
 	cout => \ULA1|Add0~10\);
@@ -3809,39 +3712,54 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~9_sumout\,
 	asdata => \ULA1|saida[2]~4_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~40_q\);
 
-\BANCO_REG|saidaB[2]~2\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1064\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[2]~2_combout\ = ( \BANCO_REG|registrador~40_q\ & ( \BANCO_REG|registrador~296_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~40_q\ & ( \BANCO_REG|registrador~296_q\ & ( 
--- (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( \BANCO_REG|registrador~40_q\ & ( !\BANCO_REG|registrador~296_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1064_combout\ = ( \PC_REG|DOUT\(7) & ( \PC_REG|DOUT\(6) & ( \BANCO_REG|registrador~40_q\ ) ) ) # ( !\PC_REG|DOUT\(7) & ( \PC_REG|DOUT\(6) & ( \BANCO_REG|registrador~40_q\ ) ) ) # ( \PC_REG|DOUT\(7) & ( !\PC_REG|DOUT\(6) & ( 
+-- \BANCO_REG|registrador~40_q\ ) ) ) # ( !\PC_REG|DOUT\(7) & ( !\PC_REG|DOUT\(6) & ( (!\PC_REG|DOUT\(5) & ((!\PC_REG|DOUT\(4) & (\PC_REG|DOUT\(3))) # (\PC_REG|DOUT\(4) & ((\BANCO_REG|registrador~40_q\))))) # (\PC_REG|DOUT\(5) & 
+-- (((\BANCO_REG|registrador~40_q\)))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000101000001000000000000000001000001010000010100000",
+	lut_mask => "0101001100110011001100110011001100110011001100110011001100110011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~40_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~296_q\,
-	combout => \BANCO_REG|saidaB[2]~2_combout\);
+	dataa => \PC_REG|ALT_INV_DOUT\(3),
+	datab => \BANCO_REG|ALT_INV_registrador~40_q\,
+	datac => \PC_REG|ALT_INV_DOUT\(5),
+	datad => \PC_REG|ALT_INV_DOUT\(4),
+	datae => \PC_REG|ALT_INV_DOUT\(7),
+	dataf => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1064_combout\);
+
+\BANCO_REG|saidaB[2]~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[2]~1_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1064_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1064_combout\,
+	combout => \BANCO_REG|saidaB[2]~1_combout\);
 
 \ULA1|saida[2]~4\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[2]~4_combout\ = (\BANCO_REG|saidaB[2]~2_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[2]~4_combout\))))
+-- \ULA1|saida[2]~4_combout\ = (\BANCO_REG|saidaB[2]~1_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[2]~3_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3852,8 +3770,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[2]~2_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[2]~4_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[2]~1_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[2]~3_combout\,
 	combout => \ULA1|saida[2]~4_combout\);
 
 \ULA1|saida[2]~5\ : cyclonev_lcell_comb
@@ -3879,58 +3797,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~13_sumout\,
 	asdata => \ULA1|saida[3]~6_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~297_q\);
 
-\BANCO_REG|saidaA[3]~5\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[3]~4\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[3]~5_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & ((\BANCO_REG|registrador~297_q\) # (\BANCO_REG|saidaA[0]~1_combout\))))
+-- \BANCO_REG|saidaA[3]~4_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (((!\PC_REG|DOUT\(2) & !\PC_REG|DOUT\(3))) # (\BANCO_REG|registrador~297_q\)))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000100010001000000010001000100000001000100010000000100010001",
+	lut_mask => "0010000000110011001000000011001100100000001100110010000000110011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~297_q\,
-	combout => \BANCO_REG|saidaA[3]~5_combout\);
-
-\BANCO_REG|registrador~1066\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1066_combout\ = ( \BANCO_REG|registrador~297_q\ & ( (!\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|registrador~41_q\)))) # (\ROM1|memROM~2_combout\ & (((!\ROM1|memROM~0_combout\ & 
--- !\BANCO_REG|registrador~41_q\)) # (\ROM1|memROM~4_combout\))) ) ) # ( !\BANCO_REG|registrador~297_q\ & ( (!\ROM1|memROM~0_combout\ & (!\BANCO_REG|registrador~41_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) # (\ROM1|memROM~0_combout\ & 
--- (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100100100000001110011010000010111001001000000011100110100000101",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~41_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~297_q\,
-	combout => \BANCO_REG|registrador~1066_combout\);
+	combout => \BANCO_REG|saidaA[3]~4_combout\);
 
 \ULA1|Add0~13\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~13_sumout\ = SUM(( \BANCO_REG|saidaA[3]~5_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1066_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1066_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~10\ ))
--- \ULA1|Add0~14\ = CARRY(( \BANCO_REG|saidaA[3]~5_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1066_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1066_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~10\ ))
+-- \ULA1|Add0~13_sumout\ = SUM(( \BANCO_REG|saidaA[3]~4_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1065_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1065_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~10\ ))
+-- \ULA1|Add0~14\ = CARRY(( \BANCO_REG|saidaA[3]~4_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1065_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1065_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~10\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3940,10 +3838,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[3]~5_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1066_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[3]~4_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1065_combout\,
 	cin => \ULA1|Add0~10\,
 	sumout => \ULA1|Add0~13_sumout\,
 	cout => \ULA1|Add0~14\);
@@ -3983,40 +3881,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~13_wirecell_combout\,
 	asdata => \ULA1|saida[3]~6_wirecell_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~41_q\);
 
-\BANCO_REG|saidaB[3]~3\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1065\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[3]~3_combout\ = ( \BANCO_REG|registrador~41_q\ & ( \BANCO_REG|registrador~297_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)) ) ) ) # ( !\BANCO_REG|registrador~41_q\ & ( 
--- \BANCO_REG|registrador~297_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & ((!\ROM1|memROM~0_combout\) # ((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)))) ) ) ) # ( \BANCO_REG|registrador~41_q\ & ( !\BANCO_REG|registrador~297_q\ & ( 
--- (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( !\BANCO_REG|registrador~41_q\ & ( !\BANCO_REG|registrador~297_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ $ (((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\))))) ) ) )
+-- \BANCO_REG|registrador~1065_combout\ = ( \PC_REG|DOUT\(6) & ( !\BANCO_REG|registrador~41_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (!\BANCO_REG|registrador~41_q\) # ((!\PC_REG|DOUT\(5) & (!\PC_REG|DOUT\(4) & !\PC_REG|DOUT\(7)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1010000010000010000000000000001010100000101000100000000000100010",
+	lut_mask => "1110101010101010101010101010101011101010101010101010101010101010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~41_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~297_q\,
-	combout => \BANCO_REG|saidaB[3]~3_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~41_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1065_combout\);
+
+\BANCO_REG|saidaB[3]~2\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[3]~2_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1065_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1065_combout\,
+	combout => \BANCO_REG|saidaB[3]~2_combout\);
 
 \ULA1|saida[3]~6\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[3]~6_combout\ = (\BANCO_REG|saidaB[3]~3_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[3]~5_combout\))))
+-- \ULA1|saida[3]~6_combout\ = (\BANCO_REG|saidaB[3]~2_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[3]~4_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4027,8 +3936,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[3]~3_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[3]~5_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[3]~2_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[3]~4_combout\,
 	combout => \ULA1|saida[3]~6_combout\);
 
 \ULA1|saida[3]~7\ : cyclonev_lcell_comb
@@ -4054,57 +3963,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~17_sumout\,
 	asdata => \ULA1|saida[4]~8_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~298_q\);
 
-\BANCO_REG|saidaA[4]~6\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[4]~5\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[4]~6_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~298_q\)))
+-- \BANCO_REG|saidaA[4]~5_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~298_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~298_q\,
-	combout => \BANCO_REG|saidaA[4]~6_combout\);
-
-\BANCO_REG|registrador~1067\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1067_combout\ = ( \BANCO_REG|registrador~298_q\ & ( (!\ROM1|memROM~0_combout\ & (((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)) # (\BANCO_REG|registrador~42_q\))) ) ) # ( !\BANCO_REG|registrador~298_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (\BANCO_REG|registrador~42_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000011001000000001001100110000000000110010000000010011001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~42_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~298_q\,
-	combout => \BANCO_REG|registrador~1067_combout\);
+	combout => \BANCO_REG|saidaA[4]~5_combout\);
 
 \ULA1|Add0~17\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~17_sumout\ = SUM(( \BANCO_REG|saidaA[4]~6_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1067_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1067_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~14\ ))
--- \ULA1|Add0~18\ = CARRY(( \BANCO_REG|saidaA[4]~6_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1067_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1067_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~14\ ))
+-- \ULA1|Add0~17_sumout\ = SUM(( \BANCO_REG|saidaA[4]~5_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1066_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1066_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~14\ ))
+-- \ULA1|Add0~18\ = CARRY(( \BANCO_REG|saidaA[4]~5_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1066_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1066_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~14\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4114,10 +4004,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[4]~6_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1067_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[4]~5_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1066_combout\,
 	cin => \ULA1|Add0~14\,
 	sumout => \ULA1|Add0~17_sumout\,
 	cout => \ULA1|Add0~18\);
@@ -4129,39 +4019,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~17_sumout\,
 	asdata => \ULA1|saida[4]~8_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~42_q\);
 
-\BANCO_REG|saidaB[4]~4\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1066\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[4]~4_combout\ = ( \BANCO_REG|registrador~42_q\ & ( \BANCO_REG|registrador~298_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~42_q\ & ( \BANCO_REG|registrador~298_q\ & ( 
--- (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( \BANCO_REG|registrador~42_q\ & ( !\BANCO_REG|registrador~298_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1066_combout\ = ( \PC_REG|DOUT\(6) & ( \BANCO_REG|registrador~42_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (\BANCO_REG|registrador~42_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000101000001000000000000000001000001010000010100000",
+	lut_mask => "0001010101010101010101010101010100010101010101010101010101010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~42_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~298_q\,
-	combout => \BANCO_REG|saidaB[4]~4_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~42_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1066_combout\);
+
+\BANCO_REG|saidaB[4]~3\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[4]~3_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1066_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1066_combout\,
+	combout => \BANCO_REG|saidaB[4]~3_combout\);
 
 \ULA1|saida[4]~8\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[4]~8_combout\ = (\BANCO_REG|saidaB[4]~4_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[4]~6_combout\))))
+-- \ULA1|saida[4]~8_combout\ = (\BANCO_REG|saidaB[4]~3_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[4]~5_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4172,8 +4074,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[4]~4_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[4]~6_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[4]~3_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[4]~5_combout\,
 	combout => \ULA1|saida[4]~8_combout\);
 
 \ULA1|saida[4]~9\ : cyclonev_lcell_comb
@@ -4199,57 +4101,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~21_sumout\,
 	asdata => \ULA1|saida[5]~10_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~299_q\);
 
-\BANCO_REG|saidaA[5]~7\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[5]~6\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[5]~7_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~299_q\)))
+-- \BANCO_REG|saidaA[5]~6_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~299_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~299_q\,
-	combout => \BANCO_REG|saidaA[5]~7_combout\);
-
-\BANCO_REG|registrador~1068\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1068_combout\ = ( \BANCO_REG|registrador~299_q\ & ( (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|registrador~43_q\) # ((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)))) ) ) # ( !\BANCO_REG|registrador~299_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (!\BANCO_REG|registrador~43_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100100000000000110011000000010011001000000000001100110000000100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~43_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~299_q\,
-	combout => \BANCO_REG|registrador~1068_combout\);
+	combout => \BANCO_REG|saidaA[5]~6_combout\);
 
 \ULA1|Add0~21\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~21_sumout\ = SUM(( \BANCO_REG|saidaA[5]~7_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1068_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1068_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~18\ ))
--- \ULA1|Add0~22\ = CARRY(( \BANCO_REG|saidaA[5]~7_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1068_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1068_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~18\ ))
+-- \ULA1|Add0~21_sumout\ = SUM(( \BANCO_REG|saidaA[5]~6_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1067_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1067_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~18\ ))
+-- \ULA1|Add0~22\ = CARRY(( \BANCO_REG|saidaA[5]~6_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1067_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1067_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~18\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4259,10 +4142,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[5]~7_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1068_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[5]~6_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1067_combout\,
 	cin => \ULA1|Add0~18\,
 	sumout => \ULA1|Add0~21_sumout\,
 	cout => \ULA1|Add0~22\);
@@ -4302,39 +4185,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~21_wirecell_combout\,
 	asdata => \ULA1|saida[5]~10_wirecell_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~43_q\);
 
-\BANCO_REG|saidaB[5]~5\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1067\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[5]~5_combout\ = ( \BANCO_REG|registrador~43_q\ & ( \BANCO_REG|registrador~299_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( 
--- !\BANCO_REG|registrador~43_q\ & ( \BANCO_REG|registrador~299_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~43_q\ & ( !\BANCO_REG|registrador~299_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1067_combout\ = ( \PC_REG|DOUT\(6) & ( !\BANCO_REG|registrador~43_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (!\BANCO_REG|registrador~43_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1010000010000000000000000000000010100000101000000000000000100000",
+	lut_mask => "0010101010101010101010101010101000101010101010101010101010101010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~43_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~299_q\,
-	combout => \BANCO_REG|saidaB[5]~5_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~43_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1067_combout\);
+
+\BANCO_REG|saidaB[5]~4\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[5]~4_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1067_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1067_combout\,
+	combout => \BANCO_REG|saidaB[5]~4_combout\);
 
 \ULA1|saida[5]~10\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[5]~10_combout\ = (\BANCO_REG|saidaB[5]~5_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[5]~7_combout\))))
+-- \ULA1|saida[5]~10_combout\ = (\BANCO_REG|saidaB[5]~4_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[5]~6_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4345,8 +4240,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[5]~5_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[5]~7_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[5]~4_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[5]~6_combout\,
 	combout => \ULA1|saida[5]~10_combout\);
 
 \ULA1|saida[5]~11\ : cyclonev_lcell_comb
@@ -4372,57 +4267,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~25_sumout\,
 	asdata => \ULA1|saida[6]~12_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~300_q\);
 
-\BANCO_REG|saidaA[6]~8\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[6]~7\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[6]~8_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~300_q\)))
+-- \BANCO_REG|saidaA[6]~7_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~300_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~300_q\,
-	combout => \BANCO_REG|saidaA[6]~8_combout\);
-
-\BANCO_REG|registrador~1069\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1069_combout\ = ( \BANCO_REG|registrador~300_q\ & ( (!\ROM1|memROM~0_combout\ & (((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)) # (\BANCO_REG|registrador~44_q\))) ) ) # ( !\BANCO_REG|registrador~300_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (\BANCO_REG|registrador~44_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000011001000000001001100110000000000110010000000010011001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~44_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~300_q\,
-	combout => \BANCO_REG|registrador~1069_combout\);
+	combout => \BANCO_REG|saidaA[6]~7_combout\);
 
 \ULA1|Add0~25\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~25_sumout\ = SUM(( \BANCO_REG|saidaA[6]~8_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1069_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1069_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~22\ ))
--- \ULA1|Add0~26\ = CARRY(( \BANCO_REG|saidaA[6]~8_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1069_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1069_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~22\ ))
+-- \ULA1|Add0~25_sumout\ = SUM(( \BANCO_REG|saidaA[6]~7_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1068_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1068_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~22\ ))
+-- \ULA1|Add0~26\ = CARRY(( \BANCO_REG|saidaA[6]~7_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1068_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1068_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~22\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4432,10 +4308,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[6]~8_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1069_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[6]~7_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1068_combout\,
 	cin => \ULA1|Add0~22\,
 	sumout => \ULA1|Add0~25_sumout\,
 	cout => \ULA1|Add0~26\);
@@ -4447,39 +4323,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~25_sumout\,
 	asdata => \ULA1|saida[6]~12_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~44_q\);
 
-\BANCO_REG|saidaB[6]~6\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1068\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[6]~6_combout\ = ( \BANCO_REG|registrador~44_q\ & ( \BANCO_REG|registrador~300_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~44_q\ & ( \BANCO_REG|registrador~300_q\ & ( 
--- (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( \BANCO_REG|registrador~44_q\ & ( !\BANCO_REG|registrador~300_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1068_combout\ = ( \PC_REG|DOUT\(6) & ( \BANCO_REG|registrador~44_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (\BANCO_REG|registrador~44_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000101000001000000000000000001000001010000010100000",
+	lut_mask => "0001010101010101010101010101010100010101010101010101010101010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~44_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~300_q\,
-	combout => \BANCO_REG|saidaB[6]~6_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~44_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1068_combout\);
+
+\BANCO_REG|saidaB[6]~5\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[6]~5_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1068_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1068_combout\,
+	combout => \BANCO_REG|saidaB[6]~5_combout\);
 
 \ULA1|saida[6]~12\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[6]~12_combout\ = (\BANCO_REG|saidaB[6]~6_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[6]~8_combout\))))
+-- \ULA1|saida[6]~12_combout\ = (\BANCO_REG|saidaB[6]~5_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[6]~7_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4490,8 +4378,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[6]~6_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[6]~8_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[6]~5_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[6]~7_combout\,
 	combout => \ULA1|saida[6]~12_combout\);
 
 \ULA1|saida[6]~13\ : cyclonev_lcell_comb
@@ -4517,57 +4405,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~29_sumout\,
 	asdata => \ULA1|saida[7]~14_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~301_q\);
 
-\BANCO_REG|saidaA[7]~9\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[7]~8\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[7]~9_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~301_q\)))
+-- \BANCO_REG|saidaA[7]~8_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~301_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~301_q\,
-	combout => \BANCO_REG|saidaA[7]~9_combout\);
-
-\BANCO_REG|registrador~1070\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1070_combout\ = ( \BANCO_REG|registrador~301_q\ & ( (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|registrador~45_q\) # ((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)))) ) ) # ( !\BANCO_REG|registrador~301_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (!\BANCO_REG|registrador~45_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100100000000000110011000000010011001000000000001100110000000100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~45_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~301_q\,
-	combout => \BANCO_REG|registrador~1070_combout\);
+	combout => \BANCO_REG|saidaA[7]~8_combout\);
 
 \ULA1|Add0~29\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~29_sumout\ = SUM(( \BANCO_REG|saidaA[7]~9_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1070_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1070_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~26\ ))
--- \ULA1|Add0~30\ = CARRY(( \BANCO_REG|saidaA[7]~9_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1070_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1070_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~26\ ))
+-- \ULA1|Add0~29_sumout\ = SUM(( \BANCO_REG|saidaA[7]~8_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1069_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1069_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~26\ ))
+-- \ULA1|Add0~30\ = CARRY(( \BANCO_REG|saidaA[7]~8_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1069_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1069_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~26\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4577,10 +4446,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[7]~9_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1070_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[7]~8_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1069_combout\,
 	cin => \ULA1|Add0~26\,
 	sumout => \ULA1|Add0~29_sumout\,
 	cout => \ULA1|Add0~30\);
@@ -4620,39 +4489,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~29_wirecell_combout\,
 	asdata => \ULA1|saida[7]~14_wirecell_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~45_q\);
 
-\BANCO_REG|saidaB[7]~7\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1069\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[7]~7_combout\ = ( \BANCO_REG|registrador~45_q\ & ( \BANCO_REG|registrador~301_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( 
--- !\BANCO_REG|registrador~45_q\ & ( \BANCO_REG|registrador~301_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~45_q\ & ( !\BANCO_REG|registrador~301_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1069_combout\ = ( \PC_REG|DOUT\(6) & ( !\BANCO_REG|registrador~45_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (!\BANCO_REG|registrador~45_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1010000010000000000000000000000010100000101000000000000000100000",
+	lut_mask => "0010101010101010101010101010101000101010101010101010101010101010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~45_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~301_q\,
-	combout => \BANCO_REG|saidaB[7]~7_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~45_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1069_combout\);
+
+\BANCO_REG|saidaB[7]~6\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[7]~6_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1069_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1069_combout\,
+	combout => \BANCO_REG|saidaB[7]~6_combout\);
 
 \ULA1|saida[7]~14\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[7]~14_combout\ = (\BANCO_REG|saidaB[7]~7_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[7]~9_combout\))))
+-- \ULA1|saida[7]~14_combout\ = (\BANCO_REG|saidaB[7]~6_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[7]~8_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4663,8 +4544,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[7]~7_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[7]~9_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[7]~6_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[7]~8_combout\,
 	combout => \ULA1|saida[7]~14_combout\);
 
 \ULA1|saida[7]~15\ : cyclonev_lcell_comb
@@ -4690,57 +4571,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~33_sumout\,
 	asdata => \ULA1|saida[8]~16_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~302_q\);
 
-\BANCO_REG|saidaA[8]~10\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[8]~9\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[8]~10_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~302_q\)))
+-- \BANCO_REG|saidaA[8]~9_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~302_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~302_q\,
-	combout => \BANCO_REG|saidaA[8]~10_combout\);
-
-\BANCO_REG|registrador~1071\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1071_combout\ = ( \BANCO_REG|registrador~302_q\ & ( (!\ROM1|memROM~0_combout\ & (((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)) # (\BANCO_REG|registrador~46_q\))) ) ) # ( !\BANCO_REG|registrador~302_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (\BANCO_REG|registrador~46_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000011001000000001001100110000000000110010000000010011001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~46_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~302_q\,
-	combout => \BANCO_REG|registrador~1071_combout\);
+	combout => \BANCO_REG|saidaA[8]~9_combout\);
 
 \ULA1|Add0~33\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~33_sumout\ = SUM(( \BANCO_REG|saidaA[8]~10_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1071_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1071_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~30\ ))
--- \ULA1|Add0~34\ = CARRY(( \BANCO_REG|saidaA[8]~10_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1071_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1071_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~30\ ))
+-- \ULA1|Add0~33_sumout\ = SUM(( \BANCO_REG|saidaA[8]~9_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1070_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1070_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~30\ ))
+-- \ULA1|Add0~34\ = CARRY(( \BANCO_REG|saidaA[8]~9_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1070_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1070_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~30\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4750,10 +4612,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[8]~10_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1071_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[8]~9_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1070_combout\,
 	cin => \ULA1|Add0~30\,
 	sumout => \ULA1|Add0~33_sumout\,
 	cout => \ULA1|Add0~34\);
@@ -4765,39 +4627,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~33_sumout\,
 	asdata => \ULA1|saida[8]~16_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~46_q\);
 
-\BANCO_REG|saidaB[8]~8\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1070\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[8]~8_combout\ = ( \BANCO_REG|registrador~46_q\ & ( \BANCO_REG|registrador~302_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~46_q\ & ( \BANCO_REG|registrador~302_q\ & ( 
--- (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( \BANCO_REG|registrador~46_q\ & ( !\BANCO_REG|registrador~302_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1070_combout\ = ( \PC_REG|DOUT\(6) & ( \BANCO_REG|registrador~46_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (\BANCO_REG|registrador~46_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000101000001000000000000000001000001010000010100000",
+	lut_mask => "0001010101010101010101010101010100010101010101010101010101010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~46_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~302_q\,
-	combout => \BANCO_REG|saidaB[8]~8_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~46_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1070_combout\);
+
+\BANCO_REG|saidaB[8]~7\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[8]~7_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1070_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1070_combout\,
+	combout => \BANCO_REG|saidaB[8]~7_combout\);
 
 \ULA1|saida[8]~16\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[8]~16_combout\ = (\BANCO_REG|saidaB[8]~8_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[8]~10_combout\))))
+-- \ULA1|saida[8]~16_combout\ = (\BANCO_REG|saidaB[8]~7_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[8]~9_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4808,8 +4682,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[8]~8_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[8]~10_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[8]~7_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[8]~9_combout\,
 	combout => \ULA1|saida[8]~16_combout\);
 
 \ULA1|saida[8]~17\ : cyclonev_lcell_comb
@@ -4835,57 +4709,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~37_sumout\,
 	asdata => \ULA1|saida[9]~18_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~303_q\);
 
-\BANCO_REG|saidaA[9]~11\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[9]~10\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[9]~11_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~303_q\)))
+-- \BANCO_REG|saidaA[9]~10_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~303_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~303_q\,
-	combout => \BANCO_REG|saidaA[9]~11_combout\);
-
-\BANCO_REG|registrador~1072\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1072_combout\ = ( \BANCO_REG|registrador~303_q\ & ( (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|registrador~47_q\) # ((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)))) ) ) # ( !\BANCO_REG|registrador~303_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (!\BANCO_REG|registrador~47_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100100000000000110011000000010011001000000000001100110000000100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~47_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~303_q\,
-	combout => \BANCO_REG|registrador~1072_combout\);
+	combout => \BANCO_REG|saidaA[9]~10_combout\);
 
 \ULA1|Add0~37\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~37_sumout\ = SUM(( \BANCO_REG|saidaA[9]~11_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1072_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1072_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~34\ ))
--- \ULA1|Add0~38\ = CARRY(( \BANCO_REG|saidaA[9]~11_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1072_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1072_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~34\ ))
+-- \ULA1|Add0~37_sumout\ = SUM(( \BANCO_REG|saidaA[9]~10_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1071_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1071_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~34\ ))
+-- \ULA1|Add0~38\ = CARRY(( \BANCO_REG|saidaA[9]~10_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1071_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1071_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~34\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4895,10 +4750,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[9]~11_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1072_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[9]~10_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1071_combout\,
 	cin => \ULA1|Add0~34\,
 	sumout => \ULA1|Add0~37_sumout\,
 	cout => \ULA1|Add0~38\);
@@ -4938,39 +4793,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~37_wirecell_combout\,
 	asdata => \ULA1|saida[9]~18_wirecell_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~47_q\);
 
-\BANCO_REG|saidaB[9]~9\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1071\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[9]~9_combout\ = ( \BANCO_REG|registrador~47_q\ & ( \BANCO_REG|registrador~303_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( 
--- !\BANCO_REG|registrador~47_q\ & ( \BANCO_REG|registrador~303_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~47_q\ & ( !\BANCO_REG|registrador~303_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1071_combout\ = ( \PC_REG|DOUT\(6) & ( !\BANCO_REG|registrador~47_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (!\BANCO_REG|registrador~47_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1010000010000000000000000000000010100000101000000000000000100000",
+	lut_mask => "0010101010101010101010101010101000101010101010101010101010101010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~47_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~303_q\,
-	combout => \BANCO_REG|saidaB[9]~9_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~47_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1071_combout\);
+
+\BANCO_REG|saidaB[9]~8\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[9]~8_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1071_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1071_combout\,
+	combout => \BANCO_REG|saidaB[9]~8_combout\);
 
 \ULA1|saida[9]~18\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[9]~18_combout\ = (\BANCO_REG|saidaB[9]~9_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[9]~11_combout\))))
+-- \ULA1|saida[9]~18_combout\ = (\BANCO_REG|saidaB[9]~8_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[9]~10_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4981,8 +4848,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[9]~9_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[9]~11_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[9]~8_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[9]~10_combout\,
 	combout => \ULA1|saida[9]~18_combout\);
 
 \ULA1|saida[9]~19\ : cyclonev_lcell_comb
@@ -5008,57 +4875,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~41_sumout\,
 	asdata => \ULA1|saida[10]~20_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~304_q\);
 
-\BANCO_REG|saidaA[10]~12\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[10]~11\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[10]~12_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~304_q\)))
+-- \BANCO_REG|saidaA[10]~11_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~304_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~304_q\,
-	combout => \BANCO_REG|saidaA[10]~12_combout\);
-
-\BANCO_REG|registrador~1073\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1073_combout\ = ( \BANCO_REG|registrador~304_q\ & ( (!\ROM1|memROM~0_combout\ & (((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)) # (\BANCO_REG|registrador~48_q\))) ) ) # ( !\BANCO_REG|registrador~304_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (\BANCO_REG|registrador~48_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000011001000000001001100110000000000110010000000010011001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~48_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~304_q\,
-	combout => \BANCO_REG|registrador~1073_combout\);
+	combout => \BANCO_REG|saidaA[10]~11_combout\);
 
 \ULA1|Add0~41\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~41_sumout\ = SUM(( \BANCO_REG|saidaA[10]~12_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1073_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1073_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~38\ ))
--- \ULA1|Add0~42\ = CARRY(( \BANCO_REG|saidaA[10]~12_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1073_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1073_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~38\ ))
+-- \ULA1|Add0~41_sumout\ = SUM(( \BANCO_REG|saidaA[10]~11_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1072_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1072_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~38\ ))
+-- \ULA1|Add0~42\ = CARRY(( \BANCO_REG|saidaA[10]~11_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1072_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1072_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~38\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5068,10 +4916,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[10]~12_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1073_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[10]~11_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1072_combout\,
 	cin => \ULA1|Add0~38\,
 	sumout => \ULA1|Add0~41_sumout\,
 	cout => \ULA1|Add0~42\);
@@ -5083,39 +4931,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~41_sumout\,
 	asdata => \ULA1|saida[10]~20_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~48_q\);
 
-\BANCO_REG|saidaB[10]~10\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1072\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[10]~10_combout\ = ( \BANCO_REG|registrador~48_q\ & ( \BANCO_REG|registrador~304_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~48_q\ & ( \BANCO_REG|registrador~304_q\ & ( 
--- (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( \BANCO_REG|registrador~48_q\ & ( !\BANCO_REG|registrador~304_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1072_combout\ = ( \PC_REG|DOUT\(6) & ( \BANCO_REG|registrador~48_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (\BANCO_REG|registrador~48_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000101000001000000000000000001000001010000010100000",
+	lut_mask => "0001010101010101010101010101010100010101010101010101010101010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~48_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~304_q\,
-	combout => \BANCO_REG|saidaB[10]~10_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~48_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1072_combout\);
+
+\BANCO_REG|saidaB[10]~9\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[10]~9_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1072_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1072_combout\,
+	combout => \BANCO_REG|saidaB[10]~9_combout\);
 
 \ULA1|saida[10]~20\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[10]~20_combout\ = (\BANCO_REG|saidaB[10]~10_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[10]~12_combout\))))
+-- \ULA1|saida[10]~20_combout\ = (\BANCO_REG|saidaB[10]~9_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[10]~11_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5126,8 +4986,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[10]~10_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[10]~12_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[10]~9_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[10]~11_combout\,
 	combout => \ULA1|saida[10]~20_combout\);
 
 \ULA1|saida[10]~21\ : cyclonev_lcell_comb
@@ -5153,57 +5013,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~45_sumout\,
 	asdata => \ULA1|saida[11]~22_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~305_q\);
 
-\BANCO_REG|saidaA[11]~13\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[11]~12\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[11]~13_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~305_q\)))
+-- \BANCO_REG|saidaA[11]~12_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~305_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~305_q\,
-	combout => \BANCO_REG|saidaA[11]~13_combout\);
-
-\BANCO_REG|registrador~1074\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1074_combout\ = ( \BANCO_REG|registrador~305_q\ & ( (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|registrador~49_q\) # ((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)))) ) ) # ( !\BANCO_REG|registrador~305_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (!\BANCO_REG|registrador~49_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100100000000000110011000000010011001000000000001100110000000100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~49_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~305_q\,
-	combout => \BANCO_REG|registrador~1074_combout\);
+	combout => \BANCO_REG|saidaA[11]~12_combout\);
 
 \ULA1|Add0~45\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~45_sumout\ = SUM(( \BANCO_REG|saidaA[11]~13_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1074_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1074_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~42\ ))
--- \ULA1|Add0~46\ = CARRY(( \BANCO_REG|saidaA[11]~13_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1074_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1074_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~42\ ))
+-- \ULA1|Add0~45_sumout\ = SUM(( \BANCO_REG|saidaA[11]~12_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1073_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1073_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~42\ ))
+-- \ULA1|Add0~46\ = CARRY(( \BANCO_REG|saidaA[11]~12_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1073_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1073_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~42\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5213,10 +5054,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[11]~13_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1074_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[11]~12_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1073_combout\,
 	cin => \ULA1|Add0~42\,
 	sumout => \ULA1|Add0~45_sumout\,
 	cout => \ULA1|Add0~46\);
@@ -5256,39 +5097,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~45_wirecell_combout\,
 	asdata => \ULA1|saida[11]~22_wirecell_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~49_q\);
 
-\BANCO_REG|saidaB[11]~11\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1073\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[11]~11_combout\ = ( \BANCO_REG|registrador~49_q\ & ( \BANCO_REG|registrador~305_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( 
--- !\BANCO_REG|registrador~49_q\ & ( \BANCO_REG|registrador~305_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~49_q\ & ( !\BANCO_REG|registrador~305_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1073_combout\ = ( \PC_REG|DOUT\(6) & ( !\BANCO_REG|registrador~49_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (!\BANCO_REG|registrador~49_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1010000010000000000000000000000010100000101000000000000000100000",
+	lut_mask => "0010101010101010101010101010101000101010101010101010101010101010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~49_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~305_q\,
-	combout => \BANCO_REG|saidaB[11]~11_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~49_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1073_combout\);
+
+\BANCO_REG|saidaB[11]~10\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[11]~10_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1073_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1073_combout\,
+	combout => \BANCO_REG|saidaB[11]~10_combout\);
 
 \ULA1|saida[11]~22\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[11]~22_combout\ = (\BANCO_REG|saidaB[11]~11_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[11]~13_combout\))))
+-- \ULA1|saida[11]~22_combout\ = (\BANCO_REG|saidaB[11]~10_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[11]~12_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5299,8 +5152,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[11]~11_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[11]~13_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[11]~10_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[11]~12_combout\,
 	combout => \ULA1|saida[11]~22_combout\);
 
 \ULA1|saida[11]~23\ : cyclonev_lcell_comb
@@ -5326,57 +5179,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~49_sumout\,
 	asdata => \ULA1|saida[12]~24_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~306_q\);
 
-\BANCO_REG|saidaA[12]~14\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[12]~13\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[12]~14_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~306_q\)))
+-- \BANCO_REG|saidaA[12]~13_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~306_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~306_q\,
-	combout => \BANCO_REG|saidaA[12]~14_combout\);
-
-\BANCO_REG|registrador~1075\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1075_combout\ = ( \BANCO_REG|registrador~306_q\ & ( (!\ROM1|memROM~0_combout\ & (((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)) # (\BANCO_REG|registrador~50_q\))) ) ) # ( !\BANCO_REG|registrador~306_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (\BANCO_REG|registrador~50_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000011001000000001001100110000000000110010000000010011001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~50_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~306_q\,
-	combout => \BANCO_REG|registrador~1075_combout\);
+	combout => \BANCO_REG|saidaA[12]~13_combout\);
 
 \ULA1|Add0~49\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~49_sumout\ = SUM(( \BANCO_REG|saidaA[12]~14_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1075_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1075_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~46\ ))
--- \ULA1|Add0~50\ = CARRY(( \BANCO_REG|saidaA[12]~14_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1075_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1075_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~46\ ))
+-- \ULA1|Add0~49_sumout\ = SUM(( \BANCO_REG|saidaA[12]~13_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1074_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1074_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~46\ ))
+-- \ULA1|Add0~50\ = CARRY(( \BANCO_REG|saidaA[12]~13_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1074_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1074_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~46\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5386,10 +5220,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[12]~14_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1075_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[12]~13_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1074_combout\,
 	cin => \ULA1|Add0~46\,
 	sumout => \ULA1|Add0~49_sumout\,
 	cout => \ULA1|Add0~50\);
@@ -5401,39 +5235,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~49_sumout\,
 	asdata => \ULA1|saida[12]~24_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~50_q\);
 
-\BANCO_REG|saidaB[12]~12\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1074\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[12]~12_combout\ = ( \BANCO_REG|registrador~50_q\ & ( \BANCO_REG|registrador~306_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~50_q\ & ( \BANCO_REG|registrador~306_q\ & ( 
--- (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( \BANCO_REG|registrador~50_q\ & ( !\BANCO_REG|registrador~306_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1074_combout\ = ( \PC_REG|DOUT\(6) & ( \BANCO_REG|registrador~50_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (\BANCO_REG|registrador~50_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000101000001000000000000000001000001010000010100000",
+	lut_mask => "0001010101010101010101010101010100010101010101010101010101010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~50_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~306_q\,
-	combout => \BANCO_REG|saidaB[12]~12_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~50_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1074_combout\);
+
+\BANCO_REG|saidaB[12]~11\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[12]~11_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1074_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1074_combout\,
+	combout => \BANCO_REG|saidaB[12]~11_combout\);
 
 \ULA1|saida[12]~24\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[12]~24_combout\ = (\BANCO_REG|saidaB[12]~12_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[12]~14_combout\))))
+-- \ULA1|saida[12]~24_combout\ = (\BANCO_REG|saidaB[12]~11_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[12]~13_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5444,8 +5290,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[12]~12_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[12]~14_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[12]~11_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[12]~13_combout\,
 	combout => \ULA1|saida[12]~24_combout\);
 
 \ULA1|saida[12]~25\ : cyclonev_lcell_comb
@@ -5471,57 +5317,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~53_sumout\,
 	asdata => \ULA1|saida[13]~26_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~307_q\);
 
-\BANCO_REG|saidaA[13]~15\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[13]~14\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[13]~15_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~307_q\)))
+-- \BANCO_REG|saidaA[13]~14_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~307_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~307_q\,
-	combout => \BANCO_REG|saidaA[13]~15_combout\);
-
-\BANCO_REG|registrador~1076\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1076_combout\ = ( \BANCO_REG|registrador~307_q\ & ( (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|registrador~51_q\) # ((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)))) ) ) # ( !\BANCO_REG|registrador~307_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (!\BANCO_REG|registrador~51_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100100000000000110011000000010011001000000000001100110000000100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~51_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~307_q\,
-	combout => \BANCO_REG|registrador~1076_combout\);
+	combout => \BANCO_REG|saidaA[13]~14_combout\);
 
 \ULA1|Add0~53\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~53_sumout\ = SUM(( \BANCO_REG|saidaA[13]~15_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1076_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1076_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~50\ ))
--- \ULA1|Add0~54\ = CARRY(( \BANCO_REG|saidaA[13]~15_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1076_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1076_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~50\ ))
+-- \ULA1|Add0~53_sumout\ = SUM(( \BANCO_REG|saidaA[13]~14_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1075_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1075_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~50\ ))
+-- \ULA1|Add0~54\ = CARRY(( \BANCO_REG|saidaA[13]~14_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1075_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1075_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~50\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5531,10 +5358,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[13]~15_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1076_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[13]~14_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1075_combout\,
 	cin => \ULA1|Add0~50\,
 	sumout => \ULA1|Add0~53_sumout\,
 	cout => \ULA1|Add0~54\);
@@ -5574,39 +5401,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~53_wirecell_combout\,
 	asdata => \ULA1|saida[13]~26_wirecell_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~51_q\);
 
-\BANCO_REG|saidaB[13]~13\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1075\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[13]~13_combout\ = ( \BANCO_REG|registrador~51_q\ & ( \BANCO_REG|registrador~307_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( 
--- !\BANCO_REG|registrador~51_q\ & ( \BANCO_REG|registrador~307_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~51_q\ & ( !\BANCO_REG|registrador~307_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1075_combout\ = ( \PC_REG|DOUT\(6) & ( !\BANCO_REG|registrador~51_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (!\BANCO_REG|registrador~51_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1010000010000000000000000000000010100000101000000000000000100000",
+	lut_mask => "0010101010101010101010101010101000101010101010101010101010101010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~51_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~307_q\,
-	combout => \BANCO_REG|saidaB[13]~13_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~51_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1075_combout\);
+
+\BANCO_REG|saidaB[13]~12\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[13]~12_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1075_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1075_combout\,
+	combout => \BANCO_REG|saidaB[13]~12_combout\);
 
 \ULA1|saida[13]~26\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[13]~26_combout\ = (\BANCO_REG|saidaB[13]~13_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[13]~15_combout\))))
+-- \ULA1|saida[13]~26_combout\ = (\BANCO_REG|saidaB[13]~12_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[13]~14_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5617,8 +5456,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[13]~13_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[13]~15_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[13]~12_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[13]~14_combout\,
 	combout => \ULA1|saida[13]~26_combout\);
 
 \ULA1|saida[13]~27\ : cyclonev_lcell_comb
@@ -5644,57 +5483,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~57_sumout\,
 	asdata => \ULA1|saida[14]~28_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~308_q\);
 
-\BANCO_REG|saidaA[14]~16\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[14]~15\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[14]~16_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~308_q\)))
+-- \BANCO_REG|saidaA[14]~15_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~308_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~308_q\,
-	combout => \BANCO_REG|saidaA[14]~16_combout\);
-
-\BANCO_REG|registrador~1077\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1077_combout\ = ( \BANCO_REG|registrador~308_q\ & ( (!\ROM1|memROM~0_combout\ & (((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)) # (\BANCO_REG|registrador~52_q\))) ) ) # ( !\BANCO_REG|registrador~308_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (\BANCO_REG|registrador~52_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000011001000000001001100110000000000110010000000010011001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~52_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~308_q\,
-	combout => \BANCO_REG|registrador~1077_combout\);
+	combout => \BANCO_REG|saidaA[14]~15_combout\);
 
 \ULA1|Add0~57\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~57_sumout\ = SUM(( \BANCO_REG|saidaA[14]~16_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1077_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1077_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~54\ ))
--- \ULA1|Add0~58\ = CARRY(( \BANCO_REG|saidaA[14]~16_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1077_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1077_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~54\ ))
+-- \ULA1|Add0~57_sumout\ = SUM(( \BANCO_REG|saidaA[14]~15_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1076_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1076_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~54\ ))
+-- \ULA1|Add0~58\ = CARRY(( \BANCO_REG|saidaA[14]~15_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1076_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1076_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~54\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5704,10 +5524,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[14]~16_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1077_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[14]~15_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1076_combout\,
 	cin => \ULA1|Add0~54\,
 	sumout => \ULA1|Add0~57_sumout\,
 	cout => \ULA1|Add0~58\);
@@ -5719,39 +5539,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~57_sumout\,
 	asdata => \ULA1|saida[14]~28_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~52_q\);
 
-\BANCO_REG|saidaB[14]~14\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1076\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[14]~14_combout\ = ( \BANCO_REG|registrador~52_q\ & ( \BANCO_REG|registrador~308_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~52_q\ & ( \BANCO_REG|registrador~308_q\ & ( 
--- (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( \BANCO_REG|registrador~52_q\ & ( !\BANCO_REG|registrador~308_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1076_combout\ = ( \PC_REG|DOUT\(6) & ( \BANCO_REG|registrador~52_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (\BANCO_REG|registrador~52_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000101000001000000000000000001000001010000010100000",
+	lut_mask => "0001010101010101010101010101010100010101010101010101010101010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~52_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~308_q\,
-	combout => \BANCO_REG|saidaB[14]~14_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~52_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1076_combout\);
+
+\BANCO_REG|saidaB[14]~13\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[14]~13_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1076_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1076_combout\,
+	combout => \BANCO_REG|saidaB[14]~13_combout\);
 
 \ULA1|saida[14]~28\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[14]~28_combout\ = (\BANCO_REG|saidaB[14]~14_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[14]~16_combout\))))
+-- \ULA1|saida[14]~28_combout\ = (\BANCO_REG|saidaB[14]~13_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[14]~15_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5762,8 +5594,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[14]~14_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[14]~16_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[14]~13_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[14]~15_combout\,
 	combout => \ULA1|saida[14]~28_combout\);
 
 \ULA1|saida[14]~29\ : cyclonev_lcell_comb
@@ -5789,57 +5621,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~61_sumout\,
 	asdata => \ULA1|saida[15]~30_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~309_q\);
 
-\BANCO_REG|saidaA[15]~17\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[15]~16\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[15]~17_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~309_q\)))
+-- \BANCO_REG|saidaA[15]~16_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~309_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~309_q\,
-	combout => \BANCO_REG|saidaA[15]~17_combout\);
-
-\BANCO_REG|registrador~1078\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1078_combout\ = ( \BANCO_REG|registrador~309_q\ & ( (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|registrador~53_q\) # ((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)))) ) ) # ( !\BANCO_REG|registrador~309_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (!\BANCO_REG|registrador~53_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100100000000000110011000000010011001000000000001100110000000100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~53_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~309_q\,
-	combout => \BANCO_REG|registrador~1078_combout\);
+	combout => \BANCO_REG|saidaA[15]~16_combout\);
 
 \ULA1|Add0~61\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~61_sumout\ = SUM(( \BANCO_REG|saidaA[15]~17_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1078_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1078_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~58\ ))
--- \ULA1|Add0~62\ = CARRY(( \BANCO_REG|saidaA[15]~17_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1078_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1078_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~58\ ))
+-- \ULA1|Add0~61_sumout\ = SUM(( \BANCO_REG|saidaA[15]~16_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1077_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1077_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~58\ ))
+-- \ULA1|Add0~62\ = CARRY(( \BANCO_REG|saidaA[15]~16_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1077_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1077_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~58\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5849,10 +5662,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[15]~17_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1078_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[15]~16_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1077_combout\,
 	cin => \ULA1|Add0~58\,
 	sumout => \ULA1|Add0~61_sumout\,
 	cout => \ULA1|Add0~62\);
@@ -5892,39 +5705,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~61_wirecell_combout\,
 	asdata => \ULA1|saida[15]~30_wirecell_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~53_q\);
 
-\BANCO_REG|saidaB[15]~15\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1077\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[15]~15_combout\ = ( \BANCO_REG|registrador~53_q\ & ( \BANCO_REG|registrador~309_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( 
--- !\BANCO_REG|registrador~53_q\ & ( \BANCO_REG|registrador~309_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~53_q\ & ( !\BANCO_REG|registrador~309_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1077_combout\ = ( \PC_REG|DOUT\(6) & ( !\BANCO_REG|registrador~53_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (!\BANCO_REG|registrador~53_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1010000010000000000000000000000010100000101000000000000000100000",
+	lut_mask => "0010101010101010101010101010101000101010101010101010101010101010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~53_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~309_q\,
-	combout => \BANCO_REG|saidaB[15]~15_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~53_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1077_combout\);
+
+\BANCO_REG|saidaB[15]~14\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[15]~14_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1077_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1077_combout\,
+	combout => \BANCO_REG|saidaB[15]~14_combout\);
 
 \ULA1|saida[15]~30\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[15]~30_combout\ = (\BANCO_REG|saidaB[15]~15_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[15]~17_combout\))))
+-- \ULA1|saida[15]~30_combout\ = (\BANCO_REG|saidaB[15]~14_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[15]~16_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5935,8 +5760,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[15]~15_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[15]~17_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[15]~14_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[15]~16_combout\,
 	combout => \ULA1|saida[15]~30_combout\);
 
 \ULA1|saida[15]~31\ : cyclonev_lcell_comb
@@ -5962,57 +5787,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~65_sumout\,
 	asdata => \ULA1|saida[16]~32_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~310_q\);
 
-\BANCO_REG|saidaA[16]~18\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[16]~17\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[16]~18_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~310_q\)))
+-- \BANCO_REG|saidaA[16]~17_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~310_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~310_q\,
-	combout => \BANCO_REG|saidaA[16]~18_combout\);
-
-\BANCO_REG|registrador~1079\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1079_combout\ = ( \BANCO_REG|registrador~310_q\ & ( (!\ROM1|memROM~0_combout\ & (((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)) # (\BANCO_REG|registrador~54_q\))) ) ) # ( !\BANCO_REG|registrador~310_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (\BANCO_REG|registrador~54_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000011001000000001001100110000000000110010000000010011001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~54_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~310_q\,
-	combout => \BANCO_REG|registrador~1079_combout\);
+	combout => \BANCO_REG|saidaA[16]~17_combout\);
 
 \ULA1|Add0~65\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~65_sumout\ = SUM(( \BANCO_REG|saidaA[16]~18_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1079_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1079_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~62\ ))
--- \ULA1|Add0~66\ = CARRY(( \BANCO_REG|saidaA[16]~18_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1079_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1079_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~62\ ))
+-- \ULA1|Add0~65_sumout\ = SUM(( \BANCO_REG|saidaA[16]~17_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1078_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1078_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~62\ ))
+-- \ULA1|Add0~66\ = CARRY(( \BANCO_REG|saidaA[16]~17_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1078_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1078_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~62\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6022,10 +5828,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[16]~18_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1079_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[16]~17_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1078_combout\,
 	cin => \ULA1|Add0~62\,
 	sumout => \ULA1|Add0~65_sumout\,
 	cout => \ULA1|Add0~66\);
@@ -6037,39 +5843,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~65_sumout\,
 	asdata => \ULA1|saida[16]~32_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~54_q\);
 
-\BANCO_REG|saidaB[16]~16\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1078\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[16]~16_combout\ = ( \BANCO_REG|registrador~54_q\ & ( \BANCO_REG|registrador~310_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~54_q\ & ( \BANCO_REG|registrador~310_q\ & ( 
--- (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( \BANCO_REG|registrador~54_q\ & ( !\BANCO_REG|registrador~310_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1078_combout\ = ( \PC_REG|DOUT\(6) & ( \BANCO_REG|registrador~54_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (\BANCO_REG|registrador~54_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000101000001000000000000000001000001010000010100000",
+	lut_mask => "0001010101010101010101010101010100010101010101010101010101010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~54_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~310_q\,
-	combout => \BANCO_REG|saidaB[16]~16_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~54_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1078_combout\);
+
+\BANCO_REG|saidaB[16]~15\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[16]~15_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1078_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1078_combout\,
+	combout => \BANCO_REG|saidaB[16]~15_combout\);
 
 \ULA1|saida[16]~32\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[16]~32_combout\ = (\BANCO_REG|saidaB[16]~16_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[16]~18_combout\))))
+-- \ULA1|saida[16]~32_combout\ = (\BANCO_REG|saidaB[16]~15_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[16]~17_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6080,8 +5898,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[16]~16_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[16]~18_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[16]~15_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[16]~17_combout\,
 	combout => \ULA1|saida[16]~32_combout\);
 
 \ULA1|saida[16]~33\ : cyclonev_lcell_comb
@@ -6107,57 +5925,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~69_sumout\,
 	asdata => \ULA1|saida[17]~34_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~311_q\);
 
-\BANCO_REG|saidaA[17]~19\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[17]~18\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[17]~19_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~311_q\)))
+-- \BANCO_REG|saidaA[17]~18_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~311_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~311_q\,
-	combout => \BANCO_REG|saidaA[17]~19_combout\);
-
-\BANCO_REG|registrador~1080\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1080_combout\ = ( \BANCO_REG|registrador~311_q\ & ( (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|registrador~55_q\) # ((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)))) ) ) # ( !\BANCO_REG|registrador~311_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (!\BANCO_REG|registrador~55_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100100000000000110011000000010011001000000000001100110000000100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~55_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~311_q\,
-	combout => \BANCO_REG|registrador~1080_combout\);
+	combout => \BANCO_REG|saidaA[17]~18_combout\);
 
 \ULA1|Add0~69\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~69_sumout\ = SUM(( \BANCO_REG|saidaA[17]~19_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1080_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1080_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~66\ ))
--- \ULA1|Add0~70\ = CARRY(( \BANCO_REG|saidaA[17]~19_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1080_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1080_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~66\ ))
+-- \ULA1|Add0~69_sumout\ = SUM(( \BANCO_REG|saidaA[17]~18_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1079_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1079_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~66\ ))
+-- \ULA1|Add0~70\ = CARRY(( \BANCO_REG|saidaA[17]~18_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1079_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1079_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~66\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6167,10 +5966,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[17]~19_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1080_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[17]~18_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1079_combout\,
 	cin => \ULA1|Add0~66\,
 	sumout => \ULA1|Add0~69_sumout\,
 	cout => \ULA1|Add0~70\);
@@ -6210,39 +6009,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~69_wirecell_combout\,
 	asdata => \ULA1|saida[17]~34_wirecell_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~55_q\);
 
-\BANCO_REG|saidaB[17]~17\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1079\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[17]~17_combout\ = ( \BANCO_REG|registrador~55_q\ & ( \BANCO_REG|registrador~311_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( 
--- !\BANCO_REG|registrador~55_q\ & ( \BANCO_REG|registrador~311_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~55_q\ & ( !\BANCO_REG|registrador~311_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1079_combout\ = ( \PC_REG|DOUT\(6) & ( !\BANCO_REG|registrador~55_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (!\BANCO_REG|registrador~55_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1010000010000000000000000000000010100000101000000000000000100000",
+	lut_mask => "0010101010101010101010101010101000101010101010101010101010101010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~55_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~311_q\,
-	combout => \BANCO_REG|saidaB[17]~17_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~55_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1079_combout\);
+
+\BANCO_REG|saidaB[17]~16\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[17]~16_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1079_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1079_combout\,
+	combout => \BANCO_REG|saidaB[17]~16_combout\);
 
 \ULA1|saida[17]~34\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[17]~34_combout\ = (\BANCO_REG|saidaB[17]~17_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[17]~19_combout\))))
+-- \ULA1|saida[17]~34_combout\ = (\BANCO_REG|saidaB[17]~16_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[17]~18_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6253,8 +6064,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[17]~17_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[17]~19_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[17]~16_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[17]~18_combout\,
 	combout => \ULA1|saida[17]~34_combout\);
 
 \ULA1|saida[17]~35\ : cyclonev_lcell_comb
@@ -6280,57 +6091,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~73_sumout\,
 	asdata => \ULA1|saida[18]~36_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~312_q\);
 
-\BANCO_REG|saidaA[18]~20\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[18]~19\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[18]~20_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~312_q\)))
+-- \BANCO_REG|saidaA[18]~19_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~312_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~312_q\,
-	combout => \BANCO_REG|saidaA[18]~20_combout\);
-
-\BANCO_REG|registrador~1081\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1081_combout\ = ( \BANCO_REG|registrador~312_q\ & ( (!\ROM1|memROM~0_combout\ & (((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)) # (\BANCO_REG|registrador~56_q\))) ) ) # ( !\BANCO_REG|registrador~312_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (\BANCO_REG|registrador~56_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000011001000000001001100110000000000110010000000010011001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~56_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~312_q\,
-	combout => \BANCO_REG|registrador~1081_combout\);
+	combout => \BANCO_REG|saidaA[18]~19_combout\);
 
 \ULA1|Add0~73\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~73_sumout\ = SUM(( \BANCO_REG|saidaA[18]~20_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1081_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1081_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~70\ ))
--- \ULA1|Add0~74\ = CARRY(( \BANCO_REG|saidaA[18]~20_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1081_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1081_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~70\ ))
+-- \ULA1|Add0~73_sumout\ = SUM(( \BANCO_REG|saidaA[18]~19_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1080_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1080_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~70\ ))
+-- \ULA1|Add0~74\ = CARRY(( \BANCO_REG|saidaA[18]~19_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1080_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1080_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~70\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6340,10 +6132,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[18]~20_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1081_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[18]~19_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1080_combout\,
 	cin => \ULA1|Add0~70\,
 	sumout => \ULA1|Add0~73_sumout\,
 	cout => \ULA1|Add0~74\);
@@ -6355,39 +6147,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~73_sumout\,
 	asdata => \ULA1|saida[18]~36_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~56_q\);
 
-\BANCO_REG|saidaB[18]~18\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1080\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[18]~18_combout\ = ( \BANCO_REG|registrador~56_q\ & ( \BANCO_REG|registrador~312_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~56_q\ & ( \BANCO_REG|registrador~312_q\ & ( 
--- (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( \BANCO_REG|registrador~56_q\ & ( !\BANCO_REG|registrador~312_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1080_combout\ = ( \PC_REG|DOUT\(6) & ( \BANCO_REG|registrador~56_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (\BANCO_REG|registrador~56_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000101000001000000000000000001000001010000010100000",
+	lut_mask => "0001010101010101010101010101010100010101010101010101010101010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~56_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~312_q\,
-	combout => \BANCO_REG|saidaB[18]~18_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~56_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1080_combout\);
+
+\BANCO_REG|saidaB[18]~17\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[18]~17_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1080_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1080_combout\,
+	combout => \BANCO_REG|saidaB[18]~17_combout\);
 
 \ULA1|saida[18]~36\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[18]~36_combout\ = (\BANCO_REG|saidaB[18]~18_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[18]~20_combout\))))
+-- \ULA1|saida[18]~36_combout\ = (\BANCO_REG|saidaB[18]~17_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[18]~19_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6398,8 +6202,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[18]~18_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[18]~20_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[18]~17_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[18]~19_combout\,
 	combout => \ULA1|saida[18]~36_combout\);
 
 \ULA1|saida[18]~37\ : cyclonev_lcell_comb
@@ -6425,57 +6229,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~77_sumout\,
 	asdata => \ULA1|saida[19]~38_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~313_q\);
 
-\BANCO_REG|saidaA[19]~21\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[19]~20\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[19]~21_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~313_q\)))
+-- \BANCO_REG|saidaA[19]~20_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~313_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~313_q\,
-	combout => \BANCO_REG|saidaA[19]~21_combout\);
-
-\BANCO_REG|registrador~1082\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1082_combout\ = ( \BANCO_REG|registrador~313_q\ & ( (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|registrador~57_q\) # ((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)))) ) ) # ( !\BANCO_REG|registrador~313_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (!\BANCO_REG|registrador~57_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100100000000000110011000000010011001000000000001100110000000100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~57_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~313_q\,
-	combout => \BANCO_REG|registrador~1082_combout\);
+	combout => \BANCO_REG|saidaA[19]~20_combout\);
 
 \ULA1|Add0~77\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~77_sumout\ = SUM(( \BANCO_REG|saidaA[19]~21_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1082_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1082_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~74\ ))
--- \ULA1|Add0~78\ = CARRY(( \BANCO_REG|saidaA[19]~21_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1082_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1082_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~74\ ))
+-- \ULA1|Add0~77_sumout\ = SUM(( \BANCO_REG|saidaA[19]~20_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1081_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1081_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~74\ ))
+-- \ULA1|Add0~78\ = CARRY(( \BANCO_REG|saidaA[19]~20_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1081_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1081_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~74\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6485,10 +6270,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[19]~21_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1082_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[19]~20_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1081_combout\,
 	cin => \ULA1|Add0~74\,
 	sumout => \ULA1|Add0~77_sumout\,
 	cout => \ULA1|Add0~78\);
@@ -6528,39 +6313,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~77_wirecell_combout\,
 	asdata => \ULA1|saida[19]~38_wirecell_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~57_q\);
 
-\BANCO_REG|saidaB[19]~19\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1081\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[19]~19_combout\ = ( \BANCO_REG|registrador~57_q\ & ( \BANCO_REG|registrador~313_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( 
--- !\BANCO_REG|registrador~57_q\ & ( \BANCO_REG|registrador~313_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~57_q\ & ( !\BANCO_REG|registrador~313_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1081_combout\ = ( \PC_REG|DOUT\(6) & ( !\BANCO_REG|registrador~57_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (!\BANCO_REG|registrador~57_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1010000010000000000000000000000010100000101000000000000000100000",
+	lut_mask => "0010101010101010101010101010101000101010101010101010101010101010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~57_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~313_q\,
-	combout => \BANCO_REG|saidaB[19]~19_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~57_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1081_combout\);
+
+\BANCO_REG|saidaB[19]~18\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[19]~18_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1081_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1081_combout\,
+	combout => \BANCO_REG|saidaB[19]~18_combout\);
 
 \ULA1|saida[19]~38\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[19]~38_combout\ = (\BANCO_REG|saidaB[19]~19_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[19]~21_combout\))))
+-- \ULA1|saida[19]~38_combout\ = (\BANCO_REG|saidaB[19]~18_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[19]~20_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6571,8 +6368,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[19]~19_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[19]~21_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[19]~18_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[19]~20_combout\,
 	combout => \ULA1|saida[19]~38_combout\);
 
 \ULA1|saida[19]~39\ : cyclonev_lcell_comb
@@ -6598,57 +6395,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~81_sumout\,
 	asdata => \ULA1|saida[20]~40_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~314_q\);
 
-\BANCO_REG|saidaA[20]~22\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[20]~21\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[20]~22_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~314_q\)))
+-- \BANCO_REG|saidaA[20]~21_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~314_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~314_q\,
-	combout => \BANCO_REG|saidaA[20]~22_combout\);
-
-\BANCO_REG|registrador~1083\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1083_combout\ = ( \BANCO_REG|registrador~314_q\ & ( (!\ROM1|memROM~0_combout\ & (((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)) # (\BANCO_REG|registrador~58_q\))) ) ) # ( !\BANCO_REG|registrador~314_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (\BANCO_REG|registrador~58_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000011001000000001001100110000000000110010000000010011001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~58_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~314_q\,
-	combout => \BANCO_REG|registrador~1083_combout\);
+	combout => \BANCO_REG|saidaA[20]~21_combout\);
 
 \ULA1|Add0~81\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~81_sumout\ = SUM(( \BANCO_REG|saidaA[20]~22_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1083_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1083_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~78\ ))
--- \ULA1|Add0~82\ = CARRY(( \BANCO_REG|saidaA[20]~22_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1083_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1083_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~78\ ))
+-- \ULA1|Add0~81_sumout\ = SUM(( \BANCO_REG|saidaA[20]~21_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1082_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1082_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~78\ ))
+-- \ULA1|Add0~82\ = CARRY(( \BANCO_REG|saidaA[20]~21_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1082_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1082_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~78\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6658,10 +6436,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[20]~22_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1083_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[20]~21_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1082_combout\,
 	cin => \ULA1|Add0~78\,
 	sumout => \ULA1|Add0~81_sumout\,
 	cout => \ULA1|Add0~82\);
@@ -6673,39 +6451,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~81_sumout\,
 	asdata => \ULA1|saida[20]~40_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~58_q\);
 
-\BANCO_REG|saidaB[20]~20\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1082\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[20]~20_combout\ = ( \BANCO_REG|registrador~58_q\ & ( \BANCO_REG|registrador~314_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~58_q\ & ( \BANCO_REG|registrador~314_q\ & ( 
--- (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( \BANCO_REG|registrador~58_q\ & ( !\BANCO_REG|registrador~314_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1082_combout\ = ( \PC_REG|DOUT\(6) & ( \BANCO_REG|registrador~58_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (\BANCO_REG|registrador~58_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000101000001000000000000000001000001010000010100000",
+	lut_mask => "0001010101010101010101010101010100010101010101010101010101010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~58_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~314_q\,
-	combout => \BANCO_REG|saidaB[20]~20_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~58_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1082_combout\);
+
+\BANCO_REG|saidaB[20]~19\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[20]~19_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1082_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1082_combout\,
+	combout => \BANCO_REG|saidaB[20]~19_combout\);
 
 \ULA1|saida[20]~40\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[20]~40_combout\ = (\BANCO_REG|saidaB[20]~20_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[20]~22_combout\))))
+-- \ULA1|saida[20]~40_combout\ = (\BANCO_REG|saidaB[20]~19_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[20]~21_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6716,8 +6506,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[20]~20_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[20]~22_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[20]~19_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[20]~21_combout\,
 	combout => \ULA1|saida[20]~40_combout\);
 
 \ULA1|saida[20]~41\ : cyclonev_lcell_comb
@@ -6743,57 +6533,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~85_sumout\,
 	asdata => \ULA1|saida[21]~42_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~315_q\);
 
-\BANCO_REG|saidaA[21]~23\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[21]~22\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[21]~23_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~315_q\)))
+-- \BANCO_REG|saidaA[21]~22_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~315_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~315_q\,
-	combout => \BANCO_REG|saidaA[21]~23_combout\);
-
-\BANCO_REG|registrador~1084\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1084_combout\ = ( \BANCO_REG|registrador~315_q\ & ( (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|registrador~59_q\) # ((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)))) ) ) # ( !\BANCO_REG|registrador~315_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (!\BANCO_REG|registrador~59_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100100000000000110011000000010011001000000000001100110000000100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~59_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~315_q\,
-	combout => \BANCO_REG|registrador~1084_combout\);
+	combout => \BANCO_REG|saidaA[21]~22_combout\);
 
 \ULA1|Add0~85\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~85_sumout\ = SUM(( \BANCO_REG|saidaA[21]~23_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1084_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1084_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~82\ ))
--- \ULA1|Add0~86\ = CARRY(( \BANCO_REG|saidaA[21]~23_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1084_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1084_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~82\ ))
+-- \ULA1|Add0~85_sumout\ = SUM(( \BANCO_REG|saidaA[21]~22_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1083_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1083_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~82\ ))
+-- \ULA1|Add0~86\ = CARRY(( \BANCO_REG|saidaA[21]~22_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1083_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1083_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~82\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6803,10 +6574,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[21]~23_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1084_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[21]~22_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1083_combout\,
 	cin => \ULA1|Add0~82\,
 	sumout => \ULA1|Add0~85_sumout\,
 	cout => \ULA1|Add0~86\);
@@ -6846,39 +6617,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~85_wirecell_combout\,
 	asdata => \ULA1|saida[21]~42_wirecell_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~59_q\);
 
-\BANCO_REG|saidaB[21]~21\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1083\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[21]~21_combout\ = ( \BANCO_REG|registrador~59_q\ & ( \BANCO_REG|registrador~315_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( 
--- !\BANCO_REG|registrador~59_q\ & ( \BANCO_REG|registrador~315_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~59_q\ & ( !\BANCO_REG|registrador~315_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1083_combout\ = ( \PC_REG|DOUT\(6) & ( !\BANCO_REG|registrador~59_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (!\BANCO_REG|registrador~59_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1010000010000000000000000000000010100000101000000000000000100000",
+	lut_mask => "0010101010101010101010101010101000101010101010101010101010101010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~59_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~315_q\,
-	combout => \BANCO_REG|saidaB[21]~21_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~59_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1083_combout\);
+
+\BANCO_REG|saidaB[21]~20\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[21]~20_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1083_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1083_combout\,
+	combout => \BANCO_REG|saidaB[21]~20_combout\);
 
 \ULA1|saida[21]~42\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[21]~42_combout\ = (\BANCO_REG|saidaB[21]~21_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[21]~23_combout\))))
+-- \ULA1|saida[21]~42_combout\ = (\BANCO_REG|saidaB[21]~20_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[21]~22_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6889,8 +6672,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[21]~21_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[21]~23_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[21]~20_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[21]~22_combout\,
 	combout => \ULA1|saida[21]~42_combout\);
 
 \ULA1|saida[21]~43\ : cyclonev_lcell_comb
@@ -6916,57 +6699,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~89_sumout\,
 	asdata => \ULA1|saida[22]~44_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~316_q\);
 
-\BANCO_REG|saidaA[22]~24\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[22]~23\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[22]~24_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~316_q\)))
+-- \BANCO_REG|saidaA[22]~23_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~316_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~316_q\,
-	combout => \BANCO_REG|saidaA[22]~24_combout\);
-
-\BANCO_REG|registrador~1085\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1085_combout\ = ( \BANCO_REG|registrador~316_q\ & ( (!\ROM1|memROM~0_combout\ & (((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)) # (\BANCO_REG|registrador~60_q\))) ) ) # ( !\BANCO_REG|registrador~316_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (\BANCO_REG|registrador~60_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000011001000000001001100110000000000110010000000010011001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~60_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~316_q\,
-	combout => \BANCO_REG|registrador~1085_combout\);
+	combout => \BANCO_REG|saidaA[22]~23_combout\);
 
 \ULA1|Add0~89\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~89_sumout\ = SUM(( \BANCO_REG|saidaA[22]~24_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1085_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1085_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~86\ ))
--- \ULA1|Add0~90\ = CARRY(( \BANCO_REG|saidaA[22]~24_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1085_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1085_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~86\ ))
+-- \ULA1|Add0~89_sumout\ = SUM(( \BANCO_REG|saidaA[22]~23_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1084_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1084_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~86\ ))
+-- \ULA1|Add0~90\ = CARRY(( \BANCO_REG|saidaA[22]~23_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1084_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1084_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~86\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6976,10 +6740,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[22]~24_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1085_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[22]~23_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1084_combout\,
 	cin => \ULA1|Add0~86\,
 	sumout => \ULA1|Add0~89_sumout\,
 	cout => \ULA1|Add0~90\);
@@ -6991,39 +6755,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~89_sumout\,
 	asdata => \ULA1|saida[22]~44_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~60_q\);
 
-\BANCO_REG|saidaB[22]~22\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1084\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[22]~22_combout\ = ( \BANCO_REG|registrador~60_q\ & ( \BANCO_REG|registrador~316_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~60_q\ & ( \BANCO_REG|registrador~316_q\ & ( 
--- (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( \BANCO_REG|registrador~60_q\ & ( !\BANCO_REG|registrador~316_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1084_combout\ = ( \PC_REG|DOUT\(6) & ( \BANCO_REG|registrador~60_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (\BANCO_REG|registrador~60_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000101000001000000000000000001000001010000010100000",
+	lut_mask => "0001010101010101010101010101010100010101010101010101010101010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~60_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~316_q\,
-	combout => \BANCO_REG|saidaB[22]~22_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~60_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1084_combout\);
+
+\BANCO_REG|saidaB[22]~21\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[22]~21_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1084_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1084_combout\,
+	combout => \BANCO_REG|saidaB[22]~21_combout\);
 
 \ULA1|saida[22]~44\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[22]~44_combout\ = (\BANCO_REG|saidaB[22]~22_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[22]~24_combout\))))
+-- \ULA1|saida[22]~44_combout\ = (\BANCO_REG|saidaB[22]~21_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[22]~23_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7034,8 +6810,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[22]~22_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[22]~24_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[22]~21_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[22]~23_combout\,
 	combout => \ULA1|saida[22]~44_combout\);
 
 \ULA1|saida[22]~45\ : cyclonev_lcell_comb
@@ -7061,57 +6837,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~93_sumout\,
 	asdata => \ULA1|saida[23]~46_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~317_q\);
 
-\BANCO_REG|saidaA[23]~25\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[23]~24\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[23]~25_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~317_q\)))
+-- \BANCO_REG|saidaA[23]~24_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~317_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~317_q\,
-	combout => \BANCO_REG|saidaA[23]~25_combout\);
-
-\BANCO_REG|registrador~1086\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1086_combout\ = ( \BANCO_REG|registrador~317_q\ & ( (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|registrador~61_q\) # ((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)))) ) ) # ( !\BANCO_REG|registrador~317_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (!\BANCO_REG|registrador~61_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100100000000000110011000000010011001000000000001100110000000100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~61_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~317_q\,
-	combout => \BANCO_REG|registrador~1086_combout\);
+	combout => \BANCO_REG|saidaA[23]~24_combout\);
 
 \ULA1|Add0~93\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~93_sumout\ = SUM(( \BANCO_REG|saidaA[23]~25_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1086_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1086_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~90\ ))
--- \ULA1|Add0~94\ = CARRY(( \BANCO_REG|saidaA[23]~25_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1086_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1086_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~90\ ))
+-- \ULA1|Add0~93_sumout\ = SUM(( \BANCO_REG|saidaA[23]~24_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1085_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1085_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~90\ ))
+-- \ULA1|Add0~94\ = CARRY(( \BANCO_REG|saidaA[23]~24_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1085_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1085_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~90\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7121,10 +6878,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[23]~25_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1086_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[23]~24_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1085_combout\,
 	cin => \ULA1|Add0~90\,
 	sumout => \ULA1|Add0~93_sumout\,
 	cout => \ULA1|Add0~94\);
@@ -7164,39 +6921,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~93_wirecell_combout\,
 	asdata => \ULA1|saida[23]~46_wirecell_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~61_q\);
 
-\BANCO_REG|saidaB[23]~23\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1085\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[23]~23_combout\ = ( \BANCO_REG|registrador~61_q\ & ( \BANCO_REG|registrador~317_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( 
--- !\BANCO_REG|registrador~61_q\ & ( \BANCO_REG|registrador~317_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~61_q\ & ( !\BANCO_REG|registrador~317_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1085_combout\ = ( \PC_REG|DOUT\(6) & ( !\BANCO_REG|registrador~61_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (!\BANCO_REG|registrador~61_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1010000010000000000000000000000010100000101000000000000000100000",
+	lut_mask => "0010101010101010101010101010101000101010101010101010101010101010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~61_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~317_q\,
-	combout => \BANCO_REG|saidaB[23]~23_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~61_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1085_combout\);
+
+\BANCO_REG|saidaB[23]~22\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[23]~22_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1085_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1085_combout\,
+	combout => \BANCO_REG|saidaB[23]~22_combout\);
 
 \ULA1|saida[23]~46\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[23]~46_combout\ = (\BANCO_REG|saidaB[23]~23_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[23]~25_combout\))))
+-- \ULA1|saida[23]~46_combout\ = (\BANCO_REG|saidaB[23]~22_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[23]~24_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7207,8 +6976,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[23]~23_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[23]~25_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[23]~22_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[23]~24_combout\,
 	combout => \ULA1|saida[23]~46_combout\);
 
 \ULA1|saida[23]~47\ : cyclonev_lcell_comb
@@ -7234,57 +7003,38 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~97_sumout\,
 	asdata => \ULA1|saida[24]~48_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~318_q\);
 
-\BANCO_REG|saidaA[24]~26\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[24]~25\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[24]~26_combout\ = (\ROM1|memROM~2_combout\ & (\ROM1|memROM~4_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~318_q\)))
+-- \BANCO_REG|saidaA[24]~25_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~318_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000010000000000000001000000000000000100000000000000010000",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~4_combout\,
-	datac => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~318_q\,
-	combout => \BANCO_REG|saidaA[24]~26_combout\);
-
-\BANCO_REG|registrador~1087\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1087_combout\ = ( \BANCO_REG|registrador~318_q\ & ( (!\ROM1|memROM~0_combout\ & (((\ROM1|memROM~2_combout\ & \ROM1|memROM~4_combout\)) # (\BANCO_REG|registrador~62_q\))) ) ) # ( !\BANCO_REG|registrador~318_q\ & ( 
--- (!\ROM1|memROM~0_combout\ & (\BANCO_REG|registrador~62_q\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000011001000000001001100110000000000110010000000010011001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~2_combout\,
-	datab => \ROM1|ALT_INV_memROM~0_combout\,
-	datac => \ROM1|ALT_INV_memROM~4_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~62_q\,
-	datae => \BANCO_REG|ALT_INV_registrador~318_q\,
-	combout => \BANCO_REG|registrador~1087_combout\);
+	combout => \BANCO_REG|saidaA[24]~25_combout\);
 
 \ULA1|Add0~97\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~97_sumout\ = SUM(( \BANCO_REG|saidaA[24]~26_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1087_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1087_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~94\ ))
--- \ULA1|Add0~98\ = CARRY(( \BANCO_REG|saidaA[24]~26_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1087_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1087_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~94\ ))
+-- \ULA1|Add0~97_sumout\ = SUM(( \BANCO_REG|saidaA[24]~25_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1086_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1086_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~94\ ))
+-- \ULA1|Add0~98\ = CARRY(( \BANCO_REG|saidaA[24]~25_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1086_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1086_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~94\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7294,10 +7044,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[24]~26_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1087_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[24]~25_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1086_combout\,
 	cin => \ULA1|Add0~94\,
 	sumout => \ULA1|Add0~97_sumout\,
 	cout => \ULA1|Add0~98\);
@@ -7309,39 +7059,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~97_sumout\,
 	asdata => \ULA1|saida[24]~48_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~62_q\);
 
-\BANCO_REG|saidaB[24]~24\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1086\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[24]~24_combout\ = ( \BANCO_REG|registrador~62_q\ & ( \BANCO_REG|registrador~318_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & !\ROM1|memROM~0_combout\) ) ) ) # ( !\BANCO_REG|registrador~62_q\ & ( \BANCO_REG|registrador~318_q\ & ( 
--- (!\BANCO_REG|registrador~1062_combout\ & (\ROM1|memROM~2_combout\ & (!\ROM1|memROM~0_combout\ & \ROM1|memROM~4_combout\))) ) ) ) # ( \BANCO_REG|registrador~62_q\ & ( !\BANCO_REG|registrador~318_q\ & ( (!\BANCO_REG|registrador~1062_combout\ & 
--- (!\ROM1|memROM~0_combout\ & ((!\ROM1|memROM~2_combout\) # (!\ROM1|memROM~4_combout\)))) ) ) )
+-- \BANCO_REG|registrador~1086_combout\ = ( \PC_REG|DOUT\(6) & ( \BANCO_REG|registrador~62_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (\BANCO_REG|registrador~62_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000101000001000000000000000001000001010000010100000",
+	lut_mask => "0001010101010101010101010101010100010101010101010101010101010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datab => \ROM1|ALT_INV_memROM~2_combout\,
-	datac => \ROM1|ALT_INV_memROM~0_combout\,
-	datad => \ROM1|ALT_INV_memROM~4_combout\,
-	datae => \BANCO_REG|ALT_INV_registrador~62_q\,
-	dataf => \BANCO_REG|ALT_INV_registrador~318_q\,
-	combout => \BANCO_REG|saidaB[24]~24_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~62_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1086_combout\);
+
+\BANCO_REG|saidaB[24]~23\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[24]~23_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1086_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1086_combout\,
+	combout => \BANCO_REG|saidaB[24]~23_combout\);
 
 \ULA1|saida[24]~48\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[24]~48_combout\ = (\BANCO_REG|saidaB[24]~24_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[24]~26_combout\))))
+-- \ULA1|saida[24]~48_combout\ = (\BANCO_REG|saidaB[24]~23_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[24]~25_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7352,8 +7114,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[24]~24_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[24]~26_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[24]~23_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[24]~25_combout\,
 	combout => \ULA1|saida[24]~48_combout\);
 
 \ULA1|saida[24]~49\ : cyclonev_lcell_comb
@@ -7372,21 +7134,61 @@ PORT MAP (
 	datac => \ULA1|ALT_INV_Add0~97_sumout\,
 	combout => \ULA1|saida[24]~49_combout\);
 
-\BANCO_REG|saidaA[25]~27\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~319\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLOCK_50~input_o\,
+	d => \ULA1|Add0~101_sumout\,
+	asdata => \ULA1|saida[25]~50_combout\,
+	sload => \Sel_ULA[1]~input_o\,
+	ena => \BANCO_REG|registrador~1090_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \BANCO_REG|registrador~319_q\);
+
+\BANCO_REG|saidaA[25]~26\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[25]~27_combout\ = (\BANCO_REG|saidaA[1]~0_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~319_q\))
+-- \BANCO_REG|saidaA[25]~26_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~319_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000010000000100000001000000010000000100000001000000010000000100",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
-	datac => \BANCO_REG|ALT_INV_registrador~319_q\,
-	combout => \BANCO_REG|saidaA[25]~27_combout\);
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
+	datad => \BANCO_REG|ALT_INV_registrador~319_q\,
+	combout => \BANCO_REG|saidaA[25]~26_combout\);
+
+\ULA1|Add0~101\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \ULA1|Add0~101_sumout\ = SUM(( \BANCO_REG|saidaA[25]~26_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1087_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1087_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~98\ ))
+-- \ULA1|Add0~102\ = CARRY(( \BANCO_REG|saidaA[25]~26_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1087_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1087_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~98\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000010100001001110000000000000000000000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datac => \ALT_INV_Sel_ULA[1]~input_o\,
+	datad => \BANCO_REG|ALT_INV_saidaA[25]~26_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1087_combout\,
+	cin => \ULA1|Add0~98\,
+	sumout => \ULA1|Add0~101_sumout\,
+	cout => \ULA1|Add0~102\);
 
 \ULA1|Add0~101_wirecell\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -7423,90 +7225,51 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~101_wirecell_combout\,
 	asdata => \ULA1|saida[25]~50_wirecell_combout\,
-	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \BANCO_REG|registrador~63_q\);
-
-\BANCO_REG|registrador~1090\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|registrador~1090_combout\ = (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|saidaA[1]~0_combout\ & (!\BANCO_REG|registrador~63_q\)) # (\BANCO_REG|saidaA[1]~0_combout\ & ((\BANCO_REG|registrador~319_q\)))))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1000000010100010100000001010001010000000101000101000000010100010",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datac => \BANCO_REG|ALT_INV_registrador~63_q\,
-	datad => \BANCO_REG|ALT_INV_registrador~319_q\,
-	combout => \BANCO_REG|registrador~1090_combout\);
-
-\ULA1|Add0~101\ : cyclonev_lcell_comb
--- Equation(s):
--- \ULA1|Add0~101_sumout\ = SUM(( \BANCO_REG|saidaA[25]~27_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1090_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1090_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~98\ ))
--- \ULA1|Add0~102\ = CARRY(( \BANCO_REG|saidaA[25]~27_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1090_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1090_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~98\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000010100001001110000000000000000000000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[25]~27_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1090_combout\,
-	cin => \ULA1|Add0~98\,
-	sumout => \ULA1|Add0~101_sumout\,
-	cout => \ULA1|Add0~102\);
-
-\BANCO_REG|registrador~319\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
-	d => \ULA1|Add0~101_sumout\,
-	asdata => \ULA1|saida[25]~50_combout\,
 	sload => \Sel_ULA[1]~input_o\,
 	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \BANCO_REG|registrador~319_q\);
+	q => \BANCO_REG|registrador~63_q\);
 
-\BANCO_REG|saidaB[25]~25\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1087\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[25]~25_combout\ = (!\ROM1|memROM~0_combout\ & (\BANCO_REG|saidaA[1]~0_combout\ & \BANCO_REG|registrador~319_q\))
+-- \BANCO_REG|registrador~1087_combout\ = ( \PC_REG|DOUT\(6) & ( !\BANCO_REG|registrador~63_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (!\BANCO_REG|registrador~63_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000100010000000000010001000000000001000100000000000100010",
+	lut_mask => "0010101010101010101010101010101000101010101010101010101010101010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~319_q\,
-	combout => \BANCO_REG|saidaB[25]~25_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~63_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1087_combout\);
+
+\BANCO_REG|saidaB[25]~24\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[25]~24_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1087_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1087_combout\,
+	combout => \BANCO_REG|saidaB[25]~24_combout\);
 
 \ULA1|saida[25]~50\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[25]~50_combout\ = (\BANCO_REG|saidaB[25]~25_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[25]~27_combout\))))
+-- \ULA1|saida[25]~50_combout\ = (\BANCO_REG|saidaB[25]~24_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[25]~26_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7517,8 +7280,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[25]~25_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[25]~27_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[25]~24_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[25]~26_combout\,
 	combout => \ULA1|saida[25]~50_combout\);
 
 \ULA1|saida[25]~51\ : cyclonev_lcell_comb
@@ -7537,61 +7300,45 @@ PORT MAP (
 	datac => \ULA1|ALT_INV_Add0~101_sumout\,
 	combout => \ULA1|saida[25]~51_combout\);
 
-\BANCO_REG|saidaA[26]~28\ : cyclonev_lcell_comb
--- Equation(s):
--- \BANCO_REG|saidaA[26]~28_combout\ = (\BANCO_REG|saidaA[1]~0_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~320_q\))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000010000000100000001000000010000000100000001000000010000000100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
-	datac => \BANCO_REG|ALT_INV_registrador~320_q\,
-	combout => \BANCO_REG|saidaA[26]~28_combout\);
-
-\BANCO_REG|registrador~64\ : dffeas
+\BANCO_REG|registrador~320\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~105_sumout\,
 	asdata => \ULA1|saida[26]~52_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \BANCO_REG|registrador~64_q\);
+	q => \BANCO_REG|registrador~320_q\);
 
-\BANCO_REG|registrador~1091\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[26]~27\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|registrador~1091_combout\ = (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|saidaA[1]~0_combout\ & (\BANCO_REG|registrador~64_q\)) # (\BANCO_REG|saidaA[1]~0_combout\ & ((\BANCO_REG|registrador~320_q\)))))
+-- \BANCO_REG|saidaA[26]~27_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~320_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000100000101010000010000010101000001000001010100000100000101010",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datac => \BANCO_REG|ALT_INV_registrador~64_q\,
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
 	datad => \BANCO_REG|ALT_INV_registrador~320_q\,
-	combout => \BANCO_REG|registrador~1091_combout\);
+	combout => \BANCO_REG|saidaA[26]~27_combout\);
 
 \ULA1|Add0~105\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~105_sumout\ = SUM(( \BANCO_REG|saidaA[26]~28_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1091_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1091_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~102\ ))
--- \ULA1|Add0~106\ = CARRY(( \BANCO_REG|saidaA[26]~28_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1091_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1091_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~102\ ))
+-- \ULA1|Add0~105_sumout\ = SUM(( \BANCO_REG|saidaA[26]~27_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1088_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1088_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~102\ ))
+-- \ULA1|Add0~106\ = CARRY(( \BANCO_REG|saidaA[26]~27_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1088_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1088_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~102\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7601,49 +7348,66 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[26]~28_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1091_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[26]~27_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1088_combout\,
 	cin => \ULA1|Add0~102\,
 	sumout => \ULA1|Add0~105_sumout\,
 	cout => \ULA1|Add0~106\);
 
-\BANCO_REG|registrador~320\ : dffeas
+\BANCO_REG|registrador~64\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~105_sumout\,
 	asdata => \ULA1|saida[26]~52_combout\,
 	sload => \Sel_ULA[1]~input_o\,
 	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \BANCO_REG|registrador~320_q\);
+	q => \BANCO_REG|registrador~64_q\);
 
-\BANCO_REG|saidaB[26]~26\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1088\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[26]~26_combout\ = (!\ROM1|memROM~0_combout\ & (\BANCO_REG|saidaA[1]~0_combout\ & \BANCO_REG|registrador~320_q\))
+-- \BANCO_REG|registrador~1088_combout\ = ( \PC_REG|DOUT\(6) & ( \BANCO_REG|registrador~64_q\ ) ) # ( !\PC_REG|DOUT\(6) & ( (\BANCO_REG|registrador~64_q\ & (((\PC_REG|DOUT\(7)) # (\PC_REG|DOUT\(4))) # (\PC_REG|DOUT\(5)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000100010000000000010001000000000001000100000000000100010",
+	lut_mask => "0001010101010101010101010101010100010101010101010101010101010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~320_q\,
-	combout => \BANCO_REG|saidaB[26]~26_combout\);
+	dataa => \BANCO_REG|ALT_INV_registrador~64_q\,
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	combout => \BANCO_REG|registrador~1088_combout\);
+
+\BANCO_REG|saidaB[26]~25\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaB[26]~25_combout\ = (!\BANCO_REG|Equal0~0_combout\ & \BANCO_REG|registrador~1088_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datab => \BANCO_REG|ALT_INV_registrador~1088_combout\,
+	combout => \BANCO_REG|saidaB[26]~25_combout\);
 
 \ULA1|saida[26]~52\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[26]~52_combout\ = (\BANCO_REG|saidaB[26]~26_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[26]~28_combout\))))
+-- \ULA1|saida[26]~52_combout\ = (\BANCO_REG|saidaB[26]~25_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[26]~27_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7654,8 +7418,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[26]~26_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[26]~28_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[26]~25_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[26]~27_combout\,
 	combout => \ULA1|saida[26]~52_combout\);
 
 \ULA1|saida[26]~53\ : cyclonev_lcell_comb
@@ -7674,21 +7438,61 @@ PORT MAP (
 	datac => \ULA1|ALT_INV_Add0~105_sumout\,
 	combout => \ULA1|saida[26]~53_combout\);
 
-\BANCO_REG|saidaA[27]~29\ : cyclonev_lcell_comb
+\ROM1|memROM~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[27]~29_combout\ = (\BANCO_REG|saidaA[1]~0_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~321_q\))
+-- \ROM1|memROM~2_combout\ = ( !\PC_REG|DOUT\(6) & ( \PC_REG|DOUT\(3) & ( (\PC_REG|DOUT\(2) & (!\PC_REG|DOUT\(5) & (!\PC_REG|DOUT\(4) & !\PC_REG|DOUT\(7)))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000010000000100000001000000010000000100000001000000010000000100",
+	lut_mask => "0000000000000000000000000000000001000000000000000000000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
-	datac => \BANCO_REG|ALT_INV_registrador~321_q\,
-	combout => \BANCO_REG|saidaA[27]~29_combout\);
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	dataf => \PC_REG|ALT_INV_DOUT\(3),
+	combout => \ROM1|memROM~2_combout\);
+
+\BANCO_REG|Equal0~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|Equal0~1_combout\ = ( !\PC_REG|DOUT\(4) & ( \PC_REG|DOUT\(3) & ( (!\PC_REG|DOUT\(7) & (!\PC_REG|DOUT\(6) & (!\PC_REG|DOUT\(2) & !\PC_REG|DOUT\(5)))) ) ) ) # ( !\PC_REG|DOUT\(4) & ( !\PC_REG|DOUT\(3) & ( (!\PC_REG|DOUT\(7) & (!\PC_REG|DOUT\(6) & 
+-- !\PC_REG|DOUT\(5))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1000100000000000000000000000000010000000000000000000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \PC_REG|ALT_INV_DOUT\(7),
+	datab => \PC_REG|ALT_INV_DOUT\(6),
+	datac => \PC_REG|ALT_INV_DOUT\(2),
+	datad => \PC_REG|ALT_INV_DOUT\(5),
+	datae => \PC_REG|ALT_INV_DOUT\(4),
+	dataf => \PC_REG|ALT_INV_DOUT\(3),
+	combout => \BANCO_REG|Equal0~1_combout\);
+
+\BANCO_REG|saidaA[27]~28\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \BANCO_REG|saidaA[27]~28_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~321_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
+	datad => \BANCO_REG|ALT_INV_registrador~321_q\,
+	combout => \BANCO_REG|saidaA[27]~28_combout\);
 
 \ULA1|Add0~109_wirecell\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -7725,38 +7529,36 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~109_wirecell_combout\,
 	asdata => \ULA1|saida[27]~54_wirecell_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~65_q\);
 
-\BANCO_REG|registrador~1092\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1091\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|registrador~1092_combout\ = (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|saidaA[1]~0_combout\ & (!\BANCO_REG|registrador~65_q\)) # (\BANCO_REG|saidaA[1]~0_combout\ & ((\BANCO_REG|registrador~321_q\)))))
+-- \BANCO_REG|registrador~1091_combout\ = (!\BANCO_REG|saidaA[0]~0_combout\ & !\BANCO_REG|registrador~65_q\)
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000000010100010100000001010001010000000101000101000000010100010",
+	lut_mask => "1010000010100000101000001010000010100000101000001010000010100000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
+	dataa => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
 	datac => \BANCO_REG|ALT_INV_registrador~65_q\,
-	datad => \BANCO_REG|ALT_INV_registrador~321_q\,
-	combout => \BANCO_REG|registrador~1092_combout\);
+	combout => \BANCO_REG|registrador~1091_combout\);
 
 \ULA1|Add0~109\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~109_sumout\ = SUM(( \BANCO_REG|saidaA[27]~29_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1092_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1092_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~106\ ))
--- \ULA1|Add0~110\ = CARRY(( \BANCO_REG|saidaA[27]~29_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1092_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1092_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~106\ ))
+-- \ULA1|Add0~109_sumout\ = SUM(( \BANCO_REG|saidaA[27]~28_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1091_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1091_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~106\ ))
+-- \ULA1|Add0~110\ = CARRY(( \BANCO_REG|saidaA[27]~28_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1091_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1091_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~106\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7766,10 +7568,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[27]~29_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1092_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[27]~28_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1091_combout\,
 	cin => \ULA1|Add0~106\,
 	sumout => \ULA1|Add0~109_sumout\,
 	cout => \ULA1|Add0~110\);
@@ -7781,34 +7583,35 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~109_sumout\,
 	asdata => \ULA1|saida[27]~54_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~321_q\);
 
-\BANCO_REG|saidaB[27]~27\ : cyclonev_lcell_comb
+\BANCO_REG|saidaB[27]~26\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[27]~27_combout\ = (!\ROM1|memROM~0_combout\ & (\BANCO_REG|saidaA[1]~0_combout\ & \BANCO_REG|registrador~321_q\))
+-- \BANCO_REG|saidaB[27]~26_combout\ = ( \BANCO_REG|registrador~321_q\ & ( (\BANCO_REG|saidaA[0]~0_combout\ & (!\ROM1|memROM~2_combout\ & !\BANCO_REG|Equal0~1_combout\)) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000100010000000000010001000000000001000100000000000100010",
+	lut_mask => "0000000000000000010000000100000000000000000000000100000001000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~321_q\,
-	combout => \BANCO_REG|saidaB[27]~27_combout\);
+	dataa => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datab => \ROM1|ALT_INV_memROM~2_combout\,
+	datac => \BANCO_REG|ALT_INV_Equal0~1_combout\,
+	datae => \BANCO_REG|ALT_INV_registrador~321_q\,
+	combout => \BANCO_REG|saidaB[27]~26_combout\);
 
 \ULA1|saida[27]~54\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[27]~54_combout\ = (\BANCO_REG|saidaB[27]~27_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[27]~29_combout\))))
+-- \ULA1|saida[27]~54_combout\ = (\BANCO_REG|saidaB[27]~26_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[27]~28_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7819,8 +7622,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[27]~27_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[27]~29_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[27]~26_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[27]~28_combout\,
 	combout => \ULA1|saida[27]~54_combout\);
 
 \ULA1|saida[27]~55\ : cyclonev_lcell_comb
@@ -7839,21 +7642,22 @@ PORT MAP (
 	datac => \ULA1|ALT_INV_Add0~109_sumout\,
 	combout => \ULA1|saida[27]~55_combout\);
 
-\BANCO_REG|saidaA[28]~30\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[28]~29\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[28]~30_combout\ = (\BANCO_REG|saidaA[1]~0_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~322_q\))
+-- \BANCO_REG|saidaA[28]~29_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~322_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000010000000100000001000000010000000100000001000000010000000100",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
-	datac => \BANCO_REG|ALT_INV_registrador~322_q\,
-	combout => \BANCO_REG|saidaA[28]~30_combout\);
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
+	datad => \BANCO_REG|ALT_INV_registrador~322_q\,
+	combout => \BANCO_REG|saidaA[28]~29_combout\);
 
 \BANCO_REG|registrador~66\ : dffeas
 -- pragma translate_off
@@ -7862,38 +7666,36 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~113_sumout\,
 	asdata => \ULA1|saida[28]~56_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~66_q\);
 
-\BANCO_REG|registrador~1093\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1092\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|registrador~1093_combout\ = (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|saidaA[1]~0_combout\ & (\BANCO_REG|registrador~66_q\)) # (\BANCO_REG|saidaA[1]~0_combout\ & ((\BANCO_REG|registrador~322_q\)))))
+-- \BANCO_REG|registrador~1092_combout\ = (!\BANCO_REG|saidaA[0]~0_combout\ & \BANCO_REG|registrador~66_q\)
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000100000101010000010000010101000001000001010100000100000101010",
+	lut_mask => "0000101000001010000010100000101000001010000010100000101000001010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
+	dataa => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
 	datac => \BANCO_REG|ALT_INV_registrador~66_q\,
-	datad => \BANCO_REG|ALT_INV_registrador~322_q\,
-	combout => \BANCO_REG|registrador~1093_combout\);
+	combout => \BANCO_REG|registrador~1092_combout\);
 
 \ULA1|Add0~113\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~113_sumout\ = SUM(( \BANCO_REG|saidaA[28]~30_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1093_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1093_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~110\ ))
--- \ULA1|Add0~114\ = CARRY(( \BANCO_REG|saidaA[28]~30_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1093_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1093_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~110\ ))
+-- \ULA1|Add0~113_sumout\ = SUM(( \BANCO_REG|saidaA[28]~29_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1092_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1092_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~110\ ))
+-- \ULA1|Add0~114\ = CARRY(( \BANCO_REG|saidaA[28]~29_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1092_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1092_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~110\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7903,10 +7705,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[28]~30_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1093_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[28]~29_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1092_combout\,
 	cin => \ULA1|Add0~110\,
 	sumout => \ULA1|Add0~113_sumout\,
 	cout => \ULA1|Add0~114\);
@@ -7918,34 +7720,35 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~113_sumout\,
 	asdata => \ULA1|saida[28]~56_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~322_q\);
 
-\BANCO_REG|saidaB[28]~28\ : cyclonev_lcell_comb
+\BANCO_REG|saidaB[28]~27\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[28]~28_combout\ = (!\ROM1|memROM~0_combout\ & (\BANCO_REG|saidaA[1]~0_combout\ & \BANCO_REG|registrador~322_q\))
+-- \BANCO_REG|saidaB[28]~27_combout\ = ( \BANCO_REG|registrador~322_q\ & ( (\BANCO_REG|saidaA[0]~0_combout\ & (!\ROM1|memROM~2_combout\ & !\BANCO_REG|Equal0~1_combout\)) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000100010000000000010001000000000001000100000000000100010",
+	lut_mask => "0000000000000000010000000100000000000000000000000100000001000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~322_q\,
-	combout => \BANCO_REG|saidaB[28]~28_combout\);
+	dataa => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datab => \ROM1|ALT_INV_memROM~2_combout\,
+	datac => \BANCO_REG|ALT_INV_Equal0~1_combout\,
+	datae => \BANCO_REG|ALT_INV_registrador~322_q\,
+	combout => \BANCO_REG|saidaB[28]~27_combout\);
 
 \ULA1|saida[28]~56\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[28]~56_combout\ = (\BANCO_REG|saidaB[28]~28_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[28]~30_combout\))))
+-- \ULA1|saida[28]~56_combout\ = (\BANCO_REG|saidaB[28]~27_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[28]~29_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7956,8 +7759,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[28]~28_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[28]~30_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[28]~27_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[28]~29_combout\,
 	combout => \ULA1|saida[28]~56_combout\);
 
 \ULA1|saida[28]~57\ : cyclonev_lcell_comb
@@ -7976,21 +7779,22 @@ PORT MAP (
 	datac => \ULA1|ALT_INV_Add0~113_sumout\,
 	combout => \ULA1|saida[28]~57_combout\);
 
-\BANCO_REG|saidaA[29]~31\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[29]~30\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[29]~31_combout\ = (\BANCO_REG|saidaA[1]~0_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~323_q\))
+-- \BANCO_REG|saidaA[29]~30_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~323_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000010000000100000001000000010000000100000001000000010000000100",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
-	datac => \BANCO_REG|ALT_INV_registrador~323_q\,
-	combout => \BANCO_REG|saidaA[29]~31_combout\);
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
+	datad => \BANCO_REG|ALT_INV_registrador~323_q\,
+	combout => \BANCO_REG|saidaA[29]~30_combout\);
 
 \ULA1|Add0~117_wirecell\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -8027,38 +7831,36 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~117_wirecell_combout\,
 	asdata => \ULA1|saida[29]~58_wirecell_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~67_q\);
 
-\BANCO_REG|registrador~1094\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1093\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|registrador~1094_combout\ = (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|saidaA[1]~0_combout\ & (!\BANCO_REG|registrador~67_q\)) # (\BANCO_REG|saidaA[1]~0_combout\ & ((\BANCO_REG|registrador~323_q\)))))
+-- \BANCO_REG|registrador~1093_combout\ = (!\BANCO_REG|saidaA[0]~0_combout\ & !\BANCO_REG|registrador~67_q\)
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000000010100010100000001010001010000000101000101000000010100010",
+	lut_mask => "1010000010100000101000001010000010100000101000001010000010100000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
+	dataa => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
 	datac => \BANCO_REG|ALT_INV_registrador~67_q\,
-	datad => \BANCO_REG|ALT_INV_registrador~323_q\,
-	combout => \BANCO_REG|registrador~1094_combout\);
+	combout => \BANCO_REG|registrador~1093_combout\);
 
 \ULA1|Add0~117\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~117_sumout\ = SUM(( \BANCO_REG|saidaA[29]~31_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1094_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1094_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~114\ ))
--- \ULA1|Add0~118\ = CARRY(( \BANCO_REG|saidaA[29]~31_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1094_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1094_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~114\ ))
+-- \ULA1|Add0~117_sumout\ = SUM(( \BANCO_REG|saidaA[29]~30_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1093_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1093_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~114\ ))
+-- \ULA1|Add0~118\ = CARRY(( \BANCO_REG|saidaA[29]~30_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1093_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1093_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~114\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8068,10 +7870,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[29]~31_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1094_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[29]~30_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1093_combout\,
 	cin => \ULA1|Add0~114\,
 	sumout => \ULA1|Add0~117_sumout\,
 	cout => \ULA1|Add0~118\);
@@ -8083,34 +7885,35 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~117_sumout\,
 	asdata => \ULA1|saida[29]~58_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~323_q\);
 
-\BANCO_REG|saidaB[29]~29\ : cyclonev_lcell_comb
+\BANCO_REG|saidaB[29]~28\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[29]~29_combout\ = (!\ROM1|memROM~0_combout\ & (\BANCO_REG|saidaA[1]~0_combout\ & \BANCO_REG|registrador~323_q\))
+-- \BANCO_REG|saidaB[29]~28_combout\ = ( \BANCO_REG|registrador~323_q\ & ( (\BANCO_REG|saidaA[0]~0_combout\ & (!\ROM1|memROM~2_combout\ & !\BANCO_REG|Equal0~1_combout\)) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000100010000000000010001000000000001000100000000000100010",
+	lut_mask => "0000000000000000010000000100000000000000000000000100000001000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~323_q\,
-	combout => \BANCO_REG|saidaB[29]~29_combout\);
+	dataa => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datab => \ROM1|ALT_INV_memROM~2_combout\,
+	datac => \BANCO_REG|ALT_INV_Equal0~1_combout\,
+	datae => \BANCO_REG|ALT_INV_registrador~323_q\,
+	combout => \BANCO_REG|saidaB[29]~28_combout\);
 
 \ULA1|saida[29]~58\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[29]~58_combout\ = (\BANCO_REG|saidaB[29]~29_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[29]~31_combout\))))
+-- \ULA1|saida[29]~58_combout\ = (\BANCO_REG|saidaB[29]~28_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[29]~30_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8121,8 +7924,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[29]~29_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[29]~31_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[29]~28_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[29]~30_combout\,
 	combout => \ULA1|saida[29]~58_combout\);
 
 \ULA1|saida[29]~59\ : cyclonev_lcell_comb
@@ -8141,21 +7944,22 @@ PORT MAP (
 	datac => \ULA1|ALT_INV_Add0~117_sumout\,
 	combout => \ULA1|saida[29]~59_combout\);
 
-\BANCO_REG|saidaA[30]~32\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[30]~31\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[30]~32_combout\ = (\BANCO_REG|saidaA[1]~0_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~324_q\))
+-- \BANCO_REG|saidaA[30]~31_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~324_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000010000000100000001000000010000000100000001000000010000000100",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
-	datac => \BANCO_REG|ALT_INV_registrador~324_q\,
-	combout => \BANCO_REG|saidaA[30]~32_combout\);
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
+	datad => \BANCO_REG|ALT_INV_registrador~324_q\,
+	combout => \BANCO_REG|saidaA[30]~31_combout\);
 
 \BANCO_REG|registrador~68\ : dffeas
 -- pragma translate_off
@@ -8164,38 +7968,36 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~121_sumout\,
 	asdata => \ULA1|saida[30]~60_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~68_q\);
 
-\BANCO_REG|registrador~1095\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1094\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|registrador~1095_combout\ = (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|saidaA[1]~0_combout\ & (\BANCO_REG|registrador~68_q\)) # (\BANCO_REG|saidaA[1]~0_combout\ & ((\BANCO_REG|registrador~324_q\)))))
+-- \BANCO_REG|registrador~1094_combout\ = (!\BANCO_REG|saidaA[0]~0_combout\ & \BANCO_REG|registrador~68_q\)
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000100000101010000010000010101000001000001010100000100000101010",
+	lut_mask => "0000101000001010000010100000101000001010000010100000101000001010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
+	dataa => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
 	datac => \BANCO_REG|ALT_INV_registrador~68_q\,
-	datad => \BANCO_REG|ALT_INV_registrador~324_q\,
-	combout => \BANCO_REG|registrador~1095_combout\);
+	combout => \BANCO_REG|registrador~1094_combout\);
 
 \ULA1|Add0~121\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~121_sumout\ = SUM(( \BANCO_REG|saidaA[30]~32_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1095_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1095_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~118\ ))
--- \ULA1|Add0~122\ = CARRY(( \BANCO_REG|saidaA[30]~32_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1095_combout\)) # (\BANCO_REG|registrador~1062_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1095_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~118\ ))
+-- \ULA1|Add0~121_sumout\ = SUM(( \BANCO_REG|saidaA[30]~31_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1094_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1094_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~118\ ))
+-- \ULA1|Add0~122\ = CARRY(( \BANCO_REG|saidaA[30]~31_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1094_combout\)) # (\BANCO_REG|Equal0~0_combout\))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1094_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~118\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8205,10 +8007,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
-	datab => \BANCO_REG|ALT_INV_registrador~1062_combout\,
+	datab => \BANCO_REG|ALT_INV_Equal0~0_combout\,
 	datac => \ALT_INV_Sel_ULA[1]~input_o\,
-	datad => \BANCO_REG|ALT_INV_saidaA[30]~32_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1095_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[30]~31_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1094_combout\,
 	cin => \ULA1|Add0~118\,
 	sumout => \ULA1|Add0~121_sumout\,
 	cout => \ULA1|Add0~122\);
@@ -8220,34 +8022,35 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~121_sumout\,
 	asdata => \ULA1|saida[30]~60_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~324_q\);
 
-\BANCO_REG|saidaB[30]~30\ : cyclonev_lcell_comb
+\BANCO_REG|saidaB[30]~29\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[30]~30_combout\ = (!\ROM1|memROM~0_combout\ & (\BANCO_REG|saidaA[1]~0_combout\ & \BANCO_REG|registrador~324_q\))
+-- \BANCO_REG|saidaB[30]~29_combout\ = ( \BANCO_REG|registrador~324_q\ & ( (\BANCO_REG|saidaA[0]~0_combout\ & (!\ROM1|memROM~2_combout\ & !\BANCO_REG|Equal0~1_combout\)) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000100010000000000010001000000000001000100000000000100010",
+	lut_mask => "0000000000000000010000000100000000000000000000000100000001000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~324_q\,
-	combout => \BANCO_REG|saidaB[30]~30_combout\);
+	dataa => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datab => \ROM1|ALT_INV_memROM~2_combout\,
+	datac => \BANCO_REG|ALT_INV_Equal0~1_combout\,
+	datae => \BANCO_REG|ALT_INV_registrador~324_q\,
+	combout => \BANCO_REG|saidaB[30]~29_combout\);
 
 \ULA1|saida[30]~60\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[30]~60_combout\ = (\BANCO_REG|saidaB[30]~30_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[30]~32_combout\))))
+-- \ULA1|saida[30]~60_combout\ = (\BANCO_REG|saidaB[30]~29_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[30]~31_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8258,8 +8061,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[30]~30_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[30]~32_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[30]~29_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[30]~31_combout\,
 	combout => \ULA1|saida[30]~60_combout\);
 
 \ULA1|saida[30]~61\ : cyclonev_lcell_comb
@@ -8278,21 +8081,22 @@ PORT MAP (
 	datac => \ULA1|ALT_INV_Add0~121_sumout\,
 	combout => \ULA1|saida[30]~61_combout\);
 
-\BANCO_REG|saidaA[31]~33\ : cyclonev_lcell_comb
+\BANCO_REG|saidaA[31]~32\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaA[31]~33_combout\ = (\BANCO_REG|saidaA[1]~0_combout\ & (!\BANCO_REG|saidaA[0]~1_combout\ & \BANCO_REG|registrador~325_q\))
+-- \BANCO_REG|saidaA[31]~32_combout\ = (\BANCO_REG|saidaA[0]~0_combout\ & (\BANCO_REG|registrador~325_q\ & ((\PC_REG|DOUT\(3)) # (\PC_REG|DOUT\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000010000000100000001000000010000000100000001000000010000000100",
+	lut_mask => "0000000000010011000000000001001100000000000100110000000000010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[0]~1_combout\,
-	datac => \BANCO_REG|ALT_INV_registrador~325_q\,
-	combout => \BANCO_REG|saidaA[31]~33_combout\);
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
+	datad => \BANCO_REG|ALT_INV_registrador~325_q\,
+	combout => \BANCO_REG|saidaA[31]~32_combout\);
 
 \ULA1|Add0~125_wirecell\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -8329,36 +8133,34 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~125_wirecell_combout\,
 	asdata => \ULA1|saida[31]~62_wirecell_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1088_combout\,
+	ena => \BANCO_REG|registrador~1089_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~69_q\);
 
-\BANCO_REG|registrador~1096\ : cyclonev_lcell_comb
+\BANCO_REG|registrador~1095\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|registrador~1096_combout\ = (!\ROM1|memROM~0_combout\ & ((!\BANCO_REG|saidaA[1]~0_combout\ & (!\BANCO_REG|registrador~69_q\)) # (\BANCO_REG|saidaA[1]~0_combout\ & ((\BANCO_REG|registrador~325_q\)))))
+-- \BANCO_REG|registrador~1095_combout\ = (!\BANCO_REG|saidaA[0]~0_combout\ & !\BANCO_REG|registrador~69_q\)
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000000010100010100000001010001010000000101000101000000010100010",
+	lut_mask => "1010000010100000101000001010000010100000101000001010000010100000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
+	dataa => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
 	datac => \BANCO_REG|ALT_INV_registrador~69_q\,
-	datad => \BANCO_REG|ALT_INV_registrador~325_q\,
-	combout => \BANCO_REG|registrador~1096_combout\);
+	combout => \BANCO_REG|registrador~1095_combout\);
 
 \ULA1|Add0~125\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|Add0~125_sumout\ = SUM(( \BANCO_REG|saidaA[31]~33_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1096_combout\) # (\BANCO_REG|registrador~1062_combout\)))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
--- (((!\BANCO_REG|registrador~1096_combout\) # (\BANCO_REG|registrador~1062_combout\))))) ) + ( \ULA1|Add0~122\ ))
+-- \ULA1|Add0~125_sumout\ = SUM(( \BANCO_REG|saidaA[31]~32_combout\ ) + ( (!\Sel_ULA[0]~input_o\ & (((!\BANCO_REG|registrador~1095_combout\) # (\BANCO_REG|Equal0~0_combout\)))) # (\Sel_ULA[0]~input_o\ & (!\Sel_ULA[1]~input_o\ $ 
+-- (((!\BANCO_REG|registrador~1095_combout\) # (\BANCO_REG|Equal0~0_combout\))))) ) + ( \ULA1|Add0~122\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8369,9 +8171,9 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[0]~input_o\,
 	datab => \ALT_INV_Sel_ULA[1]~input_o\,
-	datac => \BANCO_REG|ALT_INV_registrador~1062_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[31]~33_combout\,
-	dataf => \BANCO_REG|ALT_INV_registrador~1096_combout\,
+	datac => \BANCO_REG|ALT_INV_Equal0~0_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[31]~32_combout\,
+	dataf => \BANCO_REG|ALT_INV_registrador~1095_combout\,
 	cin => \ULA1|Add0~122\,
 	sumout => \ULA1|Add0~125_sumout\);
 
@@ -8382,34 +8184,35 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_CLOCK_50~input_o\,
+	clk => \CLOCK_50~input_o\,
 	d => \ULA1|Add0~125_sumout\,
 	asdata => \ULA1|saida[31]~62_combout\,
 	sload => \Sel_ULA[1]~input_o\,
-	ena => \BANCO_REG|registrador~1089_combout\,
+	ena => \BANCO_REG|registrador~1090_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \BANCO_REG|registrador~325_q\);
 
-\BANCO_REG|saidaB[31]~31\ : cyclonev_lcell_comb
+\BANCO_REG|saidaB[31]~30\ : cyclonev_lcell_comb
 -- Equation(s):
--- \BANCO_REG|saidaB[31]~31_combout\ = (!\ROM1|memROM~0_combout\ & (\BANCO_REG|saidaA[1]~0_combout\ & \BANCO_REG|registrador~325_q\))
+-- \BANCO_REG|saidaB[31]~30_combout\ = ( \BANCO_REG|registrador~325_q\ & ( (\BANCO_REG|saidaA[0]~0_combout\ & (!\ROM1|memROM~2_combout\ & !\BANCO_REG|Equal0~1_combout\)) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000100010000000000010001000000000001000100000000000100010",
+	lut_mask => "0000000000000000010000000100000000000000000000000100000001000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ROM1|ALT_INV_memROM~0_combout\,
-	datab => \BANCO_REG|ALT_INV_saidaA[1]~0_combout\,
-	datad => \BANCO_REG|ALT_INV_registrador~325_q\,
-	combout => \BANCO_REG|saidaB[31]~31_combout\);
+	dataa => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datab => \ROM1|ALT_INV_memROM~2_combout\,
+	datac => \BANCO_REG|ALT_INV_Equal0~1_combout\,
+	datae => \BANCO_REG|ALT_INV_registrador~325_q\,
+	combout => \BANCO_REG|saidaB[31]~30_combout\);
 
 \ULA1|saida[31]~62\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA1|saida[31]~62_combout\ = (\BANCO_REG|saidaB[31]~31_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[31]~33_combout\))))
+-- \ULA1|saida[31]~62_combout\ = (\BANCO_REG|saidaB[31]~30_combout\ & ((!\Sel_ULA[1]~input_o\) # ((!\Sel_ULA[0]~input_o\) # (\BANCO_REG|saidaA[31]~32_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8420,8 +8223,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \ALT_INV_Sel_ULA[1]~input_o\,
 	datab => \ALT_INV_Sel_ULA[0]~input_o\,
-	datac => \BANCO_REG|ALT_INV_saidaB[31]~31_combout\,
-	datad => \BANCO_REG|ALT_INV_saidaA[31]~33_combout\,
+	datac => \BANCO_REG|ALT_INV_saidaB[31]~30_combout\,
+	datad => \BANCO_REG|ALT_INV_saidaA[31]~32_combout\,
 	combout => \ULA1|saida[31]~62_combout\);
 
 \ULA1|saida[31]~63\ : cyclonev_lcell_comb
@@ -8440,58 +8243,45 @@ PORT MAP (
 	datac => \ULA1|ALT_INV_Add0~125_sumout\,
 	combout => \ULA1|saida[31]~63_combout\);
 
-\ROM1|memROM~5\ : cyclonev_lcell_comb
+\ROM1|memROM~4\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ROM1|memROM~5_combout\ = ( \ROM1|memROM~2_combout\ & ( (!\REG_PC|DOUT\(3) & (!\REG_PC|DOUT\(2) & (!\REG_PC|DOUT\(5) & !\REG_PC|DOUT\(4)))) ) )
+-- \ROM1|memROM~4_combout\ = (!\PC_REG|DOUT\(2) & (\BANCO_REG|saidaA[0]~0_combout\ & !\PC_REG|DOUT\(3)))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000100000000000000000000000000000001000000000000000",
+	lut_mask => "0010000000100000001000000010000000100000001000000010000000100000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \REG_PC|ALT_INV_DOUT\(3),
-	datab => \REG_PC|ALT_INV_DOUT\(2),
-	datac => \REG_PC|ALT_INV_DOUT\(5),
-	datad => \REG_PC|ALT_INV_DOUT\(4),
-	datae => \ROM1|ALT_INV_memROM~2_combout\,
-	combout => \ROM1|memROM~5_combout\);
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \BANCO_REG|ALT_INV_saidaA[0]~0_combout\,
+	datac => \PC_REG|ALT_INV_DOUT\(3),
+	combout => \ROM1|memROM~4_combout\);
 
-\somador|Add0~21\ : cyclonev_lcell_comb
+\ROM1|memROM~3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~21_sumout\ = SUM(( \REG_PC|DOUT\(8) ) + ( GND ) + ( \somador|Add0~14\ ))
--- \somador|Add0~22\ = CARRY(( \REG_PC|DOUT\(8) ) + ( GND ) + ( \somador|Add0~14\ ))
+-- \ROM1|memROM~3_combout\ = ( !\PC_REG|DOUT\(6) & ( \PC_REG|DOUT\(3) & ( (!\PC_REG|DOUT\(2) & (!\PC_REG|DOUT\(5) & (!\PC_REG|DOUT\(4) & !\PC_REG|DOUT\(7)))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
+	lut_mask => "0000000000000000000000000000000010000000000000000000000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(8),
-	cin => \somador|Add0~14\,
-	sumout => \somador|Add0~21_sumout\,
-	cout => \somador|Add0~22\);
+	dataa => \PC_REG|ALT_INV_DOUT\(2),
+	datab => \PC_REG|ALT_INV_DOUT\(5),
+	datac => \PC_REG|ALT_INV_DOUT\(4),
+	datad => \PC_REG|ALT_INV_DOUT\(7),
+	datae => \PC_REG|ALT_INV_DOUT\(6),
+	dataf => \PC_REG|ALT_INV_DOUT\(3),
+	combout => \ROM1|memROM~3_combout\);
 
-\REG_PC|DOUT[8]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~21_sumout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(8));
-
-\somador|Add0~25\ : cyclonev_lcell_comb
+\Somador|Add0~21\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~25_sumout\ = SUM(( \REG_PC|DOUT\(9) ) + ( GND ) + ( \somador|Add0~22\ ))
--- \somador|Add0~26\ = CARRY(( \REG_PC|DOUT\(9) ) + ( GND ) + ( \somador|Add0~22\ ))
+-- \Somador|Add0~21_sumout\ = SUM(( \PC_REG|DOUT\(8) ) + ( GND ) + ( \Somador|Add0~10\ ))
+-- \Somador|Add0~22\ = CARRY(( \PC_REG|DOUT\(8) ) + ( GND ) + ( \Somador|Add0~10\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8500,12 +8290,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(9),
-	cin => \somador|Add0~22\,
-	sumout => \somador|Add0~25_sumout\,
-	cout => \somador|Add0~26\);
+	datad => \PC_REG|ALT_INV_DOUT\(8),
+	cin => \Somador|Add0~10\,
+	sumout => \Somador|Add0~21_sumout\,
+	cout => \Somador|Add0~22\);
 
-\REG_PC|DOUT[9]\ : dffeas
+\PC_REG|DOUT[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8513,15 +8303,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~25_sumout\,
+	d => \Somador|Add0~21_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(9));
+	q => \PC_REG|DOUT\(8));
 
-\somador|Add0~29\ : cyclonev_lcell_comb
+\Somador|Add0~25\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~29_sumout\ = SUM(( \REG_PC|DOUT\(10) ) + ( GND ) + ( \somador|Add0~26\ ))
--- \somador|Add0~30\ = CARRY(( \REG_PC|DOUT\(10) ) + ( GND ) + ( \somador|Add0~26\ ))
+-- \Somador|Add0~25_sumout\ = SUM(( \PC_REG|DOUT\(9) ) + ( GND ) + ( \Somador|Add0~22\ ))
+-- \Somador|Add0~26\ = CARRY(( \PC_REG|DOUT\(9) ) + ( GND ) + ( \Somador|Add0~22\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8530,12 +8320,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(10),
-	cin => \somador|Add0~26\,
-	sumout => \somador|Add0~29_sumout\,
-	cout => \somador|Add0~30\);
+	datad => \PC_REG|ALT_INV_DOUT\(9),
+	cin => \Somador|Add0~22\,
+	sumout => \Somador|Add0~25_sumout\,
+	cout => \Somador|Add0~26\);
 
-\REG_PC|DOUT[10]\ : dffeas
+\PC_REG|DOUT[9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8543,15 +8333,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~29_sumout\,
+	d => \Somador|Add0~25_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(10));
+	q => \PC_REG|DOUT\(9));
 
-\somador|Add0~33\ : cyclonev_lcell_comb
+\Somador|Add0~29\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~33_sumout\ = SUM(( \REG_PC|DOUT\(11) ) + ( GND ) + ( \somador|Add0~30\ ))
--- \somador|Add0~34\ = CARRY(( \REG_PC|DOUT\(11) ) + ( GND ) + ( \somador|Add0~30\ ))
+-- \Somador|Add0~29_sumout\ = SUM(( \PC_REG|DOUT\(10) ) + ( GND ) + ( \Somador|Add0~26\ ))
+-- \Somador|Add0~30\ = CARRY(( \PC_REG|DOUT\(10) ) + ( GND ) + ( \Somador|Add0~26\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8560,12 +8350,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(11),
-	cin => \somador|Add0~30\,
-	sumout => \somador|Add0~33_sumout\,
-	cout => \somador|Add0~34\);
+	datad => \PC_REG|ALT_INV_DOUT\(10),
+	cin => \Somador|Add0~26\,
+	sumout => \Somador|Add0~29_sumout\,
+	cout => \Somador|Add0~30\);
 
-\REG_PC|DOUT[11]\ : dffeas
+\PC_REG|DOUT[10]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8573,15 +8363,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~33_sumout\,
+	d => \Somador|Add0~29_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(11));
+	q => \PC_REG|DOUT\(10));
 
-\somador|Add0~37\ : cyclonev_lcell_comb
+\Somador|Add0~33\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~37_sumout\ = SUM(( \REG_PC|DOUT\(12) ) + ( GND ) + ( \somador|Add0~34\ ))
--- \somador|Add0~38\ = CARRY(( \REG_PC|DOUT\(12) ) + ( GND ) + ( \somador|Add0~34\ ))
+-- \Somador|Add0~33_sumout\ = SUM(( \PC_REG|DOUT\(11) ) + ( GND ) + ( \Somador|Add0~30\ ))
+-- \Somador|Add0~34\ = CARRY(( \PC_REG|DOUT\(11) ) + ( GND ) + ( \Somador|Add0~30\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8590,12 +8380,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(12),
-	cin => \somador|Add0~34\,
-	sumout => \somador|Add0~37_sumout\,
-	cout => \somador|Add0~38\);
+	datad => \PC_REG|ALT_INV_DOUT\(11),
+	cin => \Somador|Add0~30\,
+	sumout => \Somador|Add0~33_sumout\,
+	cout => \Somador|Add0~34\);
 
-\REG_PC|DOUT[12]\ : dffeas
+\PC_REG|DOUT[11]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8603,15 +8393,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~37_sumout\,
+	d => \Somador|Add0~33_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(12));
+	q => \PC_REG|DOUT\(11));
 
-\somador|Add0~41\ : cyclonev_lcell_comb
+\Somador|Add0~37\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~41_sumout\ = SUM(( \REG_PC|DOUT\(13) ) + ( GND ) + ( \somador|Add0~38\ ))
--- \somador|Add0~42\ = CARRY(( \REG_PC|DOUT\(13) ) + ( GND ) + ( \somador|Add0~38\ ))
+-- \Somador|Add0~37_sumout\ = SUM(( \PC_REG|DOUT\(12) ) + ( GND ) + ( \Somador|Add0~34\ ))
+-- \Somador|Add0~38\ = CARRY(( \PC_REG|DOUT\(12) ) + ( GND ) + ( \Somador|Add0~34\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8620,12 +8410,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(13),
-	cin => \somador|Add0~38\,
-	sumout => \somador|Add0~41_sumout\,
-	cout => \somador|Add0~42\);
+	datad => \PC_REG|ALT_INV_DOUT\(12),
+	cin => \Somador|Add0~34\,
+	sumout => \Somador|Add0~37_sumout\,
+	cout => \Somador|Add0~38\);
 
-\REG_PC|DOUT[13]\ : dffeas
+\PC_REG|DOUT[12]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8633,15 +8423,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~41_sumout\,
+	d => \Somador|Add0~37_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(13));
+	q => \PC_REG|DOUT\(12));
 
-\somador|Add0~45\ : cyclonev_lcell_comb
+\Somador|Add0~41\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~45_sumout\ = SUM(( \REG_PC|DOUT\(14) ) + ( GND ) + ( \somador|Add0~42\ ))
--- \somador|Add0~46\ = CARRY(( \REG_PC|DOUT\(14) ) + ( GND ) + ( \somador|Add0~42\ ))
+-- \Somador|Add0~41_sumout\ = SUM(( \PC_REG|DOUT\(13) ) + ( GND ) + ( \Somador|Add0~38\ ))
+-- \Somador|Add0~42\ = CARRY(( \PC_REG|DOUT\(13) ) + ( GND ) + ( \Somador|Add0~38\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8650,12 +8440,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(14),
-	cin => \somador|Add0~42\,
-	sumout => \somador|Add0~45_sumout\,
-	cout => \somador|Add0~46\);
+	datad => \PC_REG|ALT_INV_DOUT\(13),
+	cin => \Somador|Add0~38\,
+	sumout => \Somador|Add0~41_sumout\,
+	cout => \Somador|Add0~42\);
 
-\REG_PC|DOUT[14]\ : dffeas
+\PC_REG|DOUT[13]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8663,15 +8453,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~45_sumout\,
+	d => \Somador|Add0~41_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(14));
+	q => \PC_REG|DOUT\(13));
 
-\somador|Add0~49\ : cyclonev_lcell_comb
+\Somador|Add0~45\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~49_sumout\ = SUM(( \REG_PC|DOUT\(15) ) + ( GND ) + ( \somador|Add0~46\ ))
--- \somador|Add0~50\ = CARRY(( \REG_PC|DOUT\(15) ) + ( GND ) + ( \somador|Add0~46\ ))
+-- \Somador|Add0~45_sumout\ = SUM(( \PC_REG|DOUT\(14) ) + ( GND ) + ( \Somador|Add0~42\ ))
+-- \Somador|Add0~46\ = CARRY(( \PC_REG|DOUT\(14) ) + ( GND ) + ( \Somador|Add0~42\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8680,12 +8470,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(15),
-	cin => \somador|Add0~46\,
-	sumout => \somador|Add0~49_sumout\,
-	cout => \somador|Add0~50\);
+	datad => \PC_REG|ALT_INV_DOUT\(14),
+	cin => \Somador|Add0~42\,
+	sumout => \Somador|Add0~45_sumout\,
+	cout => \Somador|Add0~46\);
 
-\REG_PC|DOUT[15]\ : dffeas
+\PC_REG|DOUT[14]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8693,15 +8483,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~49_sumout\,
+	d => \Somador|Add0~45_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(15));
+	q => \PC_REG|DOUT\(14));
 
-\somador|Add0~53\ : cyclonev_lcell_comb
+\Somador|Add0~49\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~53_sumout\ = SUM(( \REG_PC|DOUT\(16) ) + ( GND ) + ( \somador|Add0~50\ ))
--- \somador|Add0~54\ = CARRY(( \REG_PC|DOUT\(16) ) + ( GND ) + ( \somador|Add0~50\ ))
+-- \Somador|Add0~49_sumout\ = SUM(( \PC_REG|DOUT\(15) ) + ( GND ) + ( \Somador|Add0~46\ ))
+-- \Somador|Add0~50\ = CARRY(( \PC_REG|DOUT\(15) ) + ( GND ) + ( \Somador|Add0~46\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8710,12 +8500,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(16),
-	cin => \somador|Add0~50\,
-	sumout => \somador|Add0~53_sumout\,
-	cout => \somador|Add0~54\);
+	datad => \PC_REG|ALT_INV_DOUT\(15),
+	cin => \Somador|Add0~46\,
+	sumout => \Somador|Add0~49_sumout\,
+	cout => \Somador|Add0~50\);
 
-\REG_PC|DOUT[16]\ : dffeas
+\PC_REG|DOUT[15]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8723,15 +8513,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~53_sumout\,
+	d => \Somador|Add0~49_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(16));
+	q => \PC_REG|DOUT\(15));
 
-\somador|Add0~57\ : cyclonev_lcell_comb
+\Somador|Add0~53\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~57_sumout\ = SUM(( \REG_PC|DOUT\(17) ) + ( GND ) + ( \somador|Add0~54\ ))
--- \somador|Add0~58\ = CARRY(( \REG_PC|DOUT\(17) ) + ( GND ) + ( \somador|Add0~54\ ))
+-- \Somador|Add0~53_sumout\ = SUM(( \PC_REG|DOUT\(16) ) + ( GND ) + ( \Somador|Add0~50\ ))
+-- \Somador|Add0~54\ = CARRY(( \PC_REG|DOUT\(16) ) + ( GND ) + ( \Somador|Add0~50\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8740,12 +8530,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(17),
-	cin => \somador|Add0~54\,
-	sumout => \somador|Add0~57_sumout\,
-	cout => \somador|Add0~58\);
+	datad => \PC_REG|ALT_INV_DOUT\(16),
+	cin => \Somador|Add0~50\,
+	sumout => \Somador|Add0~53_sumout\,
+	cout => \Somador|Add0~54\);
 
-\REG_PC|DOUT[17]\ : dffeas
+\PC_REG|DOUT[16]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8753,15 +8543,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~57_sumout\,
+	d => \Somador|Add0~53_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(17));
+	q => \PC_REG|DOUT\(16));
 
-\somador|Add0~61\ : cyclonev_lcell_comb
+\Somador|Add0~57\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~61_sumout\ = SUM(( \REG_PC|DOUT\(18) ) + ( GND ) + ( \somador|Add0~58\ ))
--- \somador|Add0~62\ = CARRY(( \REG_PC|DOUT\(18) ) + ( GND ) + ( \somador|Add0~58\ ))
+-- \Somador|Add0~57_sumout\ = SUM(( \PC_REG|DOUT\(17) ) + ( GND ) + ( \Somador|Add0~54\ ))
+-- \Somador|Add0~58\ = CARRY(( \PC_REG|DOUT\(17) ) + ( GND ) + ( \Somador|Add0~54\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8770,12 +8560,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(18),
-	cin => \somador|Add0~58\,
-	sumout => \somador|Add0~61_sumout\,
-	cout => \somador|Add0~62\);
+	datad => \PC_REG|ALT_INV_DOUT\(17),
+	cin => \Somador|Add0~54\,
+	sumout => \Somador|Add0~57_sumout\,
+	cout => \Somador|Add0~58\);
 
-\REG_PC|DOUT[18]\ : dffeas
+\PC_REG|DOUT[17]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8783,15 +8573,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~61_sumout\,
+	d => \Somador|Add0~57_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(18));
+	q => \PC_REG|DOUT\(17));
 
-\somador|Add0~65\ : cyclonev_lcell_comb
+\Somador|Add0~61\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~65_sumout\ = SUM(( \REG_PC|DOUT\(19) ) + ( GND ) + ( \somador|Add0~62\ ))
--- \somador|Add0~66\ = CARRY(( \REG_PC|DOUT\(19) ) + ( GND ) + ( \somador|Add0~62\ ))
+-- \Somador|Add0~61_sumout\ = SUM(( \PC_REG|DOUT\(18) ) + ( GND ) + ( \Somador|Add0~58\ ))
+-- \Somador|Add0~62\ = CARRY(( \PC_REG|DOUT\(18) ) + ( GND ) + ( \Somador|Add0~58\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8800,12 +8590,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(19),
-	cin => \somador|Add0~62\,
-	sumout => \somador|Add0~65_sumout\,
-	cout => \somador|Add0~66\);
+	datad => \PC_REG|ALT_INV_DOUT\(18),
+	cin => \Somador|Add0~58\,
+	sumout => \Somador|Add0~61_sumout\,
+	cout => \Somador|Add0~62\);
 
-\REG_PC|DOUT[19]\ : dffeas
+\PC_REG|DOUT[18]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8813,15 +8603,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~65_sumout\,
+	d => \Somador|Add0~61_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(19));
+	q => \PC_REG|DOUT\(18));
 
-\somador|Add0~69\ : cyclonev_lcell_comb
+\Somador|Add0~65\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~69_sumout\ = SUM(( \REG_PC|DOUT\(20) ) + ( GND ) + ( \somador|Add0~66\ ))
--- \somador|Add0~70\ = CARRY(( \REG_PC|DOUT\(20) ) + ( GND ) + ( \somador|Add0~66\ ))
+-- \Somador|Add0~65_sumout\ = SUM(( \PC_REG|DOUT\(19) ) + ( GND ) + ( \Somador|Add0~62\ ))
+-- \Somador|Add0~66\ = CARRY(( \PC_REG|DOUT\(19) ) + ( GND ) + ( \Somador|Add0~62\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8830,12 +8620,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(20),
-	cin => \somador|Add0~66\,
-	sumout => \somador|Add0~69_sumout\,
-	cout => \somador|Add0~70\);
+	datad => \PC_REG|ALT_INV_DOUT\(19),
+	cin => \Somador|Add0~62\,
+	sumout => \Somador|Add0~65_sumout\,
+	cout => \Somador|Add0~66\);
 
-\REG_PC|DOUT[20]\ : dffeas
+\PC_REG|DOUT[19]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8843,15 +8633,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~69_sumout\,
+	d => \Somador|Add0~65_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(20));
+	q => \PC_REG|DOUT\(19));
 
-\somador|Add0~73\ : cyclonev_lcell_comb
+\Somador|Add0~69\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~73_sumout\ = SUM(( \REG_PC|DOUT\(21) ) + ( GND ) + ( \somador|Add0~70\ ))
--- \somador|Add0~74\ = CARRY(( \REG_PC|DOUT\(21) ) + ( GND ) + ( \somador|Add0~70\ ))
+-- \Somador|Add0~69_sumout\ = SUM(( \PC_REG|DOUT\(20) ) + ( GND ) + ( \Somador|Add0~66\ ))
+-- \Somador|Add0~70\ = CARRY(( \PC_REG|DOUT\(20) ) + ( GND ) + ( \Somador|Add0~66\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8860,12 +8650,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(21),
-	cin => \somador|Add0~70\,
-	sumout => \somador|Add0~73_sumout\,
-	cout => \somador|Add0~74\);
+	datad => \PC_REG|ALT_INV_DOUT\(20),
+	cin => \Somador|Add0~66\,
+	sumout => \Somador|Add0~69_sumout\,
+	cout => \Somador|Add0~70\);
 
-\REG_PC|DOUT[21]\ : dffeas
+\PC_REG|DOUT[20]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8873,15 +8663,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~73_sumout\,
+	d => \Somador|Add0~69_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(21));
+	q => \PC_REG|DOUT\(20));
 
-\somador|Add0~77\ : cyclonev_lcell_comb
+\Somador|Add0~73\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~77_sumout\ = SUM(( \REG_PC|DOUT\(22) ) + ( GND ) + ( \somador|Add0~74\ ))
--- \somador|Add0~78\ = CARRY(( \REG_PC|DOUT\(22) ) + ( GND ) + ( \somador|Add0~74\ ))
+-- \Somador|Add0~73_sumout\ = SUM(( \PC_REG|DOUT\(21) ) + ( GND ) + ( \Somador|Add0~70\ ))
+-- \Somador|Add0~74\ = CARRY(( \PC_REG|DOUT\(21) ) + ( GND ) + ( \Somador|Add0~70\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8890,12 +8680,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(22),
-	cin => \somador|Add0~74\,
-	sumout => \somador|Add0~77_sumout\,
-	cout => \somador|Add0~78\);
+	datad => \PC_REG|ALT_INV_DOUT\(21),
+	cin => \Somador|Add0~70\,
+	sumout => \Somador|Add0~73_sumout\,
+	cout => \Somador|Add0~74\);
 
-\REG_PC|DOUT[22]\ : dffeas
+\PC_REG|DOUT[21]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8903,15 +8693,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~77_sumout\,
+	d => \Somador|Add0~73_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(22));
+	q => \PC_REG|DOUT\(21));
 
-\somador|Add0~81\ : cyclonev_lcell_comb
+\Somador|Add0~77\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~81_sumout\ = SUM(( \REG_PC|DOUT\(23) ) + ( GND ) + ( \somador|Add0~78\ ))
--- \somador|Add0~82\ = CARRY(( \REG_PC|DOUT\(23) ) + ( GND ) + ( \somador|Add0~78\ ))
+-- \Somador|Add0~77_sumout\ = SUM(( \PC_REG|DOUT\(22) ) + ( GND ) + ( \Somador|Add0~74\ ))
+-- \Somador|Add0~78\ = CARRY(( \PC_REG|DOUT\(22) ) + ( GND ) + ( \Somador|Add0~74\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8920,12 +8710,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(23),
-	cin => \somador|Add0~78\,
-	sumout => \somador|Add0~81_sumout\,
-	cout => \somador|Add0~82\);
+	datad => \PC_REG|ALT_INV_DOUT\(22),
+	cin => \Somador|Add0~74\,
+	sumout => \Somador|Add0~77_sumout\,
+	cout => \Somador|Add0~78\);
 
-\REG_PC|DOUT[23]\ : dffeas
+\PC_REG|DOUT[22]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8933,15 +8723,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~81_sumout\,
+	d => \Somador|Add0~77_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(23));
+	q => \PC_REG|DOUT\(22));
 
-\somador|Add0~85\ : cyclonev_lcell_comb
+\Somador|Add0~81\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~85_sumout\ = SUM(( \REG_PC|DOUT\(24) ) + ( GND ) + ( \somador|Add0~82\ ))
--- \somador|Add0~86\ = CARRY(( \REG_PC|DOUT\(24) ) + ( GND ) + ( \somador|Add0~82\ ))
+-- \Somador|Add0~81_sumout\ = SUM(( \PC_REG|DOUT\(23) ) + ( GND ) + ( \Somador|Add0~78\ ))
+-- \Somador|Add0~82\ = CARRY(( \PC_REG|DOUT\(23) ) + ( GND ) + ( \Somador|Add0~78\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8950,12 +8740,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(24),
-	cin => \somador|Add0~82\,
-	sumout => \somador|Add0~85_sumout\,
-	cout => \somador|Add0~86\);
+	datad => \PC_REG|ALT_INV_DOUT\(23),
+	cin => \Somador|Add0~78\,
+	sumout => \Somador|Add0~81_sumout\,
+	cout => \Somador|Add0~82\);
 
-\REG_PC|DOUT[24]\ : dffeas
+\PC_REG|DOUT[23]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8963,15 +8753,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~85_sumout\,
+	d => \Somador|Add0~81_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(24));
+	q => \PC_REG|DOUT\(23));
 
-\somador|Add0~89\ : cyclonev_lcell_comb
+\Somador|Add0~85\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~89_sumout\ = SUM(( \REG_PC|DOUT\(25) ) + ( GND ) + ( \somador|Add0~86\ ))
--- \somador|Add0~90\ = CARRY(( \REG_PC|DOUT\(25) ) + ( GND ) + ( \somador|Add0~86\ ))
+-- \Somador|Add0~85_sumout\ = SUM(( \PC_REG|DOUT\(24) ) + ( GND ) + ( \Somador|Add0~82\ ))
+-- \Somador|Add0~86\ = CARRY(( \PC_REG|DOUT\(24) ) + ( GND ) + ( \Somador|Add0~82\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8980,12 +8770,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(25),
-	cin => \somador|Add0~86\,
-	sumout => \somador|Add0~89_sumout\,
-	cout => \somador|Add0~90\);
+	datad => \PC_REG|ALT_INV_DOUT\(24),
+	cin => \Somador|Add0~82\,
+	sumout => \Somador|Add0~85_sumout\,
+	cout => \Somador|Add0~86\);
 
-\REG_PC|DOUT[25]\ : dffeas
+\PC_REG|DOUT[24]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -8993,15 +8783,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~89_sumout\,
+	d => \Somador|Add0~85_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(25));
+	q => \PC_REG|DOUT\(24));
 
-\somador|Add0~93\ : cyclonev_lcell_comb
+\Somador|Add0~89\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~93_sumout\ = SUM(( \REG_PC|DOUT\(26) ) + ( GND ) + ( \somador|Add0~90\ ))
--- \somador|Add0~94\ = CARRY(( \REG_PC|DOUT\(26) ) + ( GND ) + ( \somador|Add0~90\ ))
+-- \Somador|Add0~89_sumout\ = SUM(( \PC_REG|DOUT\(25) ) + ( GND ) + ( \Somador|Add0~86\ ))
+-- \Somador|Add0~90\ = CARRY(( \PC_REG|DOUT\(25) ) + ( GND ) + ( \Somador|Add0~86\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -9010,12 +8800,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(26),
-	cin => \somador|Add0~90\,
-	sumout => \somador|Add0~93_sumout\,
-	cout => \somador|Add0~94\);
+	datad => \PC_REG|ALT_INV_DOUT\(25),
+	cin => \Somador|Add0~86\,
+	sumout => \Somador|Add0~89_sumout\,
+	cout => \Somador|Add0~90\);
 
-\REG_PC|DOUT[26]\ : dffeas
+\PC_REG|DOUT[25]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -9023,15 +8813,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~93_sumout\,
+	d => \Somador|Add0~89_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(26));
+	q => \PC_REG|DOUT\(25));
 
-\somador|Add0~97\ : cyclonev_lcell_comb
+\Somador|Add0~93\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~97_sumout\ = SUM(( \REG_PC|DOUT\(27) ) + ( GND ) + ( \somador|Add0~94\ ))
--- \somador|Add0~98\ = CARRY(( \REG_PC|DOUT\(27) ) + ( GND ) + ( \somador|Add0~94\ ))
+-- \Somador|Add0~93_sumout\ = SUM(( \PC_REG|DOUT\(26) ) + ( GND ) + ( \Somador|Add0~90\ ))
+-- \Somador|Add0~94\ = CARRY(( \PC_REG|DOUT\(26) ) + ( GND ) + ( \Somador|Add0~90\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -9040,12 +8830,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(27),
-	cin => \somador|Add0~94\,
-	sumout => \somador|Add0~97_sumout\,
-	cout => \somador|Add0~98\);
+	datad => \PC_REG|ALT_INV_DOUT\(26),
+	cin => \Somador|Add0~90\,
+	sumout => \Somador|Add0~93_sumout\,
+	cout => \Somador|Add0~94\);
 
-\REG_PC|DOUT[27]\ : dffeas
+\PC_REG|DOUT[26]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -9053,15 +8843,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~97_sumout\,
+	d => \Somador|Add0~93_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(27));
+	q => \PC_REG|DOUT\(26));
 
-\somador|Add0~101\ : cyclonev_lcell_comb
+\Somador|Add0~97\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~101_sumout\ = SUM(( \REG_PC|DOUT\(28) ) + ( GND ) + ( \somador|Add0~98\ ))
--- \somador|Add0~102\ = CARRY(( \REG_PC|DOUT\(28) ) + ( GND ) + ( \somador|Add0~98\ ))
+-- \Somador|Add0~97_sumout\ = SUM(( \PC_REG|DOUT\(27) ) + ( GND ) + ( \Somador|Add0~94\ ))
+-- \Somador|Add0~98\ = CARRY(( \PC_REG|DOUT\(27) ) + ( GND ) + ( \Somador|Add0~94\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -9070,12 +8860,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(28),
-	cin => \somador|Add0~98\,
-	sumout => \somador|Add0~101_sumout\,
-	cout => \somador|Add0~102\);
+	datad => \PC_REG|ALT_INV_DOUT\(27),
+	cin => \Somador|Add0~94\,
+	sumout => \Somador|Add0~97_sumout\,
+	cout => \Somador|Add0~98\);
 
-\REG_PC|DOUT[28]\ : dffeas
+\PC_REG|DOUT[27]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -9083,15 +8873,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~101_sumout\,
+	d => \Somador|Add0~97_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(28));
+	q => \PC_REG|DOUT\(27));
 
-\somador|Add0~105\ : cyclonev_lcell_comb
+\Somador|Add0~101\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~105_sumout\ = SUM(( \REG_PC|DOUT\(29) ) + ( GND ) + ( \somador|Add0~102\ ))
--- \somador|Add0~106\ = CARRY(( \REG_PC|DOUT\(29) ) + ( GND ) + ( \somador|Add0~102\ ))
+-- \Somador|Add0~101_sumout\ = SUM(( \PC_REG|DOUT\(28) ) + ( GND ) + ( \Somador|Add0~98\ ))
+-- \Somador|Add0~102\ = CARRY(( \PC_REG|DOUT\(28) ) + ( GND ) + ( \Somador|Add0~98\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -9100,12 +8890,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(29),
-	cin => \somador|Add0~102\,
-	sumout => \somador|Add0~105_sumout\,
-	cout => \somador|Add0~106\);
+	datad => \PC_REG|ALT_INV_DOUT\(28),
+	cin => \Somador|Add0~98\,
+	sumout => \Somador|Add0~101_sumout\,
+	cout => \Somador|Add0~102\);
 
-\REG_PC|DOUT[29]\ : dffeas
+\PC_REG|DOUT[28]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -9113,15 +8903,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~105_sumout\,
+	d => \Somador|Add0~101_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(29));
+	q => \PC_REG|DOUT\(28));
 
-\somador|Add0~109\ : cyclonev_lcell_comb
+\Somador|Add0~105\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~109_sumout\ = SUM(( \REG_PC|DOUT\(30) ) + ( GND ) + ( \somador|Add0~106\ ))
--- \somador|Add0~110\ = CARRY(( \REG_PC|DOUT\(30) ) + ( GND ) + ( \somador|Add0~106\ ))
+-- \Somador|Add0~105_sumout\ = SUM(( \PC_REG|DOUT\(29) ) + ( GND ) + ( \Somador|Add0~102\ ))
+-- \Somador|Add0~106\ = CARRY(( \PC_REG|DOUT\(29) ) + ( GND ) + ( \Somador|Add0~102\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -9130,12 +8920,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(30),
-	cin => \somador|Add0~106\,
-	sumout => \somador|Add0~109_sumout\,
-	cout => \somador|Add0~110\);
+	datad => \PC_REG|ALT_INV_DOUT\(29),
+	cin => \Somador|Add0~102\,
+	sumout => \Somador|Add0~105_sumout\,
+	cout => \Somador|Add0~106\);
 
-\REG_PC|DOUT[30]\ : dffeas
+\PC_REG|DOUT[29]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -9143,14 +8933,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~109_sumout\,
+	d => \Somador|Add0~105_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(30));
+	q => \PC_REG|DOUT\(29));
 
-\somador|Add0~113\ : cyclonev_lcell_comb
+\Somador|Add0~109\ : cyclonev_lcell_comb
 -- Equation(s):
--- \somador|Add0~113_sumout\ = SUM(( \REG_PC|DOUT\(31) ) + ( GND ) + ( \somador|Add0~110\ ))
+-- \Somador|Add0~109_sumout\ = SUM(( \PC_REG|DOUT\(30) ) + ( GND ) + ( \Somador|Add0~106\ ))
+-- \Somador|Add0~110\ = CARRY(( \PC_REG|DOUT\(30) ) + ( GND ) + ( \Somador|Add0~106\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -9159,11 +8950,12 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	datad => \REG_PC|ALT_INV_DOUT\(31),
-	cin => \somador|Add0~110\,
-	sumout => \somador|Add0~113_sumout\);
+	datad => \PC_REG|ALT_INV_DOUT\(30),
+	cin => \Somador|Add0~106\,
+	sumout => \Somador|Add0~109_sumout\,
+	cout => \Somador|Add0~110\);
 
-\REG_PC|DOUT[31]\ : dffeas
+\PC_REG|DOUT[30]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -9171,10 +8963,38 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK_50~input_o\,
-	d => \somador|Add0~113_sumout\,
+	d => \Somador|Add0~109_sumout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \REG_PC|DOUT\(31));
+	q => \PC_REG|DOUT\(30));
+
+\Somador|Add0~113\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \Somador|Add0~113_sumout\ = SUM(( \PC_REG|DOUT\(31) ) + ( GND ) + ( \Somador|Add0~110\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111111111111111100000000000000000000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datad => \PC_REG|ALT_INV_DOUT\(31),
+	cin => \Somador|Add0~110\,
+	sumout => \Somador|Add0~113_sumout\);
+
+\PC_REG|DOUT[31]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLOCK_50~input_o\,
+	d => \Somador|Add0~113_sumout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \PC_REG|DOUT\(31));
 
 ww_Instru_opcode(0) <= \Instru_opcode[0]~output_o\;
 

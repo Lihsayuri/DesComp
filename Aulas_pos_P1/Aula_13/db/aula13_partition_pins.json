@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "Funct[0]",
+					"strict" : false
+				},
+				{
 					"name" : "Funct[1]",
 					"strict" : false
 				},
@@ -408,7 +412,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "Rt_End[0]",
+					"strict" : false
+				},
+				{
 					"name" : "Rt_End[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Rt_End[2]",
 					"strict" : false
 				},
 				{
