@@ -1,0 +1,429 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity memoriaROM is
+   generic (
+          dataWidth: natural := 15;
+          addrWidth: natural := 9
+    );
+   port (
+          Endereco : in std_logic_vector (8 DOWNTO 0);
+          Dado : out std_logic_vector (dataWidth-1 DOWNTO 0)
+    );
+end entity;
+
+architecture assincrona of memoriaROM is
+
+  constant NOP  : std_logic_vector(3 downto 0) := "0000";
+  constant LDA  : std_logic_vector(3 downto 0) := "0001";
+  constant SOMA : std_logic_vector(3 downto 0) := "0010";
+  constant SUB  : std_logic_vector(3 downto 0) := "0011";
+  constant LDI : std_logic_vector(3 downto 0) := "0100";
+  constant STA : std_logic_vector(3 downto 0) := "0101";
+  constant JMP : std_logic_vector(3 downto 0) := "0110";
+  constant JEQ : std_logic_vector(3 downto 0) := "0111";
+  constant CEQ : std_logic_vector(3 downto 0) := "1000";
+  constant JSR : std_logic_vector(3 downto 0) := "1001";
+  constant RET : std_logic_vector(3 downto 0) := "1010";
+  constant ANDI : std_logic_vector(3 downto 0) := "1011";
+  
+  constant R0:    std_logic_vector (1 DOWNTO 0)	:= "00";
+  constant R1:    std_logic_vector (1 DOWNTO 0)	:= "01";
+  constant R2:    std_logic_vector (1 DOWNTO 0)	:= "10";
+  constant R3:    std_logic_vector (1 DOWNTO 0)	:= "11";
+
+  type blocoMemoria is array(0 TO 2**addrWidth - 1) of std_logic_vector(dataWidth-1 DOWNTO 0);
+
+  function initMemory
+        return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
+		
+  begin
+      -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
+					-- Inicializa os endereços:
+					
+			-- Configuração do SETUP
+			
+        tmp(0) := LDI  &  R0  &  '0'  &  x"00";	-- LDI $0, R0      	# Inicializando algumas variáveis importantes : R0 = 0
+        tmp(1) := LDI  &  R1  &  '0'  &  x"01";	-- LDI $1, R1      	# R1 = 1
+        tmp(2) := LDI  &  R2  &  '0'  &  x"06";	-- LDI $6, R2      	# R2 = 6
+        tmp(3) := LDI  &  R3  &  '0'  &  x"0a";	-- LDI $10, R3     	# R3 = 10
+        tmp(4) := STA  &  R0  &  '1'  &  x"00";	-- STA @256, R0    	# Armazena o valor do R0 no LEDR0 ~ LEDR7
+        tmp(5) := STA  &  R0  &  '1'  &  x"01";	-- STA @257, R0    	# Armazena o valor do R0 no LEDR8
+        tmp(6) := STA  &  R0  &  '1'  &  x"02";	-- STA @258, R0    	# Armazena o valor do R0 no LEDR9
+        tmp(7) := STA  &  R0  &  '1'  &  x"20";	-- STA @288, R0    	# Armazena o valor do R0 no HEX0
+        tmp(8) := STA  &  R0  &  '1'  &  x"21";	-- STA @289, R0    	# Armazena o valor do R0 no HEX1
+        tmp(9) := STA  &  R0  &  '1'  &  x"22";	-- STA @290, R0    	# Armazena o valor do R0 no HEX2
+        tmp(10) := STA  &  R0  &  '1'  &  x"23";	-- STA @291, R0    	# Armazena o valor do R0 no HEX3
+        tmp(11) := STA  &  R0  &  '1'  &  x"24";	-- STA @292, R0    	# Armazena o valor do R0 no HEX4
+        tmp(12) := STA  &  R0  &  '1'  &  x"25";	-- STA @293, R0    	# Armazena o valor do R0 no HEX5
+        tmp(13) := STA  &  R0  &  '0'  &  x"00";	-- STA @0, R0      	# Armazena o valor do R0 em MEM[0] (unidades de segundo)
+        tmp(14) := STA  &  R0  &  '0'  &  x"01";	-- STA @1, R0      	# Armazena o valor do R0 em MEM[1] (dezenas de segundo)
+        tmp(15) := STA  &  R0  &  '0'  &  x"02";	-- STA @2, R0      	# Armazena o valor do R0 em MEM[2] (unidades de minuto)
+        tmp(16) := STA  &  R0  &  '0'  &  x"03";	-- STA @3, R0      	# Armazena o valor do R0 em MEM[3] (dezenas de minuto)
+        tmp(17) := STA  &  R0  &  '0'  &  x"04";	-- STA @4, R0      	# Armazena o valor do R0 em MEM[4] (unidades de hora)
+        tmp(18) := STA  &  R0  &  '0'  &  x"05";	-- STA @5, R0      	# Armazena o valor do R0 em MEM[5] (dezenas de hora)
+        tmp(19) := STA  &  R0  &  '0'  &  x"06";	-- STA @6, R0      	# Armazena o valor do R0 em MEM[6] (flag do despertador)
+        tmp(20) := STA  &  R0  &  '0'  &  x"07";	-- STA @7, R0      	# Armazena o valor do R0 em MEM[7] (variável 0 para comparações)
+        tmp(21) := STA  &  R1  &  '0'  &  x"08";	-- STA @8, R1      	# Armazena o valor do R1 em MEM[8] (variável 1 para incremento)
+        tmp(22) := STA  &  R3  &  '0'  &  x"09";	-- STA @9, R3      	# Armazena o valor do R3 em MEM[9] (variável 10 para comparações)
+        tmp(23) := STA  &  R0  &  '0'  &  x"14";	-- STA @20, R0     	# Armazena o valor do R0 em MEM[20] (flag do AM)
+        tmp(24) := STA  &  R0  &  '0'  &  x"15";	-- STA @21, R0     	# Armazena o valor do R0 em MEM[21] (flag do PM)
+        tmp(25) := STA  &  R0  &  '0'  &  x"1e";	-- STA @30, R0     	# Armazena o valor do R0 na flag de 24h ou 12h
+        tmp(26) := STA  &  R2  &  '0'  &  x"0a";	-- STA @10, R2     	# Armazena o valor do R2 em MEM[10] (valor do despertador para UNIDADE DE SEGUNDO)
+        tmp(27) := STA  &  R2  &  '0'  &  x"0b";	-- STA @11, R2     	# Armazena o valor do R2 em MEM[11] (valor do despertador para DEZENA DE SEGUNDO)
+        tmp(28) := STA  &  R2  &  '0'  &  x"0c";	-- STA @12, R2     	# Armazena o valor do R2 em MEM[12] (valor do despertador para UNIDADE DE MINUTO)
+        tmp(29) := STA  &  R2  &  '0'  &  x"0d";	-- STA @13, R2     	# Armazena o valor do R2 em MEM[13] (valor do despertador para DEZENA DE MINUTO)
+        tmp(30) := STA  &  R2  &  '0'  &  x"0e";	-- STA @14, R2     	# Armazena o valor do R2 em MEM[14] (valor do despertador para UNIDADE DE HORA)
+        tmp(31) := STA  &  R2  &  '0'  &  x"0f";	-- STA @15, R2     	# Armazena o valor do R2 em MEM[15] (valor do despertador para DEZENA DE HORA)
+        tmp(32) := STA  &  R2  &  '0'  &  x"10";	-- STA @16, R2     	# Armazena o valor do R2 em MEM[16] (constante 6)
+        tmp(33) := LDI  &  R0  &  '0'  &  x"02";	-- LDI $2, R0      	# Carrega 2 no registrador R0
+        tmp(34) := STA  &  R0  &  '0'  &  x"11";	-- STA @17, R0     	# Armazena o valor do R0 em MEM[17] (constante 2)
+        tmp(35) := LDI  &  R0  &  '0'  &  x"04";	-- LDI $4, R0      	# Carrega 4 no registrador R0
+        tmp(36) := STA  &  R0  &  '0'  &  x"12";	-- STA @18, R0     	# Armazena o valor do R0 em MEM[18] (constante 4)
+        tmp(37) := LDI  &  R0  &  '0'  &  x"03";	-- LDI $3, R0      	# Carrega 2 no registrador R0
+        tmp(38) := STA  &  R0  &  '0'  &  x"13";	-- STA @19, R0     	# Armazena o valor do R0 em MEM[19] (constante 3) 
+        tmp(39) := NOP  &  R0  &  '0'  &  x"00";	-- NOP              	# LOOP PRINCIPAL
+        tmp(40) := LDA  &  R0  &  '0'  &  x"06";	-- LDA @6, R0       	# Carregando o R0 com o valor da flag do despertador
+        tmp(41) := CEQ  &  R0  &  '0'  &  x"08";	-- CEQ @8, R0       	# Compara com 1 para ver se a flag está ativada
+        tmp(42) := JEQ  &  R0  &  '0'  &  x"31";	-- JEQ @LEITURA_KEY1 	# Se for igual, pula pra leitura de KEY1
+        tmp(43) := LDA  &  R0  &  '1'  &  x"60";	-- LDA @352, R0     	# Carrega o R0 com a leitura do botão KEY0
+        tmp(44) := ANDI  &  R0  &  '0'  &  x"01";	-- ANDI @1, R0      	# Aplica máscara na leitura do botão
+        tmp(45) := CEQ  &  R0  &  '0'  &  x"07";	-- CEQ @7, R0       	# Compara com 0
+        tmp(46) := JEQ  &  R0  &  '0'  &  x"31";	-- JEQ @LEITURA_KEY1 	# Se for 0, vai ler a próxima chave
+        tmp(47) := JSR  &  R0  &  '0'  &  x"46";	-- JSR @INCREMENTO  	# Se for 1, vai pra sub-rotina de incremento
+        tmp(48) := NOP  &  R0  &  '0'  &  x"00";	-- NOP              	# Aqui é onde o RET volta
+        tmp(49) := LDA  &  R1  &  '1'  &  x"61";	-- LDA @353, R1     	# Carrega o R1 com a leitura do botão KEY1
+        tmp(50) := ANDI  &  R1  &  '0'  &  x"01";	-- ANDI @1, R1      	# Aplica máscara na leitura do botão
+        tmp(51) := CEQ  &  R1  &  '0'  &  x"07";	-- CEQ @7, R1       	# Compara com 0
+        tmp(52) := JEQ  &  R0  &  '0'  &  x"37";	-- JEQ @CHAMA_CONFERE_LIMITE 	# Se for 0, vai conferir o limite 
+        tmp(53) := JSR  &  R0  &  '0'  &  x"b1";	-- JSR @CONFIG_DESPERTADOR   	# Se for 1, vai pra sub-rotina de configuração do despertador
+        tmp(54) := NOP  &  R0  &  '0'  &  x"00";	-- NOP              	# Aqui é onde o RET volta
+        tmp(55) := JSR  &  R0  &  '0'  &  x"f7";	-- JSR @CONFERE_LIMITE  	# Chama a sub-rotina para verificar o limite
+        tmp(56) := NOP  &  R0  &  '0'  &  x"00";	-- NOP              	# Aqui é onde o RET volta
+        tmp(57) := LDA  &  R2  &  '1'  &  x"63";	-- LDA @355, R2    	# Carrega R2 com a leitura de KEY3
+        tmp(58) := ANDI  &  R2  &  '0'  &  x"01";	-- ANDI @1, R2     	# Depois de fazer a leitura do botão aplica a máscara
+        tmp(59) := CEQ  &  R2  &  '0'  &  x"07";	-- CEQ @7, R2      	# Compara com 0
+        tmp(60) := JEQ  &  R0  &  '0'  &  x"3f";	-- JEQ @LEITURA_RESET 	# Se for 0, vai ler a próxima chave 
+        tmp(61) := JSR  &  R0  &  '1'  &  x"2c";	-- JSR @CONFIGURA_HORA 	# Se for 1, vai para a sub-rotina de configurar hora
+        tmp(62) := NOP  &  R0  &  '0'  &  x"00";	-- NOP
+        tmp(63) := LDA  &  R3  &  '1'  &  x"64";	-- LDA @356, R3     	# Carrega o R3 com a leitura do botão FPGA_RESET 
+        tmp(64) := ANDI  &  R3  &  '0'  &  x"01";	-- ANDI @1, R3      	# Aplica máscara na leitura do botão
+        tmp(65) := CEQ  &  R3  &  '0'  &  x"08";	-- CEQ @8, R3       	# Compara com 1
+        tmp(66) := JEQ  &  R0  &  '0'  &  x"44";	-- JEQ @CHAMA_ATUALIZA_DISPLAY 	# Se for 1, vai pra subrotina pra reiniciar a contagem (botão é o contrário. 0 - ativado. 1 - desativado)
+        tmp(67) := JSR  &  R0  &  '1'  &  x"14";	-- JSR @REINICIAR_CONTAGEM  	# Chama sub-rotina de reiniciar a contagem
+        tmp(68) := JSR  &  R0  &  '1'  &  x"1f";	-- JSR @ATUALIZA_SEVEN_SEG  	# Chama sub-rotina de atualizar o display de sete segmentos
+        tmp(69) := JMP  &  R0  &  '0'  &  x"27";	-- JMP @LOOP_PRINCIPAL      	# Volta para o início do loop principal
+        tmp(70) := STA  &  R0  &  '1'  &  x"ff";	-- STA @511, R0     	# Limpa a leitura do botão KEY0
+        tmp(71) := LDA  &  R1  &  '0'  &  x"06";	-- LDA @6, R1       	# Carrega o valor da flag do despertador no R1
+        tmp(72) := CEQ  &  R1  &  '0'  &  x"08";	-- CEQ @8, R1       	# Compara com 1 para ver se a flag está ativada
+        tmp(73) := JEQ  &  R0  &  '0'  &  x"b0";	-- JEQ @FIM_INCREMENTO  	# Se for 1, não incrementa e vai pro RET
+        tmp(74) := LDA  &  R2  &  '1'  &  x"41";	-- LDA @321, R2     	# Carrega o valor da chave SW8 em 
+        tmp(75) := ANDI  &  R2  &  '0'  &  x"01";	-- ANDI @1, R2
+        tmp(76) := STA  &  R2  &  '0'  &  x"1e";	-- STA @30, R2      	# Armazena o valor na flag do formato de horas
+        tmp(77) := STA  &  R2  &  '1'  &  x"01";	-- STA @257, R2     	# Armazena o valor da flag no LED
+        tmp(78) := LDA  &  R0  &  '0'  &  x"00";	-- LDA @0, R0       	# Carrega o valor das unidades de segundo em R0
+        tmp(79) := SOMA  &  R0  &  '0'  &  x"08";	-- SOMA @8, R0      	# Soma com 1 e guarda resultado em R0
+        tmp(80) := CEQ  &  R0  &  '0'  &  x"09";	-- CEQ @9, R0       	# Compara com 10
+        tmp(81) := JEQ  &  R0  &  '0'  &  x"54";	-- JEQ @INC_DEZENA  	# Se for 10, vai para as dezenas
+        tmp(82) := STA  &  R0  &  '0'  &  x"00";	-- STA @0, R0       	# Se não, armazena o valor das unidades de segundo
+        tmp(83) := JMP  &  R0  &  '0'  &  x"b0";	-- JMP @FIM_INCREMENTO 	# E retorna
+        tmp(84) := LDA  &  R0  &  '0'  &  x"07";	-- LDA @7, R0      	# Carrega 0 no R0
+        tmp(85) := STA  &  R0  &  '0'  &  x"00";	-- STA @0, R0      	# Carrega 0 nas unidades de segundo
+        tmp(86) := LDA  &  R0  &  '0'  &  x"01";	-- LDA @1, R0      	# Carrega o valor das dezenas em R0
+        tmp(87) := SOMA  &  R0  &  '0'  &  x"08";	-- SOMA @8, R0     	# Soma com 1 e guarda resultado em R0
+        tmp(88) := CEQ  &  R0  &  '0'  &  x"10";	-- CEQ @16, R0      	# Compara com 6
+        tmp(89) := JEQ  &  R0  &  '0'  &  x"5c";	-- JEQ @INC_CENTENA 	# Se for 10, vai para as centenas
+        tmp(90) := STA  &  R0  &  '0'  &  x"01";	-- STA @1, R0      	# Se não, armazena o valor das dezenas
+        tmp(91) := JMP  &  R0  &  '0'  &  x"b0";	-- JMP @FIM_INCREMENTO 	# E retorna
+        tmp(92) := LDA  &  R0  &  '0'  &  x"07";	-- LDA @7, R0      	#Carrega 0 no REG
+        tmp(93) := STA  &  R0  &  '0'  &  x"01";	-- STA @1, R0      	# Carrega 0 nas dezenas
+        tmp(94) := LDA  &  R0  &  '0'  &  x"02";	-- LDA @2, R0      	# Carrega o valor das centenas em R0
+        tmp(95) := SOMA  &  R0  &  '0'  &  x"08";	-- SOMA @8, R0     	# Soma com 1 e guarda resultado em R0
+        tmp(96) := CEQ  &  R0  &  '0'  &  x"09";	-- CEQ @9, R0      	# Compara com 10
+        tmp(97) := JEQ  &  R0  &  '0'  &  x"64";	-- JEQ @INC_MILHAR 	# Se for 10, vai para o milhar
+        tmp(98) := STA  &  R0  &  '0'  &  x"02";	-- STA @2, R0      	# Se não, armazena o valor das centenas
+        tmp(99) := JMP  &  R0  &  '0'  &  x"b0";	-- JMP @FIM_INCREMENTO 	# E retorna
+        tmp(100) := LDA  &  R0  &  '0'  &  x"07";	-- LDA @7, R0      	# Carrega 0 no R0
+        tmp(101) := STA  &  R0  &  '0'  &  x"02";	-- STA @2, R0      	# Carrega 0 nas centenas
+        tmp(102) := LDA  &  R0  &  '0'  &  x"03";	-- LDA @3, R0      	# Carrega o valor dos milhares em R0
+        tmp(103) := SOMA  &  R0  &  '0'  &  x"08";	-- SOMA @8, R0     	# Soma com 1 e guarda resultado em R0
+        tmp(104) := CEQ  &  R0  &  '0'  &  x"10";	-- CEQ @16, R0      	# Compara com 6
+        tmp(105) := JEQ  &  R0  &  '0'  &  x"6c";	-- JEQ @INC_DEZMILHAR  	# Se for 10, vai para as dezenas de milhar
+        tmp(106) := STA  &  R0  &  '0'  &  x"03";	-- STA @3, R0      	# Se não, armazena o valor dos milhares
+        tmp(107) := JMP  &  R0  &  '0'  &  x"b0";	-- JMP @FIM_INCREMENTO 	# E retorna
+        tmp(108) := LDA  &  R0  &  '0'  &  x"07";	-- LDA @7, R0      	# Carrega 0 no R0
+        tmp(109) := STA  &  R0  &  '0'  &  x"03";	-- STA @3, R0      	# Carrega 0 no milhar
+        tmp(110) := LDA  &  R0  &  '0'  &  x"04";	-- LDA @4, R0      	# Carrega o valor das dezenas de milhar
+        tmp(111) := SOMA  &  R0  &  '0'  &  x"08";	-- SOMA @8, R0     	# Soma com 1 e guarda resultado em R0
+        tmp(112) := LDA  &  R2  &  '0'  &  x"1e";	-- LDA @30, R2     	# Carrega o valor da flag de 12h ou 24h
+        tmp(113) := CEQ  &  R2  &  '0'  &  x"08";	-- CEQ @8, R2      	# Se for 1, incremento vai ser de AM e PM
+        tmp(114) := STA  &  R2  &  '1'  &  x"02";	-- STA @258, R2    	#  
+        tmp(115) := JEQ  &  R0  &  '0'  &  x"92";	-- JEQ @FORMATO_12 	# Se for 1, vai para 
+        tmp(116) := CEQ  &  R0  &  '0'  &  x"12";	-- CEQ @18, R0     	# Compara com 4
+        tmp(117) := JEQ  &  R0  &  '0'  &  x"7a";	-- JEQ @CONFERE_24 	# Se for 4, vai conferir a flag de ir para
+        tmp(118) := CEQ  &  R0  &  '0'  &  x"09";	-- CEQ @9, R0      	# Caso contrário compara com 10
+        tmp(119) := JEQ  &  R0  &  '0'  &  x"81";	-- JEQ @INC_CENTMILHAR 	# Se for igual a 10, vai para as centenas de milhar
+        tmp(120) := STA  &  R0  &  '0'  &  x"04";	-- STA @4, R0      	# Caso contrário, armazena o valor das dezenas de milhar
+        tmp(121) := JMP  &  R0  &  '0'  &  x"b0";	-- JMP @FIM_INCREMENTO 	# E retorna
+        tmp(122) := LDA  &  R1  &  '0'  &  x"05";	-- LDA @5, R1      	#Carrega o valor das centenas de milhar
+        tmp(123) := CEQ  &  R1  &  '0'  &  x"11";	-- CEQ @17, R1     	# Compara com 2
+        tmp(124) := JEQ  &  R0  &  '0'  &  x"87";	-- JEQ @REINICIAR_CONTAGEM_24 	# Se for 2, dai deu 24h de fato
+        tmp(125) := CEQ  &  R0  &  '0'  &  x"09";	-- CEQ @9, R0      	# Caso contrário compara com 10
+        tmp(126) := JEQ  &  R0  &  '0'  &  x"81";	-- JEQ @INC_CENTMILHAR 	# Se for igual a 10, vai para as centenas de milhar
+        tmp(127) := STA  &  R0  &  '0'  &  x"04";	-- STA @4, R0      	# Caso contrário, armazena o valor das dezenas de milhar
+        tmp(128) := JMP  &  R0  &  '0'  &  x"b0";	-- JMP @FIM_INCREMENTO
+        tmp(129) := LDA  &  R0  &  '0'  &  x"07";	-- LDA @7, R0      	# Carrega 0 no R0
+        tmp(130) := STA  &  R0  &  '0'  &  x"04";	-- STA @4, R0      	# Carrega 0 nas dezenas de milhar 
+        tmp(131) := LDA  &  R0  &  '0'  &  x"05";	-- LDA @5, R0      	#Carrega o valor das centenas de milhar
+        tmp(132) := SOMA  &  R0  &  '0'  &  x"08";	-- SOMA @8, R0     	# Soma com 1 e guarda resultado em R0
+        tmp(133) := STA  &  R0  &  '0'  &  x"05";	-- STA @5, R0      	# Armazena o valor das centena de milhar
+        tmp(134) := JMP  &  R0  &  '0'  &  x"b0";	-- JMP @FIM_INCREMENTO
+        tmp(135) := LDA  &  R0  &  '0'  &  x"07";	-- LDA @7, R0      	# Carrega o acumulador com o valor 0
+        tmp(136) := STA  &  R0  &  '0'  &  x"00";	-- STA @0, R0      	#  Armazena o valor 0 nas unidades de segundo
+        tmp(137) := STA  &  R0  &  '0'  &  x"01";	-- STA @1, R0      	#  Armazena o valor 0 nas dezenas
+        tmp(138) := STA  &  R0  &  '0'  &  x"02";	-- STA @2, R0      	#  Armazena o valor 0 nas centenas
+        tmp(139) := STA  &  R0  &  '0'  &  x"03";	-- STA @3, R0      	#  Armazena o valor 0 nos milhares
+        tmp(140) := STA  &  R0  &  '0'  &  x"04";	-- STA @4, R0      	#  Armazena o valor 0 nas dezenas de milhar
+        tmp(141) := STA  &  R0  &  '0'  &  x"05";	-- STA @5, R0      	#  Armazena o valor 0 nas centenas de milhar
+        tmp(142) := STA  &  R0  &  '0'  &  x"06";	-- STA @6, R0      	# Armazena o valor 0 na flag do despertador
+        tmp(143) := STA  &  R0  &  '1'  &  x"01";	-- STA @257, R0    	# Armazena o valor 0 no LED8
+        tmp(144) := STA  &  R0  &  '1'  &  x"02";	-- STA @258, R0    	# Armazena o valor 0 no LED9
+        tmp(145) := JMP  &  R0  &  '0'  &  x"b0";	-- JMP @FIM_INCREMENTO
+        tmp(146) := CEQ  &  R0  &  '0'  &  x"13";	-- CEQ @19, R0      	# Compara com 3 // AQUI É O PROBLEMA: PENSA QUE QUANDO DER QUATRO ELE VAI PRA PRÓXIMA
+        tmp(147) := JEQ  &  R0  &  '0'  &  x"98";	-- JEQ @CONFERE_12 	# Se for 3, vai conferir a flag de ir para
+        tmp(148) := CEQ  &  R0  &  '0'  &  x"09";	-- CEQ @9, R0 	# Caso contrário compara com 10
+        tmp(149) := JEQ  &  R0  &  '0'  &  x"9f";	-- JEQ @INC_CENTMILHAR_12 	# Se for igual a 10, vai para as centenas de milhar
+        tmp(150) := STA  &  R0  &  '0'  &  x"04";	-- STA @4, R0      	# Caso contrário, armazena o valor das dezenas de milhar
+        tmp(151) := JMP  &  R0  &  '0'  &  x"b0";	-- JMP @FIM_INCREMENTO 	# E retorna
+        tmp(152) := LDA  &  R1  &  '0'  &  x"05";	-- LDA @5, R1      	#Carrega o valor das centenas de milhar
+        tmp(153) := CEQ  &  R1  &  '0'  &  x"08";	-- CEQ @8, R1      	# Compara com 1
+        tmp(154) := JEQ  &  R0  &  '0'  &  x"a5";	-- JEQ @REINICIAR_CONTAGEM_12 	# Se for 1, dai deu 12h de fato
+        tmp(155) := CEQ  &  R0  &  '0'  &  x"09";	-- CEQ @9, R0 	# Caso contrário compara com 10
+        tmp(156) := JEQ  &  R0  &  '0'  &  x"9f";	-- JEQ @INC_CENTMILHAR_12 	# Se for igual a 10, vai para as centenas de milhar
+        tmp(157) := STA  &  R0  &  '0'  &  x"04";	-- STA @4, R0      	# Caso contrário, armazena o valor das dezenas de milhar
+        tmp(158) := JMP  &  R0  &  '0'  &  x"b0";	-- JMP @FIM_INCREMENTO
+        tmp(159) := LDA  &  R0  &  '0'  &  x"07";	-- LDA @7, R0      	# Carrega 0 no R0
+        tmp(160) := STA  &  R0  &  '0'  &  x"04";	-- STA @4, R0      	# Carrega 0 nas dezenas de milhar 
+        tmp(161) := LDA  &  R0  &  '0'  &  x"05";	-- LDA @5, R0      	#Carrega o valor das centenas de milhar
+        tmp(162) := SOMA  &  R0  &  '0'  &  x"08";	-- SOMA @8, R0     	# Soma com 1 e guarda resultado em R0
+        tmp(163) := STA  &  R0  &  '0'  &  x"05";	-- STA @5, R0      	# Armazena o valor das centena de milhar
+        tmp(164) := JMP  &  R0  &  '0'  &  x"b0";	-- JMP @FIM_INCREMENTO
+        tmp(165) := LDA  &  R0  &  '0'  &  x"07";	-- LDA @7, R0      	# Carrega o acumulador com o valor 0
+        tmp(166) := STA  &  R0  &  '0'  &  x"00";	-- STA @0, R0      	#  Armazena o valor 0 nas unidades de segundo
+        tmp(167) := STA  &  R0  &  '0'  &  x"01";	-- STA @1, R0      	#  Armazena o valor 0 nas dezenas
+        tmp(168) := STA  &  R0  &  '0'  &  x"02";	-- STA @2, R0      	#  Armazena o valor 0 nas centenas
+        tmp(169) := STA  &  R0  &  '0'  &  x"03";	-- STA @3, R0      	#  Armazena o valor 0 nos milhares
+        tmp(170) := STA  &  R0  &  '0'  &  x"05";	-- STA @5, R0      	#  Armazena o valor 0 nas centenas de milhar
+        tmp(171) := STA  &  R0  &  '0'  &  x"06";	-- STA @6, R0      	# Armazena o valor 0 na flag do despertador
+        tmp(172) := STA  &  R0  &  '1'  &  x"01";	-- STA @257, R0    	# Armazena o valor 0 no LED8
+        tmp(173) := STA  &  R0  &  '1'  &  x"02";	-- STA @258, R0    	# Armazena o valor 0 no LED9
+        tmp(174) := LDA  &  R1  &  '0'  &  x"08";	-- LDA @8, R1      	# Carrega o acumulador com o valor 1
+        tmp(175) := STA  &  R1  &  '0'  &  x"04";	-- STA @4, R1      	# Armazena o valor 1 nas dezenas de milhar
+        tmp(176) := RET  &  R0  &  '0'  &  x"00";	-- RET
+        tmp(177) := STA  &  R0  &  '1'  &  x"fe";	-- STA @510, R0    	# Para limpar a leitura do botão 1
+        tmp(178) := STA  &  R3  &  '0'  &  x"06";	-- STA @6, R3      	# Carrega a flag do despertador em R3
+        tmp(179) := CEQ  &  R3  &  '0'  &  x"07";	-- CEQ @7, R3      	# Compara a flag do despertador com 0
+        tmp(180) := JEQ  &  R0  &  '0'  &  x"b8";	-- JEQ @LIM_UNIDADE 	# Se for 0, então começa a configurar
+        tmp(181) := LDA  &  R3  &  '0'  &  x"07";	-- LDA @7, R3      	# Se for 1, tem que voltar para 0
+        tmp(182) := STA  &  R3  &  '0'  &  x"06";	-- STA @6, R3      	# Guardo 0 na flag do despertador
+        tmp(183) := STA  &  R3  &  '1'  &  x"01";	-- STA @257, R3    	# Guardo 0 no LED8
+        tmp(184) := LDA  &  R1  &  '0'  &  x"08";	-- LDA @8, R1      	# Carrega 1 em R1
+        tmp(185) := STA  &  R1  &  '1'  &  x"00";	-- STA @256, R1    	# Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades de segundo
+        tmp(186) := LDA  &  R0  &  '1'  &  x"61";	-- LDA @353, R0    	# Guarda a leitura de KEY1 em R0
+        tmp(187) := ANDI  &  R0  &  '0'  &  x"01";	-- ANDI @1, R0     	# Depois de fazer a leitura do botão aplica a máscara
+        tmp(188) := CEQ  &  R0  &  '0'  &  x"07";	-- CEQ @7, R0      	#Compara com o valor 0
+        tmp(189) := LDA  &  R2  &  '1'  &  x"40";	-- LDA @320, R2    	# Lê as chaves e salva o valor delas no R2
+        tmp(190) := JEQ  &  R0  &  '0'  &  x"b8";	-- JEQ @LIM_UNIDADE 	# Caso botão não tenha sido apertado volta novamente para ler KEY1
+        tmp(191) := STA  &  R2  &  '0'  &  x"0a";	-- STA @10, R2     	# Guarda o valor limite nas unidades de segundo
+        tmp(192) := STA  &  R2  &  '1'  &  x"20";	-- STA @288, R2    	# Guarda o valor das unidades de segundo dos segundos em HEX0
+        tmp(193) := STA  &  R0  &  '1'  &  x"fe";	-- STA @510, R0    	# Para limpar a leitura do botão 1
+        tmp(194) := LDI  &  R1  &  '0'  &  x"02";	-- LDI $2, R1      	# Carrega 2 em R1
+        tmp(195) := STA  &  R1  &  '1'  &  x"00";	-- STA @256, R1    	# Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das dezenas
+        tmp(196) := LDA  &  R0  &  '1'  &  x"61";	-- LDA @353, R0    	# Guarda a leitura de KEY1 em R0
+        tmp(197) := ANDI  &  R0  &  '0'  &  x"01";	-- ANDI @1, R0     	# Depois de fazer a leitura do botão aplica a máscara
+        tmp(198) := CEQ  &  R0  &  '0'  &  x"07";	-- CEQ @7, R0      	#Compara com o valor 0
+        tmp(199) := LDA  &  R2  &  '1'  &  x"40";	-- LDA @320, R2    	# Lê de novo o valor das chaves e salva no R2
+        tmp(200) := JEQ  &  R0  &  '0'  &  x"c2";	-- JEQ @LIM_DEZENA 	# Caso botão não tenha sido apertado volta novamente para ler KEY1
+        tmp(201) := STA  &  R2  &  '0'  &  x"0b";	-- STA @11, R2     	# Guarda o valor limite nas dezenas
+        tmp(202) := STA  &  R2  &  '1'  &  x"21";	-- STA @289, R2    	# Guarda o valor das dezenas dos segundos em HEX1
+        tmp(203) := STA  &  R0  &  '1'  &  x"fe";	-- STA @510, R0    	# Para limpar a leitura do botão 1
+        tmp(204) := LDI  &  R1  &  '0'  &  x"04";	-- LDI $4, R1      	# Carrega 4 em R1
+        tmp(205) := STA  &  R1  &  '1'  &  x"00";	-- STA @256, R1    	# Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das centenas
+        tmp(206) := LDA  &  R0  &  '1'  &  x"61";	-- LDA @353, R0    	# Guarda a leitura de KEY1
+        tmp(207) := ANDI  &  R0  &  '0'  &  x"01";	-- ANDI @1, R0     	# Depois de fazer a leitura do botão aplica a máscara
+        tmp(208) := CEQ  &  R0  &  '0'  &  x"07";	-- CEQ @7, R0      	# Compara com o valor 0
+        tmp(209) := LDA  &  R2  &  '1'  &  x"40";	-- LDA @320, R2    	# Lê de novo o valor das chaves e salva no R2
+        tmp(210) := JEQ  &  R0  &  '0'  &  x"cc";	-- JEQ @LIM_CENTENA  	# Caso botão não tenha sido apertado volta novamente para ler KEY1
+        tmp(211) := STA  &  R2  &  '0'  &  x"0c";	-- STA @12, R2     	# Guarda o valor limite nas centenas
+        tmp(212) := STA  &  R2  &  '1'  &  x"22";	-- STA @290, R2    	# Guarda o valor das unidades de segundo dos minutos em HEX2
+        tmp(213) := STA  &  R0  &  '1'  &  x"fe";	-- STA @510, R0    	# Para limpar a leitura do botão 1
+        tmp(214) := LDI  &  R1  &  '0'  &  x"08";	-- LDI $8, R1      	# Carrega 8 em R1
+        tmp(215) := STA  &  R1  &  '1'  &  x"00";	-- STA @256, R1    	# Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave do milhar
+        tmp(216) := LDA  &  R0  &  '1'  &  x"61";	-- LDA @353, R0    	# Guarda a leitura de KEY1
+        tmp(217) := ANDI  &  R0  &  '0'  &  x"01";	-- ANDI @1, R0     	# Depois de fazer a leitura do botão aplica a máscara
+        tmp(218) := CEQ  &  R0  &  '0'  &  x"07";	-- CEQ @7, R0      	# Compara com o valor 0
+        tmp(219) := LDA  &  R2  &  '1'  &  x"40";	-- LDA @320, R2    	# Lê de novo o valor das chaves e salva no R2
+        tmp(220) := JEQ  &  R0  &  '0'  &  x"d6";	-- JEQ @LIM_MILHAR  	# Caso botão não tenha sido apertado volta novamente para ler KEY1
+        tmp(221) := STA  &  R2  &  '0'  &  x"0d";	-- STA @13, R2     	# Guarda o valor limite nos milhares
+        tmp(222) := STA  &  R2  &  '1'  &  x"23";	-- STA @291, R2    	# Guarda o valor das dezenas dos minutos em HEX3
+        tmp(223) := STA  &  R0  &  '1'  &  x"fe";	-- STA @510, R0    	# Para limpar a leitura do botão 1 
+        tmp(224) := LDI  &  R1  &  '0'  &  x"10";	-- LDI $16, R1     	# Carrega 16 em R1
+        tmp(225) := STA  &  R1  &  '1'  &  x"00";	-- STA @256, R1    	# Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das dezenas de milhar
+        tmp(226) := LDA  &  R0  &  '1'  &  x"61";	-- LDA @353, R0    	# Guarda a leitura de KEY1
+        tmp(227) := ANDI  &  R0  &  '0'  &  x"01";	-- ANDI @1, R0     	# Depois de fazer a leitura do botão aplica a máscara
+        tmp(228) := CEQ  &  R0  &  '0'  &  x"07";	-- CEQ @7, R0      	# Compara com o valor 0
+        tmp(229) := LDA  &  R2  &  '1'  &  x"40";	-- LDA @320, R2    	# Lê de novo o valor das chaves e salva no R2
+        tmp(230) := JEQ  &  R0  &  '0'  &  x"e0";	-- JEQ @LIM_DEZMILHAR 	# Caso botão não tenha sido apertado volta novamente para ler KEY1
+        tmp(231) := STA  &  R2  &  '0'  &  x"0e";	-- STA @14, R2     	# Guarda o valor limite nas dezenas de milhar
+        tmp(232) := STA  &  R2  &  '1'  &  x"24";	-- STA @292, R2    	# Guarda o valor das unidades de segundo das horas em HEX4
+        tmp(233) := STA  &  R0  &  '1'  &  x"fe";	-- STA @510, R0    	# Para limpar a leitura do botão 1
+        tmp(234) := LDI  &  R1  &  '0'  &  x"20";	-- LDI $32, R1     	# Carrega 32 em R0
+        tmp(235) := STA  &  R1  &  '1'  &  x"00";	-- STA @256, R1    	# Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades de segundo
+        tmp(236) := LDA  &  R0  &  '1'  &  x"61";	-- LDA @353, R0    	# Guarda a leitura de KEY1
+        tmp(237) := ANDI  &  R0  &  '0'  &  x"01";	-- ANDI @1, R0     	# Depois de fazer a leitura do botão aplica a máscara
+        tmp(238) := CEQ  &  R0  &  '0'  &  x"07";	-- CEQ @7, R0      	#Compara com o valor 0
+        tmp(239) := LDA  &  R2  &  '1'  &  x"40";	-- LDA @320, R2    	# Lê de novo o valor das chaves e salva no R2
+        tmp(240) := JEQ  &  R0  &  '0'  &  x"ea";	-- JEQ @LIM_CENTMILHAR 	# Caso botão não tenha sido apertado volta novamente para ler KEY1
+        tmp(241) := STA  &  R2  &  '0'  &  x"0f";	-- STA @15, R2     	# Guarda o valor limite nas centenas de milhar
+        tmp(242) := STA  &  R2  &  '1'  &  x"25";	-- STA @293, R2    	# Guarda o valor das dezenas das horas em HEX5
+        tmp(243) := STA  &  R0  &  '1'  &  x"fe";	-- STA @510, R0    	# Para limpar a leitura do botão 1
+        tmp(244) := LDA  &  R3  &  '0'  &  x"07";	-- LDA @7, R3      	# Carrega o 0 em R3
+        tmp(245) := STA  &  R3  &  '1'  &  x"00";	-- STA @256, R3    	# Desliga os LEDS
+        tmp(246) := RET  &  R0  &  '0'  &  x"00";	-- RET
+        tmp(247) := NOP  &  R0  &  '0'  &  x"00";	-- NOP             	# Aqui começa a conferência dos limites
+        tmp(248) := LDA  &  R0  &  '0'  &  x"00";	-- LDA @0, R0      	# Carrega o valor das unidades de segundo em R0
+        tmp(249) := CEQ  &  R0  &  '0'  &  x"0a";	-- CEQ @10, R0     	# Compara com o limite de unidades de segundo
+        tmp(250) := JEQ  &  R0  &  '0'  &  x"fc";	-- JEQ @CONFERE_LIMITE_DEZENA 	# Se for 0, vai para a dezena
+        tmp(251) := JMP  &  R0  &  '1'  &  x"13";	-- JMP @FIM_CONFERE_LIMITE   	# Caso o contrário já retorna
+        tmp(252) := LDA  &  R1  &  '0'  &  x"01";	-- LDA @1, R1      	# Carrega o valor das dezenas em R1
+        tmp(253) := CEQ  &  R1  &  '0'  &  x"0b";	-- CEQ @11, R1     	# Compara com o limite de dezenas
+        tmp(254) := JEQ  &  R0  &  '1'  &  x"00";	-- JEQ @CONFERE_LIMITE_CENTENA 	# Se for 0, vai para a centena
+        tmp(255) := JMP  &  R0  &  '1'  &  x"13";	-- JMP @FIM_CONFERE_LIMITE   	# Caso o contrário já retorna
+        tmp(256) := LDA  &  R2  &  '0'  &  x"02";	-- LDA @2, R2      	#Carrega o valor das centenas em R2
+        tmp(257) := CEQ  &  R2  &  '0'  &  x"0c";	-- CEQ @12, R2     	#Compara com o limite das centenas
+        tmp(258) := JEQ  &  R0  &  '1'  &  x"04";	-- JEQ @CONFERE_LIMITE_MILHAR 	# Se for 0, vai para os milhares
+        tmp(259) := JMP  &  R0  &  '1'  &  x"13";	-- JMP @FIM_CONFERE_LIMITE  	# Caso o contrário já retorna
+        tmp(260) := LDA  &  R3  &  '0'  &  x"03";	-- LDA @3, R3      	#Carrega o valor dos milhares em R3
+        tmp(261) := CEQ  &  R3  &  '0'  &  x"0d";	-- CEQ @13, R3     	#Compara com o limite dos milhares
+        tmp(262) := JEQ  &  R0  &  '1'  &  x"08";	-- JEQ @CONFERE_LIMITE_DEZMILHAR 	# Se for 0, vai para as dezenas de milhr
+        tmp(263) := JMP  &  R0  &  '1'  &  x"13";	-- JMP @FIM_CONFERE_LIMITE   	# Caso o contrário já retorna
+        tmp(264) := LDA  &  R0  &  '0'  &  x"04";	-- LDA @4, R0      	#Carrega o valor das dezenas de milhar em R0
+        tmp(265) := CEQ  &  R0  &  '0'  &  x"0e";	-- CEQ @14, R0     	#Compara com o limite das dezenas de milhar
+        tmp(266) := JEQ  &  R0  &  '1'  &  x"0c";	-- JEQ @CONFERE_LIMITE_CENTMILHAR 	# Se for 0, vai para as centenas de milhar
+        tmp(267) := JMP  &  R0  &  '1'  &  x"13";	-- JMP @FIM_CONFERE_LIMITE 	# Caso o contrário já retorna
+        tmp(268) := LDA  &  R1  &  '0'  &  x"05";	-- LDA @5, R1      	#Carrega as dezenas de centenas de milhar em R1
+        tmp(269) := CEQ  &  R1  &  '0'  &  x"0f";	-- CEQ @15, R1     	#Compara com o limite das centenas de milhar
+        tmp(270) := JEQ  &  R0  &  '1'  &  x"10";	-- JEQ @ATIVAR_FLAG_DO_DESPERTADOR 	# Se for 0, vai ativar a flag do despertador
+        tmp(271) := JMP  &  R0  &  '1'  &  x"13";	-- JMP @FIM_CONFERE_LIMITE  	# Caso o contrário já retorna
+        tmp(272) := LDA  &  R2  &  '0'  &  x"08";	-- LDA @8, R2      	# Carrega o valor 1
+        tmp(273) := STA  &  R2  &  '1'  &  x"01";	-- STA @257, R2    	# Armazena o valor 1 no LED8
+        tmp(274) := STA  &  R2  &  '0'  &  x"06";	-- STA @6, R2      	# Armazena o valor 1 na flag do despertador
+        tmp(275) := RET  &  R0  &  '0'  &  x"00";	-- RET
+        tmp(276) := LDA  &  R0  &  '0'  &  x"07";	-- LDA @7, R0      	# Carrega o acumulador com o valor 0
+        tmp(277) := STA  &  R0  &  '0'  &  x"00";	-- STA @0, R0      	#  Armazena o valor 0 nas unidades de segundo
+        tmp(278) := STA  &  R0  &  '0'  &  x"01";	-- STA @1, R0      	#  Armazena o valor 0 nas dezenas
+        tmp(279) := STA  &  R0  &  '0'  &  x"02";	-- STA @2, R0      	#  Armazena o valor 0 nas centenas
+        tmp(280) := STA  &  R0  &  '0'  &  x"03";	-- STA @3, R0      	#  Armazena o valor 0 nos milhares
+        tmp(281) := STA  &  R0  &  '0'  &  x"04";	-- STA @4, R0      	#  Armazena o valor 0 nas dezenas de milhar
+        tmp(282) := STA  &  R0  &  '0'  &  x"05";	-- STA @5, R0      	#  Armazena o valor 0 nas centenas de milhar
+        tmp(283) := STA  &  R0  &  '0'  &  x"06";	-- STA @6, R0      	# Armazena o valor 0 na flag do despertador
+        tmp(284) := STA  &  R0  &  '1'  &  x"01";	-- STA @257, R0    	# Armazena o valor 0 no LED8
+        tmp(285) := STA  &  R0  &  '1'  &  x"02";	-- STA @258, R0    	# Armazena o valor 0 no LED9
+        tmp(286) := RET  &  R0  &  '0'  &  x"00";	-- RET
+        tmp(287) := LDA  &  R0  &  '0'  &  x"00";	-- LDA @0, R0      	# Carrega o valor das unidades de segundo em R0
+        tmp(288) := STA  &  R0  &  '1'  &  x"20";	-- STA @288, R0    	# Guarda o valor das unidades de segundo no HEX0
+        tmp(289) := LDA  &  R0  &  '0'  &  x"01";	-- LDA @1, R0      	# Carrega o valor das dezenas em R0
+        tmp(290) := STA  &  R0  &  '1'  &  x"21";	-- STA @289, R0    	# Guarda o valor das dezenas no HEX1 
+        tmp(291) := LDA  &  R0  &  '0'  &  x"02";	-- LDA @2, R0      	# Carrega o valor das centenas em R0
+        tmp(292) := STA  &  R0  &  '1'  &  x"22";	-- STA @290, R0    	# Guarda o valor das centenas no HEX2
+        tmp(293) := LDA  &  R0  &  '0'  &  x"03";	-- LDA @3, R0      	# Carrega o valor dos milhares em R0
+        tmp(294) := STA  &  R0  &  '1'  &  x"23";	-- STA @291, R0    	# Guarda o valor do milhar no HEX3
+        tmp(295) := LDA  &  R0  &  '0'  &  x"04";	-- LDA @4, R0      	# Carrega o valor das dezenas de milhar em R0
+        tmp(296) := STA  &  R0  &  '1'  &  x"24";	-- STA @292, R0    	# Guarda o valor das dezenas de milhar no HEX4
+        tmp(297) := LDA  &  R0  &  '0'  &  x"05";	-- LDA @5, R0      	# Carrega o valor das centenas de milhar em R0
+        tmp(298) := STA  &  R0  &  '1'  &  x"25";	-- STA @293, R0    	# Guarda o valor das centenas de milhar no HEX5
+        tmp(299) := RET  &  R0  &  '0'  &  x"00";	-- RET
+        tmp(300) := STA  &  R0  &  '1'  &  x"fc";	-- STA @508, R0    	# Para limpar a leitura do botão 3
+        tmp(301) := STA  &  R3  &  '0'  &  x"06";	-- STA @6, R3      	# Carrega a flag do despertador em R3
+        tmp(302) := CEQ  &  R3  &  '0'  &  x"07";	-- CEQ @7, R3      	# Compara a flag do despertador com 0
+        tmp(303) := JEQ  &  R0  &  '1'  &  x"33";	-- JEQ @CONFIG_SEG1 	# Se for 0, então começa a configurar
+        tmp(304) := LDA  &  R3  &  '0'  &  x"07";	-- LDA @7, R3      	# Se for 1, tem que voltar para 0
+        tmp(305) := STA  &  R3  &  '0'  &  x"06";	-- STA @6, R3      	# Guardo 0 na flag do despertador
+        tmp(306) := STA  &  R3  &  '1'  &  x"01";	-- STA @257, R3    	# Guardo 0 no LED8
+        tmp(307) := LDA  &  R1  &  '0'  &  x"08";	-- LDA @8, R1      	# Carrega 1 em R1
+        tmp(308) := STA  &  R1  &  '1'  &  x"00";	-- STA @256, R1    	# Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades de segundo
+        tmp(309) := LDA  &  R0  &  '1'  &  x"63";	-- LDA @355, R0    	# Guarda a leitura de KEY3 em R0
+        tmp(310) := ANDI  &  R0  &  '0'  &  x"01";	-- ANDI @1, R0     	# Depois de fazer a leitura do botão aplica a máscara
+        tmp(311) := CEQ  &  R0  &  '0'  &  x"07";	-- CEQ @7, R0      	#Compara com o valor 0
+        tmp(312) := LDA  &  R2  &  '1'  &  x"40";	-- LDA @320, R2    	# Lê as chaves e salva o valor delas no R2
+        tmp(313) := JEQ  &  R0  &  '1'  &  x"33";	-- JEQ @CONFIG_SEG1 	# Caso botão não tenha sido apertado volta novamente para ler KEY3
+        tmp(314) := STA  &  R2  &  '0'  &  x"00";	-- STA @0, R2     	# Guarda o valor nas unidades de segundo
+        tmp(315) := STA  &  R2  &  '1'  &  x"20";	-- STA @288, R2    	# Guarda o valor das unidades de segundo dos segundos em HEX0
+        tmp(316) := STA  &  R0  &  '1'  &  x"fc";	-- STA @508, R0    	# Para limpar a leitura do botão 3
+        tmp(317) := LDI  &  R1  &  '0'  &  x"02";	-- LDI $2, R1      	# Carrega 2 em R1
+        tmp(318) := STA  &  R1  &  '1'  &  x"00";	-- STA @256, R1    	# Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das dezenas
+        tmp(319) := LDA  &  R0  &  '1'  &  x"63";	-- LDA @355, R0    	# Guarda a leitura de KEY3 em R0
+        tmp(320) := ANDI  &  R0  &  '0'  &  x"01";	-- ANDI @1, R0     	# Depois de fazer a leitura do botão aplica a máscara
+        tmp(321) := CEQ  &  R0  &  '0'  &  x"07";	-- CEQ @7, R0      	#Compara com o valor 0
+        tmp(322) := LDA  &  R2  &  '1'  &  x"40";	-- LDA @320, R2    	# Lê de novo o valor das chaves e salva no R2
+        tmp(323) := JEQ  &  R0  &  '1'  &  x"3d";	-- JEQ @CONFIG_SEG2 	# Caso botão não tenha sido apertado volta novamente para ler KEY3
+        tmp(324) := STA  &  R2  &  '0'  &  x"01";	-- STA @1, R2     	# Guarda o valor nas dezenas
+        tmp(325) := STA  &  R2  &  '1'  &  x"21";	-- STA @289, R2    	# Guarda o valor das dezenas dos segundos em HEX1
+        tmp(326) := STA  &  R0  &  '1'  &  x"fc";	-- STA @508, R0    	# Para limpar a leitura do botão 3
+        tmp(327) := LDI  &  R1  &  '0'  &  x"04";	-- LDI $4, R1      	# Carrega 4 em R1
+        tmp(328) := STA  &  R1  &  '1'  &  x"00";	-- STA @256, R1    	# Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das centenas
+        tmp(329) := LDA  &  R0  &  '1'  &  x"63";	-- LDA @355, R0    	# Guarda a leitura de KEY3
+        tmp(330) := ANDI  &  R0  &  '0'  &  x"01";	-- ANDI @1, R0     	# Depois de fazer a leitura do botão aplica a máscara
+        tmp(331) := CEQ  &  R0  &  '0'  &  x"07";	-- CEQ @7, R0      	# Compara com o valor 0
+        tmp(332) := LDA  &  R2  &  '1'  &  x"40";	-- LDA @320, R2    	# Lê de novo o valor das chaves e salva no R2
+        tmp(333) := JEQ  &  R0  &  '1'  &  x"47";	-- JEQ @CONFIG_MIN1  	# Caso botão não tenha sido apertado volta novamente para ler KEY3
+        tmp(334) := STA  &  R2  &  '0'  &  x"02";	-- STA @2, R2     	# Guarda o valor nas centenas
+        tmp(335) := STA  &  R2  &  '1'  &  x"22";	-- STA @290, R2    	# Guarda o valor das unidades de segundo dos minutos em HEX2
+        tmp(336) := STA  &  R0  &  '1'  &  x"fc";	-- STA @508, R0    	# Para limpar a leitura do botão 3
+        tmp(337) := LDI  &  R1  &  '0'  &  x"08";	-- LDI $8, R1      	# Carrega 8 em R1
+        tmp(338) := STA  &  R1  &  '1'  &  x"00";	-- STA @256, R1    	# Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave do milhar
+        tmp(339) := LDA  &  R0  &  '1'  &  x"63";	-- LDA @355, R0    	# Guarda a leitura de KEY3
+        tmp(340) := ANDI  &  R0  &  '0'  &  x"01";	-- ANDI @1, R0     	# Depois de fazer a leitura do botão aplica a máscara
+        tmp(341) := CEQ  &  R0  &  '0'  &  x"07";	-- CEQ @7, R0      	# Compara com o valor 0
+        tmp(342) := LDA  &  R2  &  '1'  &  x"40";	-- LDA @320, R2    	# Lê de novo o valor das chaves e salva no R2
+        tmp(343) := JEQ  &  R0  &  '1'  &  x"51";	-- JEQ @CONFIG_MIN2  	# Caso botão não tenha sido apertado volta novamente para ler KEY3
+        tmp(344) := STA  &  R2  &  '0'  &  x"03";	-- STA @3, R2     	# Guarda o valor nos milhares
+        tmp(345) := STA  &  R2  &  '1'  &  x"23";	-- STA @291, R2    	# Guarda o valor das dezenas dos minutos em HEX3
+        tmp(346) := STA  &  R0  &  '1'  &  x"fc";	-- STA @508, R0    	# Para limpar a leitura do botão 3 
+        tmp(347) := LDI  &  R1  &  '0'  &  x"10";	-- LDI $16, R1     	# Carrega 16 em R1
+        tmp(348) := STA  &  R1  &  '1'  &  x"00";	-- STA @256, R1    	# Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das dezenas de milhar
+        tmp(349) := LDA  &  R0  &  '1'  &  x"63";	-- LDA @355, R0    	# Guarda a leitura de KEY3
+        tmp(350) := ANDI  &  R0  &  '0'  &  x"01";	-- ANDI @1, R0     	# Depois de fazer a leitura do botão aplica a máscara
+        tmp(351) := CEQ  &  R0  &  '0'  &  x"07";	-- CEQ @7, R0      	# Compara com o valor 0
+        tmp(352) := LDA  &  R2  &  '1'  &  x"40";	-- LDA @320, R2    	# Lê de novo o valor das chaves e salva no R2
+        tmp(353) := JEQ  &  R0  &  '1'  &  x"5b";	-- JEQ @CONFIG_HORA1 	# Caso botão não tenha sido apertado volta novamente para ler KEY3
+        tmp(354) := STA  &  R2  &  '0'  &  x"04";	-- STA @4, R2     	# Guarda o valor nas dezenas de milhar
+        tmp(355) := STA  &  R2  &  '1'  &  x"24";	-- STA @292, R2    	# Guarda o valor das unidades de segundo das horas em HEX4
+        tmp(356) := STA  &  R0  &  '1'  &  x"fc";	-- STA @508, R0    	# Para limpar a leitura do botão 3
+        tmp(357) := LDI  &  R1  &  '0'  &  x"20";	-- LDI $32, R1     	# Carrega 32 em R0
+        tmp(358) := STA  &  R1  &  '1'  &  x"00";	-- STA @256, R1    	# Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades de segundo
+        tmp(359) := LDA  &  R0  &  '1'  &  x"63";	-- LDA @355, R0    	# Guarda a leitura de KEY3
+        tmp(360) := ANDI  &  R0  &  '0'  &  x"01";	-- ANDI @1, R0     	# Depois de fazer a leitura do botão aplica a máscara
+        tmp(361) := CEQ  &  R0  &  '0'  &  x"07";	-- CEQ @7, R0      	#Compara com o valor 0
+        tmp(362) := LDA  &  R2  &  '1'  &  x"40";	-- LDA @320, R2    	# Lê de novo o valor das chaves e salva no R2
+        tmp(363) := JEQ  &  R0  &  '1'  &  x"65";	-- JEQ @CONFIG_HORA2 	# Caso botão não tenha sido apertado volta novamente para ler KEY3
+        tmp(364) := STA  &  R2  &  '0'  &  x"05";	-- STA @5, R2     	# Guarda o valor nas centenas de milhar
+        tmp(365) := STA  &  R2  &  '1'  &  x"25";	-- STA @293, R2    	# Guarda o valor das dezenas das horas em HEX5
+        tmp(366) := STA  &  R0  &  '1'  &  x"fc";	-- STA @508, R0    	# Para limpar a leitura do botão 3
+        tmp(367) := LDA  &  R3  &  '0'  &  x"07";	-- LDA @7, R3      	# Carrega o 0 em R3
+        tmp(368) := STA  &  R3  &  '1'  &  x"00";	-- STA @256, R3    	# Desliga os LEDS
+        tmp(369) := RET  &  R0  &  '0'  &  x"00";	-- RET
+
+
+
+
+		  return tmp;
+		  
+    end initMemory;
+
+    signal memROM : blocoMemoria := initMemory;
+
+begin
+    Dado <= memROM (to_integer(unsigned(Endereco)));
+end architecture;

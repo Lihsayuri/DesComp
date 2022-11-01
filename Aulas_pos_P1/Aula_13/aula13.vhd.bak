@@ -1,0 +1,62 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity aula13 is
+  -- Total de bits das entradas e saidas
+  generic ( larguraDados : natural := 32;
+          larguraEnderecos : natural := 32;
+        simulacao : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
+  );
+  port   (
+
+    CLOCK_50 : in std_logic;
+);
+  
+end entity;
+
+architecture arquitetura of aula13 is
+
+  signal CLK : std_logic;
+  
+  alias Endereco : std_logic_vector (larguraEnderecos-1 downto 0) is PC_OUT_processador(larguraEnderecos-1 downto 0);
+--  alias DecoderBloco_IN : std_logic_vector (2 downto 0) is instruction_ROM(8 downto 6);
+  alias DecoderBloco_IN : std_logic_vector (2 downto 0) is MEM_ADD(8 downto 6);
+
+  alias Data_Address_5 : std_logic is MEM_ADD(5);
+  alias DecoderPosicao_IN : std_logic_vector (2 downto 0) is MEM_ADD(2 downto 0);
+
+  alias MEM_Habilita: std_logic is decoder_Habilita_OUT(0); 
+  
+  alias MEM_IN: std_logic_vector(larguraDados - 1 downto 0) is Reg_A;  
+
+
+begin
+
+
+gravar:  if simulacao generate
+				CLK 				<= CLOCK_50;
+
+			else generate
+				CLK 				<= CLOCK_50;
+				
+                  
+end generate;
+	
+	
+	---------------------------------- COMPONENTES DE MEMORIA, CPU E SAIDA ------------------------------
+	
+	
+		-- Falta acertar o conteudo da ROM (no arquivo memoriaROM.vhd)
+	ROM1 : entity work.memoriaROM generic map (dataWidth => 15, addrWidth =>9) -- POR QUE 4?
+				 port map (
+						 Endereco => Endereco,
+						 Dado => instruction_ROM);
+					 
+	PC_OUT <= PC_OUT_processador; 	 
+--	Palavra <= Palavra_processador;
+	HabilitaRAM <= MEM_Habilita;
+	MEM_OUTT <= MEM_OUT;
+   MEM_ADDRESS <= MEM_ADD; 
+   REGA_OUT <= Reg_A;
+
+end architecture;
