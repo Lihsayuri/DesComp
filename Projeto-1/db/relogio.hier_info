@@ -3,8 +3,8 @@ CLOCK_50 => edgedetector:gravar:detectorSub0.clk
 CLOCK_50 => edgedetector:gravar:detectorSub1.clk
 CLOCK_50 => edgedetector:gravar:detectorSub2.clk
 CLOCK_50 => edgedetector:gravar:detectorSub3.clk
-CLOCK_50 => divisorgenerico:TIM3.clk
-CLOCK_50 => divisorgenerico:TIM4.clk
+CLOCK_50 => divisorgenerico:TIM_SEG_NORMAL_INC.clk
+CLOCK_50 => divisorgenerico:TIM_SEG_ACELERADO_INC.clk
 CLOCK_50 => processador:processador.CLK
 CLOCK_50 => logica_led:logica_LED.CLK
 CLOCK_50 => logica_7seg:logica_Seven_Seg.CLK
@@ -183,6 +183,36 @@ habilita => saida[0].OE
 saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
+|relogio|buffer_3_state_8portas:KEY_0
+entrada[0] => saida[0].DATAIN
+habilita => saida[0].OE
+saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio|buffer_3_state_8portas:KEY_1
+entrada[0] => saida[0].DATAIN
+habilita => saida[0].OE
+saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio|buffer_3_state_8portas:KEY_2
+entrada[0] => saida[0].DATAIN
+habilita => saida[0].OE
+saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio|buffer_3_state_8portas:KEY_3
+entrada[0] => saida[0].DATAIN
+habilita => saida[0].OE
+saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio|buffer_3_state_8portas:FPGA_RESET
+entrada[0] => saida[0].DATAIN
+habilita => saida[0].OE
+saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
 |relogio|flipflopGenerico:FF_DEBOUNCER_0
 DIN => DOUT~reg0.DATAIN
 DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -215,37 +245,7 @@ CLK => DOUT~reg0.CLK
 RST => DOUT~reg0.ACLR
 
 
-|relogio|buffer_3_state_8portas:KEY_0
-entrada[0] => saida[0].DATAIN
-habilita => saida[0].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|relogio|buffer_3_state_8portas:KEY_1
-entrada[0] => saida[0].DATAIN
-habilita => saida[0].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|relogio|buffer_3_state_8portas:KEY_2
-entrada[0] => saida[0].DATAIN
-habilita => saida[0].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|relogio|buffer_3_state_8portas:KEY_3
-entrada[0] => saida[0].DATAIN
-habilita => saida[0].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|relogio|buffer_3_state_8portas:FPGA_RESET
-entrada[0] => saida[0].DATAIN
-habilita => saida[0].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|relogio|divisorGenerico:TIM3
+|relogio|divisorGenerico:TIM_SEG_NORMAL_INC
 clk => tick.CLK
 clk => contador[0].CLK
 clk => contador[1].CLK
@@ -275,7 +275,7 @@ clk => contador[24].CLK
 saida_clk <= tick.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|relogio|divisorGenerico:TIM4
+|relogio|divisorGenerico:TIM_SEG_ACELERADO_INC
 clk => tick.CLK
 clk => contador[0].CLK
 clk => contador[1].CLK

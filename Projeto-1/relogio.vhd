@@ -41,10 +41,12 @@ architecture arquitetura of relogio is
   signal KEY_0_tratadoB : std_logic; -- é o clock do relógio real
   signal KEY_0_tratadoC : std_logic; -- é o clock do relógio acelerado
   signal KEY_0_tratadoF : std_logic; -- é o que sai do MUX: minha escolha. Se botão não apertado: real. Se apertado: acelera 
+  
   -- ele vira o clk do debouncer do key0
   signal KEY_1_tratado : std_logic;
-  signal KEY_3_tratado : std_logic;
   signal KEY_2_tratado : std_logic;
+  signal KEY_3_tratado : std_logic;
+ 
   
   signal MEM_Read : std_logic;
   signal MEM_Write: std_logic;
@@ -142,7 +144,50 @@ end generate;
 			);
 			
 
-	RESET_511 <= MEM_ADD(8) AND MEM_ADD(7) AND MEM_ADD(6) AND
+
+	
+	KEY_0: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
+			port map(
+					entrada(0) =>  DEBOUNCER_OUT_0,
+					habilita => (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(0) AND  decoder_Habilita_OUT(5)),
+					saida(0) => MEM_OUT(0)
+			);
+			
+
+	KEY_1: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
+			port map(
+					entrada(0) => DEBOUNCER_OUT_1,
+					habilita => (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(1) AND  decoder_Habilita_OUT(5)),
+					saida(0) => MEM_OUT(0)
+			);
+
+
+	KEY_2: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
+			port map(
+					entrada(0) => DEBOUNCER_OUT_2,
+					habilita => (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(2) AND  decoder_Habilita_OUT(5)),
+					saida(0) => MEM_OUT(0)
+			);
+
+
+
+	KEY_3: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
+			port map(
+					entrada(0) => DEBOUNCER_OUT_3,
+					habilita => (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(3) AND  decoder_Habilita_OUT(5)),
+					saida(0) => MEM_OUT(0)
+			);	
+	
+	FPGA_RESET: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
+			port map(
+					entrada(0) => FPGA_RESET_N,
+					habilita	=> (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(4) AND  decoder_Habilita_OUT(5)),
+					saida(0) => MEM_OUT(0)
+	);	
+	
+	
+	
+		RESET_511 <= MEM_ADD(8) AND MEM_ADD(7) AND MEM_ADD(6) AND
 					 MEM_ADD(5) AND MEM_ADD(4) AND MEM_ADD(3) AND
 					 MEM_ADD(2) AND MEM_ADD(1) AND MEM_ADD(0) AND MEM_Write; 
 
@@ -198,57 +243,22 @@ end generate;
 	);	
 					 
 	
-	KEY_0: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
-			port map(
-					entrada(0) =>  DEBOUNCER_OUT_0,
-					habilita => (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(0) AND  decoder_Habilita_OUT(5)),
-					saida(0) => MEM_OUT(0)
-			);
-			
-
-	KEY_1: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
-			port map(
-					entrada(0) => DEBOUNCER_OUT_1,
-					habilita => (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(1) AND  decoder_Habilita_OUT(5)),
-					saida(0) => MEM_OUT(0)
-			);
-
-
-	KEY_2: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
-			port map(
-					entrada(0) => DEBOUNCER_OUT_2,
-					habilita => (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(2) AND  decoder_Habilita_OUT(5)),
-					saida(0) => MEM_OUT(0)
-			);
-
-
-
-	KEY_3: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
-			port map(
-					entrada(0) => DEBOUNCER_OUT_3,
-					habilita => (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(3) AND  decoder_Habilita_OUT(5)),
-					saida(0) => MEM_OUT(0)
-			);	
-	
-	FPGA_RESET: entity work.buffer_3_state_8portas generic map(dataWidth => 1)
-			port map(
-					entrada(0) => FPGA_RESET_N,
-					habilita	=> (MEM_Read AND Data_Address_5 AND decoder_Posicao_OUT(4) AND  decoder_Habilita_OUT(5)),
-					saida(0) => MEM_OUT(0)
-	);	
-	
 	
 		-- Divisor generico que faz 1 segundo real ser igual a 1 segundo no relogio:						
-	TIM3 : entity work.divisorGenerico generic map (divisor => 25000000)   -- divide por 50000000.
+	TIM_SEG_NORMAL_INC : entity work.divisorGenerico generic map (divisor => 25000000)   -- divide por 50000000.
 				port map(	clk 				=> CLK,
 								saida_clk 		=> KEY_0_tratadoB
 							);
 							
+							
+							
 	-- Divisor generico que faz 1 segundo real ser igual a 2000 segundos no relogio:		
-	TIM4 : entity work.divisorGenerico generic map (divisor => 12500)   -- divide por 25000.
+	TIM_SEG_ACELERADO_INC : entity work.divisorGenerico generic map (divisor => 12500)   -- divide por 25000.
 				port map(	clk 				=> CLK,
 								saida_clk 		=> KEY_0_tratadoC
 							);
+							
+							
 							
 	-- MUX 2x1 para os aumentar ou diminuir a passagem de tempo:
 	MUX1 :	entity work.muxGenerico2x1  generic map (larguraDados => 1)
@@ -257,7 +267,8 @@ end generate;
 								seletor_MUX 	=> not KEY(0),
 								saida_MUX(0) 		=> KEY_0_tratadoF
 							);
-	
+							
+				  	
 	
 	---------------------------------- COMPONENTES DE MEMORIA, CPU E SAIDA ------------------------------
 	
