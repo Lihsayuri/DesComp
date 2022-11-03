@@ -78,7 +78,7 @@ INCREMENTO:
 STA @511, R0     # Limpa a leitura do botão KEY0
 INC_UNIDADE:
 LDA @0, R0       # Carrega o valor das unidades de segundo em R0
-SOMA @8, R0      # Soma com 1 e guarda resultado em R0
+ADDI $1, R0      # Soma com 1 e guarda resultado em R0
 CEQ @9, R0       # Compara com 10
 JEQ @INC_DEZENA  # Se for 10, vai para as dezenas de segundo
 STA @0, R0       # Se não, armazena o valor das unidades de segundo
@@ -87,7 +87,7 @@ INC_DEZENA:
 LDA @7, R0      # Carrega 0 no R0
 STA @0, R0      # Carrega 0 nas unidades de segundo
 LDA @1, R0      # Carrega o valor das dezenas de segundo em R0
-SOMA @8, R0     # Soma com 1 e guarda resultado em R0
+ADDI $1, R0     # Soma com 1 e guarda resultado em R0
 CEQ @16, R0      # Compara com 6
 JEQ @INC_CENTENA # Se for 6, vai para as unidades de minuto
 STA @1, R0      # Se não, armazena o valor das dezenas de segundo
@@ -96,7 +96,7 @@ INC_CENTENA:
 LDA @7, R0      # Carrega 0 no R0
 STA @1, R0      # Carrega 0 nas dezenas de segundo
 LDA @2, R0      # Carrega o valor das unidades de minuto em R0
-SOMA @8, R0     # Soma com 1 e guarda resultado em R0
+ADDI $1, R0     # Soma com 1 e guarda resultado em R0
 CEQ @9, R0      # Compara com 10
 JEQ @INC_MILHAR # Se for 10, vai para as dezenas de minuto
 STA @2, R0      # Se não, armazena o valor das unidades de minuto
@@ -105,7 +105,7 @@ INC_MILHAR:
 LDA @7, R0      # Carrega 0 no R0
 STA @2, R0      # Carrega 0 nas unidades de minuto
 LDA @3, R0      # Carrega o valor das dezenas de minuto em R0
-SOMA @8, R0     # Soma com 1 e guarda resultado em R0
+ADDI $1, R0     # Soma com 1 e guarda resultado em R0
 CEQ @16, R0      # Compara com 6
 JEQ @INC_DEZMILHAR  # Se for 6, vai para as unidades de hora
 STA @3, R0      # Se não, armazena o valor das dezenas de minuto
@@ -114,7 +114,7 @@ INC_DEZMILHAR:
 LDA @7, R0      # Carrega 0 no R0
 STA @3, R0      # Carrega 0 nas dezenas de minuto
 LDA @4, R0      # Carrega o valor das unidades de hora
-SOMA @8, R0     # Soma com 1 e guarda resultado em R0
+ADDI $1, R0     # Soma com 1 e guarda resultado em R0
 CEQ @18, R0     # Compara com 4
 JEQ @CONFERE_24 # Se for 4, vai conferir se as dezenas de hora são 2
 CEQ @9, R0      # Caso contrário compara com 10
@@ -133,28 +133,17 @@ INC_CENTMILHAR:
 LDA @7, R0      # Carrega 0 no R0
 STA @4, R0      # Carrega 0 nas unidades de hora 
 LDA @5, R0      # Carrega o valor das dezenas de hora
-SOMA @8, R0     # Soma com 1 e guarda resultado em R0
+ADDI $1, R0     # Soma com 1 e guarda resultado em R0
 STA @5, R0      # Armazena o valor das centena de milhar
 JMP @FIM_INCREMENTO
 REINICIAR_CONTAGEM_24:
-LDA @7, R0      # Carrega o acumulador com o valor 0
+LDA @7, R0      # Carrega o R0 com o valor 0
 STA @0, R0      #  Armazena o valor 0 nas unidades de segundo
 STA @1, R0      #  Armazena o valor 0 nas dezenas
 STA @2, R0      #  Armazena o valor 0 nas centenas
 STA @3, R0      #  Armazena o valor 0 nos milhares
 STA @4, R0      #  Armazena o valor 0 nas dezenas de milhar
 STA @5, R0      #  Armazena o valor 0 nas centenas de milhar
-FIM_INCREMENTO:
-RET
-REINICIAR_CONTAGEM_24:
-LDA @8, R2      # Carrega 1 em R2
-LDA @7, R3      # Carrega 0 em R3
-STA @0, R3      # Salva 0 nas unidades      
-STA @1, R3      # Salva 0 nas dezenas
-STA @2, R3      # Salva 0 nas centenas
-STA @3, R3      # Salva 0 nas milhar
-STA @4, R3      # Salva 0 nas dezenas de milhar
-STA @5, R3      # Salva 0 nas centenas de milhar
 FIM_INCREMENTO:
 RET
 ATUALIZA_SEVEN_SEG:
@@ -305,8 +294,8 @@ LDA @14, R0      # Carrega as unidades de hora em R0
 LDA @15, R1      # Carrega as dezenas de hora em R1
 LDA @7, R2
 LOOP_PARA_CONCAT_HORA_LIMITE:
-SOMA @9, R3    # Soma 10 em R3
-SUB @8, R1     # Subtrai um de R1
+ADDI $10, R3    # Soma 10 em R3
+SUBI $1, R1     # Subtrai um de R1
 CEQ @7, R1     # Compara 0 com R1
 JEQ @CONTINUA_COMPARACAO_LIMITE
 JMP @LOOP_PARA_CONCAT_HORA_LIMITE
@@ -320,6 +309,8 @@ LDA @8, R0      # Se não for menor, carrega 1 em R0
 STA @258, R0    # Acende o LEDR9
 JMP @LIM_UNIDADE # Vai configurar a hora de novo
 EH_24_HORAS_LIMITE:
+LDA @8, R0      # carrega 1 em R0
+STA @258, R0    # Acende o LEDR9
 LDA @7, R0      # Carrega 0 em R0
 STA @14, R0      # Seta as unidades de hora para 0
 STA @15, R0      # Seta as dezenas de hora para 0
@@ -359,7 +350,6 @@ STA @12, R2     # Armazena o valor do R2 em MEM[12] (valor do despertador para U
 STA @13, R2     # Armazena o valor do R2 em MEM[13] (valor do despertador para DEZENA DE MINUTO)
 STA @14, R2     # Armazena o valor do R2 em MEM[14] (valor do despertador para UNIDADE DE HORA)
 STA @15, R2     # Armazena o valor do R2 em MEM[15] (valor do despertador para DEZENA DE HORA)
-RETORNA_DESPERTA:
 RET
 CONFIGURA_HORARIO:
 STA @508, R0    # Para limpar a leitura do botão 3
@@ -436,8 +426,8 @@ LDA @4, R0      # Carrega as unidades de hora em R0
 LDA @5, R1      # Carrega as dezenas de hora em R1
 LDA @7, R2
 LOOP_PARA_CONCAT_HORA:
-SOMA @9, R3    # Soma 10 em R3
-SUB @8, R1     # Subtrai um de R1
+ADDI $10, R3    # Soma 10 em R3
+SUBI $1, R1     # Subtrai um de R1
 CEQ @7, R1     # Compara 0 com R1
 JEQ @CONTINUA_COMPARACAO
 JMP @LOOP_PARA_CONCAT_HORA
@@ -451,6 +441,8 @@ LDA @8, R0      # Se não for menor, carrega 1 em R0
 STA @258, R0    # Acende o LEDR9
 JMP @CONFIG_HORA1 # Vai configurar a hora de novo
 EH_24_HORAS:
+LDA @8, R0      # carrega 1 em R0
+STA @258, R0    # Acende o LEDR9
 LDA @7, R0      # Carrega 0 em R0
 STA @4, R0      # Seta as unidades de hora para 0
 STA @5, R0      # Seta as dezenas de hora para 0
