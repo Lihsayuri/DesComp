@@ -56,7 +56,7 @@ architecture arquitetura of relogio is
   signal decoder_Posicao_OUT: std_logic_vector(7 downto 0);
   signal instruction_ROM: std_logic_vector(14 downto 0);  
   signal PC_OUT_processador : std_logic_vector(larguraEnderecos-1 downto 0);
-  signal Palavra_processador : std_logic_vector(11 downto 0);
+  signal Palavra_processador : std_logic_vector(13 downto 0);
   signal Reg_A : std_logic_vector(larguraDados - 1 downto 0);
   signal RESET_511 : std_logic;
   signal RESET_510 : std_logic;  
