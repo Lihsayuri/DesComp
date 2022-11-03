@@ -364,11 +364,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[0]",
+					"name" : "SW[9]",
 					"strict" : false
 				},
 				{
-					"name" : "FPGA_RESET_N",
+					"name" : "SW[0]",
 					"strict" : false
 				},
 				{
@@ -376,7 +376,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[9]",
+					"name" : "FPGA_RESET_N",
 					"strict" : false
 				},
 				{
@@ -408,10 +408,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "KEY[3]",
-					"strict" : false
-				},
-				{
 					"name" : "KEY[0]",
 					"strict" : false
 				},
@@ -421,6 +417,10 @@
 				},
 				{
 					"name" : "KEY[2]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[3]",
 					"strict" : false
 				}
 			]

@@ -91,6 +91,8 @@ mne =	{
        "B":  "ANDI",
        "C":  "CLT",
        "D":  "JLT",
+       "E":  "ADDI",
+       "F":  "SUBI"
 }
 
 
