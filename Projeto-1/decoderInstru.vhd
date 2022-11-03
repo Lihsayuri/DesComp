@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity decoderInstru is
   port ( opcode : in std_logic_vector(3 downto 0);
-         saida : out std_logic_vector(11 downto 0)
+         saida : out std_logic_vector(13 downto 0)
   );
 end entity;
 
@@ -21,21 +21,28 @@ architecture comportamento of decoderInstru is
   constant JSR : std_logic_vector(3 downto 0) := "1001";
   constant RET : std_logic_vector(3 downto 0) := "1010";
   constant ANDI : std_logic_vector(3 downto 0) := "1011"; -- ANDI
+  constant CLT : std_logic_vector (3 downto 0) := "1100"; -- CLT
+  constant JLT : std_logic_vector (3 downto 0) := "1101"; -- JLT. OBS: ainda temos 1110 e 1111
 
   begin
   
   -- MUX HABILITA OPERACAO // DECODER : LER ESCREVER
-saida <= "00000X0XX000" when opcode = NOP else  -- SelMUX HabilitaA Reset Operacao
-         "000000110010" when opcode = LDA else  -- operação final não importa/ carrega Y: A
-         "000000101010" when opcode = SOMA else -- soma valor da mem com acumulador
-         "000000100010" when opcode = SUB else
-			"000001111010" when opcode = ANDI else -- AND COM O IMEDIATO
-			"000001110000" when opcode = LDI else
-			"0000000XX001" when opcode = STA else
-			"01000X0XX000" when opcode = JMP else
-			"00001X0XX000" when opcode = JEQ else
-			"000000000110" when opcode = CEQ else
-			"10010X0XX000" when opcode = JSR else
-			"00100X0XX000" when opcode = RET else
-         "00000X0XX000";  -- NOP para os opcodes Indefinidos
+  
+	    -- HabRET JMP RET JSR JEQ JLT SelMux HAB_A OPeracao habFlag= habFlag< RD WR
+		 
+saida <= "000000X0XX0000" when opcode = NOP else  
+         "00000001100010" when opcode = LDA else  
+         "00000001010010" when opcode = SOMA else 
+         "00000001000010" when opcode = SUB else
+			"00000011110010" when opcode = ANDI else 
+			"00000011100000" when opcode = LDI else
+			"00000000XX0001" when opcode = STA else
+			"010000X0XX0000" when opcode = JMP else
+			"000010X0XX0000" when opcode = JEQ else
+			"00000000001010" when opcode = CEQ else
+			"100100X0XX0000" when opcode = JSR else
+			"001000X0XX0000" when opcode = RET else
+			"00000000000110" when opcode = CLT else
+			"000001X0XX0000" when opcode = JLT else
+         "000000X0XX0000";  -- NOP para os opcodes Indefinidos
 end architecture;
