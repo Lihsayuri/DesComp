@@ -439,7 +439,7 @@ CEQ @19, R3     # Confere se é igual a 24h
 JEQ @EH_24_HORAS
 LDA @8, R0      # Se não for menor, carrega 1 em R0
 STA @258, R0    # Acende o LEDR9
-JMP @CONFIG_HORA1 # Vai configurar a hora de novo
+JMP @CONFIG_SEG1 # Vai configurar a hora de novo
 EH_24_HORAS:
 LDA @8, R0      # carrega 1 em R0
 STA @258, R0    # Acende o LEDR9
