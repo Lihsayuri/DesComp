@@ -1,0 +1,21 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;  
+
+
+entity estendeSinal is
+    generic
+    (
+        larguraDados : natural := 16
+    );
+    port
+    (
+        entrada: in  STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+        saida:   out STD_LOGIC_VECTOR((larguraDados-1) downto 0)
+    );
+end entity;
+
+architecture comportamento of estendeSinal is
+    begin
+        saida <= entrada(15) & entrada(15) & entrada(15) & entrada(15) & entrada(15) & entrada(15) & entrada(15) & 
+end architecture;
