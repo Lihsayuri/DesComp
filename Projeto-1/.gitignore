@@ -1,0 +1,12 @@
+.settings
+.classpath
+target
+.project
+bin
+*.dat
+db
+*.bak
+*.qdf
+*.qws
+*.json
+*.txt

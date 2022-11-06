@@ -67,6 +67,9 @@ architecture arquitetura of relogio is
   signal DEBOUNCER_OUT_2 : std_logic;
   signal DEBOUNCER_OUT_3 : std_logic;
 
+  signal stack_pointer : std_logic_vector(2 downto 0); -- para escrever no sevenseg
+  signal stack_overflow : std_logic; -- para escrever no led8
+
   
   alias Endereco : std_logic_vector (larguraEnderecos-1 downto 0) is PC_OUT_processador(larguraEnderecos-1 downto 0);
 --  alias DecoderBloco_IN : std_logic_vector (2 downto 0) is instruction_ROM(8 downto 6);
@@ -291,7 +294,9 @@ end generate;
 --					 EQUAL_FLAG => EQUAL_FLAG,
 					 MEM_Read => MEM_Read,
 					 MEM_Write => MEM_Write,
-					 enderecoRG => enderecoR
+					 enderecoRG => enderecoR,
+					 stack_overflow => stack_overflow,
+					 stack_pointer => stack_pointer
 				); 
 	
 	decoderBloco :  entity work.decoder3x8
