@@ -1,0 +1,471 @@
+LDI $0, R0      # Inicializando algumas variáveis importantes : R0 = 0
+LDI $1, R1      # R1 = 1
+LDI $6, R2      # R2 = 6
+LDI $10, R3     # R3 = 10
+STA @256, R0    # Armazena o valor do R0 no LEDR0 ~ LEDR7
+STA @257, R0    # Armazena o valor do R0 no LEDR8
+STA @258, R0    # Armazena o valor do R0 no LEDR9
+STA @288, R0    # Armazena o valor do R0 no HEX0
+STA @289, R0    # Armazena o valor do R0 no HEX1
+STA @290, R0    # Armazena o valor do R0 no HEX2
+STA @291, R0    # Armazena o valor do R0 no HEX3
+STA @292, R0    # Armazena o valor do R0 no HEX4
+STA @293, R0    # Armazena o valor do R0 no HEX5
+STA @0, R0      # Armazena o valor do R0 em MEM[0] (unidades de segundo)
+STA @1, R0      # Armazena o valor do R0 em MEM[1] (dezenas de segundo)
+STA @2, R0      # Armazena o valor do R0 em MEM[2] (unidades de minuto)
+STA @3, R0      # Armazena o valor do R0 em MEM[3] (dezenas de minuto)
+STA @4, R0      # Armazena o valor do R0 em MEM[4] (unidades de hora)
+STA @5, R0      # Armazena o valor do R0 em MEM[5] (dezenas de hora)
+STA @6, R0      # Armazena o valor do R0 em MEM[6] (flag do despertador)
+STA @7, R0      # Armazena o valor do R0 em MEM[7] (variável 0 para comparações)
+STA @8, R1      # Armazena o valor do R1 em MEM[8] (variável 1 para incremento)
+STA @9, R3      # Armazena o valor do R3 em MEM[9] (variável 10 para comparações)
+STA @10, R2     # Armazena o valor do R2 em MEM[10] (valor do despertador para UNIDADE DE SEGUNDO)
+STA @11, R2     # Armazena o valor do R2 em MEM[11] (valor do despertador para DEZENA DE SEGUNDO)
+STA @12, R2     # Armazena o valor do R2 em MEM[12] (valor do despertador para UNIDADE DE MINUTO)
+STA @13, R2     # Armazena o valor do R2 em MEM[13] (valor do despertador para DEZENA DE MINUTO)
+STA @14, R2     # Armazena o valor do R2 em MEM[14] (valor do despertador para UNIDADE DE HORA)
+STA @15, R2     # Armazena o valor do R2 em MEM[15] (valor do despertador para DEZENA DE HORA)
+STA @16, R2     # Armazena o valor do R2 em MEM[16] (constante 6)
+LDI $2, R0      # Carrega 2 no registrador R0
+STA @17, R0     # Armazena o valor do R0 em MEM[17] (constante 2)
+LDI $4, R0      # Carrega 4 no registrador R0
+STA @18, R0     # Armazena o valor do R0 em MEM[18] (constante 4)
+LDI $24, R0     # Carrega 24 no registrador R0
+STA @19, R0     # Armazena o valor do R0 em MEM[19] (constante 24)
+LOOP_PRINCIPAL:
+NOP              # LOOP PRINCIPAL
+LDA @352, R0     # Carrega o R0 com a leitura do botão KEY0
+ANDI @1, R0      # Aplica máscara na leitura do botão
+CEQ @7, R0       # Compara com 0
+JEQ @LEITURA_KEY1 # Se for 0, vai ler a próxima chave
+JSR @INCREMENTO  # Se for 1, vai pra sub-rotina de incremento
+NOP              # Aqui é onde o RET volta
+LEITURA_KEY1:
+LDA @353, R1     # Carrega o R1 com a leitura do botão KEY1
+ANDI @1, R1      # Aplica máscara na leitura do botão
+CEQ @7, R1       # Compara com 0
+JEQ @CHAMA_CONFERE_LIMITE # Se for 0, vai conferir o limite 
+JSR @CONFIG_DESPERTADOR   # Se for 1, vai pra sub-rotina de configuração do despertador
+NOP              # Aqui é onde o RET volta
+CHAMA_CONFERE_LIMITE:
+JSR @CONFERE_LIMITE  # Chama a sub-rotina para verificar o limite
+NOP              # Aqui é onde o RET volta
+LEITURA_KEY2:
+LDA @354, R0    # Carrega R2 com a leitura de KEY2
+ANDI @1, R0     # Depois de fazer a leitura do botão aplica a máscara
+CEQ @7, R0      # Compara com 0
+JEQ @LEITURA_KEY3 # Se for 0, vai ler a próxima chave 
+JSR @DESLIGA_DESPERTADOR # Se for 1, vai para a sub-rotina de configurar hora
+LEITURA_KEY3:
+LDA @355, R2    # Carrega R2 com a leitura de KEY3
+ANDI @1, R2     # Depois de fazer a leitura do botão aplica a máscara
+CEQ @7, R2      # Compara com 0
+JEQ @LEITURA_RESET # Se for 0, vai ler a próxima chave 
+JSR @CONFIGURA_HORARIO # Se for 1, vai para a sub-rotina de configurar hora
+NOP
+LEITURA_RESET:
+LDA @356, R3     # Carrega o R3 com a leitura do botão FPGA_RESET 
+ANDI @1, R3      # Aplica máscara na leitura do botão
+CEQ @8, R3       # Compara com 1
+JEQ @CHAMA_ATUALIZA_DISPLAY # Se for 1, vai pra subrotina pra reiniciar a contagem (botão é o contrário. 0 - ativado. 1 - desativado)
+JSR @REINICIAR_CONTAGEM  # Chama sub-rotina de reiniciar a contagem
+CHAMA_ATUALIZA_DISPLAY:
+JSR @ATUALIZA_SEVEN_SEG  # Chama sub-rotina de atualizar o display de sete segmentos
+JMP @LOOP_PRINCIPAL      # Volta para o início do loop principal
+INCREMENTO:
+STA @511, R0     # Limpa a leitura do botão KEY0
+INC_UNIDADE:
+LDA @0, R0       # Carrega o valor das unidades de segundo em R0
+ADDI $1, R0      # Soma com 1 e guarda resultado em R0
+CEQ @9, R0       # Compara com 10
+JEQ @INC_DEZENA  # Se for 10, vai para as dezenas de segundo
+STA @0, R0       # Se não, armazena o valor das unidades de segundo
+JMP @FIM_INCREMENTO # E retorna
+INC_DEZENA:
+LDA @7, R0      # Carrega 0 no R0
+STA @0, R0      # Carrega 0 nas unidades de segundo
+LDA @1, R0      # Carrega o valor das dezenas de segundo em R0
+ADDI $1, R0     # Soma com 1 e guarda resultado em R0
+CEQ @16, R0      # Compara com 6
+JEQ @INC_CENTENA # Se for 6, vai para as unidades de minuto
+STA @1, R0      # Se não, armazena o valor das dezenas de segundo
+JMP @FIM_INCREMENTO # E retorna
+INC_CENTENA:
+LDA @7, R0      # Carrega 0 no R0
+STA @1, R0      # Carrega 0 nas dezenas de segundo
+LDA @2, R0      # Carrega o valor das unidades de minuto em R0
+ADDI $1, R0     # Soma com 1 e guarda resultado em R0
+CEQ @9, R0      # Compara com 10
+JEQ @INC_MILHAR # Se for 10, vai para as dezenas de minuto
+STA @2, R0      # Se não, armazena o valor das unidades de minuto
+JMP @FIM_INCREMENTO # E retorna
+INC_MILHAR:
+LDA @7, R0      # Carrega 0 no R0
+STA @2, R0      # Carrega 0 nas unidades de minuto
+LDA @3, R0      # Carrega o valor das dezenas de minuto em R0
+ADDI $1, R0     # Soma com 1 e guarda resultado em R0
+CEQ @16, R0      # Compara com 6
+JEQ @INC_DEZMILHAR  # Se for 6, vai para as unidades de hora
+STA @3, R0      # Se não, armazena o valor das dezenas de minuto
+JMP @FIM_INCREMENTO # E retorna
+INC_DEZMILHAR:
+LDA @7, R0      # Carrega 0 no R0
+STA @3, R0      # Carrega 0 nas dezenas de minuto
+LDA @4, R0      # Carrega o valor das unidades de hora
+ADDI $1, R0     # Soma com 1 e guarda resultado em R0
+CEQ @18, R0     # Compara com 4
+JEQ @CONFERE_24 # Se for 4, vai conferir se as dezenas de hora são 2
+CEQ @9, R0      # Caso contrário compara com 10
+JEQ @INC_CENTMILHAR # Se for igual a 10, vai para as dezenas de hora
+STA @4, R0      # Caso contrário, armazena o valor das unidades de hora
+JMP @FIM_INCREMENTO # E retorna
+CONFERE_24:
+LDA @5, R1      #Carrega o valor das dezenas de hora
+CEQ @17, R1     # Compara com 2
+JEQ @REINICIAR_CONTAGEM_24 # Se for 2, daí deu 24h de fato
+CEQ @9, R0      # Caso contrário compara com 10
+JEQ @INC_CENTMILHAR # Se for igual a 10, vai para as dezenas de hora
+STA @4, R0      # Caso contrário, armazena o valor das unidades de hora
+JMP @FIM_INCREMENTO
+INC_CENTMILHAR:
+LDA @7, R0      # Carrega 0 no R0
+STA @4, R0      # Carrega 0 nas unidades de hora 
+LDA @5, R0      # Carrega o valor das dezenas de hora
+ADDI $1, R0     # Soma com 1 e guarda resultado em R0
+STA @5, R0      # Armazena o valor das centena de milhar
+JMP @FIM_INCREMENTO
+REINICIAR_CONTAGEM_24:
+LDA @7, R0      # Carrega o R0 com o valor 0
+STA @0, R0      #  Armazena o valor 0 nas unidades de segundo
+STA @1, R0      #  Armazena o valor 0 nas dezenas
+STA @2, R0      #  Armazena o valor 0 nas centenas
+STA @3, R0      #  Armazena o valor 0 nos milhares
+STA @4, R0      #  Armazena o valor 0 nas dezenas de milhar
+STA @5, R0      #  Armazena o valor 0 nas centenas de milhar
+FIM_INCREMENTO:
+RET
+ATUALIZA_SEVEN_SEG:
+LDA @0, R0      # Carrega o valor das unidades de segundo em R0
+LDA @1, R1      # Carrega o valor das dezenas  de segundo em R1
+LDA @2, R2      # Carrega o valor das unidades de minuto em R2
+STA @288, R0    # Guarda o valor das unidades de segundo no HEX0
+STA @289, R1    # Guarda o valor das dezenas de segundo no HEX1 
+STA @290, R2    # Guarda o valor das unidades de minuto no HEX2
+LDA @3, R0      # Carrega o valor das dezenas de minuto em R0
+LDA @4, R1      # Carrega o valor das unidades de hora em R1
+LDA @5, R2      # Carrega o valor das dezenas de hora em R2
+STA @291, R0    # Guarda o valor das dezenas de minuto no HEX3
+STA @292, R1    # Guarda o valor das unidades de hora no HEX4
+STA @293, R2    # Guarda o valor das dezenas de hora no HEX5
+LDA @6, R0      # Carrega o valor da flag do despertador 
+CEQ @7, R0      # Compara o valor da flag com 0
+JEQ @FIM_ATUALIZA_TELA # Se for 0 a flag está inativa: então termina sub-rotina
+LDA @8, R2      # Caso contrário, carrega 1 em R2
+STA @257, R2    # Salva o 1 no LEDR8
+FIM_ATUALIZA_TELA:
+RET
+REINICIAR_CONTAGEM:
+LDA @7, R0      # Carrega o R0 com o valor 0
+STA @0, R0      # Armazena o valor 0 nas unidades de segundo
+STA @1, R0      # Armazena o valor 0 nas dezenas de segundo
+STA @2, R0      # Armazena o valor 0 nas unidades de minuto
+STA @3, R0      # Armazena o valor 0 nas dezenas de minuto
+STA @4, R0      # Armazena o valor 0 nas unidades de hora
+STA @5, R0      # Armazena o valor 0 nas dezenas de hora
+STA @6, R0      # Armazena o valor 0 na flag do despertador
+STA @257, R0    # Armazena o valor 0 no LEDR8
+STA @258, R0    # Armazena o valor 0 no LEDR9
+RET
+CONFERE_LIMITE:
+LDA @10, R0      # Carrega o valor do limite das unidades de segundo em R0
+CEQ @0, R0     # Compara com as unidades de segundo
+JEQ @CONFERE_LIMITE_SEG2 # Se for igual, vai conferir as dezenas de segundo
+JMP @FIM_CONFERE_LIMITE   # Caso o contrário já retorna
+CONFERE_LIMITE_SEG2:
+LDA @11, R1      # Carrega o valor do limite das dezenas de segundo em R1
+CEQ @1, R1     # Compara com as dezenas de segundo
+JEQ @CONFERE_LIMITE_MIN1 # Se for igual, vai conferir as unidades de minuto
+JMP @FIM_CONFERE_LIMITE   # Caso o contrário já retorna
+CONFERE_LIMITE_MIN1:
+LDA @12, R2      # Carrega o valor do limite das unidades de minuto em R2
+CEQ @2, R2     # Compara com as unidades de minuto
+JEQ @CONFERE_LIMITE_MIN2 # Se for igual, vai para os as dezenas de minuto
+JMP @FIM_CONFERE_LIMITE  # Caso o contrário já retorna
+CONFERE_LIMITE_MIN2:
+LDA @13, R3      #Carrega o valor do limite das dezenas de minuto em R3
+CEQ @3, R3     # Compara com as dezenas de minuto
+JEQ @CONFERE_LIMITE_HORA1 # Se for igual, vai para as unidades de hora
+JMP @FIM_CONFERE_LIMITE   # Caso o contrário já retorna
+CONFERE_LIMITE_HORA1:
+LDA @14, R0      # Carrega o valor do limite das unidades de hora em R0
+CEQ @4, R0     # Compara com as unidades de hora
+JEQ @CONFERE_LIMITE_HORA2 # Se for igual, vai para as dezenas de hora
+JMP @FIM_CONFERE_LIMITE # Caso o contrário já retorna
+CONFERE_LIMITE_HORA2:
+LDA @15, R1      # Carrega o valor do limite das dezenas de hora em R1
+CEQ @5, R1     # Compara com as dezenas de hora
+JEQ @ATIVA_FLAG_DESPERTADOR # Se for igual, vai ativar a flag do despertador
+JMP @FIM_CONFERE_LIMITE  # Caso o contrário já retorna
+ATIVA_FLAG_DESPERTADOR:
+LDA @8, R2      # Carrega o valor 1
+STA @6, R2      # Armazena o valor 1 na flag do despertador
+FIM_CONFERE_LIMITE:
+RET
+CONFIG_DESPERTADOR:
+STA @510, R0    # Para limpar a leitura do botão 1
+STA @6, R3      # Carrega a flag do despertador em R3
+CEQ @7, R3      # Compara a flag do despertador com 0
+JEQ @LIM_UNIDADE # Se for 0, então começa a configurar
+LDA @7, R3      # Se for 1, tem que voltar para 0
+STA @6, R3      # Guardo 0 na flag do despertador
+STA @257, R3    # Guardo 0 no LED8
+LIM_UNIDADE:
+LDA @8, R1      # Carrega 1 em R1
+STA @256, R1    # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades de segundo
+LDA @353, R0    # Carrega a leitura de KEY1 em R0
+ANDI @1, R0     # Depois de fazer a leitura do botão aplica a máscara
+CEQ @7, R0      # Compara com o valor 0
+LDA @320, R2    # Lê as chaves e salva o valor delas no R2
+JEQ @LIM_UNIDADE # Caso botão não tenha sido apertado volta novamente para ler KEY1
+STA @10, R2     # Guarda o valor limite nas unidades de segundo
+STA @288, R2    # Guarda o valor das unidades de segundo dos segundos em HEX0
+STA @510, R0    # Para limpar a leitura do botão 1
+LIM_DEZENA:
+LDI $2, R1      # Carrega 2 em R1
+STA @256, R1    # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das dezenas
+LDA @353, R0    # Guarda a leitura de KEY1 em R0
+ANDI @1, R0     # Depois de fazer a leitura do botão aplica a máscara
+CEQ @7, R0      #Compara com o valor 0
+LDA @320, R2    # Lê de novo o valor das chaves e salva no R2
+JEQ @LIM_DEZENA # Caso botão não tenha sido apertado volta novamente para ler KEY1
+STA @11, R2     # Guarda o valor limite nas dezenas
+STA @289, R2    # Guarda o valor das dezenas dos segundos em HEX1
+STA @510, R0    # Para limpar a leitura do botão 1
+LIM_CENTENA:
+LDI $4, R1      # Carrega 4 em R1
+STA @256, R1    # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das centenas
+LDA @353, R0    # Guarda a leitura de KEY1
+ANDI @1, R0     # Depois de fazer a leitura do botão aplica a máscara
+CEQ @7, R0      # Compara com o valor 0
+LDA @320, R2    # Lê de novo o valor das chaves e salva no R2
+JEQ @LIM_CENTENA  # Caso botão não tenha sido apertado volta novamente para ler KEY1
+STA @12, R2     # Guarda o valor limite nas centenas
+STA @290, R2    # Guarda o valor das unidades de segundo dos minutos em HEX2
+STA @510, R0    # Para limpar a leitura do botão 1
+LIM_MILHAR:
+LDI $8, R1      # Carrega 8 em R1
+STA @256, R1    # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave do milhar
+LDA @353, R0    # Guarda a leitura de KEY1
+ANDI @1, R0     # Depois de fazer a leitura do botão aplica a máscara
+CEQ @7, R0      # Compara com o valor 0
+LDA @320, R2    # Lê de novo o valor das chaves e salva no R2
+JEQ @LIM_MILHAR  # Caso botão não tenha sido apertado volta novamente para ler KEY1
+STA @13, R2     # Guarda o valor limite nos milhares
+STA @291, R2    # Guarda o valor das dezenas dos minutos em HEX3
+STA @510, R0    # Para limpar a leitura do botão 1 
+LIM_DEZMILHAR:
+LDI $16, R1     # Carrega 16 em R1
+STA @256, R1    # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das dezenas de milhar
+LDA @353, R0    # Guarda a leitura de KEY1
+ANDI @1, R0     # Depois de fazer a leitura do botão aplica a máscara
+CEQ @7, R0      # Compara com o valor 0
+LDA @320, R2    # Lê de novo o valor das chaves e salva no R2
+JEQ @LIM_DEZMILHAR # Caso botão não tenha sido apertado volta novamente para ler KEY1
+STA @14, R2     # Guarda o valor limite nas dezenas de milhar
+STA @292, R2    # Guarda o valor das unidades de segundo das horas em HEX4
+STA @510, R0    # Para limpar a leitura do botão 1
+LIM_CENTMILHAR:
+LDI $32, R1     # Carrega 32 em R0
+STA @256, R1    # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades de segundo
+LDA @353, R0    # Guarda a leitura de KEY1
+ANDI @1, R0     # Depois de fazer a leitura do botão aplica a máscara
+CEQ @7, R0      #Compara com o valor 0
+LDA @320, R2    # Lê de novo o valor das chaves e salva no R2
+JEQ @LIM_CENTMILHAR # Caso botão não tenha sido apertado volta novamente para ler KEY1
+STA @15, R2     # Guarda o valor limite nas centenas de milhar
+STA @293, R2    # Guarda o valor das dezenas das horas em HEX5
+STA @510, R0    # Para limpar a leitura do botão 1
+LDA @7, R3      # Carrega o 0 em R3
+STA @256, R3    # Desliga os LEDS
+COMPARA_MENOR_24_LIMITE:
+LDA @14, R0      # Carrega as unidades de hora em R0
+LDA @15, R1      # Carrega as dezenas de hora em R1
+LDA @7, R2
+LOOP_PARA_CONCAT_HORA_LIMITE:
+ADDI $10, R3    # Soma 10 em R3
+SUBI $1, R1     # Subtrai um de R1
+CEQ @7, R1     # Compara 0 com R1
+JEQ @CONTINUA_COMPARACAO_LIMITE
+JMP @LOOP_PARA_CONCAT_HORA_LIMITE
+CONTINUA_COMPARACAO_LIMITE:
+SOMA @14, R3    # Soma as unidades de hora com as dezenas de hora
+CLT @19, R3     # R3 é menor que 24?
+JLT @FIM_LIMITE_DESPERTA  # Se for menor show de bola
+CEQ @19, R3     # Confere se é igual a 24h
+JEQ @EH_24_HORAS_LIMITE
+LDA @8, R0      # Se não for menor, carrega 1 em R0
+STA @258, R0    # Acende o LEDR9
+JMP @LIM_UNIDADE # Vai configurar a hora de novo
+EH_24_HORAS_LIMITE:
+LDA @8, R0      # carrega 1 em R0
+STA @258, R0    # Acende o LEDR9
+LDA @7, R0      # Carrega 0 em R0
+STA @14, R0      # Seta as unidades de hora para 0
+STA @15, R0      # Seta as dezenas de hora para 0
+LDA @10, R0      # Começa a conferir minutos e segundos
+CEQ @7, R0      # Compara com 0, se não for já volta
+JEQ @CONFERE_SEG2_LIMITE 
+JMP @LIM_UNIDADE
+CONFERE_SEG2_LIMITE:
+LDA @11, R0      # Começa a conferir minutos e segundos
+CEQ @7, R0      # Compara com 0, se não for já volta
+JEQ @CONFERE_MIN1_LIMITE  
+JMP @LIM_DEZENA
+CONFERE_MIN1_LIMITE:
+LDA @12, R0      # Começa a conferir minutos e segundos
+CEQ @7, R0      # Compara com 0, se não for já volta
+JEQ @CONFERE_MIN2_LIMITE 
+JMP @LIM_CENTENA
+CONFERE_MIN2_LIMITE:
+LDA @13, R0      # Começa a conferir minutos e segundos
+CEQ @7, R0      # Compara com 0, se não for já volta
+JEQ @FIM_LIMITE_DESPERTA  
+JMP @LIM_MILHAR
+FIM_LIMITE_DESPERTA:
+LDA @7, R0      # Se não for menor, carrega 1 em R0
+STA @258, R0    # Apaga o LEDR9
+RET
+DESLIGA_DESPERTADOR:
+STA @509, R0    # Para limpar a leitura do botão 2
+LDA @7, R0      # Carrega 0 no R0
+STA @6, R0      # Volta a flag do despertador para 0
+STA @257, R0    # Salva 0 no LED8
+STA @258, R0    # Salva 0 no LED8
+LDA @16, R2     # Carrega 6 em R2
+STA @10, R2     # Armazena o valor do R2 em MEM[10] (valor do despertador para UNIDADE DE SEGUNDO)
+STA @11, R2     # Armazena o valor do R2 em MEM[11] (valor do despertador para DEZENA DE SEGUNDO)
+STA @12, R2     # Armazena o valor do R2 em MEM[12] (valor do despertador para UNIDADE DE MINUTO)
+STA @13, R2     # Armazena o valor do R2 em MEM[13] (valor do despertador para DEZENA DE MINUTO)
+STA @14, R2     # Armazena o valor do R2 em MEM[14] (valor do despertador para UNIDADE DE HORA)
+STA @15, R2     # Armazena o valor do R2 em MEM[15] (valor do despertador para DEZENA DE HORA)
+RET
+CONFIGURA_HORARIO:
+STA @508, R0    # Para limpar a leitura do botão 3
+CONFIG_SEG1:
+LDA @8, R1      # Carrega 1 em R1
+STA @256, R1    # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades de segundo
+LDA @355, R0    # Guarda a leitura de KEY3 em R0
+ANDI @1, R0     # Depois de fazer a leitura do botão aplica a máscara
+CEQ @7, R0      #Compara com o valor 0
+LDA @320, R2    # Lê as chaves e salva o valor delas no R2
+JEQ @CONFIG_SEG1 # Caso botão não tenha sido apertado volta novamente para ler KEY3
+STA @0, R2     # Guarda o valor nas unidades de segundo
+STA @288, R2    # Guarda o valor das unidades de segundo dos segundos em HEX0
+STA @508, R0    # Para limpar a leitura do botão 3
+CONFIG_SEG2:
+LDI $2, R1      # Carrega 2 em R1
+STA @256, R1    # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das dezenas
+LDA @355, R0    # Guarda a leitura de KEY3 em R0
+ANDI @1, R0     # Depois de fazer a leitura do botão aplica a máscara
+CEQ @7, R0      #Compara com o valor 0
+LDA @320, R2    # Lê de novo o valor das chaves e salva no R2
+JEQ @CONFIG_SEG2 # Caso botão não tenha sido apertado volta novamente para ler KEY3
+STA @1, R2     # Guarda o valor nas dezenas
+STA @289, R2    # Guarda o valor das dezenas dos segundos em HEX1
+STA @508, R0    # Para limpar a leitura do botão 3
+CONFIG_MIN1:
+LDI $4, R1      # Carrega 4 em R1
+STA @256, R1    # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das centenas
+LDA @355, R0    # Guarda a leitura de KEY3
+ANDI @1, R0     # Depois de fazer a leitura do botão aplica a máscara
+CEQ @7, R0      # Compara com o valor 0
+LDA @320, R2    # Lê de novo o valor das chaves e salva no R2
+JEQ @CONFIG_MIN1  # Caso botão não tenha sido apertado volta novamente para ler KEY3
+STA @2, R2     # Guarda o valor nas centenas
+STA @290, R2    # Guarda o valor das unidades de segundo dos minutos em HEX2
+STA @508, R0    # Para limpar a leitura do botão 3
+CONFIG_MIN2:
+LDI $8, R1      # Carrega 8 em R1
+STA @256, R1    # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave do milhar
+LDA @355, R0    # Guarda a leitura de KEY3
+ANDI @1, R0     # Depois de fazer a leitura do botão aplica a máscara
+CEQ @7, R0      # Compara com o valor 0
+LDA @320, R2    # Lê de novo o valor das chaves e salva no R2
+JEQ @CONFIG_MIN2  # Caso botão não tenha sido apertado volta novamente para ler KEY3
+STA @3, R2     # Guarda o valor nos milhares
+STA @291, R2    # Guarda o valor das dezenas dos minutos em HEX3
+STA @508, R0    # Para limpar a leitura do botão 3 
+CONFIG_HORA1:
+LDI $16, R1     # Carrega 16 em R1
+STA @256, R1    # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das dezenas de milhar
+LDA @355, R0    # Guarda a leitura de KEY3
+ANDI @1, R0     # Depois de fazer a leitura do botão aplica a máscara
+CEQ @7, R0      # Compara com o valor 0
+LDA @320, R2    # Lê de novo o valor das chaves e salva no R2
+JEQ @CONFIG_HORA1 # Caso botão não tenha sido apertado volta novamente para ler KEY3
+STA @4, R2     # Guarda o valor nas dezenas de milhar
+STA @292, R2    # Guarda o valor das unidades de segundo das horas em HEX4
+STA @508, R0    # Para limpar a leitura do botão 3
+CONFIG_HORA2:
+LDI $32, R1     # Carrega 32 em R0
+STA @256, R1    # Liga o LED 0 ~ 7 dizendo que está pronto pra ler a chave das unidades de segundo
+LDA @355, R0    # Guarda a leitura de KEY3
+ANDI @1, R0     # Depois de fazer a leitura do botão aplica a máscara
+CEQ @7, R0      #Compara com o valor 0
+LDA @320, R2    # Lê de novo o valor das chaves e salva no R2
+JEQ @CONFIG_HORA2 # Caso botão não tenha sido apertado volta novamente para ler KEY3
+STA @5, R2     # Guarda o valor nas centenas de milhar
+STA @293, R2    # Guarda o valor das dezenas das horas em HEX5
+STA @508, R0    # Para limpar a leitura do botão 3
+LDA @7, R3      # Carrega o 0 em R3
+STA @256, R3    # Desliga os LEDS
+COMPARA_MENOR_24:
+LDA @4, R0      # Carrega as unidades de hora em R0
+LDA @5, R1      # Carrega as dezenas de hora em R1
+LDA @7, R2
+LOOP_PARA_CONCAT_HORA:
+ADDI $10, R3    # Soma 10 em R3
+SUBI $1, R1     # Subtrai um de R1
+CEQ @7, R1     # Compara 0 com R1
+JEQ @CONTINUA_COMPARACAO
+JMP @LOOP_PARA_CONCAT_HORA
+CONTINUA_COMPARACAO:
+SOMA @4, R3    # Soma as unidades de hora com as dezenas de hora
+CLT @19, R3     # R3 é menor que 24?
+JLT @FIM_CONFIG_HORA  # Se for menor show de bola
+CEQ @19, R3     # Confere se é igual a 24h
+JEQ @EH_24_HORAS
+LDA @8, R0      # Se não for menor, carrega 1 em R0
+STA @258, R0    # Acende o LEDR9
+JMP @CONFIG_SEG1 # Vai configurar a hora de novo
+EH_24_HORAS:
+LDA @8, R0      # carrega 1 em R0
+STA @258, R0    # Acende o LEDR9
+LDA @7, R0      # Carrega 0 em R0
+STA @4, R0      # Seta as unidades de hora para 0
+STA @5, R0      # Seta as dezenas de hora para 0
+LDA @0, R0      # Começa a conferir minutos e segundos
+CEQ @7, R0      # Compara com 0, se não for já volta
+JEQ @CONFERE_SEG2 
+JMP @CONFIG_SEG1
+CONFERE_SEG2:
+LDA @1, R0      # Começa a conferir minutos e segundos
+CEQ @7, R0      # Compara com 0, se não for já volta
+JEQ @CONFERE_MIN1  
+JMP @CONFIG_SEG2
+CONFERE_MIN1:
+LDA @2, R0      # Começa a conferir minutos e segundos
+CEQ @7, R0      # Compara com 0, se não for já volta
+JEQ @CONFERE_MIN2  
+JMP @CONFIG_MIN1
+CONFERE_MIN2:
+LDA @3, R0      # Começa a conferir minutos e segundos
+CEQ @7, R0      # Compara com 0, se não for já volta
+JEQ @FIM_CONFIG_HORA  
+JMP @CONFIG_MIN2
+FIM_CONFIG_HORA:
+LDA @7, R0      # Se não for menor, carrega 1 em R0
+STA @258, R0    # Apaga o LEDR9
+RET

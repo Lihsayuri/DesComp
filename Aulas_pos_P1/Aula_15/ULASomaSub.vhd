@@ -23,10 +23,11 @@ architecture comportamento of ULASomaSub is
       subtracao <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
 		passa <= STD_LOGIC_VECTOR(unsigned(entradaB));
 		and_op <= STD_LOGIC_VECTOR(entradaA and entradaB);
+		
       saida <= soma when (seletor = "01") else 
 					subtracao when (seletor = "00") else
 					passa when (seletor = "10") else
 					and_op when (seletor = "11") else
 					entradaB;
-		flagEqual <= '1' when (subtracao = 32x"00") else '0';
+		flagEqual <= '1' when (saida = 32x"00") else '0';
 end architecture;

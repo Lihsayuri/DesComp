@@ -1,0 +1,28 @@
+Quartus Prime Archive log --	C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.qarlog
+
+Archive:	C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.qar
+Date:		Mon Nov 07 20:03:38 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.qpf
+C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.qsf
+C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd
+C:/DesComp/Aulas_pos_P1/Aula_15/Decoder.vhd
+C:/DesComp/Aulas_pos_P1/Aula_15/ULASomaSub.vhd
+C:/DesComp/Aulas_pos_P1/Aula_15/Waveform.vwf
+C:/DesComp/Aulas_pos_P1/Aula_15/bancoReg.vhd
+C:/DesComp/Aulas_pos_P1/Aula_15/estendeSinal.vhd
+C:/DesComp/Aulas_pos_P1/Aula_15/flipflopGenerico.vhd
+C:/DesComp/Aulas_pos_P1/Aula_15/memoriaRAM.vhd
+C:/DesComp/Aulas_pos_P1/Aula_15/memoriaROM.vhd
+C:/DesComp/Aulas_pos_P1/Aula_15/muxGenerico2x1.vhd
+C:/DesComp/Aulas_pos_P1/Aula_15/registradorGenerico.vhd
+C:/DesComp/Aulas_pos_P1/Aula_15/shiftSinal.vhd
+C:/DesComp/Aulas_pos_P1/Aula_15/somaConstante.vhd
+C:/DesComp/Aulas_pos_P1/Aula_15/somadorGenerico.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 17 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

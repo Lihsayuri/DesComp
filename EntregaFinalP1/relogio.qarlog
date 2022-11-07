@@ -1,0 +1,40 @@
+Quartus Prime Archive log --	C:/DesComp/Projeto-1/relogio.qarlog
+
+Archive:	C:/DesComp/Projeto-1/relogio.qar
+Date:		Sat Nov 05 21:48:00 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/DesComp/Projeto-1/ULASomaSub.vhd
+C:/DesComp/Projeto-1/bancoRegistradoresArqRegMem.vhd
+C:/DesComp/Projeto-1/buffer_3_state_8portas.vhd
+C:/DesComp/Projeto-1/conversorHex7Seg.vhd
+C:/DesComp/Projeto-1/decoder3x8.vhd
+C:/DesComp/Projeto-1/decoderInstru.vhd
+C:/DesComp/Projeto-1/divisorGenerico.vhd
+C:/DesComp/Projeto-1/edgeDetector.vhd
+C:/DesComp/Projeto-1/flipflopGenerico.vhd
+C:/DesComp/Projeto-1/logica_7Seg.vhd
+C:/DesComp/Projeto-1/logica_LED.vhd
+C:/DesComp/Projeto-1/logica_desvio.vhd
+C:/DesComp/Projeto-1/memoriaRAM.vhd
+C:/DesComp/Projeto-1/memoriaROM.vhd
+C:/DesComp/Projeto-1/muxGenerico2x1.vhd
+C:/DesComp/Projeto-1/muxGenerico4x1.vhd
+C:/DesComp/Projeto-1/processador.vhd
+C:/DesComp/Projeto-1/registradorGenerico.vhd
+C:/DesComp/Projeto-1/relogio.qpf
+C:/DesComp/Projeto-1/relogio.qsf
+C:/DesComp/Projeto-1/relogio.vhd
+C:/DesComp/Projeto-1/somaConstante.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 23 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Sat Nov 05 21:50:15 2022
+Source archive file:	C:/EntregaFinalP1/relogio.qar
+Archive was extracted into	C:/EntregaFinalP1/relogio_restored/
+		 - successfully.

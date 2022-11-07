@@ -1,5 +1,5 @@
 Assembler report for Aula15
-Sat Nov 05 12:06:11 2022
+Mon Nov 07 19:13:07 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Nov 05 12:06:11 2022 ;
+; Assembler Status      ; Successful - Mon Nov 07 19:13:07 2022 ;
 ; Revision Name         ; Aula15                                ;
 ; Top-level Entity Name ; Aula15                                ;
 ; Family                ; Cyclone V                             ;
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+------------------------------------------------------------------+
 ; Option         ; Setting                                                          ;
 +----------------+------------------------------------------------------------------+
-; JTAG usercode  ; 0x004F4BFC                                                       ;
-; Checksum       ; 0x004F4BFC                                                       ;
+; JTAG usercode  ; 0x00812443                                                       ;
+; Checksum       ; 0x00812443                                                       ;
 +----------------+------------------------------------------------------------------+
 
 
@@ -78,13 +78,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Nov 05 12:06:06 2022
+    Info: Processing started: Mon Nov 07 19:13:01 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Aula15 -c Aula15
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4820 megabytes
-    Info: Processing ended: Sat Nov 05 12:06:11 2022
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 4841 megabytes
+    Info: Processing ended: Mon Nov 07 19:13:07 2022
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
 
 
