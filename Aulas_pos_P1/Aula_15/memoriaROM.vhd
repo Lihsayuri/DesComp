@@ -31,7 +31,9 @@ architecture assincrona OF memoriaROM IS
   constant SHAMT : std_logic_vector(4 downto 0) := "00000";
   constant IM1   : std_logic_vector(15 downto 0) := "0000000000000001";
   constant IM2   : std_logic_vector(15 downto 0) := "0000000000000010";
-  
+  constant IM3   : std_logic_vector(15 downto 0) := "0000000000001000";
+  constant IM4   : std_logic_vector(15 downto 0) := "0000000000000000";
+
   
   function initMemory
         return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
@@ -41,15 +43,17 @@ architecture assincrona OF memoriaROM IS
 		  -- FALTA FAZER OS TESTESSSSSSSSS
 					   -- 6 bit    5 bit      5 bit            16 bits
 						-- opcode     Rs         Rt             imediato
-        tmp(0) := 	LW	 	&    T0   &    T0   &   IM1; -- LW T0, 0x01($t0) -- load em t1 o que está em t0
-        tmp(1) :=    SW    &    T0   &    T1  &   IM2 ; --  LW T1, 
-        tmp(2) := "000000" & "01000" & "01011" & "01000" & "00000" & "100000"; -- Add t0, t0 (10), t3 - 11 (0C) = 22 [10+12]
-        tmp(3) := "000000" & "01000" & "01100" & "01000" & "00000" & "100111"; -- Sub t0, t0 (22), t4 - 12 (0D) = 9 [22-13]
-        tmp(4) := 32x"00";
-        tmp(5) := 32x"00";
-        tmp(6) := 32x"00";
-        tmp(7) := 32x"00";
-        return tmp;
+        tmp(0) :=    SW    &    T0   &    T1  &   IM4 ; --Mem_Dados[R[rs] + EstendeSinal(Imediato)]=R[rt]    | MEM[0] = 10
+		  tmp(1) := 	LW	 	&    T0   &    T2  &   IM4; --LW T2, 0x00($t0) -- load em t2 o que está em MEM[0] | T2 = 10
+		  tmp(2) := 	LW	 	&    T0   &    T3  &   IM4; --LW T3, 0x00($t0) -- load em t3 o que está em MEM[0] | T3 = 10
+        tmp(3) :=    BEQ   &    T2   &    T3  &   IM2 ; -- Compara T2 com T3, se for igual jump
+        tmp(4) :=    32x"00";
+        tmp(5) := 	32x"00";
+        tmp(6) :=    BEQ   &    T0   &    T3  &   IM2  ;
+        tmp(7) :=    SW    &    T0   &    T4  &   IM1 ; --Mem_Dados[R[rs] + EstendeSinal(Imediato)]= t4    | MEM[1] = 13
+        tmp(8) :=    LW    &    T0   &    T5  &   IM1 ; --LW T1, 0x00($t0) -- load em t5 o que está em MEM[1] | T5 = 13
+		  
+		  return tmp;
     end initMemory;
 
     signal memROM : blocoMemoria := initMemory;
