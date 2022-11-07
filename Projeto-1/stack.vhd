@@ -26,5 +26,5 @@ BEGIN
             mem(to_integer(unsigned(Endereco))) <= dado_in;
         END IF;
     END PROCESS;
-    Dado_out <= mem (to_integer(unsigned(Endereco)));
+    Dado_out <= mem(to_integer(unsigned(Endereco)) - 1);
 END ARCHITECTURE;

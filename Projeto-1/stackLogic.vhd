@@ -25,11 +25,12 @@ ARCHITECTURE comportamento OF stackLogic IS
 
     ALIAS stack_addr : STD_LOGIC_VECTOR(2 DOWNTO 0) IS sp_sumsub;
     ALIAS sp_out : STD_LOGIC_VECTOR(2 DOWNTO 0) IS sp_sumsub;
+	 
 BEGIN
-    sp <= sp_out;
-    stack_overflow <= '1' WHEN (hab = '1' AND sel_push_pop = '1' AND addr_out = "111") ELSE
-        '1' WHEN (hab = '1' AND sel_push_pop = '0' AND addr_out = "000") ELSE
-        '0';
+    sp <= sp_sumsub;
+    stack_overflow <= '1' WHEN (hab = '1' AND sel_push_pop = '1' AND sp = "111") ELSE
+                    '1' WHEN (hab = '1' AND sel_push_pop = '0' AND sp = "000") ELSE
+                    '0';
 
     -- MUX para selecionar a entrada do somador/subtrator
     MUX : ENTITY work.muxGenerico2x1 GENERIC MAP (larguraDados => 3)
@@ -56,6 +57,7 @@ BEGIN
             RST => '0'
         );
 
+    sp_stack <= sp_sumsub;
     STACK : ENTITY work.stack
         PORT MAP(
             clk => clk,
