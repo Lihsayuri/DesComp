@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Aula15
-Mon Nov 07 19:51:53 2022
+Mon Nov 07 20:18:43 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -58,7 +58,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Nov 07 19:51:53 2022       ;
+; Analysis & Synthesis Status     ; Successful - Mon Nov 07 20:18:43 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Aula15                                      ;
 ; Top-level Entity Name           ; Aula15                                      ;
@@ -180,7 +180,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
@@ -1500,7 +1500,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -1510,7 +1510,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Nov 07 19:51:35 2022
+    Info: Processing started: Mon Nov 07 20:18:29 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Aula15 -c Aula15
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file memoriaram.vhd
@@ -1553,17 +1553,17 @@ Info (12021): Found 2 design units, including 1 entities, in source file decoder
     Info (12022): Found design unit 1: Decoder-arch_name File: C:/DesComp/Aulas_pos_P1/Aula_15/Decoder.vhd Line: 12
     Info (12023): Found entity 1: Decoder File: C:/DesComp/Aulas_pos_P1/Aula_15/Decoder.vhd Line: 5
 Info (12127): Elaborating entity "Aula15" for the top level hierarchy
-Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:Somador1" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 78
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC_REG" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 82
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 92
-Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:decoderInstru1" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 98
-Info (12128): Elaborating entity "bancoReg" for hierarchy "bancoReg:BANCO_REG" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 104
-Info (12128): Elaborating entity "estendeSinal" for hierarchy "estendeSinal:EstendeSinal" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 116
-Info (12128): Elaborating entity "shiftSinal" for hierarchy "shiftSinal:ShiftSinal" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 121
-Info (12128): Elaborating entity "somadorGenerico" for hierarchy "somadorGenerico:Somador2" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 138
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX1" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 146
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "ULASomaSub:ULA1" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 163
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM1" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 171
+Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:Somador1" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 77
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC_REG" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 81
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 91
+Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:decoderInstru1" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 97
+Info (12128): Elaborating entity "bancoReg" for hierarchy "bancoReg:BANCO_REG" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 103
+Info (12128): Elaborating entity "estendeSinal" for hierarchy "estendeSinal:EstendeSinal" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 115
+Info (12128): Elaborating entity "shiftSinal" for hierarchy "shiftSinal:ShiftSinal" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 120
+Info (12128): Elaborating entity "somadorGenerico" for hierarchy "somadorGenerico:Somador2" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 126
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX1" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 134
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "ULASomaSub:ULA1" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 151
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM1" File: C:/DesComp/Aulas_pos_P1/Aula_15/Aula15.vhd Line: 159
 Info (276014): Found 3 instances of uninferred RAM logic
     Info (276007): RAM logic "memoriaRAM:RAM1|memRAM" is uninferred due to asynchronous read logic File: C:/DesComp/Aulas_pos_P1/Aula_15/memoriaRAM.vhd Line: 21
     Info (276007): RAM logic "bancoReg:BANCO_REG|registrador" is uninferred due to asynchronous read logic File: C:/DesComp/Aulas_pos_P1/Aula_15/bancoReg.vhd Line: 50
@@ -1618,9 +1618,9 @@ Info (21057): Implemented 3539 device resources after synthesis - the final reso
     Info (21059): Implemented 209 output pins
     Info (21061): Implemented 3329 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
-    Info: Peak virtual memory: 4846 megabytes
-    Info: Processing ended: Mon Nov 07 19:51:53 2022
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:41
+    Info: Peak virtual memory: 4854 megabytes
+    Info: Processing ended: Mon Nov 07 20:18:43 2022
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:30
 
 

@@ -1,0 +1,30 @@
+Quartus Prime Archive log --	C:/DesComp/Aulas_pos_P1/Aula_16/Aula16.qarlog
+
+Archive:	C:/DesComp/Aulas_pos_P1/Aula_16/Aula16.qar
+Date:		Sun Nov 13 15:32:30 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/DesComp/Aulas_pos_P1/Aula_16/Aula16.qpf
+C:/DesComp/Aulas_pos_P1/Aula_16/Aula16.qsf
+C:/DesComp/Aulas_pos_P1/Aula_16/Aula16.vhd
+C:/DesComp/Aulas_pos_P1/Aula_16/ControleULA.vhd
+C:/DesComp/Aulas_pos_P1/Aula_16/Decoder.vhd
+C:/DesComp/Aulas_pos_P1/Aula_16/ULASomaSub.vhd
+C:/DesComp/Aulas_pos_P1/Aula_16/Waveform.vwf
+C:/DesComp/Aulas_pos_P1/Aula_16/Waveform1.vwf
+C:/DesComp/Aulas_pos_P1/Aula_16/bancoReg.vhd
+C:/DesComp/Aulas_pos_P1/Aula_16/estendeSinal.vhd
+C:/DesComp/Aulas_pos_P1/Aula_16/flipflopGenerico.vhd
+C:/DesComp/Aulas_pos_P1/Aula_16/memoriaRAM.vhd
+C:/DesComp/Aulas_pos_P1/Aula_16/memoriaROM.vhd
+C:/DesComp/Aulas_pos_P1/Aula_16/muxGenerico2x1.vhd
+C:/DesComp/Aulas_pos_P1/Aula_16/registradorGenerico.vhd
+C:/DesComp/Aulas_pos_P1/Aula_16/shiftSinal.vhd
+C:/DesComp/Aulas_pos_P1/Aula_16/somaConstante.vhd
+C:/DesComp/Aulas_pos_P1/Aula_16/somadorGenerico.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 19 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

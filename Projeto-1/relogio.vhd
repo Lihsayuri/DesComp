@@ -187,7 +187,7 @@ end generate;
 	
 	
 	
-		RESET_511 <= MEM_ADD(8) AND MEM_ADD(7) AND MEM_ADD(6) AND
+	RESET_511 <= MEM_ADD(8) AND MEM_ADD(7) AND MEM_ADD(6) AND
 					 MEM_ADD(5) AND MEM_ADD(4) AND MEM_ADD(3) AND
 					 MEM_ADD(2) AND MEM_ADD(1) AND MEM_ADD(0) AND MEM_Write; 
 
@@ -264,7 +264,7 @@ end generate;
 	MUX1 :	entity work.muxGenerico2x1  generic map (larguraDados => 1)
 				port map( 	entradaA_MUX(0) 	=> KEY_0_tratadoB,
 								entradaB_MUX(0) 	=> KEY_0_tratadoC,
-								seletor_MUX 	=> not KEY(0),
+								seletor_MUX 		=> not KEY(0),
 								saida_MUX(0) 		=> KEY_0_tratadoF
 							);
 							
@@ -273,8 +273,7 @@ end generate;
 	---------------------------------- COMPONENTES DE MEMORIA, CPU E SAIDA ------------------------------
 	
 	
-		-- Falta acertar o conteudo da ROM (no arquivo memoriaROM.vhd)
-	ROM1 : entity work.memoriaROM generic map (dataWidth => 15, addrWidth =>9) -- POR QUE 4?
+	ROM1 : entity work.memoriaROM generic map (dataWidth => 15, addrWidth =>9)
 				 port map (
 						 Endereco => Endereco,
 						 Dado => instruction_ROM);
