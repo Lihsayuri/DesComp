@@ -1,0 +1,33 @@
+Quartus Prime Archive log --	C:/DesComp/Aulas_pos_P1/Aula_ULA/Aula16.qarlog
+
+Archive:	C:/DesComp/Aulas_pos_P1/Aula_ULA/Aula16.qar
+Date:		Tue Nov 15 18:01:45 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/DesComp/Aulas_pos_P1/Aula_ULA/Aula16.qpf
+C:/DesComp/Aulas_pos_P1/Aula_ULA/Aula16.qsf
+C:/DesComp/Aulas_pos_P1/Aula_ULA/Aula16.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/ControleULA.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/Decoder.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/ULA1a31bit.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/ULA32bit.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/ULASomaSub.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/Waveform.vwf
+C:/DesComp/Aulas_pos_P1/Aula_ULA/bancoReg.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/estendeSinal.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/flipflopGenerico.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/memoriaRAM.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/memoriaROM.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/muxGenerico2x1.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/muxGenerico4x1.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/registradorGenerico.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/shiftSinal.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/somaConstante.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/somadorGenerico.vhd
+C:/DesComp/Aulas_pos_P1/Aula_ULA/somadorGenerico1bit.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 22 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
