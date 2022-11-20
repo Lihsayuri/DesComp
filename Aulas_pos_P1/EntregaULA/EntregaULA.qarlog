@@ -1,0 +1,21 @@
+Quartus Prime Archive log --	C:/DesComp/Aulas_pos_P1/EntregaULA/EntregaULA.qarlog
+
+Archive:	C:/DesComp/Aulas_pos_P1/EntregaULA/EntregaULA.qar
+Date:		Fri Nov 18 14:25:30 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/DesComp/Aulas_pos_P1/EntregaULA/EntregaULA.qpf
+C:/DesComp/Aulas_pos_P1/EntregaULA/EntregaULA.qsf
+C:/DesComp/Aulas_pos_P1/EntregaULA/EntregaULA.vhd
+C:/DesComp/Aulas_pos_P1/EntregaULA/ULA1a31bit.vhd
+C:/DesComp/Aulas_pos_P1/EntregaULA/ULA32bit.vhd
+C:/DesComp/Aulas_pos_P1/EntregaULA/Waveform.vwf
+C:/DesComp/Aulas_pos_P1/EntregaULA/muxGenerico2x1.vhd
+C:/DesComp/Aulas_pos_P1/EntregaULA/muxGenerico4x1.vhd
+C:/DesComp/Aulas_pos_P1/EntregaULA/somadorGenerico1bit.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 10 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
