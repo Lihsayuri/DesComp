@@ -3,99 +3,99 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'KEY[0]'
-Slack : -10.671
-TNS   : -18675.074
+Slack : -11.508
+TNS   : -20112.379
 
 Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -2.734
-TNS   : -2.734
-
-Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.648
-TNS   : 0.000
+Slack : -2.825
+TNS   : -2.825
 
 Type  : Slow 1100mV 85C Model Hold 'KEY[0]'
-Slack : 0.768
+Slack : 0.623
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.791
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.755
-TNS   : -1.313
+Slack : -0.718
+TNS   : -1.256
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
 Slack : -0.538
-TNS   : -1728.695
+TNS   : -1787.185
 
 Type  : Slow 1100mV 0C Model Setup 'KEY[0]'
-Slack : -10.584
-TNS   : -18276.223
+Slack : -11.438
+TNS   : -19607.454
 
 Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -2.698
-TNS   : -2.698
-
-Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.485
-TNS   : 0.000
+Slack : -2.811
+TNS   : -2.811
 
 Type  : Slow 1100mV 0C Model Hold 'KEY[0]'
-Slack : 0.705
+Slack : 0.584
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.639
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.753
-TNS   : -1.349
+Slack : -0.716
+TNS   : -1.275
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
 Slack : -0.538
-TNS   : -1757.842
+TNS   : -1771.591
 
 Type  : Fast 1100mV 85C Model Setup 'KEY[0]'
-Slack : -5.258
-TNS   : -8911.013
+Slack : -5.880
+TNS   : -9775.115
 
 Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -2.104
-TNS   : -2.104
+Slack : -2.135
+TNS   : -2.135
 
 Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.157
+Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'KEY[0]'
-Slack : 0.231
+Slack : 0.265
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.790
-TNS   : -1.397
+Slack : -0.767
+TNS   : -1.351
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
-Slack : -0.579
-TNS   : -1208.013
+Slack : -0.501
+TNS   : -1100.567
 
 Type  : Fast 1100mV 0C Model Setup 'KEY[0]'
-Slack : -4.646
-TNS   : -7918.479
+Slack : -5.222
+TNS   : -8583.760
 
 Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -1.984
-TNS   : -1.984
+Slack : -2.018
+TNS   : -2.018
 
 Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.037
+Slack : 0.083
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'KEY[0]'
-Slack : 0.190
+Slack : 0.238
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.784
-TNS   : -1.443
+Slack : -0.764
+TNS   : -1.403
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
-Slack : -0.654
-TNS   : -1551.164
+Slack : -0.571
+TNS   : -1480.193
 
 ------------------------------------------------------------

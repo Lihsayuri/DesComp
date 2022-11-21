@@ -26,19 +26,19 @@ ENTITY Aula17 IS
 		HEX4          : out std_logic_vector(6 downto 0);
 		HEX5          : out std_logic_vector(6 downto 0)
 
---		Instru_opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
---		Funct : out std_logic_vector(5 downto 0);
---		ULAA_OUT_AddrRAM : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
---		MEM_INN : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
---		MEM_OUTT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
---		RS_OUT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
---		RT_OUTT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0); -- dado a ser escrito
---		Rs_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
---		Rt_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
---		PC_OUTT : OUT STD_LOGIC_VECTOR(larguraEnderecos - 1 DOWNTO 0);
---		flagEqual : OUT STD_LOGIC;
---		habFlagBEQ : OUT STD_LOGIC;
---		muxJmp : OUT STD_LOGIC
+		-- Instru_opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		-- Funct : out std_logic_vector(5 downto 0);
+		-- ULAA_OUT_AddrRAM : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
+		-- MEM_INN : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
+		-- MEM_OUTT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
+		-- RS_OUT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
+		-- RT_OUTT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0); -- dado a ser escrito
+		-- Rs_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+		-- Rt_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+		-- PC_OUTT : OUT STD_LOGIC_VECTOR(larguraEnderecos - 1 DOWNTO 0);
+		-- flagEqual : OUT STD_LOGIC;
+		-- habFlagBEQ : OUT STD_LOGIC;
+		-- muxJmp : OUT STD_LOGIC
 	);
 
 END ENTITY;
@@ -268,7 +268,7 @@ BEGIN
 		seletor_MUX => SW(0),
 		saida_MUX => saida_LED_HEX 
 	);
-	
+
 	HEX_0 : ENTITY work.logica_7Seg GENERIC MAP (IN_WIDTH => 4, OUT_WIDTH => 7)
 	PORT MAP(
 		dataIN => saida_LED_HEX(3 downto 0),
@@ -315,18 +315,18 @@ BEGIN
 		
 
 
---	Instru_opcode <= ROM_OUT(31 DOWNTO 26);
---	ULAA_OUT_AddrRAM <= ULA_OUT;
---	MEM_INN <= Rt_RAM;
---	MEM_OUTT <= MEM_OUT;
---	RS_OUT <= Rs_ULA_A;
---	RT_OUTT <= RT_OUT;
---	PC_OUTT <= PC_OUT;
---	Rs_End <= RsAddr;
---	Rt_End <= RtAddr;
---	flagEqual <= ULA_FLAG;
---	Funct <= ROM_OUT(5 downto 0);
---	habFlagBEQ <= habFlagEqual;
---	muxJmp <= SelMuxJump;
+	-- Instru_opcode <= ROM_OUT(31 DOWNTO 26);
+	-- ULAA_OUT_AddrRAM <= ULA_OUT;
+	-- MEM_INN <= Rt_RAM;
+	-- MEM_OUTT <= MEM_OUT;
+	-- RS_OUT <= Rs_ULA_A;
+	-- RT_OUTT <= RT_OUT;
+	-- PC_OUTT <= PC_OUT;
+	-- Rs_End <= RsAddr;
+	-- Rt_End <= RtAddr;
+	-- flagEqual <= ULA_FLAG;
+	-- Funct <= ROM_OUT(5 downto 0);
+	-- habFlagBEQ <= habFlagEqual;
+	-- muxJmp <= SelMuxJump;
 
 END ARCHITECTURE;
