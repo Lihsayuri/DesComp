@@ -21,13 +21,12 @@ ARCHITECTURE arch_name OF Decoder IS
 	CONSTANT SLT : STD_LOGIC_VECTOR(5 DOWNTO 0) := "101010";
 	CONSTANT ANDR : STD_LOGIC_VECTOR(5 DOWNTO 0) := "100100";
 	CONSTANT ORR : STD_LOGIC_VECTOR(5 DOWNTO 0) := "100101";
-	-- TipoR|SelMuxJump|SelMuxRtRd|write_REG(1)|habMUX(rt/imediato)|OP(2)|SelMuxMEMULA|habFlagEqual|
-	--read_RAM|write_RAM
+	-- TipoR|SelMuxJump|SelMuxRtRd|write_REG(1)|habMUX(rt/imediato)|SelMuxMEMULA|habFlagEqual|read_RAM|write_RAM
 BEGIN
 
 	OUTPUT <= "0" & "0011"  & "1010" WHEN (OPCODE = LW) ELSE
-		"0" & "0001"   & "1001" WHEN (OPCODE = SW) ELSE
-		"0" & "0000"  & "1100" WHEN (OPCODE = BEQ) ELSE
+		"0" & "0001"   & "0001" WHEN (OPCODE = SW) ELSE
+		"0" & "0000"  & "0100" WHEN (OPCODE = BEQ) ELSE
 		"1" & "0110"  & "0000" WHEN (((FUNCT = ADDR) OR (FUNCT = SUBR) OR (FUNCT = ORR) OR (FUNCT = ANDR) OR (FUNCT = SLT)) AND OPCODE = "000000") ELSE
 		"0" & "1000"  & "0000" WHEN (OPCODE = J) ELSE
 		"000000000";

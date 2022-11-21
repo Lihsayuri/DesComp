@@ -314,6 +314,32 @@ BEGIN
 	LEDR(7 downto 0) <= saida_LED_HEX(31 downto 24);
 		
 
+	monitor: work.debugMonitor
+	port map(PC => PC_OUT,                         -- Saida o PC: entrada de endereco da ROM
+		  Instrucao => ROM_OUT,   -- Saida de dados da ROM
+		  LeituraRS => Rs_ULA_A,        -- Saida do Banco de Registradores: leitura de RS
+		  LeituraRT => RT_OUT,        -- Saida do Banco de Registradores: leitura de RT
+		  EscritaRD => MUX_DADO_BANCO,      -- Entrada do Banco de Registradores (C)
+		  EntradaB_ULA => MUX_ULA_B,             -- Entrada B da ULA: saida do MUX RT/ImediatoEstendido
+		  imediatoEstendido => imediatoEstendido,  -- ImediatoEstendido: entrada do MUX RT/ImediatoEstendido
+		  saidaULA => ULA_OUT,        -- Saida da ULA: entrada do MUX ULA/MEM
+		  dadoLido_RAM => MEM_OUT,     -- Saida da RAM: entrada do MUX ULA/MEM
+		  proxPC => MUX_PROX_PC,    -- Entrada do PC ou saida do MUX ProxPC MUX_PROX_PC
+		  MUXProxPCEntradaA => MuxBeqOut,   -- Entrada do MUX ProxPC: vinda MUX PC+4/BEQ
+		  MUXProxPCEntradaB => CONCAT_JMP,   -- Entrada do MUX ProxPC: vinda da montagem do endereco de Jump
+		  ULActrl => '0' & Ula_ctrl,                      -- Entrada do ULActrl na ULA: pode ser necessario concatenar 1 bit '0': '0' & ULActrl
+		  zeroFLAG => ULA_FLAG,                        -- Saida do Flag da ULA e entrada da porta AND
+		  escreveC => write_REG,       -- Entrada do Banco de Registradores: sinal de habilita escrita no terceiro endereco (RD ou RT)
+		  MUXPCBEQJUMP => SelMuxJump,          -- Selecao do MUX do proxPC: vem da unidade de controle
+		  MUXRTRD => SelMuxRtRd,                     -- Selecao do MUX RT/RD: vem da unidade de controle
+		  MUXRTIMED => SelImediatoReg,                 -- Selecao do MUX RT/Imediato: vem da unidade de controle
+		  MUXULAMEM => SelMuxUlaMem,                 -- Selecao do MUX ULA/MEM: vem da unidade de controle
+		  iBEQ => habFlagEqual,                              -- Indicador de instrucao BEQ: vem da unidade de controle
+		  WR => write_RAM,                    -- Habilita escrita na RAM: vem da unidade de controle
+		  RD => read_RAM,                    -- Habilita leitura da RAM: vem da unidade de controle
+		  --Output
+		  clkTCL => open);                       -- Sem uso: conectar com open
+
 
 	-- Instru_opcode <= ROM_OUT(31 DOWNTO 26);
 	-- ULAA_OUT_AddrRAM <= ULA_OUT;
