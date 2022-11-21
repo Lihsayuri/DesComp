@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Aula17
-Sun Nov 20 10:02:13 2022
+Mon Nov 21 18:33:46 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -14,133 +14,132 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |Aula17
- 13. Parameter Settings for User Entity Instance: somaConstante:Somador1
- 14. Parameter Settings for User Entity Instance: registradorGenerico:PC_REG
- 15. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_NEXT_PC
- 16. Parameter Settings for User Entity Instance: memoriaROM:ROM1
- 17. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_FUNCT_OPCODE
- 18. Parameter Settings for User Entity Instance: bancoReg:BANCO_REG
- 19. Parameter Settings for User Entity Instance: estendeSinal:EstendeSinal
- 20. Parameter Settings for User Entity Instance: shiftSinal:ShiftSinal
- 21. Parameter Settings for User Entity Instance: somadorGenerico:Somador2
- 22. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_RD_RT
- 23. Parameter Settings for User Entity Instance: muxGenerico2x1:MUXBEQ
- 24. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_ULAB
- 25. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_ULA_MEM
- 26. Parameter Settings for User Entity Instance: ULASomaSub:ULA1
- 27. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA1|muxGenerico2x1:InverterOuNao
- 28. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA1|muxGenerico4x1:MuxOperacao
- 29. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA2|muxGenerico2x1:InverterOuNao
- 30. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA2|muxGenerico4x1:MuxOperacao
- 31. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA3|muxGenerico2x1:InverterOuNao
- 32. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA3|muxGenerico4x1:MuxOperacao
- 33. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA4|muxGenerico2x1:InverterOuNao
- 34. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA4|muxGenerico4x1:MuxOperacao
- 35. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA5|muxGenerico2x1:InverterOuNao
- 36. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA5|muxGenerico4x1:MuxOperacao
- 37. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA6|muxGenerico2x1:InverterOuNao
- 38. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA6|muxGenerico4x1:MuxOperacao
- 39. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA7|muxGenerico2x1:InverterOuNao
- 40. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA7|muxGenerico4x1:MuxOperacao
- 41. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA8|muxGenerico2x1:InverterOuNao
- 42. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA8|muxGenerico4x1:MuxOperacao
- 43. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA9|muxGenerico2x1:InverterOuNao
- 44. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA9|muxGenerico4x1:MuxOperacao
- 45. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA10|muxGenerico2x1:InverterOuNao
- 46. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA10|muxGenerico4x1:MuxOperacao
- 47. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA11|muxGenerico2x1:InverterOuNao
- 48. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA11|muxGenerico4x1:MuxOperacao
- 49. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA12|muxGenerico2x1:InverterOuNao
- 50. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA12|muxGenerico4x1:MuxOperacao
- 51. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA13|muxGenerico2x1:InverterOuNao
- 52. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA13|muxGenerico4x1:MuxOperacao
- 53. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA14|muxGenerico2x1:InverterOuNao
- 54. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA14|muxGenerico4x1:MuxOperacao
- 55. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA15|muxGenerico2x1:InverterOuNao
- 56. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA15|muxGenerico4x1:MuxOperacao
- 57. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA16|muxGenerico2x1:InverterOuNao
- 58. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA16|muxGenerico4x1:MuxOperacao
- 59. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA17|muxGenerico2x1:InverterOuNao
- 60. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA17|muxGenerico4x1:MuxOperacao
- 61. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA18|muxGenerico2x1:InverterOuNao
- 62. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA18|muxGenerico4x1:MuxOperacao
- 63. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA19|muxGenerico2x1:InverterOuNao
- 64. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA19|muxGenerico4x1:MuxOperacao
- 65. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA20|muxGenerico2x1:InverterOuNao
- 66. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA20|muxGenerico4x1:MuxOperacao
- 67. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA21|muxGenerico2x1:InverterOuNao
- 68. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA21|muxGenerico4x1:MuxOperacao
- 69. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA22|muxGenerico2x1:InverterOuNao
- 70. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA22|muxGenerico4x1:MuxOperacao
- 71. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA23|muxGenerico2x1:InverterOuNao
- 72. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA23|muxGenerico4x1:MuxOperacao
- 73. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA24|muxGenerico2x1:InverterOuNao
- 74. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA24|muxGenerico4x1:MuxOperacao
- 75. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA25|muxGenerico2x1:InverterOuNao
- 76. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA25|muxGenerico4x1:MuxOperacao
- 77. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA26|muxGenerico2x1:InverterOuNao
- 78. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA26|muxGenerico4x1:MuxOperacao
- 79. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA27|muxGenerico2x1:InverterOuNao
- 80. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA27|muxGenerico4x1:MuxOperacao
- 81. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA28|muxGenerico2x1:InverterOuNao
- 82. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA28|muxGenerico4x1:MuxOperacao
- 83. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA29|muxGenerico2x1:InverterOuNao
- 84. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA29|muxGenerico4x1:MuxOperacao
- 85. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA30|muxGenerico2x1:InverterOuNao
- 86. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA30|muxGenerico4x1:MuxOperacao
- 87. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA31|muxGenerico2x1:InverterOuNao
- 88. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA31|muxGenerico4x1:MuxOperacao
- 89. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA32bit:ULA32|muxGenerico2x1:InverterOuNao
- 90. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA32bit:ULA32|muxGenerico4x1:MuxOperacao
- 91. Parameter Settings for User Entity Instance: memoriaRAM:RAM1
- 92. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_ULA_PC
- 93. Parameter Settings for User Entity Instance: logica_7Seg:HEX_0
- 94. Parameter Settings for User Entity Instance: logica_7Seg:HEX_1
- 95. Parameter Settings for User Entity Instance: logica_7Seg:HEX_2
- 96. Parameter Settings for User Entity Instance: logica_7Seg:HEX_3
- 97. Parameter Settings for User Entity Instance: logica_7Seg:HEX_4
- 98. Parameter Settings for User Entity Instance: logica_7Seg:HEX_5
- 99. Port Connectivity Checks: "logica_7Seg:HEX_0|conversorHex7Seg:HEX"
-100. Port Connectivity Checks: "ULASomaSub:ULA1|ULA32bit:ULA32"
-101. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA31"
-102. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA30"
-103. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA29"
-104. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA28"
-105. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA27"
-106. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA26"
-107. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA25"
-108. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA24"
-109. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA23"
-110. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA22"
-111. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA21"
-112. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA20"
-113. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA19"
-114. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA18"
-115. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA17"
-116. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA16"
-117. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA15"
-118. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA14"
-119. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA13"
-120. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA12"
-121. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA11"
-122. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA10"
-123. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA9"
-124. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA8"
-125. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA7"
-126. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA6"
-127. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA5"
-128. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA4"
-129. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA3"
-130. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA2"
-131. Port Connectivity Checks: "muxGenerico2x1:MUX_NEXT_PC"
-132. Port Connectivity Checks: "registradorGenerico:PC_REG"
-133. Post-Synthesis Netlist Statistics for Top Partition
-134. Elapsed Time Per Partition
-135. Analysis & Synthesis Messages
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |Aula17
+ 12. Parameter Settings for User Entity Instance: somaConstante:Somador1
+ 13. Parameter Settings for User Entity Instance: registradorGenerico:PC_REG
+ 14. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_NEXT_PC
+ 15. Parameter Settings for User Entity Instance: memoriaROM:ROM1
+ 16. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_FUNCT_OPCODE
+ 17. Parameter Settings for User Entity Instance: bancoReg:BANCO_REG
+ 18. Parameter Settings for User Entity Instance: estendeSinal:EstendeSinal
+ 19. Parameter Settings for User Entity Instance: shiftSinal:ShiftSinal
+ 20. Parameter Settings for User Entity Instance: somadorGenerico:Somador2
+ 21. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_RD_RT
+ 22. Parameter Settings for User Entity Instance: muxGenerico2x1:MUXBEQ
+ 23. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_ULAB
+ 24. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_ULA_MEM
+ 25. Parameter Settings for User Entity Instance: ULASomaSub:ULA1
+ 26. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA1|muxGenerico2x1:InverterOuNao
+ 27. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA1|muxGenerico4x1:MuxOperacao
+ 28. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA2|muxGenerico2x1:InverterOuNao
+ 29. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA2|muxGenerico4x1:MuxOperacao
+ 30. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA3|muxGenerico2x1:InverterOuNao
+ 31. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA3|muxGenerico4x1:MuxOperacao
+ 32. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA4|muxGenerico2x1:InverterOuNao
+ 33. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA4|muxGenerico4x1:MuxOperacao
+ 34. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA5|muxGenerico2x1:InverterOuNao
+ 35. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA5|muxGenerico4x1:MuxOperacao
+ 36. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA6|muxGenerico2x1:InverterOuNao
+ 37. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA6|muxGenerico4x1:MuxOperacao
+ 38. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA7|muxGenerico2x1:InverterOuNao
+ 39. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA7|muxGenerico4x1:MuxOperacao
+ 40. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA8|muxGenerico2x1:InverterOuNao
+ 41. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA8|muxGenerico4x1:MuxOperacao
+ 42. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA9|muxGenerico2x1:InverterOuNao
+ 43. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA9|muxGenerico4x1:MuxOperacao
+ 44. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA10|muxGenerico2x1:InverterOuNao
+ 45. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA10|muxGenerico4x1:MuxOperacao
+ 46. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA11|muxGenerico2x1:InverterOuNao
+ 47. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA11|muxGenerico4x1:MuxOperacao
+ 48. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA12|muxGenerico2x1:InverterOuNao
+ 49. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA12|muxGenerico4x1:MuxOperacao
+ 50. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA13|muxGenerico2x1:InverterOuNao
+ 51. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA13|muxGenerico4x1:MuxOperacao
+ 52. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA14|muxGenerico2x1:InverterOuNao
+ 53. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA14|muxGenerico4x1:MuxOperacao
+ 54. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA15|muxGenerico2x1:InverterOuNao
+ 55. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA15|muxGenerico4x1:MuxOperacao
+ 56. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA16|muxGenerico2x1:InverterOuNao
+ 57. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA16|muxGenerico4x1:MuxOperacao
+ 58. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA17|muxGenerico2x1:InverterOuNao
+ 59. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA17|muxGenerico4x1:MuxOperacao
+ 60. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA18|muxGenerico2x1:InverterOuNao
+ 61. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA18|muxGenerico4x1:MuxOperacao
+ 62. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA19|muxGenerico2x1:InverterOuNao
+ 63. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA19|muxGenerico4x1:MuxOperacao
+ 64. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA20|muxGenerico2x1:InverterOuNao
+ 65. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA20|muxGenerico4x1:MuxOperacao
+ 66. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA21|muxGenerico2x1:InverterOuNao
+ 67. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA21|muxGenerico4x1:MuxOperacao
+ 68. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA22|muxGenerico2x1:InverterOuNao
+ 69. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA22|muxGenerico4x1:MuxOperacao
+ 70. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA23|muxGenerico2x1:InverterOuNao
+ 71. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA23|muxGenerico4x1:MuxOperacao
+ 72. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA24|muxGenerico2x1:InverterOuNao
+ 73. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA24|muxGenerico4x1:MuxOperacao
+ 74. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA25|muxGenerico2x1:InverterOuNao
+ 75. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA25|muxGenerico4x1:MuxOperacao
+ 76. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA26|muxGenerico2x1:InverterOuNao
+ 77. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA26|muxGenerico4x1:MuxOperacao
+ 78. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA27|muxGenerico2x1:InverterOuNao
+ 79. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA27|muxGenerico4x1:MuxOperacao
+ 80. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA28|muxGenerico2x1:InverterOuNao
+ 81. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA28|muxGenerico4x1:MuxOperacao
+ 82. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA29|muxGenerico2x1:InverterOuNao
+ 83. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA29|muxGenerico4x1:MuxOperacao
+ 84. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA30|muxGenerico2x1:InverterOuNao
+ 85. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA30|muxGenerico4x1:MuxOperacao
+ 86. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA31|muxGenerico2x1:InverterOuNao
+ 87. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA1a31bit:ULA31|muxGenerico4x1:MuxOperacao
+ 88. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA32bit:ULA32|muxGenerico2x1:InverterOuNao
+ 89. Parameter Settings for User Entity Instance: ULASomaSub:ULA1|ULA32bit:ULA32|muxGenerico4x1:MuxOperacao
+ 90. Parameter Settings for User Entity Instance: memoriaRAM:RAM1
+ 91. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_ULA_PC
+ 92. Parameter Settings for User Entity Instance: logica_7Seg:HEX_0
+ 93. Parameter Settings for User Entity Instance: logica_7Seg:HEX_1
+ 94. Parameter Settings for User Entity Instance: logica_7Seg:HEX_2
+ 95. Parameter Settings for User Entity Instance: logica_7Seg:HEX_3
+ 96. Parameter Settings for User Entity Instance: logica_7Seg:HEX_4
+ 97. Parameter Settings for User Entity Instance: logica_7Seg:HEX_5
+ 98. Port Connectivity Checks: "logica_7Seg:HEX_0|conversorHex7Seg:HEX"
+ 99. Port Connectivity Checks: "ULASomaSub:ULA1|ULA32bit:ULA32"
+100. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA31"
+101. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA30"
+102. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA29"
+103. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA28"
+104. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA27"
+105. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA26"
+106. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA25"
+107. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA24"
+108. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA23"
+109. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA22"
+110. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA21"
+111. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA20"
+112. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA19"
+113. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA18"
+114. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA17"
+115. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA16"
+116. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA15"
+117. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA14"
+118. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA13"
+119. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA12"
+120. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA11"
+121. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA10"
+122. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA9"
+123. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA8"
+124. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA7"
+125. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA6"
+126. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA5"
+127. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA4"
+128. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA3"
+129. Port Connectivity Checks: "ULASomaSub:ULA1|ULA1a31bit:ULA2"
+130. Port Connectivity Checks: "muxGenerico2x1:MUX_NEXT_PC"
+131. Port Connectivity Checks: "registradorGenerico:PC_REG"
+132. Post-Synthesis Netlist Statistics for Top Partition
+133. Elapsed Time Per Partition
+134. Analysis & Synthesis Messages
 
 
 
@@ -167,13 +166,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Nov 20 10:02:13 2022       ;
+; Analysis & Synthesis Status     ; Successful - Mon Nov 21 18:33:46 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Aula17                                      ;
 ; Top-level Entity Name           ; Aula17                                      ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 2111                                        ;
+; Total registers                 ; 2207                                        ;
 ; Total pins                      ; 68                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -329,25 +328,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------------------------------------+
 ; Resource                                    ; Usage                                   ;
 +---------------------------------------------+-----------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 1540                                    ;
+; Estimate of Logic utilization (ALMs needed) ; 1627                                    ;
 ;                                             ;                                         ;
-; Combinational ALUT usage for logic          ; 1275                                    ;
-;     -- 7 input functions                    ; 3                                       ;
-;     -- 6 input functions                    ; 840                                     ;
-;     -- 5 input functions                    ; 50                                      ;
-;     -- 4 input functions                    ; 94                                      ;
-;     -- <=3 input functions                  ; 288                                     ;
+; Combinational ALUT usage for logic          ; 1312                                    ;
+;     -- 7 input functions                    ; 32                                      ;
+;     -- 6 input functions                    ; 858                                     ;
+;     -- 5 input functions                    ; 59                                      ;
+;     -- 4 input functions                    ; 108                                     ;
+;     -- <=3 input functions                  ; 255                                     ;
 ;                                             ;                                         ;
-; Dedicated logic registers                   ; 2111                                    ;
+; Dedicated logic registers                   ; 2207                                    ;
 ;                                             ;                                         ;
 ; I/O pins                                    ; 68                                      ;
 ;                                             ;                                         ;
 ; Total DSP Blocks                            ; 0                                       ;
 ;                                             ;                                         ;
 ; Maximum fan-out node                        ; edgeDetector:\gravar:detectorSub0|saida ;
-; Maximum fan-out                             ; 2110                                    ;
-; Total fan-out                               ; 12820                                   ;
-; Average fan-out                             ; 3.64                                    ;
+; Maximum fan-out                             ; 2206                                    ;
+; Total fan-out                               ; 13416                                   ;
+; Average fan-out                             ; 3.67                                    ;
 +---------------------------------------------+-----------------------------------------+
 
 
@@ -356,11 +355,11 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                   ; Entity Name         ; Library Name ;
 +-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------+---------------------+--------------+
-; |Aula17                                 ; 1275 (10)           ; 2111 (0)                  ; 0                 ; 0          ; 68   ; 0            ; |Aula17                                                               ; Aula17              ; work         ;
+; |Aula17                                 ; 1312 (11)           ; 2207 (0)                  ; 0                 ; 0          ; 68   ; 0            ; |Aula17                                                               ; Aula17              ; work         ;
 ;    |Decoder:decoderInstru1|             ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|Decoder:decoderInstru1                                        ; Decoder             ; work         ;
-;    |DecoderFunct:decoderFUNCT|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|DecoderFunct:decoderFUNCT                                     ; DecoderFunct        ; work         ;
+;    |DecoderFunct:decoderFUNCT|          ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|DecoderFunct:decoderFUNCT                                     ; DecoderFunct        ; work         ;
 ;    |DecoderOpcode:decoderOPCODE|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|DecoderOpcode:decoderOPCODE                                   ; DecoderOpcode       ; work         ;
-;    |ULASomaSub:ULA1|                    ; 147 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1                                               ; ULASomaSub          ; work         ;
+;    |ULASomaSub:ULA1|                    ; 165 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1                                               ; ULASomaSub          ; work         ;
 ;       |ULA1a31bit:ULA10|                ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA10                              ; ULA1a31bit          ; work         ;
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA10|muxGenerico2x1:InverterOuNao ; muxGenerico2x1      ; work         ;
 ;          |muxGenerico4x1:MuxOperacao|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA10|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
@@ -377,9 +376,10 @@ https://fpgasoftware.intel.com/eula.
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA13|muxGenerico2x1:InverterOuNao ; muxGenerico2x1      ; work         ;
 ;          |muxGenerico4x1:MuxOperacao|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA13|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
 ;          |somadorGenerico1bit:Somador|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA13|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
-;       |ULA1a31bit:ULA14|                ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA14                              ; ULA1a31bit          ; work         ;
-;          |muxGenerico4x1:MuxOperacao|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA14|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
-;          |somadorGenerico1bit:Somador|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA14|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
+;       |ULA1a31bit:ULA14|                ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA14                              ; ULA1a31bit          ; work         ;
+;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA14|muxGenerico2x1:InverterOuNao ; muxGenerico2x1      ; work         ;
+;          |muxGenerico4x1:MuxOperacao|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA14|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
+;          |somadorGenerico1bit:Somador|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA14|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
 ;       |ULA1a31bit:ULA15|                ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA15                              ; ULA1a31bit          ; work         ;
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA15|muxGenerico2x1:InverterOuNao ; muxGenerico2x1      ; work         ;
 ;          |muxGenerico4x1:MuxOperacao|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA15|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
@@ -398,35 +398,34 @@ https://fpgasoftware.intel.com/eula.
 ;          |somadorGenerico1bit:Somador|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA18|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
 ;       |ULA1a31bit:ULA19|                ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA19                              ; ULA1a31bit          ; work         ;
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA19|muxGenerico2x1:InverterOuNao ; muxGenerico2x1      ; work         ;
-;          |muxGenerico4x1:MuxOperacao|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA19|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
-;          |somadorGenerico1bit:Somador|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA19|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
-;       |ULA1a31bit:ULA1|                 ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA1                               ; ULA1a31bit          ; work         ;
-;          |muxGenerico4x1:MuxOperacao|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA1|muxGenerico4x1:MuxOperacao    ; muxGenerico4x1      ; work         ;
-;          |somadorGenerico1bit:Somador|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA1|somadorGenerico1bit:Somador   ; somadorGenerico1bit ; work         ;
+;          |muxGenerico4x1:MuxOperacao|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA19|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
+;          |somadorGenerico1bit:Somador|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA19|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
+;       |ULA1a31bit:ULA1|                 ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA1                               ; ULA1a31bit          ; work         ;
+;          |muxGenerico4x1:MuxOperacao|   ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA1|muxGenerico4x1:MuxOperacao    ; muxGenerico4x1      ; work         ;
+;          |somadorGenerico1bit:Somador|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA1|somadorGenerico1bit:Somador   ; somadorGenerico1bit ; work         ;
 ;       |ULA1a31bit:ULA20|                ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA20                              ; ULA1a31bit          ; work         ;
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA20|muxGenerico2x1:InverterOuNao ; muxGenerico2x1      ; work         ;
 ;          |muxGenerico4x1:MuxOperacao|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA20|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
 ;          |somadorGenerico1bit:Somador|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA20|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
-;       |ULA1a31bit:ULA21|                ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA21                              ; ULA1a31bit          ; work         ;
+;       |ULA1a31bit:ULA21|                ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA21                              ; ULA1a31bit          ; work         ;
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA21|muxGenerico2x1:InverterOuNao ; muxGenerico2x1      ; work         ;
-;          |muxGenerico4x1:MuxOperacao|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA21|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
+;          |muxGenerico4x1:MuxOperacao|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA21|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
 ;          |somadorGenerico1bit:Somador|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA21|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
-;       |ULA1a31bit:ULA22|                ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA22                              ; ULA1a31bit          ; work         ;
+;       |ULA1a31bit:ULA22|                ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA22                              ; ULA1a31bit          ; work         ;
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA22|muxGenerico2x1:InverterOuNao ; muxGenerico2x1      ; work         ;
-;          |muxGenerico4x1:MuxOperacao|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA22|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
+;          |muxGenerico4x1:MuxOperacao|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA22|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
 ;          |somadorGenerico1bit:Somador|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA22|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
-;       |ULA1a31bit:ULA23|                ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA23                              ; ULA1a31bit          ; work         ;
+;       |ULA1a31bit:ULA23|                ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA23                              ; ULA1a31bit          ; work         ;
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA23|muxGenerico2x1:InverterOuNao ; muxGenerico2x1      ; work         ;
-;          |muxGenerico4x1:MuxOperacao|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA23|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
+;          |muxGenerico4x1:MuxOperacao|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA23|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
 ;          |somadorGenerico1bit:Somador|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA23|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
-;       |ULA1a31bit:ULA24|                ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA24                              ; ULA1a31bit          ; work         ;
+;       |ULA1a31bit:ULA24|                ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA24                              ; ULA1a31bit          ; work         ;
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA24|muxGenerico2x1:InverterOuNao ; muxGenerico2x1      ; work         ;
-;          |muxGenerico4x1:MuxOperacao|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA24|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
-;          |somadorGenerico1bit:Somador|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA24|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
+;          |muxGenerico4x1:MuxOperacao|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA24|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
+;          |somadorGenerico1bit:Somador|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA24|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
 ;       |ULA1a31bit:ULA25|                ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA25                              ; ULA1a31bit          ; work         ;
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA25|muxGenerico2x1:InverterOuNao ; muxGenerico2x1      ; work         ;
-;          |muxGenerico4x1:MuxOperacao|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA25|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
-;          |somadorGenerico1bit:Somador|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA25|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
+;          |muxGenerico4x1:MuxOperacao|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA25|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
 ;       |ULA1a31bit:ULA26|                ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA26                              ; ULA1a31bit          ; work         ;
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA26|muxGenerico2x1:InverterOuNao ; muxGenerico2x1      ; work         ;
 ;          |muxGenerico4x1:MuxOperacao|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA26|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
@@ -439,9 +438,9 @@ https://fpgasoftware.intel.com/eula.
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA28|muxGenerico2x1:InverterOuNao ; muxGenerico2x1      ; work         ;
 ;          |muxGenerico4x1:MuxOperacao|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA28|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
 ;          |somadorGenerico1bit:Somador|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA28|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
-;       |ULA1a31bit:ULA29|                ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA29                              ; ULA1a31bit          ; work         ;
+;       |ULA1a31bit:ULA29|                ; 8 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA29                              ; ULA1a31bit          ; work         ;
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA29|muxGenerico2x1:InverterOuNao ; muxGenerico2x1      ; work         ;
-;          |muxGenerico4x1:MuxOperacao|   ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA29|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
+;          |muxGenerico4x1:MuxOperacao|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA29|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
 ;          |somadorGenerico1bit:Somador|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA29|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
 ;       |ULA1a31bit:ULA2|                 ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA2                               ; ULA1a31bit          ; work         ;
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA2|muxGenerico2x1:InverterOuNao  ; muxGenerico2x1      ; work         ;
@@ -453,17 +452,16 @@ https://fpgasoftware.intel.com/eula.
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA31|muxGenerico2x1:InverterOuNao ; muxGenerico2x1      ; work         ;
 ;          |muxGenerico4x1:MuxOperacao|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA31|muxGenerico4x1:MuxOperacao   ; muxGenerico4x1      ; work         ;
 ;          |somadorGenerico1bit:Somador|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA31|somadorGenerico1bit:Somador  ; somadorGenerico1bit ; work         ;
-;       |ULA1a31bit:ULA3|                 ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA3                               ; ULA1a31bit          ; work         ;
-;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA3|muxGenerico2x1:InverterOuNao  ; muxGenerico2x1      ; work         ;
-;          |muxGenerico4x1:MuxOperacao|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA3|muxGenerico4x1:MuxOperacao    ; muxGenerico4x1      ; work         ;
-;          |somadorGenerico1bit:Somador|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA3|somadorGenerico1bit:Somador   ; somadorGenerico1bit ; work         ;
-;       |ULA1a31bit:ULA4|                 ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA4                               ; ULA1a31bit          ; work         ;
-;          |muxGenerico4x1:MuxOperacao|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA4|muxGenerico4x1:MuxOperacao    ; muxGenerico4x1      ; work         ;
-;          |somadorGenerico1bit:Somador|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA4|somadorGenerico1bit:Somador   ; somadorGenerico1bit ; work         ;
-;       |ULA1a31bit:ULA5|                 ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA5                               ; ULA1a31bit          ; work         ;
+;       |ULA1a31bit:ULA3|                 ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA3                               ; ULA1a31bit          ; work         ;
+;          |muxGenerico2x1:InverterOuNao| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA3|muxGenerico2x1:InverterOuNao  ; muxGenerico2x1      ; work         ;
+;          |muxGenerico4x1:MuxOperacao|   ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA3|muxGenerico4x1:MuxOperacao    ; muxGenerico4x1      ; work         ;
+;          |somadorGenerico1bit:Somador|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA3|somadorGenerico1bit:Somador   ; somadorGenerico1bit ; work         ;
+;       |ULA1a31bit:ULA4|                 ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA4                               ; ULA1a31bit          ; work         ;
+;          |muxGenerico4x1:MuxOperacao|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA4|muxGenerico4x1:MuxOperacao    ; muxGenerico4x1      ; work         ;
+;          |somadorGenerico1bit:Somador|  ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA4|somadorGenerico1bit:Somador   ; somadorGenerico1bit ; work         ;
+;       |ULA1a31bit:ULA5|                 ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA5                               ; ULA1a31bit          ; work         ;
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA5|muxGenerico2x1:InverterOuNao  ; muxGenerico2x1      ; work         ;
 ;          |muxGenerico4x1:MuxOperacao|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA5|muxGenerico4x1:MuxOperacao    ; muxGenerico4x1      ; work         ;
-;          |somadorGenerico1bit:Somador|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA5|somadorGenerico1bit:Somador   ; somadorGenerico1bit ; work         ;
 ;       |ULA1a31bit:ULA6|                 ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA6                               ; ULA1a31bit          ; work         ;
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA6|muxGenerico2x1:InverterOuNao  ; muxGenerico2x1      ; work         ;
 ;          |muxGenerico4x1:MuxOperacao|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA6|muxGenerico4x1:MuxOperacao    ; muxGenerico4x1      ; work         ;
@@ -476,14 +474,15 @@ https://fpgasoftware.intel.com/eula.
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA8|muxGenerico2x1:InverterOuNao  ; muxGenerico2x1      ; work         ;
 ;          |muxGenerico4x1:MuxOperacao|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA8|muxGenerico4x1:MuxOperacao    ; muxGenerico4x1      ; work         ;
 ;          |somadorGenerico1bit:Somador|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA8|somadorGenerico1bit:Somador   ; somadorGenerico1bit ; work         ;
-;       |ULA1a31bit:ULA9|                 ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA9                               ; ULA1a31bit          ; work         ;
-;          |muxGenerico4x1:MuxOperacao|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA9|muxGenerico4x1:MuxOperacao    ; muxGenerico4x1      ; work         ;
-;          |somadorGenerico1bit:Somador|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA9|somadorGenerico1bit:Somador   ; somadorGenerico1bit ; work         ;
-;       |ULA32bit:ULA32|                  ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA32bit:ULA32                                ; ULA32bit            ; work         ;
+;       |ULA1a31bit:ULA9|                 ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA9                               ; ULA1a31bit          ; work         ;
+;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA9|muxGenerico2x1:InverterOuNao  ; muxGenerico2x1      ; work         ;
+;          |muxGenerico4x1:MuxOperacao|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA9|muxGenerico4x1:MuxOperacao    ; muxGenerico4x1      ; work         ;
+;          |somadorGenerico1bit:Somador|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA1a31bit:ULA9|somadorGenerico1bit:Somador   ; somadorGenerico1bit ; work         ;
+;       |ULA32bit:ULA32|                  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA32bit:ULA32                                ; ULA32bit            ; work         ;
 ;          |muxGenerico2x1:InverterOuNao| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA32bit:ULA32|muxGenerico2x1:InverterOuNao   ; muxGenerico2x1      ; work         ;
-;          |muxGenerico4x1:MuxOperacao|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA32bit:ULA32|muxGenerico4x1:MuxOperacao     ; muxGenerico4x1      ; work         ;
+;          |muxGenerico4x1:MuxOperacao|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA32bit:ULA32|muxGenerico4x1:MuxOperacao     ; muxGenerico4x1      ; work         ;
 ;          |somadorGenerico1bit:Somador|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|ULASomaSub:ULA1|ULA32bit:ULA32|somadorGenerico1bit:Somador    ; somadorGenerico1bit ; work         ;
-;    |bancoReg:BANCO_REG|                 ; 99 (99)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |Aula17|bancoReg:BANCO_REG                                            ; bancoReg            ; work         ;
+;    |bancoReg:BANCO_REG|                 ; 112 (112)           ; 128 (128)                 ; 0                 ; 0          ; 0    ; 0            ; |Aula17|bancoReg:BANCO_REG                                            ; bancoReg            ; work         ;
 ;    |edgeDetector:\gravar:detectorSub0|  ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|edgeDetector:\gravar:detectorSub0                             ; edgeDetector        ; work         ;
 ;    |logica_7Seg:HEX_0|                  ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|logica_7Seg:HEX_0                                             ; logica_7Seg         ; work         ;
 ;       |conversorHex7Seg:HEX|            ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|logica_7Seg:HEX_0|conversorHex7Seg:HEX                        ; conversorHex7Seg    ; work         ;
@@ -497,9 +496,9 @@ https://fpgasoftware.intel.com/eula.
 ;       |conversorHex7Seg:HEX|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|logica_7Seg:HEX_4|conversorHex7Seg:HEX                        ; conversorHex7Seg    ; work         ;
 ;    |logica_7Seg:HEX_5|                  ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|logica_7Seg:HEX_5                                             ; logica_7Seg         ; work         ;
 ;       |conversorHex7Seg:HEX|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|logica_7Seg:HEX_5|conversorHex7Seg:HEX                        ; conversorHex7Seg    ; work         ;
-;    |memoriaRAM:RAM1|                    ; 797 (797)           ; 2048 (2048)               ; 0                 ; 0          ; 0    ; 0            ; |Aula17|memoriaRAM:RAM1                                               ; memoriaRAM          ; work         ;
-;    |memoriaROM:ROM1|                    ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|memoriaROM:ROM1                                               ; memoriaROM          ; work         ;
-;    |muxGenerico2x1:MUX_FUNCT_OPCODE|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|muxGenerico2x1:MUX_FUNCT_OPCODE                               ; muxGenerico2x1      ; work         ;
+;    |memoriaRAM:RAM1|                    ; 800 (800)           ; 2048 (2048)               ; 0                 ; 0          ; 0    ; 0            ; |Aula17|memoriaRAM:RAM1                                               ; memoriaRAM          ; work         ;
+;    |memoriaROM:ROM1|                    ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|memoriaROM:ROM1                                               ; memoriaROM          ; work         ;
+;    |muxGenerico2x1:MUX_FUNCT_OPCODE|    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|muxGenerico2x1:MUX_FUNCT_OPCODE                               ; muxGenerico2x1      ; work         ;
 ;    |muxGenerico2x1:MUX_NEXT_PC|         ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|muxGenerico2x1:MUX_NEXT_PC                                    ; muxGenerico2x1      ; work         ;
 ;    |muxGenerico2x1:MUX_ULA_MEM|         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|muxGenerico2x1:MUX_ULA_MEM                                    ; muxGenerico2x1      ; work         ;
 ;    |muxGenerico2x1:MUX_ULA_PC|          ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula17|muxGenerico2x1:MUX_ULA_PC                                     ; muxGenerico2x1      ; work         ;
@@ -1413,159 +1412,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; bancoReg:BANCO_REG|registrador~132      ; Stuck at GND due to stuck port clock_enable    ;
 ; bancoReg:BANCO_REG|registrador~165      ; Stuck at GND due to stuck port clock_enable    ;
 ; bancoReg:BANCO_REG|registrador~133      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~326      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~327      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~328      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~329      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~330      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~331      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~332      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~333      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~334      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~335      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~336      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~337      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~338      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~339      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~340      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~341      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~342      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~343      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~344      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~345      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~346      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~347      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~348      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~349      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~350      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~351      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~352      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~353      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~354      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~355      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~356      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~357      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~390      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~358      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~391      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~359      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~392      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~360      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~393      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~361      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~394      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~362      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~395      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~363      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~396      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~364      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~397      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~365      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~398      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~366      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~399      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~367      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~400      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~368      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~401      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~369      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~402      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~370      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~403      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~371      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~404      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~372      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~405      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~373      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~406      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~374      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~407      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~375      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~408      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~376      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~409      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~377      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~410      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~378      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~411      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~379      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~412      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~380      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~413      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~381      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~414      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~382      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~415      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~383      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~416      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~384      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~417      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~385      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~418      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~386      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~419      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~387      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~420      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~388      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~421      ; Stuck at GND due to stuck port clock_enable    ;
-; bancoReg:BANCO_REG|registrador~389      ; Stuck at GND due to stuck port clock_enable    ;
-; Total Number of Removed Registers = 994 ;                                                ;
+; Total Number of Removed Registers = 898 ;                                                ;
 +-----------------------------------------+------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                   ;
-+------------------------------------+--------------------------------+-------------------------------------------------------------------------+
-; Register name                      ; Reason for Removal             ; Registers Removed due to This Register                                  ;
-+------------------------------------+--------------------------------+-------------------------------------------------------------------------+
-; bancoReg:BANCO_REG|registrador~326 ; Stuck at GND                   ; bancoReg:BANCO_REG|registrador~327, bancoReg:BANCO_REG|registrador~328, ;
-;                                    ; due to stuck port clock_enable ; bancoReg:BANCO_REG|registrador~329, bancoReg:BANCO_REG|registrador~330, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~331, bancoReg:BANCO_REG|registrador~332, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~333, bancoReg:BANCO_REG|registrador~334, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~335, bancoReg:BANCO_REG|registrador~336, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~337, bancoReg:BANCO_REG|registrador~338, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~339, bancoReg:BANCO_REG|registrador~340, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~341, bancoReg:BANCO_REG|registrador~342, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~343, bancoReg:BANCO_REG|registrador~344, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~345, bancoReg:BANCO_REG|registrador~346, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~347, bancoReg:BANCO_REG|registrador~348, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~349, bancoReg:BANCO_REG|registrador~350, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~351, bancoReg:BANCO_REG|registrador~352, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~353, bancoReg:BANCO_REG|registrador~354, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~355, bancoReg:BANCO_REG|registrador~356, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~357, bancoReg:BANCO_REG|registrador~390, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~391, bancoReg:BANCO_REG|registrador~359, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~392, bancoReg:BANCO_REG|registrador~360, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~393, bancoReg:BANCO_REG|registrador~361, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~394, bancoReg:BANCO_REG|registrador~362, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~395, bancoReg:BANCO_REG|registrador~363, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~396, bancoReg:BANCO_REG|registrador~364, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~397, bancoReg:BANCO_REG|registrador~365, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~398, bancoReg:BANCO_REG|registrador~366, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~399, bancoReg:BANCO_REG|registrador~367, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~400, bancoReg:BANCO_REG|registrador~368, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~401, bancoReg:BANCO_REG|registrador~369, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~402, bancoReg:BANCO_REG|registrador~370, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~403, bancoReg:BANCO_REG|registrador~371, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~404, bancoReg:BANCO_REG|registrador~372, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~405, bancoReg:BANCO_REG|registrador~373, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~406, bancoReg:BANCO_REG|registrador~374, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~407, bancoReg:BANCO_REG|registrador~375, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~408, bancoReg:BANCO_REG|registrador~376, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~409, bancoReg:BANCO_REG|registrador~377, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~410, bancoReg:BANCO_REG|registrador~378, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~411, bancoReg:BANCO_REG|registrador~379, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~412, bancoReg:BANCO_REG|registrador~380, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~413, bancoReg:BANCO_REG|registrador~381, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~414, bancoReg:BANCO_REG|registrador~382, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~415, bancoReg:BANCO_REG|registrador~383, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~416, bancoReg:BANCO_REG|registrador~384, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~417, bancoReg:BANCO_REG|registrador~385, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~418, bancoReg:BANCO_REG|registrador~386, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~419, bancoReg:BANCO_REG|registrador~387, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~420, bancoReg:BANCO_REG|registrador~388, ;
-;                                    ;                                ; bancoReg:BANCO_REG|registrador~421, bancoReg:BANCO_REG|registrador~389  ;
-+------------------------------------+--------------------------------+-------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -1573,12 +1421,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2111  ;
+; Total registers                              ; 2207  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2080  ;
+; Number of registers using Clock Enable       ; 2176  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -2796,29 +2644,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 2111                        ;
-;     ENA               ; 2080                        ;
+; arriav_ff             ; 2207                        ;
+;     ENA               ; 2176                        ;
 ;     plain             ; 31                          ;
-; arriav_lcell_comb     ; 1277                        ;
+; arriav_lcell_comb     ; 1314                        ;
 ;     arith             ; 60                          ;
 ;         1 data inputs ; 30                          ;
 ;         2 data inputs ; 25                          ;
 ;         3 data inputs ; 2                           ;
 ;         4 data inputs ; 3                           ;
-;     extend            ; 3                           ;
-;         7 data inputs ; 3                           ;
-;     normal            ; 1214                        ;
+;     extend            ; 32                          ;
+;         7 data inputs ; 32                          ;
+;     normal            ; 1222                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 122                         ;
-;         3 data inputs ; 108                         ;
-;         4 data inputs ; 91                          ;
-;         5 data inputs ; 50                          ;
-;         6 data inputs ; 840                         ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 113                         ;
+;         3 data inputs ; 77                          ;
+;         4 data inputs ; 105                         ;
+;         5 data inputs ; 59                          ;
+;         6 data inputs ; 858                         ;
 ; boundary_port         ; 68                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 18.00                       ;
-; Average LUT depth     ; 6.42                        ;
+; Average LUT depth     ; 6.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2827,7 +2675,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:07     ;
 +----------------+--------------+
 
 
@@ -2837,7 +2685,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Nov 20 10:01:59 2022
+    Info: Processing started: Mon Nov 21 18:33:24 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Aula17 -c Aula17
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 3 design units, including 1 entities, in source file edgedetector.vhd
@@ -2905,7 +2753,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file decoder
     Info (12022): Found design unit 1: DecoderOpcode-arch_name File: C:/DesComp/Aulas_pos_P1/Aula_17/DecoderOpcode.vhd Line: 12
     Info (12023): Found entity 1: DecoderOpcode File: C:/DesComp/Aulas_pos_P1/Aula_17/DecoderOpcode.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file decoderfunct.vhd
-    Info (12022): Found design unit 1: DecoderFunct-arch_name File: C:/DesComp/Aulas_pos_P1/Aula_17/DecoderFunct.vhd Line: 12
+    Info (12022): Found design unit 1: DecoderFunct-arch_name File: C:/DesComp/Aulas_pos_P1/Aula_17/DecoderFunct.vhd Line: 13
     Info (12023): Found entity 1: DecoderFunct File: C:/DesComp/Aulas_pos_P1/Aula_17/DecoderFunct.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file logica_7seg.vhd
     Info (12022): Found design unit 1: logica_7Seg-arch_name File: C:/DesComp/Aulas_pos_P1/Aula_17/logica_7Seg.vhd Line: 20
@@ -2994,14 +2842,14 @@ Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: C:/DesComp/Aulas_pos_P1/Aula_17/Aula17.vhd Line: 18
     Warning (15610): No output dependent on input pin "SW[8]" File: C:/DesComp/Aulas_pos_P1/Aula_17/Aula17.vhd Line: 18
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/DesComp/Aulas_pos_P1/Aula_17/Aula17.vhd Line: 18
-Info (21057): Implemented 3391 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3549 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 3323 logic cells
+    Info (21061): Implemented 3481 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 52 warnings
-    Info: Peak virtual memory: 4861 megabytes
-    Info: Processing ended: Sun Nov 20 10:02:13 2022
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 4860 megabytes
+    Info: Processing ended: Mon Nov 21 18:33:46 2022
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:41
 
 

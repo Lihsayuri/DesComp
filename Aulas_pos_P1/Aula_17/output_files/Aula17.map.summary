@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sun Nov 20 10:02:13 2022
+Analysis & Synthesis Status : Successful - Mon Nov 21 18:33:46 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : Aula17
 Top-level Entity Name : Aula17
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 2111
+Total registers : 2207
 Total pins : 68
 Total virtual pins : 0
 Total block memory bits : 0
