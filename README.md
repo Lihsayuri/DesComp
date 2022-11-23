@@ -1,1 +1,1 @@
-# QUE VÁRZEA ESSE GITHUB AQUI EM, BAGUNÇA
+# Entregas e exercícios de aula da matéria de Design de Computadores.
