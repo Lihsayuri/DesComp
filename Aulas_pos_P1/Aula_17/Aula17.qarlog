@@ -1,0 +1,43 @@
+Quartus Prime Archive log --	C:/DesComp/Aulas_pos_P1/Aula_17/Aula17.qarlog
+
+Archive:	C:/DesComp/Aulas_pos_P1/Aula_17/Aula17.qar
+Date:		Mon Nov 21 19:58:31 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/DesComp/Aulas_pos_P1/Aula_17/Aula17.qpf
+C:/DesComp/Aulas_pos_P1/Aula_17/Aula17.qsf
+C:/DesComp/Aulas_pos_P1/Aula_17/Aula17.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/ControleULA.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/Decoder.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/DecoderFunct.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/DecoderOpcode.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/Toplevel.mif
+C:/DesComp/Aulas_pos_P1/Aula_17/ULA1a31bit.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/ULA32bit.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/ULASomaSub.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/Waveform.vwf
+C:/DesComp/Aulas_pos_P1/Aula_17/bancoReg.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/conversorHex7Seg.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/debugMonitor.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/edgeDetector.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/estendeSinal.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/flipflopGenerico.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/getHW.tcl
+C:/DesComp/Aulas_pos_P1/Aula_17/logica_7Seg.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/memoriaRAM.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/memoriaROM.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/muxGenerico2x1.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/muxGenerico4x1.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/probesSourcesDebug.qsys
+C:/DesComp/Aulas_pos_P1/Aula_17/probesSourcesDebug.sopcinfo
+C:/DesComp/Aulas_pos_P1/Aula_17/registradorGenerico.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/shiftSinal.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/somaConstante.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/somadorGenerico.vhd
+C:/DesComp/Aulas_pos_P1/Aula_17/somadorGenerico1bit.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 32 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
