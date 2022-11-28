@@ -1,0 +1,40 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL; --Soma (esta biblioteca =ieee)
+
+ENTITY WB IS
+    GENERIC (
+        larguraDados : NATURAL := 32;
+        larguraEnderecos : NATURAL := 32
+    );
+    PORT (
+        CLK : IN STD_LOGIC;
+        decoder_OUT : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
+        MEM_OUT_WB : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+        ADDRESS_WB : IN STD_LOGIC_VECTOR((larguraEnderecos - 1) DOWNTO 0);
+        PC_constante_WB : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+        imediato_WB : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+        MUX_DADO_BANCO_WB : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+    );
+END ENTITY;
+
+ARCHITECTURE write_back OF WB IS
+
+ALIAS SelMuxUlaMem : STD_LOGIC_VECTOR(1 DOWNTO 0) IS decoder_OUT(5 DOWNTO 4);
+    
+
+BEGIN
+
+		-- O port map completo do Mux que decide se o dado que vai para o banco de registradores
+	-- é o resultado da ULA ou o dado da memória:
+	MUX_ULA_MEM : ENTITY work.muxGenerico4x1 GENERIC MAP (larguraDados => larguraDados)
+		PORT MAP(
+			E0 => ADDRESS_WB,
+			E1 => MEM_OUT_WB,
+			E2 =>  PC_constante_WB,
+			E3	=> imediato_WB & x"0000",
+			SEL_MUX => SelMuxUlaMem,
+			MUX_OUT => MUX_DADO_BANCO_WB 			
+		);
+
+END ARCHITECTURE;
