@@ -16,54 +16,6 @@
 <TH>Output only Bidir</TH>
 </TR>
 <TR >
-<TD >monitor|probe0|in_system_sources_probes_0</TD>
-<TD >512</TD>
-<TD >1</TD>
-<TD >0</TD>
-<TD >1</TD>
-<TD >1</TD>
-<TD >1</TD>
-<TD >1</TD>
-<TD >1</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >monitor|probe0</TD>
-<TD >511</TD>
-<TD >114</TD>
-<TD >0</TD>
-<TD >114</TD>
-<TD >1</TD>
-<TD >114</TD>
-<TD >114</TD>
-<TD >114</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >monitor</TD>
-<TD >399</TD>
-<TD >4</TD>
-<TD >1</TD>
-<TD >4</TD>
-<TD >1</TD>
-<TD >4</TD>
-<TD >4</TD>
-<TD >4</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
 <TD >HEX_5|HEX</TD>
 <TD >7</TD>
 <TD >3</TD>
@@ -272,23 +224,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >RAM1</TD>
-<TD >67</TD>
-<TD >0</TD>
-<TD >26</TD>
-<TD >0</TD>
-<TD >32</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >MUX_ULA_MEM</TD>
+<TD >BLOCO_WB|MUX_ULA_MEM</TD>
 <TD >130</TD>
 <TD >16</TD>
 <TD >0</TD>
@@ -304,7 +240,39 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >MUXBEQ</TD>
+<TD >BLOCO_WB</TD>
+<TD >127</TD>
+<TD >0</TD>
+<TD >13</TD>
+<TD >0</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >BLOCO_MEM|RAM1</TD>
+<TD >67</TD>
+<TD >0</TD>
+<TD >26</TD>
+<TD >0</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >BLOCO_MEM|MUXBEQ</TD>
 <TD >65</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -320,7 +288,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >MUXULA_BEQBNE</TD>
+<TD >BLOCO_MEM|MUXULA_BEQBNE</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -336,7 +304,23 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA32|MuxOperacao</TD>
+<TD >BLOCO_MEM</TD>
+<TD >144</TD>
+<TD >0</TD>
+<TD >10</TD>
+<TD >0</TD>
+<TD >64</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >BLOCO_EX|ULA1|ULA32|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -352,7 +336,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA32|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA32|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -368,7 +352,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA32|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA32|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -384,7 +368,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA32</TD>
+<TD >BLOCO_EX|ULA1|ULA32</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -400,7 +384,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA31|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA31|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -416,7 +400,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA31|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA31|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -432,7 +416,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA31|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA31|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -448,7 +432,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA31</TD>
+<TD >BLOCO_EX|ULA1|ULA31</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -464,7 +448,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA30|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA30|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -480,7 +464,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA30|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA30|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -496,7 +480,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA30|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA30|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -512,7 +496,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA30</TD>
+<TD >BLOCO_EX|ULA1|ULA30</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -528,7 +512,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA29|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA29|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -544,7 +528,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA29|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA29|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -560,7 +544,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA29|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA29|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -576,7 +560,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA29</TD>
+<TD >BLOCO_EX|ULA1|ULA29</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -592,7 +576,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA28|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA28|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -608,7 +592,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA28|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA28|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -624,7 +608,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA28|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA28|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -640,7 +624,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA28</TD>
+<TD >BLOCO_EX|ULA1|ULA28</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -656,7 +640,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA27|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA27|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -672,7 +656,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA27|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA27|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -688,7 +672,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA27|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA27|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -704,7 +688,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA27</TD>
+<TD >BLOCO_EX|ULA1|ULA27</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -720,7 +704,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA26|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA26|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -736,7 +720,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA26|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA26|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -752,7 +736,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA26|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA26|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -768,7 +752,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA26</TD>
+<TD >BLOCO_EX|ULA1|ULA26</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -784,7 +768,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA25|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA25|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -800,7 +784,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA25|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA25|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -816,7 +800,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA25|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA25|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -832,7 +816,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA25</TD>
+<TD >BLOCO_EX|ULA1|ULA25</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -848,7 +832,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA24|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA24|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -864,7 +848,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA24|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA24|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -880,7 +864,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA24|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA24|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -896,7 +880,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA24</TD>
+<TD >BLOCO_EX|ULA1|ULA24</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -912,7 +896,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA23|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA23|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -928,7 +912,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA23|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA23|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -944,7 +928,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA23|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA23|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -960,7 +944,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA23</TD>
+<TD >BLOCO_EX|ULA1|ULA23</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -976,7 +960,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA22|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA22|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -992,7 +976,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA22|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA22|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1008,7 +992,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA22|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA22|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1024,7 +1008,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA22</TD>
+<TD >BLOCO_EX|ULA1|ULA22</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1040,7 +1024,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA21|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA21|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1056,7 +1040,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA21|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA21|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1072,7 +1056,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA21|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA21|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1088,7 +1072,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA21</TD>
+<TD >BLOCO_EX|ULA1|ULA21</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1104,7 +1088,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA20|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA20|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1120,7 +1104,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA20|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA20|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1136,7 +1120,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA20|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA20|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1152,7 +1136,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA20</TD>
+<TD >BLOCO_EX|ULA1|ULA20</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1168,7 +1152,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA19|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA19|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1184,7 +1168,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA19|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA19|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1200,7 +1184,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA19|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA19|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1216,7 +1200,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA19</TD>
+<TD >BLOCO_EX|ULA1|ULA19</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1232,7 +1216,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA18|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA18|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1248,7 +1232,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA18|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA18|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1264,7 +1248,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA18|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA18|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1280,7 +1264,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA18</TD>
+<TD >BLOCO_EX|ULA1|ULA18</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1296,7 +1280,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA17|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA17|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1312,7 +1296,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA17|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA17|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1328,7 +1312,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA17|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA17|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1344,7 +1328,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA17</TD>
+<TD >BLOCO_EX|ULA1|ULA17</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1360,7 +1344,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA16|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA16|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1376,7 +1360,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA16|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA16|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1392,7 +1376,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA16|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA16|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1408,7 +1392,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA16</TD>
+<TD >BLOCO_EX|ULA1|ULA16</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1424,7 +1408,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA15|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA15|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1440,7 +1424,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA15|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA15|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1456,7 +1440,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA15|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA15|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1472,7 +1456,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA15</TD>
+<TD >BLOCO_EX|ULA1|ULA15</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1488,7 +1472,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA14|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA14|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1504,7 +1488,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA14|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA14|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1520,7 +1504,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA14|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA14|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1536,7 +1520,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA14</TD>
+<TD >BLOCO_EX|ULA1|ULA14</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1552,7 +1536,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA13|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA13|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1568,7 +1552,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA13|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA13|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1584,7 +1568,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA13|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA13|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1600,7 +1584,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA13</TD>
+<TD >BLOCO_EX|ULA1|ULA13</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1616,7 +1600,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA12|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA12|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1632,7 +1616,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA12|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA12|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1648,7 +1632,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA12|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA12|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1664,7 +1648,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA12</TD>
+<TD >BLOCO_EX|ULA1|ULA12</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1680,7 +1664,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA11|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA11|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1696,7 +1680,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA11|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA11|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1712,7 +1696,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA11|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA11|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1728,7 +1712,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA11</TD>
+<TD >BLOCO_EX|ULA1|ULA11</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1744,7 +1728,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA10|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA10|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1760,7 +1744,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA10|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA10|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1776,7 +1760,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA10|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA10|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1792,7 +1776,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA10</TD>
+<TD >BLOCO_EX|ULA1|ULA10</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1808,7 +1792,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA9|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA9|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1824,7 +1808,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA9|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA9|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1840,7 +1824,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA9|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA9|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1856,7 +1840,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA9</TD>
+<TD >BLOCO_EX|ULA1|ULA9</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1872,7 +1856,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA8|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA8|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1888,7 +1872,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA8|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA8|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1904,7 +1888,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA8|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA8|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1920,7 +1904,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA8</TD>
+<TD >BLOCO_EX|ULA1|ULA8</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1936,7 +1920,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA7|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA7|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1952,7 +1936,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA7|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA7|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1968,7 +1952,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA7|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA7|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1984,7 +1968,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA7</TD>
+<TD >BLOCO_EX|ULA1|ULA7</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2000,7 +1984,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA6|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA6|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2016,7 +2000,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA6|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA6|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2032,7 +2016,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA6|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA6|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2048,7 +2032,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA6</TD>
+<TD >BLOCO_EX|ULA1|ULA6</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2064,7 +2048,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA5|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA5|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2080,7 +2064,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA5|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA5|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2096,7 +2080,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA5|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA5|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2112,7 +2096,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA5</TD>
+<TD >BLOCO_EX|ULA1|ULA5</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2128,7 +2112,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA4|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA4|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2144,7 +2128,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA4|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA4|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2160,7 +2144,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA4|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA4|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2176,7 +2160,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA4</TD>
+<TD >BLOCO_EX|ULA1|ULA4</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2192,7 +2176,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA3|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA3|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2208,7 +2192,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA3|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA3|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2224,7 +2208,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA3|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA3|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2240,7 +2224,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA3</TD>
+<TD >BLOCO_EX|ULA1|ULA3</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2256,7 +2240,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA2|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA2|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2272,7 +2256,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA2|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA2|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2288,7 +2272,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA2|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA2|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2304,7 +2288,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA2</TD>
+<TD >BLOCO_EX|ULA1|ULA2</TD>
 <TD >7</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2320,7 +2304,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA1|MuxOperacao</TD>
+<TD >BLOCO_EX|ULA1|ULA1|MuxOperacao</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2336,7 +2320,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA1|Somador</TD>
+<TD >BLOCO_EX|ULA1|ULA1|Somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2352,7 +2336,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA1|InverterOuNao</TD>
+<TD >BLOCO_EX|ULA1|ULA1|InverterOuNao</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2368,7 +2352,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1|ULA1</TD>
+<TD >BLOCO_EX|ULA1|ULA1</TD>
 <TD >7</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2384,7 +2368,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULA1</TD>
+<TD >BLOCO_EX|ULA1</TD>
 <TD >67</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2400,7 +2384,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >MUX_RT_IMEDIATO</TD>
+<TD >BLOCO_EX|MUX_RT_IMEDIATO</TD>
 <TD >65</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2416,23 +2400,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >MUX_RD_RT</TD>
-<TD >22</TD>
-<TD >10</TD>
-<TD >0</TD>
-<TD >10</TD>
-<TD >5</TD>
-<TD >10</TD>
-<TD >10</TD>
-<TD >10</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >Somador2</TD>
+<TD >BLOCO_EX|Somador2</TD>
 <TD >64</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2448,7 +2416,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ShiftSinal</TD>
+<TD >BLOCO_EX|ShiftSinal</TD>
 <TD >32</TD>
 <TD >2</TD>
 <TD >2</TD>
@@ -2464,7 +2432,23 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >MUX_ORI_ANDI_IMEDIATO</TD>
+<TD >BLOCO_EX</TD>
+<TD >146</TD>
+<TD >0</TD>
+<TD >14</TD>
+<TD >0</TD>
+<TD >129</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >BLOCO_ID|MUX_ORI_ANDI_IMEDIATO</TD>
 <TD >65</TD>
 <TD >16</TD>
 <TD >0</TD>
@@ -2480,7 +2464,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >BANCO_REG</TD>
+<TD >BLOCO_ID|BANCO_REG</TD>
 <TD >49</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2496,7 +2480,23 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >MUX_FUNCT_OPCODE</TD>
+<TD >BLOCO_ID|MUX_RD_RT</TD>
+<TD >22</TD>
+<TD >10</TD>
+<TD >0</TD>
+<TD >10</TD>
+<TD >5</TD>
+<TD >10</TD>
+<TD >10</TD>
+<TD >10</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >BLOCO_ID|MUX_FUNCT_OPCODE</TD>
 <TD >7</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2512,7 +2512,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >decoderFUNCT</TD>
+<TD >BLOCO_ID|decoderFUNCT</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2528,7 +2528,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >decoderOPCODE</TD>
+<TD >BLOCO_ID|decoderOPCODE</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2544,10 +2544,10 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >decoderInstru1</TD>
-<TD >14</TD>
+<TD >BLOCO_ID|decoderInstru1</TD>
+<TD >12</TD>
 <TD >0</TD>
-<TD >2</TD>
+<TD >0</TD>
 <TD >0</TD>
 <TD >14</TD>
 <TD >0</TD>
@@ -2560,7 +2560,23 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ROM1</TD>
+<TD >BLOCO_ID</TD>
+<TD >97</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >145</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >BLOCO_IF|ROM1</TD>
 <TD >33</TD>
 <TD >0</TD>
 <TD >27</TD>
@@ -2576,7 +2592,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >Somador1</TD>
+<TD >BLOCO_IF|Somador1</TD>
 <TD >32</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2592,7 +2608,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >PC_REG</TD>
+<TD >BLOCO_IF|PC_REG</TD>
 <TD >35</TD>
 <TD >2</TD>
 <TD >0</TD>
@@ -2608,7 +2624,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >MUX_JR</TD>
+<TD >BLOCO_IF|MUX_JR</TD>
 <TD >65</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2624,7 +2640,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >MUX_NEXT_PC_BEQ_JMP</TD>
+<TD >BLOCO_IF|MUX_NEXT_PC_BEQ_JMP</TD>
 <TD >65</TD>
 <TD >2</TD>
 <TD >0</TD>
@@ -2633,6 +2649,22 @@
 <TD >2</TD>
 <TD >2</TD>
 <TD >2</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >BLOCO_IF</TD>
+<TD >79</TD>
+<TD >0</TD>
+<TD >12</TD>
+<TD >0</TD>
+<TD >96</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>

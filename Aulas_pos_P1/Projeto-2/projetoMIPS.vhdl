@@ -53,63 +53,39 @@ END ENTITY;
 ARCHITECTURE arquitetura OF projetoMIPS IS
 
 	SIGNAL CLK : STD_LOGIC;
-	SIGNAL PC_constante : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL Prox_PC : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL MuxBeqOut : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL PC_OUT : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL ROM_OUT : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL MUX_OUT : STD_LOGIC_VECTOR(4 DOWNTO 0);
-	SIGNAL Rs_ULA_A : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL Rt_OUT : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL MUX_ULA_B : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL MUX_DADO_BANCO : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL imediatoEstendido : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL imediatoEstendidoShiftado : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL ULA_OUT : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL MEM_OUT : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL ULA_FLAG : STD_LOGIC;
-	SIGNAL FLAG_EQ_OUT : STD_LOGIC;
-	SIGNAL somador_OUT : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
+
+	-- sinais de saida do bloco do Fetch:
+	SIGNAL PC_OUT : STD_LOGIC_VECTOR((larguraEnderecos - 1) DOWNTO 0);
+	SIGNAL somador_constante_OUT :STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+	SIGNAL ROM_OUT : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+
+	-- sinais de saida do bloco do Decode:
+	SIGNAL somador2_constante_OUT_ID : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+	SIGNAL RS_OUT : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+	SIGNAL RT_OUT : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+	SIGNAL imediato_estendido : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
 	SIGNAL decoder_OUT : STD_LOGIC_VECTOR(13 DOWNTO 0);
-	SIGNAL MUX_RTRD_OUT : STD_LOGIC_VECTOR(4 DOWNTO 0);
-	SIGNAL MUX_PROX_PC : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL MUX_BEQ_JMP_OUT : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL CONCAT_JMP : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-	SIGNAL decoderFunct_OUT : STD_LOGIC_VECTOR(2 DOWNTO 0);
-	SIGNAL decoderOpcode_OUT : STD_LOGIC_VECTOR(2 DOWNTO 0);
-	SIGNAL Ula_ctrl : STD_LOGIC_VECTOR(2 DOWNTO 0);
+	SIGNAL ULA_ctrl : STD_LOGIC_VECTOR(2 DOWNTO 0); 
+
+	-- sinais de saida do bloco do Execute:
+	SIGNAL somador_BEQ_OUT : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+	SIGNAL ULA_OUT : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+	SIGNAL ULA_FLAG : STD_LOGIC;
+	SIGNAL RT_OUT_2 : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+	SIGNAL PC_constante : STD_LOGIC_VECTOR((larguraEnderecos - 1) DOWNTO 0);
+
+	-- sinais de saída do bloco Memory Access:
+	SIGNAL MuxBeqOut : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+	SIGNAL MEM_OUT : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+
+	-- sinais de saida do bloco Write Back:
+	SIGNAL MUX_DADO_BANCO : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+
+    ALIAS imediato : STD_LOGIC_VECTOR(15 DOWNTO 0) IS ROM_OUT(15 DOWNTO 0);
 	SIGNAL saida_LED_HEX : STD_LOGIC_VECTOR(larguraDados-1 DOWNTO 0);
-	SIGNAL imediato_tipoI : STD_LOGIC_VECTOR(larguraDados-1 DOWNTO 0);
-	SIGNAL imediato_ORI_ANDI : STD_LOGIC_VECTOR(larguraDados-1 DOWNTO 0); 
-	SIGNAL muxULA_BEQ_BNE_OUT : STD_LOGIC;
 
-	ALIAS Rt_RAM : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0) IS Rt_OUT;
-	ALIAS ROM_IN : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0) IS PC_OUT(larguraDados - 1 DOWNTO 0);
-	ALIAS RsAddr : STD_LOGIC_VECTOR(4 DOWNTO 0) IS ROM_OUT(25 DOWNTO 21);
-	ALIAS RtAddr : STD_LOGIC_VECTOR(4 DOWNTO 0) IS ROM_OUT(20 DOWNTO 16);
-	ALIAS RdAddr : STD_LOGIC_VECTOR(4 DOWNTO 0) IS ROM_OUT(15 DOWNTO 11);
-
-	ALIAS imediato : STD_LOGIC_VECTOR(15 DOWNTO 0) IS ROM_OUT(15 DOWNTO 0);
-	ALIAS imediatoJmp : STD_LOGIC_VECTOR(25 DOWNTO 0) IS ROM_OUT(25 DOWNTO 0);
-	ALIAS MEM_ADD : STD_LOGIC_VECTOR(31 DOWNTO 0) IS ULA_OUT(31 DOWNTO 0);
-	ALIAS FUNCT_SIGNAL: STD_LOGIC_VECTOR(5 DOWNTO 0) IS ROM_OUT(5 DOWNTO 0);
-	ALIAS OPCODE_SIGNAL: STD_LOGIC_VECTOR(5 DOWNTO 0) IS ROM_OUT(31 DOWNTO 26);
-	ALIAS SelMuxFlag : STD_LOGIC IS FLAG_EQ_OUT;
 
 -- JR|SelMuxBEQJmp|muxRTRD|ORI_ANDI|habEscritaReg|muxRTImediato|TipoR|muxULAMEM|BEQ|Leitura|Escrita
-
-    ALIAS JR : STD_LOGIC IS decoder_OUT(13);
-	ALIAS SelMuxJump : STD_LOGIC IS decoder_OUT(12);
-	ALIAS SelMuxRtRd : STD_LOGIC_VECTOR(1 DOWNTO 0) IS decoder_OUT(11 DOWNTO 10);
-	ALIAS ORI_ANDI : STD_LOGIC IS decoder_OUT(9);
-	ALIAS write_REG : STD_LOGIC IS decoder_OUT(8);
-	ALIAS SelImediatoReg : STD_LOGIC IS decoder_OUT(7);
-	ALIAS TIPOR : STD_LOGIC IS decoder_OUT(6);
-	ALIAS SelMuxUlaMem : STD_LOGIC_VECTOR(1 DOWNTO 0) IS decoder_OUT(5 DOWNTO 4);
-	ALIAS BEQ : STD_LOGIC IS decoder_OUT(3);
-	ALIAS BNE: STD_LOGIC IS decoder_OUT(2);
-	ALIAS read_RAM : STD_LOGIC IS decoder_OUT(1);
-	ALIAS write_RAM : STD_LOGIC IS decoder_OUT(0);
 
 BEGIN
 	gravar:  if simulacao generate
@@ -121,210 +97,83 @@ BEGIN
 							saida    => CLK
 							);
 	end generate;
-	
 
-	CONCAT_JMP <=  PC_constante(31 DOWNTO 28) & imediatoJmp & "00";
-
-	-- O port map completo do Mux que decide o Jump ou fluxo de dados normal para o PC:
-	MUX_NEXT_PC_BEQ_JMP : ENTITY work.muxGenerico2x1 GENERIC MAP (larguraDados => larguraDados)
-		PORT MAP(
-			entradaA_MUX => MuxBeqOut,
-			entradaB_MUX => CONCAT_JMP, 
-			seletor_MUX => SelMuxJump, 
-			saida_MUX => MUX_BEQ_JMP_OUT
-		);
-
-
-	-- O port map completo do Mux que decide o Jump ou fluxo de dados normal para o PC:
-	MUX_JR : ENTITY work.muxGenerico2x1 GENERIC MAP (larguraDados => larguraDados)
-		PORT MAP(
-			entradaA_MUX => MUX_BEQ_JMP_OUT,
-			entradaB_MUX => Rs_ULA_A, 
-			seletor_MUX => JR, 
-			saida_MUX => MUX_PROX_PC
-		);
-
-	-- Port map do registrador do PC
-	PC_REG : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => larguraEnderecos)
-		PORT MAP(
-			DIN => MUX_PROX_PC,
-			DOUT => PC_OUT,
-			ENABLE => '1',
-			CLK => CLK,
-			RST => '0'
-		);
-
-	-- Port map do Somador do PC
-	Somador1 : ENTITY work.somaConstante GENERIC MAP (larguraDados => larguraEnderecos, constante => 4)
-		PORT MAP(entrada => PC_OUT, saida => PC_constante);
-
-
-	ROM1 : ENTITY work.memoriaROM GENERIC MAP (dataWidth => larguraDados, addrWidth => larguraEnderecos, memoryAddrWidth => 6)
-		PORT MAP(
-			clk => CLK,
-			Endereco => ROM_IN,
-			Dado => ROM_OUT
-		);
-
-
-	decoderInstru1 : ENTITY work.Decoder
-		PORT MAP(
-			OPCODE => OPCODE_SIGNAL,
-			FUNCT  => FUNCT_SIGNAL,
-			OPERACAO => ULA_ctrl(1 downto 0),
-			OUTPUT => decoder_OUT
-	);
-
-
-	
-	decoderOPCODE : ENTITY work.DecoderOpcode
-		PORT MAP(
-			OPCODE => OPCODE_SIGNAL,
-			OUTPUT_OP => decoderOpcode_OUT
-	);
-
-	
-	decoderFUNCT : ENTITY work.DecoderFunct
-		PORT MAP(
-			FUNCT => FUNCT_SIGNAL,
-			OUTPUT_FUN => decoderFunct_OUT
-	);
-
-
-	MUX_FUNCT_OPCODE : ENTITY work.muxGenerico2x1 GENERIC MAP (larguraDados => 3)
+	BLOCO_IF: ENTITY work.IFF GENERIC MAP (larguraDados => larguraDados)
 	PORT MAP(
-		entradaA_MUX => decoderOpcode_OUT,
-		entradaB_MUX => decoderFunct_OUT,
-		seletor_MUX => TIPOR,
-		saida_MUX => ULA_ctrl
+		-- entradas do bloco:
+		CLK => CLK,	
+		decoder_OUT => decoder_OUT, -- importante para pontos de controle
+		MuxBeqOut => MuxBeqOut, -- provém da MEM
+		Rs_ULA_A => RS_OUT, -- provém do EX (banco de registradores)
+		-- saidas do bloco:
+		PC_OUT_IF => PC_OUT, -- necessário para monitoramento do PC pelo display 
+		somador_constante_OUT_IF => somador_constante_OUT, -- vai ser passado até a etapa EX
+		ROM_OUT_IF => ROM_OUT -- saída da ROM que vai ser utilizada na etapa ID
 	);
 
-	BANCO_REG : ENTITY work.bancoReg GENERIC MAP (larguraDados => larguraDados)
-		PORT MAP(
-			clk => CLK,
-			enderecoA => RsAddr,
-			enderecoB => RtAddr,
-			enderecoC => MUX_RTRD_OUT,
-			dadoEscritaC => MUX_DADO_BANCO,
-			escreveC => write_REG,
-			saidaA => Rs_ULA_A,
-			saidaB => Rt_OUT
-		);
+	BLOCO_ID: ENTITY work.ID GENERIC MAP (larguraDados => larguraDados)
+	PORT MAP(
+		-- entradas do bloco:
+		CLK => CLK,
+        somador_constante_OUT_IF => somador_constante_OUT, -- provém do IF
+        MUX_DADO_BANCO => MUX_DADO_BANCO, -- provém do WB
+        ROM_OUT_ID => ROM_OUT, -- probém do IF
+		-- saidas do bloco:
+        somador_constante_OUT_ID => somador2_constante_OUT_ID, -- esse fio apenas passou pela etapa
+        RS_OUT_ID => RS_OUT, -- necessário para a etapa EX
+        RT_OUT_ID  => RT_OUT, -- necessário para a etapa EX
+        imediato_estendido_ID => imediato_estendido,  -- necessário para a etapa EX
+        decoder_OUT_ID  => decoder_OUT, -- necessário para todas as etapas: sinais de controle
+		operacao_ULA_ID => ULA_ctrl -- necessário para a etapa EX (ULA)
+	);
+	
+	BLOCO_EX: ENTITY work.EX GENERIC MAP (larguraDados => larguraDados)
+	PORT MAP(
+		-- entradas do bloco:
+		CLK => CLK,
+		decoder_OUT => decoder_OUT, -- provém do ID
+        somador_constante_OUT_ID=> somador2_constante_OUT_ID, -- provém do ID
+        RS_OUT_EX => RS_OUT, -- provém do ID
+        RT_OUT_EX => RT_OUT, -- provém do ID
+        imediato_estendido_EX => imediato_estendido, -- provém do ID
+		ULA_Op => ULA_ctrl, -- provém do ID
+		-- saidas do bloco:
+        somador_BEQ_OUT => somador_BEQ_OUT,
+        ULA_result => ULA_OUT,
+        ULA_FLAG_ZERO => ULA_FLAG,
+        RT_OUT_EXX => RT_OUT_2,
+		PC_constante_EX => PC_constante
+	);
 		
-		
-	imediato_tipoI <= (larguraDados - 1 DOWNTO 16 => imediato(15)) & imediato;
-	imediato_ORI_ANDI <= "0000000000000000"  & imediato;
-	
-	MUX_ORI_ANDI_IMEDIATO : ENTITY work.muxGenerico2x1 GENERIC MAP (larguraDados => larguraDados)
+
+	BLOCO_MEM: ENTITY work.MEM GENERIC MAP (larguraDados => larguraDados)
 	PORT MAP(
-		entradaA_MUX => imediato_tipoI,
-		entradaB_MUX => imediato_ORI_ANDI,
-		seletor_MUX => ORI_ANDI,
-		saida_MUX => imediatoEstendido
-	);
-	
---
---	EstendeSinal : ENTITY work.estendeSinal GENERIC MAP (larguraDadosEntrada => 16, larguraDadosSaida => larguraDados)
---		PORT MAP(
---			entrada => imediato,
---			saida => imediatoEstendido
---		);
-
-	ShiftSinal : ENTITY work.shiftSinal GENERIC MAP (larguraDados => larguraDados, deslocar => 2)
-		PORT MAP(
-			entrada => imediatoEstendido,
-			saida => imediatoEstendidoShiftado
-		);
-
-	Somador2 : ENTITY work.somadorGenerico GENERIC MAP (larguraDados => larguraEnderecos)
-		PORT MAP(
-			entradaA => PC_constante,
-			entradaB => imediatoEstendidoShiftado,
-			saida => somador_OUT
-		);
-
-	-- O port map completo do Muxque decide se o que entra em RD é RT ou RD	
-	-- MUX_RD_RT : ENTITY work.muxGenerico2x1 GENERIC MAP (larguraDados => 5)
-	-- 	PORT MAP(
-	-- 		entradaA_MUX => RtAddr,
-	-- 		entradaB_MUX => RdAddr,
-	-- 		seletor_MUX => SelMuxRtRd,
-	-- 		saida_MUX => MUX_RTRD_OUT
-	-- 	);
-
-	-- é o resultado da ULA ou o dado da memória:
-	MUX_RD_RT : ENTITY work.muxGenerico4x1 GENERIC MAP (larguraDados => 5)
-		PORT MAP(
-			E0 => RtAddr,
-			E1 => RdAddr,
-			E2 =>  "11111",
-			E3	=> "00000",
-			SEL_MUX => SelMuxRtRd,
-			MUX_OUT => MUX_RTRD_OUT 			
+		-- entradas do bloco:
+		CLK => CLK, 
+        decoder_OUT => decoder_OUT, -- provém do ID
+        somador_BEQ_OUT_MEM => somador_BEQ_OUT, -- provém do EX
+        ULA_result_MEM => ULA_OUT, -- provém do EX
+        ULA_FLAG_ZERO_MEM => ULA_FLAG, -- provém do EX
+        RT_OUT_MEM => RT_OUT_2, -- provém do EX
+		PC_constante => PC_constante, -- provém do EX
+		-- saidas do bloco:
+        MEM_OUT_MEM => MEM_OUT,  
+		MuxBeqOutMEM => MuxBeqOut
+        -- ADDRESS => ADDRESS,
 	);
 
-	-- O port map completo do Mux que decide a entrada B da ULA:						
-	MUX_RT_IMEDIATO : ENTITY work.muxGenerico2x1 GENERIC MAP (larguraDados => larguraDados)
-		PORT MAP(
-			entradaA_MUX => Rt_OUT,
-			entradaB_MUX => imediatoEstendido,
-			seletor_MUX => SelImediatoReg,
-			saida_MUX => MUX_ULA_B
-		);
-
-
-	ULA1 : ENTITY work.ULASomaSub GENERIC MAP(larguraDados => larguraDados)
-		PORT MAP(
-			entradaA => Rs_ULA_A,
-			entradaB => MUX_ULA_B,
-			seletor => ULA_ctrl(1 downto 0),
-			inverteB => ULA_ctrl(2),
-			saida => ULA_OUT,
-			flagZero => ULA_FLAG
-		);
-
-	MUXULA_BEQBNE : ENTITY work.muxGenerico2x1 GENERIC MAP (larguraDados => 1)
+	BLOCO_WB: ENTITY work.WB GENERIC MAP (larguraDados => larguraDados)
 	PORT MAP(
-		entradaA_MUX(0) => NOT(ULA_FLAG),
-		entradaB_MUX(0) => ULA_FLAG,
-		seletor_MUX => BEQ,
-		saida_MUX(0) => muxULA_BEQ_BNE_OUT
+		-- entradas do bloco:
+		CLK => CLK,
+		decoder_OUT => decoder_OUT, -- provém do ID
+		MEM_OUT_WB => MEM_OUT, -- provém do MEM
+		ADDRESS_WB => ULA_OUT, -- provém do EX
+		PC_constante_WB => PC_constante, -- provém do EX
+		imediato_WB => imediato,
+		-- saida do bloco:
+		MUX_DADO_BANCO_WB => MUX_DADO_BANCO
 	);
-
-
-	-- O port map completo do Mux que decide se o vai pro PC é a contagem norma ou jump por BEQ
-	MUXBEQ : ENTITY work.muxGenerico2x1 GENERIC MAP (larguraDados => larguraDados)
-	PORT MAP(
-		entradaA_MUX => PC_constante,
-		entradaB_MUX => somador_OUT,
-		seletor_MUX => muxULA_BEQ_BNE_OUT AND (BEQ OR BNE),
-		saida_MUX => MuxBeqOut
-	);
-
-
-		-- O port map completo do Mux que decide se o dado que vai para o banco de registradores
-	-- é o resultado da ULA ou o dado da memória:
-	MUX_ULA_MEM : ENTITY work.muxGenerico4x1 GENERIC MAP (larguraDados => larguraDados)
-		PORT MAP(
-			E0 => ULA_OUT,
-			E1 => MEM_OUT,
-			E2 =>  PC_constante,
-			E3	=> imediato & x"0000",
-			SEL_MUX => SelMuxUlaMem,
-			MUX_OUT => MUX_DADO_BANCO 			
-		);
-
-		
-	RAM1 : ENTITY work.memoriaRAM GENERIC MAP (dataWidth => larguraDados, addrWidth => larguraDados, memoryAddrWidth => 6)
-	PORT MAP(
-		clk => CLK,
-		Endereco => MEM_ADD,
-		Dado_in => Rt_RAM,
-		Dado_out => MEM_OUT,
-		we => write_RAM,
-		re => read_RAM
-	);
-
 
 	MUX_ULA_PC: ENTITY work.muxGenerico2x1 GENERIC MAP (larguraDados => larguraDados)
 	PORT MAP(
@@ -379,31 +228,31 @@ BEGIN
 	LEDR(7 downto 0) <= saida_LED_HEX(31 downto 24);
 		
 
-	monitor: work.debugMonitor
-	port map(PC => PC_OUT,                         -- Saida o PC: entrada de endereco da ROM
-		  Instrucao => ROM_OUT,   -- Saida de dados da ROM
-		  LeituraRS => Rs_ULA_A,        -- Saida do Banco de Registradores: leitura de RS
-		  LeituraRT => Rt_OUT,        -- Saida do Banco de Registradores: leitura de RT
-		  EscritaRD => MUX_DADO_BANCO,      -- Entrada do Banco de Registradores (C)
-		  EntradaB_ULA => MUX_ULA_B,             -- Entrada B da ULA: saida do MUX RT/ImediatoEstendido
-		  imediatoEstendido => imediatoEstendido,  -- ImediatoEstendido: entrada do MUX RT/ImediatoEstendido
-		  saidaULA => ULA_OUT,        -- Saida da ULA: entrada do MUX ULA/MEM
-		  dadoLido_RAM => MEM_OUT,     -- Saida da RAM: entrada do MUX ULA/MEM
-		  proxPC => MUX_PROX_PC,    -- Entrada do PC ou saida do MUX ProxPC MUX_PROX_PC
-		  MUXProxPCEntradaA => MuxBeqOut,   -- Entrada do MUX ProxPC: vinda MUX PC+4/BEQ
-		  MUXProxPCEntradaB => CONCAT_JMP,   -- Entrada do MUX ProxPC: vinda da montagem do endereco de Jump
-		  ULActrl => '0' & Ula_ctrl,                      -- Entrada do ULActrl na ULA: pode ser necessario concatenar 1 bit '0': '0' & ULActrl
-		  zeroFLAG => ULA_FLAG,                        -- Saida do Flag da ULA e entrada da porta AND
-		  escreveC => write_REG,       -- Entrada do Banco de Registradores: sinal de habilita escrita no terceiro endereco (RD ou RT)
-		  MUXPCBEQJUMP => SelMuxJump,          -- Selecao do MUX do proxPC: vem da unidade de controle
-		  MUXRTRD => SelMuxRtRd,                     -- Selecao do MUX RT/RD: vem da unidade de controle
-		  MUXRTIMED => SelImediatoReg,                 -- Selecao do MUX RT/Imediato: vem da unidade de controle
-		  MUXULAMEM => SelMuxUlaMem,                 -- Selecao do MUX ULA/MEM: vem da unidade de controle
-		  iBEQ => BEQ,                              -- Indicador de instrucao BEQ: vem da unidade de controle
-		  WR => write_RAM,                    -- Habilita escrita na RAM: vem da unidade de controle
-		  RD => read_RAM,                    -- Habilita leitura da RAM: vem da unidade de controle
-		  --Output
-		  clkTCL => open);                       -- Sem uso: conectar com open
+--	monitor: work.debugMonitor
+--	port map(PC => PC_OUT,                         -- Saida o PC: entrada de endereco da ROM
+--		  Instrucao => ROM_OUT,   -- Saida de dados da ROM
+--		  LeituraRS => Rs_ULA_A,        -- Saida do Banco de Registradores: leitura de RS
+--		  LeituraRT => Rt_OUT,        -- Saida do Banco de Registradores: leitura de RT
+--		  EscritaRD => MUX_DADO_BANCO,      -- Entrada do Banco de Registradores (C)
+--		  EntradaB_ULA => MUX_ULA_B,             -- Entrada B da ULA: saida do MUX RT/ImediatoEstendido
+--		  imediatoEstendido => imediatoEstendido,  -- ImediatoEstendido: entrada do MUX RT/ImediatoEstendido
+--		  saidaULA => ULA_OUT,        -- Saida da ULA: entrada do MUX ULA/MEM
+--		  dadoLido_RAM => MEM_OUT,     -- Saida da RAM: entrada do MUX ULA/MEM
+--		  proxPC => MUX_PROX_PC,    -- Entrada do PC ou saida do MUX ProxPC MUX_PROX_PC
+--		  MUXProxPCEntradaA => MuxBeqOut,   -- Entrada do MUX ProxPC: vinda MUX PC+4/BEQ
+--		  MUXProxPCEntradaB => CONCAT_JMP,   -- Entrada do MUX ProxPC: vinda da montagem do endereco de Jump
+--		  ULActrl => '0' & Ula_ctrl,                      -- Entrada do ULActrl na ULA: pode ser necessario concatenar 1 bit '0': '0' & ULActrl
+--		  zeroFLAG => ULA_FLAG,                        -- Saida do Flag da ULA e entrada da porta AND
+--		  escreveC => write_REG,       -- Entrada do Banco de Registradores: sinal de habilita escrita no terceiro endereco (RD ou RT)
+--		  MUXPCBEQJUMP => SelMuxJump,          -- Selecao do MUX do proxPC: vem da unidade de controle
+--		  MUXRTRD => SelMuxRtRd,                     -- Selecao do MUX RT/RD: vem da unidade de controle
+--		  MUXRTIMED => SelImediatoReg,                 -- Selecao do MUX RT/Imediato: vem da unidade de controle
+--		  MUXULAMEM => SelMuxUlaMem,                 -- Selecao do MUX ULA/MEM: vem da unidade de controle
+--		  iBEQ => BEQ,                              -- Indicador de instrucao BEQ: vem da unidade de controle
+--		  WR => write_RAM,                    -- Habilita escrita na RAM: vem da unidade de controle
+--		  RD => read_RAM,                    -- Habilita leitura da RAM: vem da unidade de controle
+--		  --Output
+--		  clkTCL => open);                       -- Sem uso: conectar com open
 
 
 	-- Instru_opcode <= ROM_OUT(31 DOWNTO 26);

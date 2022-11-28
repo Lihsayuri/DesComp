@@ -1,0 +1,96 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL; --Soma (esta biblioteca =ieee)
+
+ENTITY IFF IS
+    GENERIC (
+        larguraDados : NATURAL := 32;
+        larguraEnderecos : NATURAL := 32
+    );
+    PORT (
+        -- o que entra: muxbeqout| decoder| Rs_ULA_A. O que sai: ROM_OUT, somador_4_out, PC_OUT (para HEXs)  
+        CLK : IN STD_LOGIC;
+        decoder_OUT : IN STD_LOGIC_VECTOR(13 DOWNTO 0); 
+        MuxBeqOut : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0); 
+        Rs_ULA_A : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+        PC_OUT_IF : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0); 
+        somador_constante_OUT_IF : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+        ROM_OUT_IF: OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+        
+    );
+END ENTITY;
+
+ARCHITECTURE fetch OF IFF IS
+
+    -- sinais e aliases do MUX_NEXT_PC_BEQ_JMP:
+    SIGNAL CONCAT_JMP : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
+    ALIAS SelMuxJump : STD_LOGIC IS decoder_OUT(12);
+    SIGNAL MUX_BEQ_JMP_OUT : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
+
+    -- sinais e aliases do MUX_JR:
+    ALIAS JR : STD_LOGIC IS decoder_OUT(13);
+    SIGNAL MUX_PROX_PC : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
+
+    -- sinais do PC_REG:
+    SIGNAL PC_OUT : STD_LOGIC_VECTOR((larguraEnderecos - 1) DOWNTO 0);
+
+    -- sinais do somador:
+    SIGNAL PC_constante : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
+
+    -- sinais e aliases da Rom:
+    ALIAS ROM_IN : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0) IS PC_OUT(larguraDados - 1 DOWNTO 0);
+    SIGNAL ROM_OUT : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
+
+    -- sinais necessários para formar instuções
+    ALIAS imediatoJmp : STD_LOGIC_VECTOR(25 DOWNTO 0) IS ROM_OUT(25 DOWNTO 0);
+
+BEGIN
+
+    CONCAT_JMP <=  PC_constante(31 DOWNTO 28) & imediatoJmp & "00";
+
+    -- O port map completo do Mux que decide se vai ter Jump ou fluxo de dados normal|BEQ:
+    MUX_NEXT_PC_BEQ_JMP : ENTITY work.muxGenerico2x1 GENERIC MAP (larguraDados => larguraDados)
+        PORT MAP(
+            entradaA_MUX => MuxBeqOut, --entra na etapa, sendo proveniente da MEM
+            entradaB_MUX => CONCAT_JMP, -- junta os 4 bits mais significativos que vem do PC, imediato do JMP e 00 
+            seletor_MUX => SelMuxJump,  -- vem do decoder
+            saida_MUX => MUX_BEQ_JMP_OUT
+        );
+
+
+    -- O port map completo do Mux que decide o JAL ou fluxo de dados normal| BEQ| Jmp para o PC:
+    MUX_JR : ENTITY work.muxGenerico2x1 GENERIC MAP (larguraDados => larguraDados)
+        PORT MAP(
+            entradaA_MUX => MUX_BEQ_JMP_OUT, 
+            entradaB_MUX => Rs_ULA_A, -- entra na etapa, sendo proveniente de EX
+            seletor_MUX => JR,  -- vem do decoder 
+            saida_MUX => MUX_PROX_PC
+        );
+
+    -- Port map do registrador do PC
+    PC_REG : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => larguraEnderecos)
+        PORT MAP(
+            DIN => MUX_PROX_PC,
+            DOUT => PC_OUT, 
+            ENABLE => '1',
+            CLK => CLK,
+            RST => '0'
+        );
+
+    -- Port map do Somador do PC
+    Somador1 : ENTITY work.somaConstante GENERIC MAP (larguraDados => larguraEnderecos, constante => 4)
+        PORT MAP(entrada => PC_OUT, saida => PC_constante);
+
+
+    ROM1 : ENTITY work.memoriaROM GENERIC MAP (dataWidth => larguraDados, addrWidth => larguraEnderecos, memoryAddrWidth => 6)
+        PORT MAP(
+            clk => CLK,
+            Endereco => ROM_IN,
+            Dado => ROM_OUT
+        );
+
+    somador_constante_OUT <= PC_constante;
+    ROM_OUT_IF <= ROM_OUT; 
+    PC_OUT_IF <= PC_OUT;
+
+END ARCHITECTURE;
