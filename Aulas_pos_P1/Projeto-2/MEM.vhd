@@ -12,6 +12,7 @@ ENTITY MEM IS
         -- o que sai: MEM_OUT, ULA_result (nao precisa pois já tem do EX), MuxBeqOutMEM(IF)
         -- ENTRADAS:
         CLK : IN STD_LOGIC;
+        somador_constante_EX : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         MUX_RTRD_OUT_EX: IN STD_LOGIC_VECTOR(4 DOWNTO 0);
         decoder_OUT_EX : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
         somador_BEQ_OUT_MEM : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
@@ -21,8 +22,9 @@ ENTITY MEM IS
         PC_constante : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         imediato_LUI_EX : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         --- SAIDAS:
+        somador_constante_MEM : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         MEM_OUT_MEM : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
-        PC_constante_OUT : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+        -- PC_constante_OUT : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         muxULA_BEQ_BNE_OUT : OUT STD_LOGIC;
         imediato_LUI_MEM : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         decoder_OUT_MEM : OUT STD_LOGIC_VECTOR(13 DOWNTO 0);
@@ -74,5 +76,6 @@ BEGIN
     imediato_LUI_MEM <= imediato_LUI_EX;
     decoder_OUT_MEM <= decoder_OUT_EX;
     MUX_RTRD_OUT_MEM <= MUX_RTRD_OUT_EX;
+    somador_constante_MEM <= somador_constante_EX;
 
 END ARCHITECTURE;

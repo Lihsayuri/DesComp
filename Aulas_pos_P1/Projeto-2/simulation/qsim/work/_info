@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dC:/DesComp/Aulas_pos_P1/Projeto-2/simulation/qsim
 Eprojetomips
-Z1 w1670342133
+Z1 w1670348547
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,19 +20,19 @@ Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z10 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 109
+!i122 133
 R0
 Z11 8projetoMIPS.vho
 Z12 FprojetoMIPS.vho
 l0
 L39 1
-VWmVzTKF5n075I`Wk8dCOP2
-!s100 z[TZ9Z5A<:c[c=iCzYMo51
+VZWz^>[O]B7AEifa[U`Lkz3
+!s100 T<R@S4TngeV=[8M^MBH<?0
 Z13 OV;C;2020.1;71
 32
-!s110 1670342135
+!s110 1670348549
 !i10b 1
-Z14 !s108 1670342135.000000
+Z14 !s108 1670348549.000000
 Z15 !s90 -work|work|projetoMIPS.vho|
 Z16 !s107 projetoMIPS.vho|
 !i113 1
@@ -48,15 +48,15 @@ R7
 R8
 R9
 R10
-DEx4 work 11 projetomips 0 22 WmVzTKF5n075I`Wk8dCOP2
-!i122 109
-l7051
-L72 79493
-Vi]>@V7]Hhhk>d7nd7PWAY0
-!s100 7RS50]I7`01h2FOFOJ2fH1
+DEx4 work 11 projetomips 0 22 ZWz^>[O]B7AEifa[U`Lkz3
+!i122 133
+l9913
+L72 102761
+VZUh;X35gn@ikU_L2d`4VV3
+!s100 [zaPf=SlFjEBcED^bDojd3
 R13
 32
-!s110 1670342136
+!s110 1670348550
 !i10b 1
 R14
 R15
@@ -65,10 +65,10 @@ R16
 R17
 R18
 Eprojetomips_vhd_vec_tst
-Z19 w1670342131
+Z19 w1670348543
 R8
 R9
-!i122 110
+!i122 134
 R0
 Z20 8Waveform.vwf.vht
 Z21 FWaveform.vwf.vht
@@ -78,9 +78,9 @@ V:]B8n2ZioJh:^WAkN`U=D1
 !s100 i=88dUz4A6PL;EoWQ`cLR3
 R13
 32
-Z22 !s110 1670342139
+Z22 !s110 1670348554
 !i10b 1
-Z23 !s108 1670342138.000000
+Z23 !s108 1670348553.000000
 Z24 !s90 -work|work|Waveform.vwf.vht|
 Z25 !s107 Waveform.vwf.vht|
 !i113 1
@@ -90,11 +90,11 @@ Aprojetomips_arch
 R8
 R9
 Z26 DEx4 work 23 projetomips_vhd_vec_tst 0 22 :]B8n2ZioJh:^WAkN`U=D1
-!i122 110
+!i122 134
 l97
-L34 113
-Vz8[d:NVh@Vn<g<HGjE4MG1
-!s100 [;P^h8KUVJP6o];=d16NW2
+Z27 L34 113
+Vo3H5:GNnH_^OiM8g<Lh@a2
+!s100 M@W_IImYzdl2gl>NWJZ@Q0
 R13
 32
 R22

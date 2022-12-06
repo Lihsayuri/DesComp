@@ -26,16 +26,12 @@ ENTITY projetoMIPS IS
 		HEX4          : out std_logic_vector(6 downto 0);
 		HEX5          : out std_logic_vector(6 downto 0);
 
-		-- Instru_opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
-		-- Funct : out std_logic_vector(5 downto 0);
+
 		ULAA_OUT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
 		decoder_OUTT : OUT STD_LOGIC_VECTOR(13 DOWNTO 0);
-		-- MEM_INN : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
 		MEM_OUTT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
 		RS_OUTT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
 		RT_OUTT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0); -- dado a ser escrito
-		RD_OUTT_MUX : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0); -- dado a ser escrito
-		-- Rs_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 		Rt_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 		Rd_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 		Rs_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
@@ -43,13 +39,12 @@ ENTITY projetoMIPS IS
 		imediato_OUT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		operacao : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
 		flagEqual : OUT STD_LOGIC;
-	--	flagNotEqual : OUT STD_LOGIC;
 		mux_BEQ_BNE : OUT STD_LOGIC;
 		escrita_WB : OUT STD_LOGIC_VECTOR(larguraEnderecos - 1 DOWNTO 0);
 		destino_end : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
-		habEscritaReg : OUT STD_LOGIC
-		-- ULA_MEM_Select : OUT STD_LOGIC_VECTOR (1 DOWNTO 0);
-		-- muxJmp : OUT STD_LOGIC
+		habEscritaReg : OUT STD_LOGIC;
+		SOMADOR_CONSTANTE_MEM : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0)
+
 	);
 
 END ENTITY;
@@ -83,6 +78,7 @@ ARCHITECTURE arquitetura OF projetoMIPS IS
 	SIGNAL imediatoLUI_EX: STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
 	SIGNAL decoder_OUT_EX : STD_LOGIC_VECTOR(13 DOWNTO 0);
 	SIGNAL MUX_RTRD_OUT_EX : STD_LOGIC_VECTOR(4 DOWNTO 0);
+	SIGNAL somador_constante_OUT_EX : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
 
 	-- sinais de saída do bloco Memory Access:
 	SIGNAL MuxBeqOut : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
@@ -114,13 +110,13 @@ ARCHITECTURE arquitetura OF projetoMIPS IS
 	SIGNAL IF_ID_OUT : STD_LOGIC_VECTOR(95 DOWNTO 0);
 
 	-- sinais do registrador ID_EX:
-	SIGNAL ID_EX_OUT : STD_LOGIC_VECTOR(186 DOWNTO 0);
+	SIGNAL ID_EX_OUT : STD_LOGIC_VECTOR(191 DOWNTO 0);
 
 	-- sinais do registrador EX_MEM:
-	SIGNAL EX_MEM_OUT : STD_LOGIC_VECTOR(179 DOWNTO 0);
+	SIGNAL EX_MEM_OUT : STD_LOGIC_VECTOR(211 DOWNTO 0);
 
 	-- sinais do registrador MEM_WB:
-	SIGNAL MEM_WB_OUT : STD_LOGIC_VECTOR(115 DOWNTO 0);
+	SIGNAL MEM_WB_OUT : STD_LOGIC_VECTOR(147 DOWNTO 0);
 
 	-- sinal da instrução:
 	ALIAS Instru : STD_LOGIC_VECTOR(31 DOWNTO 0) IS IF_ID_OUT(31 DOWNTO 0);
@@ -215,9 +211,9 @@ BEGIN
 		operacao_ULA_ID => ULA_ctrl -- necessário para a etapa EX (ULA)
 	);
 
-	ID_EX: ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 187)
+	ID_EX: ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 192)
 	PORT MAP(
-		DIN =>  decoder_OUT & somador2_constante_OUT_ID & imediato_estendido &  imediatoLUI & RS_OUT  & RT_OUT & RtAddr & RdAddr & ULA_ctrl, -- RtAddr RdAddr
+		DIN =>  RsAddr & decoder_OUT & somador2_constante_OUT_ID & imediato_estendido &  imediatoLUI & RS_OUT  & RT_OUT & RtAddr & RdAddr & ULA_ctrl, -- RtAddr RdAddr
 		DOUT => ID_EX_OUT, 
 		ENABLE => '1',
 		CLK => CLK,
@@ -238,6 +234,7 @@ BEGIN
 		ULA_Op => ID_EX_OUT(2 downto 0), -- provém do ID, ULA_ctrl
 		imediatoLUI_ID => ID_EX_OUT(108 downto 77), -- provém do ID, imediatoLUI
 		-- saidas do bloco:
+		somador_constante_OUT_EX => somador_constante_OUT_EX,
         somador_BEQ_OUT => somador_BEQ_OUT,
         ULA_result => ULA_OUT,
         ULA_FLAG_ZERO => ULA_FLAG,
@@ -248,9 +245,9 @@ BEGIN
 		MUX_RTRD_OUT_EX => MUX_RTRD_OUT_EX --- vai ter que acrescentar esse cara, coloca no final rique mais facil
 	);
 
-	EX_MEM: ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 180)
+	EX_MEM: ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 212)
 	PORT MAP(
-		DIN => MUX_RTRD_OUT_EX & decoder_OUT_EX & somador_BEQ_OUT & ULA_OUT & ULA_FLAG  & RT_OUT_2 & PC_constante & imediatoLUI_EX, -- RtAddr RdAddr
+		DIN => somador_constante_OUT_EX & MUX_RTRD_OUT_EX & decoder_OUT_EX & somador_BEQ_OUT & ULA_OUT & ULA_FLAG  & RT_OUT_2 & PC_constante & imediatoLUI_EX, -- RtAddr RdAddr
 		DOUT => EX_MEM_OUT,
 		ENABLE => '1',
 		CLK => CLK,
@@ -262,6 +259,7 @@ BEGIN
 	PORT MAP(
 		-- entradas do bloco:
 		CLK => CLK, 
+		somador_constante_EX => EX_MEM_OUT(211 downto 180),
 		MUX_RTRD_OUT_EX => EX_MEM_OUT(179 downto 175), -- MODIFICAR AQUI TBM
         decoder_OUT_EX => EX_MEM_OUT(174 downto 161), -- provém do ID
         somador_BEQ_OUT_MEM => EX_MEM_OUT(160 downto 129) , -- provém do EX, somador_BEQ_OUT [CONFIRA BITS]
@@ -271,6 +269,7 @@ BEGIN
 		PC_constante => EX_MEM_OUT(63 downto 32), -- provém do EX, PC_constante
 		imediato_LUI_EX => EX_MEM_OUT(31 downto 0), -- provém do EX, imediatoLUI_EX
 		-- saidas do bloco:
+		somador_constante_MEM => somador_constante_MEM,
         MEM_OUT_MEM => MEM_OUT,  
 		muxULA_BEQ_BNE_OUT => muxULA_BEQ_BNE_OUT,
 		imediato_LUI_MEM => imediato_LUI_MEM,
@@ -278,9 +277,9 @@ BEGIN
 		MUX_RTRD_OUT_MEM => MUX_RTRD_OUT_MEM
 	);
 
-	MEM_WB: ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 116)
+	MEM_WB: ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 148)
 	PORT MAP(
-		DIN => imediato_LUI_MEM & MUX_RTRD_OUT_MEM & muxULA_BEQ_BNE_OUT & decoder_OUT_MEM & MEM_OUT & ULA_OUT, -- RtAddr RdAddr
+		DIN => somador_constante_MEM & imediato_LUI_MEM & MUX_RTRD_OUT_MEM & muxULA_BEQ_BNE_OUT & decoder_OUT_MEM & MEM_OUT & ULA_OUT, -- RtAddr RdAddr
 		DOUT => MEM_WB_OUT, 
 		ENABLE => '1',
 		CLK => CLK,
@@ -295,7 +294,7 @@ BEGIN
 		decoder_OUT => MEM_WB_OUT(77 downto 64) , --  provém do ID, decoder_OUT
 		MEM_OUT_WB => MEM_WB_OUT(63 downto 32), -- provém do MEM, MEM_OUT
 		ADDRESS_WB => MEM_WB_OUT(31 downto 0), -- provém do EX, ULA_OUT
-		PC_constante_WB => somador_constante_OUT, -- provém do IF
+		PC_constante_WB => MEM_WB_OUT(147 downto 116), -- provém do IF
 		imediato_LUI_WB => MEM_WB_OUT(115 downto 84), -- provém do MEM, imediato_LUI_MEM
 		-- saida do bloco:
 		MUX_RTRD_OUT_WB => MUX_RTRD_OUT_WB,
@@ -390,32 +389,28 @@ BEGIN
 --		  clkTCL => open);                       -- Sem uso: conectar com open
 
 
-	-- Instru_opcode <= ROM_OUT(31 DOWNTO 26);
 	ULAA_OUT <= ULA_OUT;
 	decoder_OUTT <= ID_EX_OUT(186 downto 173);
 	operacao <= Ula_ctrl;
-	-- MEM_INN <= Rt_RAM;
 	MEM_OUTT <= MEM_OUT;
-	--RS_OUTT <= ID_EX_OUT(76 downto 45);
 	RS_OUTT <= ID_EX_OUT(76 downto 45);
 	RT_OUTT <= ID_EX_OUT(44 downto 13);
 	PC_OUTT <= PC_OUT;
 	Rt_End <= ID_EX_OUT(12 downto 8);
 	Rd_End <= ID_EX_OUT(7 downto 3);
-	Rs_End <= RsAddr;
+	Rs_End <= ID_EX_OUT(191 downto 187);
 	flagEqual <= ULA_FLAG;
 	mux_BEQ_BNE <= muxULA_BEQ_BNE_OUT;
 	escrita_WB <= MUX_DADO_BANCO;
 	destino_end <= MUX_RTRD_OUT_WB;
 	imediato_OUT <= ID_EX_OUT(140 downto 109);
-	-- flagEqual <= ULA_FLAG;
-	-- Funct <= ROM_OUT(5 downto 0);
-	-- habFlagBEQ <= BEQ;
-	-- muxJmp <= SelMuxJump;
-	--imediato_OUT <= imediatoEstendido;
 	habEscritaReg <= ID_EX_OUT(181);
-	-- ULA_MEM_Select <= SelMuxUlaMem;
-	-- RD_OUTT_MUX <= MUX_DADO_BANCO;
-	-- flagNotEqual <= NOT(ULA_FLAG);
 
 END ARCHITECTURE;
+
+
+
+
+
+
+-- やっと終わった、またね。

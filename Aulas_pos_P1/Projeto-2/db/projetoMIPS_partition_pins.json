@@ -1264,6 +1264,134 @@
 					"strict" : false
 				},
 				{
+					"name" : "SOMADOR_CONSTANTE_MEM[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[8]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[9]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[10]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[11]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[12]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[13]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[14]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[15]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[16]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[17]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[18]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[19]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[20]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[21]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[22]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[23]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[24]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[25]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[26]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[27]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[28]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[29]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[30]",
+					"strict" : false
+				},
+				{
+					"name" : "SOMADOR_CONSTANTE_MEM[31]",
+					"strict" : false
+				},
+				{
 					"name" : "SW[0]",
 					"strict" : false
 				},

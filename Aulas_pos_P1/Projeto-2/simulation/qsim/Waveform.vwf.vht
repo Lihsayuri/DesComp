@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "12/06/2022 12:55:31"
+-- Generated on "12/06/2022 14:42:23"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          projetoMIPS
 -- 
@@ -55,11 +55,11 @@ SIGNAL mux_BEQ_BNE : STD_LOGIC;
 SIGNAL operacao : STD_LOGIC_VECTOR(2 DOWNTO 0);
 SIGNAL PC_OUTT : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL Rd_End : STD_LOGIC_VECTOR(4 DOWNTO 0);
-SIGNAL RD_OUTT_MUX : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL Rs_End : STD_LOGIC_VECTOR(4 DOWNTO 0);
 SIGNAL RS_OUTT : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL Rt_End : STD_LOGIC_VECTOR(4 DOWNTO 0);
 SIGNAL RT_OUTT : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL SOMADOR_CONSTANTE_MEM : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL SW : STD_LOGIC_VECTOR(9 DOWNTO 0);
 SIGNAL ULAA_OUT : STD_LOGIC_VECTOR(31 DOWNTO 0);
 COMPONENT projetoMIPS
@@ -85,11 +85,11 @@ COMPONENT projetoMIPS
 	operacao : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
 	PC_OUTT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	Rd_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
-	RD_OUTT_MUX : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	Rs_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 	RS_OUTT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	Rt_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 	RT_OUTT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SOMADOR_CONSTANTE_MEM : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 	ULAA_OUT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 	);
@@ -119,11 +119,11 @@ BEGIN
 	operacao => operacao,
 	PC_OUTT => PC_OUTT,
 	Rd_End => Rd_End,
-	RD_OUTT_MUX => RD_OUTT_MUX,
 	Rs_End => Rs_End,
 	RS_OUTT => RS_OUTT,
 	Rt_End => Rt_End,
 	RT_OUTT => RT_OUTT,
+	SOMADOR_CONSTANTE_MEM => SOMADOR_CONSTANTE_MEM,
 	SW => SW,
 	ULAA_OUT => ULAA_OUT
 	);

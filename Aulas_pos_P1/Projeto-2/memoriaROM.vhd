@@ -52,33 +52,64 @@ ARCHITECTURE assincrona OF memoriaROM IS
    CONSTANT TUDO_F : STD_LOGIC_VECTOR(15 DOWNTO 0) := "1111111111111111";
 
 
---   FUNCTION initMemory
---      RETURN blocoMemoria IS VARIABLE tmp : blocoMemoria := (OTHERS => (OTHERS => '0'));
+   FUNCTION initMemory
+      RETURN blocoMemoria IS VARIABLE tmp : blocoMemoria := (OTHERS => (OTHERS => '0'));
 
---   BEGIN
+   BEGIN
 
-      -- FALTA FAZER OS TESTESSSSSSSSS
-            -- 6      5    5      16     bits
-   --    --     opcode  Rs   Rt   imediato
-   --    tmp(0) := SW & T0 & T1 & IM4; --Mem_Dados[R[rs] + EstendeSinal(Imediato)]=R[rt]    | MEM[0] = 10
-   --    tmp(1) := LW & T0 & T2 & IM4; --LW T2, 0x00($t0) -- load em t2 o que está em MEM[0] | T2 = 10
-   --    tmp(2) := ADDI & T2 & T3 & IM2; --T3 = 10 + 2 = 12
-   --    tmp(3) := SLTI & T2 & T3 & IM2; -- T3 = 10 < 2 = 0
-   --    tmp(4) := SLTI & T3 & T2 & IM3; -- T3 = 0 < 8 = 1 ;
-   --    tmp(5) := ANDI & T4 & T1 & IM6; -- T1 = 13 & 9 = 1101 & 1001 = 1001 = 9 
-   --    tmp(6) := ORI  & T1 & T2 & IM2; -- T2 = 9 | 1 = 1001 | 0010 = 1011 = 11
-   --    tmp(7) := LUI & "00000" & T0 & TUDO_F; -- T1 = 10
+		 tmp(0)  := x"3c090000";      --lui $t1, 0x0000;
+		 tmp(1)  := x"3c0baaaa";      --lui $t3, 0xAAAA;
+		 tmp(2)  := x"3c0f1000";      --lui $t7, 0x1000;
+		 tmp(3)  := x"3529000a";      --ori $t1, $t1, 0x0A;     # $t1 (#9) := 0x0A
+		 tmp(4)  := x"356baaaa";      --ori $t3, $t3, 0xAAAA;   # $t3 (#11) := 0xAAAAAAAA
+		 tmp(5)  := x"35ef0000";      --ori $t7, $t7, 0x0000;   # $t7 (#15) := 0x10000000 (4096*64k)
+		 tmp(6)  := x"212a0001";      --addi $t2, $t1, 0x01;    # $t2 (#10) := 0x0B
+		 tmp(7)  := x"01606025";      --or $t4, $t3, $0;        # $t4 (#12) := 0xAAAAAAAA
+		 tmp(8)  := x"316dffff";      --andi $t5, $t3, 0xFFFF;  # $t5 (#13) := 0x0000AAAA
+		 tmp(9)  := x"01497022";      --sub $t6, $t2, $t1;      # $t6 (#14) := 0x01
+		 tmp(10) := x"ac090008";      --sw $t1, 8($zero);       # M[8) = 0x0A
+		 tmp(11) := x"8c080008";      --lw $t0, 8($zero);
+		 tmp(12) := x"010a7824";      --and $t7, $t0, $t2;      # Hazard Load Use
+		 tmp(13) := x"290fffff";      --slti $t7, $t0, 0xFFFF;
+		 tmp(14) := x"012a402a";      --slt $t0, $t1, $t2;
+	--destinoBEQ:
+		 tmp(15) := x"012e4820";      --add $t1, $t1, $t6;      # t0 = t2, segunda vez: t0 != t2
+		 tmp(16) := x"00000000";      --nop;
+		 tmp(17) := x"00000000";      --nop;
+		 tmp(18) := x"112afffc";      --beq $t1, $t2, destinoBEQ;  # Desvia na primeira e nao desvia depois
+		 tmp(19) := x"00000000";      --nop;
+		 tmp(20) := x"00000000";      --nop;
+		 tmp(21) := x"00000000";      --nop;
+		 tmp(22) := x"0c000020";      --jal subrotina;
+		 tmp(23) := x"00000000";      --nop;
+		 tmp(24) := x"00000000";      --nop;
+		 tmp(25) := x"00000000";      --nop;
+		 tmp(26) := x"00000000";      --nop;
+		 tmp(27) := x"150d0008";      --bne $t0, $t5, fim
+		 tmp(28) := x"00000000";      --nop;
+		 tmp(29) := x"00000000";      --nop;
+		 tmp(30) := x"00000000";      --nop;
+		 tmp(31) := x"00000000";      --nop;
+	--subrotina:
+		 tmp(32) := x"00000000";      --nop;
+		 tmp(33) := x"03e00008";      --jr $ra;
+		 tmp(34) := x"00000000";      --nop;
+		 tmp(35) := x"00000000";      --nop;
+	--fim:
+		 tmp(36) := x"00000000";      --nop;
+		 tmp(37) := x"08000024";      --j fim;
+		 tmp(38) := x"00000000";      --nop;
+		 tmp(39) := x"00000000";      --nop;
 
+       RETURN tmp;
+		END initMemory;
 
-   --    RETURN tmp;
-   -- END initMemory;
-
-   -- SIGNAL memROM : blocoMemoria := initMemory;
-
-  signal memROM: blocoMemoria;
-  attribute ram_init_file : string;
-  attribute ram_init_file of memROM:
-  signal is "Toplevel.mif";
+     SIGNAL memROM : blocoMemoria := initMemory;
+--
+--  signal memROM: blocoMemoria;
+--  attribute ram_init_file : string;
+--  attribute ram_init_file of memROM:
+--  signal is "Toplevel.mif";
 
    -- Utiliza uma quantidade menor de endereços locais:
    SIGNAL EnderecoLocal : STD_LOGIC_VECTOR(memoryAddrWidth - 1 DOWNTO 0);

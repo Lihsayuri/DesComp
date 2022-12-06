@@ -23,6 +23,7 @@ ENTITY EX IS
         ULA_Op : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         imediatoLUI_ID : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         -- SAIDAS:
+        somador_constante_OUT_EX : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         somador_BEQ_OUT : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         ULA_result : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         ULA_FLAG_ZERO : OUT STD_LOGIC;
@@ -116,5 +117,6 @@ BEGIN
     imediatoLUI_EX <= imediatoLUI_ID;
     decoder_OUT_EX <= decoder_OUT;
     MUX_RTRD_OUT_EX <= MUX_RTRD_OUT;
+    somador_constante_OUT_EX <= somador_constante_OUT_ID;
 
 END ARCHITECTURE;
