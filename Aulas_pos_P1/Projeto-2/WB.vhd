@@ -10,11 +10,13 @@ ENTITY WB IS
     PORT (
         -- o que entra: decoder, MEM_OUT, Address(ULA_result), PC, imediato (LUI). Sai: MUX_DADO_BANCO
         CLK : IN STD_LOGIC;
+        MUX_RTRD_OUT_MEM: IN STD_LOGIC_VECTOR(4 DOWNTO 0);
         decoder_OUT : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
         MEM_OUT_WB : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         ADDRESS_WB : IN STD_LOGIC_VECTOR((larguraEnderecos - 1) DOWNTO 0);
         PC_constante_WB : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
-        imediato_WB : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        imediato_LUI_WB : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+        MUX_RTRD_OUT_WB : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
         MUX_DADO_BANCO_WB : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0)
     );
 END ENTITY;
@@ -32,9 +34,11 @@ BEGIN
 			E0 => ADDRESS_WB,
 			E1 => MEM_OUT_WB,
 			E2 =>  PC_constante_WB,
-			E3	=> imediato_WB & x"0000",
+			E3	=> imediato_LUI_WB,
 			SEL_MUX => SelMuxUlaMem,
 			MUX_OUT => MUX_DADO_BANCO_WB 			
 		);
+
+    MUX_RTRD_OUT_WB <= MUX_RTRD_OUT_MEM;
 
 END ARCHITECTURE;
