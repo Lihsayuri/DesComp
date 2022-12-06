@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "12/06/2022 14:42:23"
+-- Generated on "12/06/2022 18:50:46"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          projetoMIPS
 -- 
@@ -59,9 +59,9 @@ SIGNAL Rs_End : STD_LOGIC_VECTOR(4 DOWNTO 0);
 SIGNAL RS_OUTT : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL Rt_End : STD_LOGIC_VECTOR(4 DOWNTO 0);
 SIGNAL RT_OUTT : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL SOMADOR_CONSTANTE_MEM : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL SW : STD_LOGIC_VECTOR(9 DOWNTO 0);
 SIGNAL ULAA_OUT : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL write_REG_BACK : STD_LOGIC;
 COMPONENT projetoMIPS
 	PORT (
 	CLOCK_50 : IN STD_LOGIC;
@@ -89,9 +89,9 @@ COMPONENT projetoMIPS
 	RS_OUTT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	Rt_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 	RT_OUTT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	SOMADOR_CONSTANTE_MEM : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
-	ULAA_OUT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+	ULAA_OUT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	write_REG_BACK : OUT STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
@@ -123,9 +123,9 @@ BEGIN
 	RS_OUTT => RS_OUTT,
 	Rt_End => Rt_End,
 	RT_OUTT => RT_OUTT,
-	SOMADOR_CONSTANTE_MEM => SOMADOR_CONSTANTE_MEM,
 	SW => SW,
-	ULAA_OUT => ULAA_OUT
+	ULAA_OUT => ULAA_OUT,
+	write_REG_BACK => write_REG_BACK
 	);
 
 -- CLOCK_50
@@ -133,14 +133,13 @@ t_prcs_CLOCK_50: PROCESS
 BEGIN
 	CLOCK_50 <= '1';
 	WAIT FOR 20000 ps;
-	FOR i IN 1 TO 24
+	FOR i IN 1 TO 47
 	LOOP
 		CLOCK_50 <= '0';
 		WAIT FOR 20000 ps;
 		CLOCK_50 <= '1';
 		WAIT FOR 20000 ps;
 	END LOOP;
-	CLOCK_50 <= '0';
 WAIT;
 END PROCESS t_prcs_CLOCK_50;
 END projetoMIPS_arch;

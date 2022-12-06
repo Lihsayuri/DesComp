@@ -6,7 +6,7 @@ ENTITY projetoMIPS IS
 	GENERIC (
 		larguraDados : NATURAL := 32;
 		larguraEnderecos : NATURAL := 32;
-		simulacao : BOOLEAN := TRUE -- para gravar na placa, altere de TRUE para FALSE
+		simulacao : BOOLEAN := FALSE -- para gravar na placa, altere de TRUE para FALSE
 	);
 	PORT (
 
@@ -24,26 +24,26 @@ ENTITY projetoMIPS IS
 		HEX2          : out std_logic_vector(6 downto 0);
 		HEX3          : out std_logic_vector(6 downto 0);
 		HEX4          : out std_logic_vector(6 downto 0);
-		HEX5          : out std_logic_vector(6 downto 0);
+		HEX5          : out std_logic_vector(6 downto 0)
 
 
-		ULAA_OUT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-		decoder_OUTT : OUT STD_LOGIC_VECTOR(13 DOWNTO 0);
-		MEM_OUTT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-		RS_OUTT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
-		RT_OUTT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0); -- dado a ser escrito
-		Rt_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
-		Rd_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
-		Rs_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
-		PC_OUTT : OUT STD_LOGIC_VECTOR(larguraEnderecos - 1 DOWNTO 0);
-		imediato_OUT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		operacao : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-		flagEqual : OUT STD_LOGIC;
-		mux_BEQ_BNE : OUT STD_LOGIC;
-		escrita_WB : OUT STD_LOGIC_VECTOR(larguraEnderecos - 1 DOWNTO 0);
-		destino_end : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
-		habEscritaReg : OUT STD_LOGIC;
-		SOMADOR_CONSTANTE_MEM : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0)
+		-- ULAA_OUT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
+		-- decoder_OUTT : OUT STD_LOGIC_VECTOR(13 DOWNTO 0);
+		-- MEM_OUTT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
+		-- RS_OUTT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
+		-- RT_OUTT : OUT STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0); -- dado a ser escrito
+		-- Rt_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+		-- Rd_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+		-- Rs_End : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+		-- PC_OUTT : OUT STD_LOGIC_VECTOR(larguraEnderecos - 1 DOWNTO 0);
+		-- imediato_OUT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		-- operacao : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+		-- flagEqual : OUT STD_LOGIC;
+		-- mux_BEQ_BNE : OUT STD_LOGIC;
+		-- escrita_WB : OUT STD_LOGIC_VECTOR(larguraEnderecos - 1 DOWNTO 0);
+		-- destino_end : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+		-- habEscritaReg : OUT STD_LOGIC;
+		-- write_REG_BACK : OUT STD_LOGIC
 
 	);
 
@@ -87,11 +87,15 @@ ARCHITECTURE arquitetura OF projetoMIPS IS
 	SIGNAL decoder_OUT_MEM : STD_LOGIC_VECTOR(13 DOWNTO 0);
 	SIGNAL muxULA_BEQ_BNE_OUT : STD_LOGIC;
 	SIGNAL MUX_RTRD_OUT_MEM : STD_LOGIC_VECTOR(4 DOWNTO 0);
+	SIGNAL ULA_OUT_MEM : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+	SIGNAL somador_constante_MEM : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+
 
 	-- sinais de saida do bloco Write Back:
 	SIGNAL MUX_DADO_BANCO : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
 	SIGNAL MUX_RTRD_OUT_WB : STD_LOGIC_VECTOR(4 DOWNTO 0);
 	SIGNAL imediato_LUI_WB:  STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL write_REG_WB : STD_LOGIC;
 
     ALIAS imediato : STD_LOGIC_VECTOR(15 DOWNTO 0) IS ROM_OUT(15 DOWNTO 0);
 	SIGNAL imediatoLUI:  STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -123,8 +127,8 @@ ARCHITECTURE arquitetura OF projetoMIPS IS
 
 	-- sinais necessários para formar instuções
 	ALIAS imediatoJmp : STD_LOGIC_VECTOR(25 DOWNTO 0) IS Instru(25 DOWNTO 0);
-	ALIAS BEQ : STD_LOGIC IS decoder_OUT(3);
-	ALIAS BNE: STD_LOGIC IS decoder_OUT(2);
+	ALIAS BEQ : STD_LOGIC IS EX_MEM_OUT(164);
+	ALIAS BNE: STD_LOGIC IS EX_MEM_OUT(163);
 	
 
 -- JR|SelMuxBEQJmp|muxRTRD|ORI_ANDI|habEscritaReg|muxRTImediato|TipoR|muxULAMEM|BEQ|Leitura|Escrita
@@ -141,13 +145,13 @@ BEGIN
 	end generate;
 
 
-	CONCAT_JMP <=  PC_constante(31 DOWNTO 28) & imediatoJmp & "00";
+	CONCAT_JMP <= IF_ID_OUT(63 downto 60) & imediatoJmp & "00";
 
 	MUXBEQ : ENTITY work.muxGenerico2x1 GENERIC MAP (larguraDados => larguraDados)
     PORT MAP(
-        entradaA_MUX => somador_constante_OUT,
-        entradaB_MUX => somador_BEQ_OUT,   --EX_MEM_OUT(128 downto 97), -- somador_BEQ_OUT_MEM
-        seletor_MUX => MEM_WB_OUT(78) AND (BEQ OR BNE),
+        entradaA_MUX =>  somador_constante_OUT,  ------somador_constante_OUT,
+        entradaB_MUX => EX_MEM_OUT(160 downto 129),   --EX_MEM_OUT(128 downto 97), -- somador_BEQ_OUT_MEM
+        seletor_MUX => muxULA_BEQ_BNE_OUT AND (BEQ OR BNE),
         saida_MUX => MuxBeqOut
     );
 
@@ -198,6 +202,7 @@ BEGIN
         MUX_DADO_BANCO => MUX_DADO_BANCO, -- provém do WB
         ROM_OUT_ID => IF_ID_OUT(31 downto 0), -- probém do IF, ROM_OUT
 		MUX_RTRD_OUT => MUX_RTRD_OUT_WB, -- provém do WB
+		write_REG => write_REG_WB,
 		-- saidas do bloco:
         somador_constante_OUT_ID => somador2_constante_OUT_ID, -- esse fio apenas passou pela etapa
         RS_OUT_ID => RS_OUT, -- necessário para a etapa EX
@@ -271,6 +276,7 @@ BEGIN
 		-- saidas do bloco:
 		somador_constante_MEM => somador_constante_MEM,
         MEM_OUT_MEM => MEM_OUT,  
+		ULA_OUT_MEM => ULA_OUT_MEM,
 		muxULA_BEQ_BNE_OUT => muxULA_BEQ_BNE_OUT,
 		imediato_LUI_MEM => imediato_LUI_MEM,
 		decoder_OUT_MEM => decoder_OUT_MEM,
@@ -279,7 +285,7 @@ BEGIN
 
 	MEM_WB: ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 148)
 	PORT MAP(
-		DIN => somador_constante_MEM & imediato_LUI_MEM & MUX_RTRD_OUT_MEM & muxULA_BEQ_BNE_OUT & decoder_OUT_MEM & MEM_OUT & ULA_OUT, -- RtAddr RdAddr
+		DIN => somador_constante_MEM & imediato_LUI_MEM & MUX_RTRD_OUT_MEM & muxULA_BEQ_BNE_OUT & decoder_OUT_MEM & MEM_OUT & ULA_OUT_MEM, -- RtAddr RdAddr
 		DOUT => MEM_WB_OUT, 
 		ENABLE => '1',
 		CLK => CLK,
@@ -298,20 +304,24 @@ BEGIN
 		imediato_LUI_WB => MEM_WB_OUT(115 downto 84), -- provém do MEM, imediato_LUI_MEM
 		-- saida do bloco:
 		MUX_RTRD_OUT_WB => MUX_RTRD_OUT_WB,
-		MUX_DADO_BANCO_WB => MUX_DADO_BANCO
+		MUX_DADO_BANCO_WB => MUX_DADO_BANCO,
+		write_REG_WB => write_REG_WB
 	);
 
 
 	MUX_INFO: ENTITY work.muxGenerico4x1 GENERIC MAP (larguraDados => larguraDados)
 	PORT MAP(
 		E0 => PC_OUT, -- PC_OUT
-		E1 => ID_EX_OUT(172 downto 141), -- somador_constante
+		E1 => EX_MEM_OUT(211 downto 180), -- somador_constante
 		E2 =>  ULA_OUT, -- ULA_OUT
 		E3	=> MUX_DADO_BANCO, -- dado que salva
 		SEL_MUX => SW(1) & SW(0),
 		MUX_OUT => saida_LED_HEX 
 	);
 
+	LEDR(8) <= write_REG_WB;
+	
+	LEDR(9) <= ULA_FLAG;
 
 	HEX_0 : ENTITY work.logica_7Seg GENERIC MAP (IN_WIDTH => 4, OUT_WIDTH => 7)
 	PORT MAP(
@@ -355,62 +365,27 @@ BEGIN
 		display_OUT => HEX5
 	);
 
-	LEDR(7 downto 0) <= saida_LED_HEX(31 downto 24);
+	--LEDR(7 downto 0) <= saida_LED_HEX(31 downto 24);
 
-	LEDR(8) <= ID_EX_OUT(181);
-	
-	LEDR(9) <= ULA_FLAG;
-		
+	LEDR(3 downto 0) <= saida_LED_HEX(27 downto 24);
+	LEDR(7 downto 4) <= saida_LED_HEX(31 downto 28);		
 
---	monitor: work.debugMonitor
---	port map(PC => PC_OUT,                         -- Saida o PC: entrada de endereco da ROM
---		  Instrucao => ROM_OUT,   -- Saida de dados da ROM
---		  LeituraRS => Rs_ULA_A,        -- Saida do Banco de Registradores: leitura de RS
---		  LeituraRT => Rt_OUT,        -- Saida do Banco de Registradores: leitura de RT
---		  EscritaRD => MUX_DADO_BANCO,      -- Entrada do Banco de Registradores (C)
---		  EntradaB_ULA => MUX_ULA_B,             -- Entrada B da ULA: saida do MUX RT/ImediatoEstendido
---		  imediatoEstendido => imediatoEstendido,  -- ImediatoEstendido: entrada do MUX RT/ImediatoEstendido
---		  saidaULA => ULA_OUT,        -- Saida da ULA: entrada do MUX ULA/MEM
---		  dadoLido_RAM => MEM_OUT,     -- Saida da RAM: entrada do MUX ULA/MEM
---		  proxPC => MUX_PROX_PC,    -- Entrada do PC ou saida do MUX ProxPC MUX_PROX_PC
---		  MUXProxPCEntradaA => MuxBeqOut,   -- Entrada do MUX ProxPC: vinda MUX PC+4/BEQ
---		  MUXProxPCEntradaB => CONCAT_JMP,   -- Entrada do MUX ProxPC: vinda da montagem do endereco de Jump
---		  ULActrl => '0' & Ula_ctrl,                      -- Entrada do ULActrl na ULA: pode ser necessario concatenar 1 bit '0': '0' & ULActrl
---		  zeroFLAG => ULA_FLAG,                        -- Saida do Flag da ULA e entrada da porta AND
---		  escreveC => write_REG,       -- Entrada do Banco de Registradores: sinal de habilita escrita no terceiro endereco (RD ou RT)
---		  MUXPCBEQJUMP => SelMuxJump,          -- Selecao do MUX do proxPC: vem da unidade de controle
---		  MUXRTRD => SelMuxRtRd,                     -- Selecao do MUX RT/RD: vem da unidade de controle
---		  MUXRTIMED => SelImediatoReg,                 -- Selecao do MUX RT/Imediato: vem da unidade de controle
---		  MUXULAMEM => SelMuxUlaMem,                 -- Selecao do MUX ULA/MEM: vem da unidade de controle
---		  iBEQ => BEQ,                              -- Indicador de instrucao BEQ: vem da unidade de controle
---		  WR => write_RAM,                    -- Habilita escrita na RAM: vem da unidade de controle
---		  RD => read_RAM,                    -- Habilita leitura da RAM: vem da unidade de controle
---		  --Output
---		  clkTCL => open);                       -- Sem uso: conectar com open
-
-
-	ULAA_OUT <= ULA_OUT;
-	decoder_OUTT <= ID_EX_OUT(186 downto 173);
-	operacao <= Ula_ctrl;
-	MEM_OUTT <= MEM_OUT;
-	RS_OUTT <= ID_EX_OUT(76 downto 45);
-	RT_OUTT <= ID_EX_OUT(44 downto 13);
-	PC_OUTT <= PC_OUT;
-	Rt_End <= ID_EX_OUT(12 downto 8);
-	Rd_End <= ID_EX_OUT(7 downto 3);
-	Rs_End <= ID_EX_OUT(191 downto 187);
-	flagEqual <= ULA_FLAG;
-	mux_BEQ_BNE <= muxULA_BEQ_BNE_OUT;
-	escrita_WB <= MUX_DADO_BANCO;
-	destino_end <= MUX_RTRD_OUT_WB;
-	imediato_OUT <= ID_EX_OUT(140 downto 109);
-	habEscritaReg <= ID_EX_OUT(181);
+	-- ULAA_OUT <= ULA_OUT;
+	-- decoder_OUTT <= ID_EX_OUT(186 downto 173);
+	-- operacao <= Ula_ctrl;
+	-- MEM_OUTT <= MEM_OUT;
+	-- RS_OUTT <= ID_EX_OUT(76 downto 45);
+	-- RT_OUTT <= ID_EX_OUT(44 downto 13);
+	-- PC_OUTT <= PC_OUT;
+	-- Rt_End <= ID_EX_OUT(12 downto 8);
+	-- Rd_End <= ID_EX_OUT(7 downto 3);
+	-- Rs_End <= ID_EX_OUT(191 downto 187);
+	-- flagEqual <= ULA_FLAG;
+	-- mux_BEQ_BNE <= muxULA_BEQ_BNE_OUT;
+	-- escrita_WB <= MUX_DADO_BANCO;
+	-- destino_end <= MUX_RTRD_OUT_WB;
+	-- imediato_OUT <= ID_EX_OUT(140 downto 109);
+	-- habEscritaReg <= ID_EX_OUT(181);
+	-- write_REG_BACK <= write_REG_WB;
 
 END ARCHITECTURE;
-
-
-
-
-
-
--- やっと終わった、またね。

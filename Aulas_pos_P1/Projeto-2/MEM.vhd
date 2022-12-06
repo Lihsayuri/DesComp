@@ -25,6 +25,7 @@ ENTITY MEM IS
         somador_constante_MEM : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         MEM_OUT_MEM : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         -- PC_constante_OUT : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+        ULA_OUT_MEM : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         muxULA_BEQ_BNE_OUT : OUT STD_LOGIC;
         imediato_LUI_MEM : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         decoder_OUT_MEM : OUT STD_LOGIC_VECTOR(13 DOWNTO 0);
@@ -77,5 +78,6 @@ BEGIN
     decoder_OUT_MEM <= decoder_OUT_EX;
     MUX_RTRD_OUT_MEM <= MUX_RTRD_OUT_EX;
     somador_constante_MEM <= somador_constante_EX;
+    ULA_OUT_MEM <= ULA_result_MEM;
 
 END ARCHITECTURE;

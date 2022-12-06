@@ -17,6 +17,7 @@ ENTITY ID IS
         MUX_DADO_BANCO: IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0); 
         ROM_OUT_ID: IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         MUX_RTRD_OUT : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+        write_REG : IN STD_LOGIC;
 
         --- SAÍDA:
         somador_constante_OUT_ID : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
@@ -56,7 +57,7 @@ ARCHITECTURE decode OF ID IS
     
     -- sinais de controle originados com o decoder
     ALIAS TIPOR : STD_LOGIC IS decoder_OUT(6);
-    ALIAS write_REG : STD_LOGIC IS decoder_OUT(8);
+    -- ALIAS write_REG : STD_LOGIC IS decoder_OUT(8);
     ALIAS ORI_ANDI : STD_LOGIC IS decoder_OUT(9);
 
     -- sinais com partes das instruções

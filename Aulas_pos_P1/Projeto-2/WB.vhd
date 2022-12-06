@@ -17,13 +17,16 @@ ENTITY WB IS
         PC_constante_WB : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         imediato_LUI_WB : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         MUX_RTRD_OUT_WB : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
-        MUX_DADO_BANCO_WB : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0)
+        MUX_DADO_BANCO_WB : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+        write_REG_WB : OUT STD_LOGIC
     );
 END ENTITY;
 
 ARCHITECTURE write_back OF WB IS
 
 ALIAS SelMuxUlaMem : STD_LOGIC_VECTOR(1 DOWNTO 0) IS decoder_OUT(5 DOWNTO 4);
+ALIAS write_REG : STD_LOGIC IS decoder_OUT(8);
+
 
 BEGIN
 
@@ -40,5 +43,6 @@ BEGIN
 		);
 
     MUX_RTRD_OUT_WB <= MUX_RTRD_OUT_MEM;
+    write_REG_WB <= write_REG;
 
 END ARCHITECTURE;
