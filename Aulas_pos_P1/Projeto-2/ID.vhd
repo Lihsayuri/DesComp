@@ -10,14 +10,24 @@ ENTITY ID IS
     PORT (
         -- o que entra: ROM_OUT| somador_constante_OUT (só passa)| MUX_DADO_BANCO (WB) para escrever no reg
         -- o que sai: RS_OUT, RT_OUT, imediato_estendido, somador_constante, decoder, operacao_ULA
+
+        -- ENTRADA:
         CLK : IN STD_LOGIC;
         somador_constante_OUT_IF: IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
-        MUX_DADO_BANCO: IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0); -- conferir
+        MUX_DADO_BANCO: IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0); 
         ROM_OUT_ID: IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+        MUX_RTRD_OUT : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+        write_REG : IN STD_LOGIC;
+
+        --- SAÍDA:
         somador_constante_OUT_ID : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         RS_OUT_ID : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         RT_OUT_ID : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+		RS_Addr_ID : OUT STD_LOGIC_VECTOR (4 DOWNTO 0);
+        RT_Addr_ID : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+        RD_Addr_ID : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
         imediato_estendido_ID : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+        imediatoLUI_ID : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
         decoder_OUT_ID : OUT STD_LOGIC_VECTOR(13 DOWNTO 0);
         operacao_ULA_ID : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
     );
@@ -35,9 +45,6 @@ ARCHITECTURE decode OF ID IS
     -- sinais do MUX_FUNCT_OPCODE:
     SIGNAL ULA_ctrl : STD_LOGIC_VECTOR(2 DOWNTO 0); 
 
-    -- sinais do MUX_RD_RT:
-    SIGNAL MUX_RTRD_OUT : STD_LOGIC_VECTOR(4 DOWNTO 0);
-
     -- sinais do Banco de registradores:
     SIGNAL Rt_OUT : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
     SIGNAL Rs_ULA_A : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
@@ -46,12 +53,12 @@ ARCHITECTURE decode OF ID IS
     SIGNAL imediatoEstendido : STD_LOGIC_VECTOR(larguraDados - 1 DOWNTO 0);
     SIGNAL imediato_tipoI : STD_LOGIC_VECTOR(larguraDados-1 DOWNTO 0);
 	SIGNAL imediato_ORI_ANDI : STD_LOGIC_VECTOR(larguraDados-1 DOWNTO 0); 
+    SIGNAL imediato_LUI : STD_LOGIC_VECTOR(larguraDados-1 DOWNTO 0);
     
     -- sinais de controle originados com o decoder
     ALIAS TIPOR : STD_LOGIC IS decoder_OUT(6);
-    ALIAS write_REG : STD_LOGIC IS decoder_OUT(8);
+    -- ALIAS write_REG : STD_LOGIC IS decoder_OUT(8);
     ALIAS ORI_ANDI : STD_LOGIC IS decoder_OUT(9);
-    ALIAS SelMuxRtRd : STD_LOGIC_VECTOR(1 DOWNTO 0) IS decoder_OUT(11 DOWNTO 10);
 
     -- sinais com partes das instruções
     ALIAS OPCODE_SIGNAL: STD_LOGIC_VECTOR(5 DOWNTO 0) IS ROM_OUT_ID(31 DOWNTO 26);
@@ -92,16 +99,6 @@ BEGIN
         saida_MUX => ULA_ctrl
     );
 
-     -- é o resultado da ULA ou o dado da memória:
-     MUX_RD_RT : ENTITY work.muxGenerico4x1 GENERIC MAP (larguraDados => 5)
-     PORT MAP(
-         E0 => RtAddr,
-         E1 => RdAddr,
-         E2 =>  "11111",
-         E3	=> "00000",
-         SEL_MUX => SelMuxRtRd,
-         MUX_OUT => MUX_RTRD_OUT 			
-     );
 
     BANCO_REG : ENTITY work.bancoReg GENERIC MAP (larguraDados => larguraDados)
         PORT MAP(
@@ -118,6 +115,7 @@ BEGIN
         
     imediato_tipoI <= (larguraDados - 1 DOWNTO 16 => imediato(15)) & imediato;
     imediato_ORI_ANDI <= "0000000000000000"  & imediato;
+	imediato_LUI <= imediato & x"0000";
 
     MUX_ORI_ANDI_IMEDIATO : ENTITY work.muxGenerico2x1 GENERIC MAP (larguraDados => larguraDados)
     PORT MAP(
@@ -130,7 +128,11 @@ BEGIN
     somador_constante_OUT_ID <= somador_constante_OUT_IF;
     RS_OUT_ID <= Rs_ULA_A ; 
     RT_OUT_ID <= Rt_OUT;
+    RT_Addr_ID <= RtAddr;
+    RD_Addr_ID <= RdAddr;
+	 RS_Addr_ID <= RsAddr;
     imediato_estendido_ID <= imediatoEstendido;
+    imediatoLUI_ID <= imediato_LUI;
     decoder_OUT_ID <= decoder_OUT;
     operacao_ULA_ID <= ULA_ctrl;
 

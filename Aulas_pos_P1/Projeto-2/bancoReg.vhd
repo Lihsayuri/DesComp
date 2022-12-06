@@ -40,6 +40,8 @@ ARCHITECTURE comportamento OF bancoReg IS
         tmp(11) := 32x"0C";  -- $t3 = 0x0C
         tmp(12) := 32x"0D";  -- $t4 = 0x0D
         tmp(13) := 32x"16";  -- $t5 = 0x16
+        tmp(14) := 32x"17";  -- $t6 = 0x17
+        
         return tmp;
     end initMemory;
 
@@ -49,7 +51,8 @@ ARCHITECTURE comportamento OF bancoReg IS
 BEGIN
     PROCESS (clk) IS
     BEGIN
-        IF (rising_edge(clk)) THEN
+        --IF (rising_edge(clk)) THEN
+		  IF (falling_edge(clk)) THEN
             IF (escreveC = '1') THEN
                 registrador(to_integer(unsigned(enderecoC))) := dadoEscritaC;
             END IF;
