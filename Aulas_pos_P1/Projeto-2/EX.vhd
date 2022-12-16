@@ -117,6 +117,6 @@ BEGIN
     imediatoLUI_EX <= imediatoLUI_ID;
     decoder_OUT_EX <= decoder_OUT;
     MUX_RTRD_OUT_EX <= MUX_RTRD_OUT;
-    somador_constante_OUT_EX <= somador_constante_OUT_ID;
+    somador_constante_OUT_EX <= PC_constante;
 
 END ARCHITECTURE;

@@ -57,6 +57,8 @@ ARCHITECTURE assincrona OF memoriaROM IS
 
    BEGIN
 
+		-- TESTE PARA INSTRUÇÕES DO TIPO B
+
 		tmp(0)  := x"3c090000";      --lui $t1, 0x0000;
 		tmp(1)  := x"3c0baaaa";      --lui $t3, 0xAAAA;
 		tmp(2)  := x"3c0f1000";      --lui $t7, 0x1000;
@@ -100,6 +102,10 @@ ARCHITECTURE assincrona OF memoriaROM IS
 		tmp(37) := x"08000024";      --j fim;
 		tmp(38) := x"00000000";      --nop;
 		tmp(39) := x"00000000";      --nop;
+
+		--------------------------------------------------------
+
+		-- TESTE APENAS PARA INSTRUÇÕES DO TIPO A
 
 		-- tmp(0) := x"AC09_0008"; --sw $t1 8($zero)
 		-- tmp(1) := x"8C08_0008"; --lw $t0 8($zero)

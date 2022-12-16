@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projetoMIPS
-Tue Dec 06 19:55:09 2022
+Wed Dec 07 10:36:12 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -185,7 +185,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Dec 06 19:55:08 2022       ;
+; Analysis & Synthesis Status     ; Successful - Wed Dec 07 10:36:12 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; projetoMIPS                                 ;
 ; Top-level Entity Name           ; projetoMIPS                                 ;
@@ -2077,7 +2077,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 68                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 15.00                       ;
-; Average LUT depth     ; 3.44                        ;
+; Average LUT depth     ; 3.45                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2086,7 +2086,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:07     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -2096,18 +2096,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Dec 06 19:54:30 2022
+    Info: Processing started: Wed Dec 07 10:35:46 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projetoMIPS -c projetoMIPS
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12248): Elaborating Platform Designer system entity "probesSourcesDebug.qsys"
-Info (12250): 2022.12.06.19:54:52 Progress: Loading Projeto-2/probesSourcesDebug.qsys
-Info (12250): 2022.12.06.19:54:53 Progress: Reading input file
-Info (12250): 2022.12.06.19:54:53 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 20.1]
-Info (12250): 2022.12.06.19:54:53 Progress: Parameterizing module in_system_sources_probes_0
-Info (12250): 2022.12.06.19:54:53 Progress: Building connections
-Info (12250): 2022.12.06.19:54:53 Progress: Parameterizing connections
-Info (12250): 2022.12.06.19:54:53 Progress: Validating
-Info (12250): 2022.12.06.19:54:55 Progress: Done reading input file
+Info (12250): 2022.12.07.10:35:59 Progress: Loading Projeto-2/probesSourcesDebug.qsys
+Info (12250): 2022.12.07.10:36:00 Progress: Reading input file
+Info (12250): 2022.12.07.10:36:00 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 20.1]
+Info (12250): 2022.12.07.10:36:00 Progress: Parameterizing module in_system_sources_probes_0
+Info (12250): 2022.12.07.10:36:00 Progress: Building connections
+Info (12250): 2022.12.07.10:36:00 Progress: Parameterizing connections
+Info (12250): 2022.12.07.10:36:00 Progress: Validating
+Info (12250): 2022.12.07.10:36:01 Progress: Done reading input file
 Info (12250): ProbesSourcesDebug: Generating probesSourcesDebug "probesSourcesDebug" for QUARTUS_SYNTH
 Info (12250): In_system_sources_probes_0: "probesSourcesDebug" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
 Info (12250): ProbesSourcesDebug: Done "probesSourcesDebug" with 2 modules, 2 files
@@ -2186,8 +2186,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file bancore
     Info (12022): Found design unit 1: bancoReg-comportamento File: C:/DesComp/Aulas_pos_P1/Projeto-2/bancoReg.vhd Line: 28
     Info (12023): Found entity 1: bancoReg File: C:/DesComp/Aulas_pos_P1/Projeto-2/bancoReg.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file projetomips.vhdl
-    Info (12022): Found design unit 1: projetoMIPS-arquitetura File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 52
-    Info (12023): Found entity 1: projetoMIPS File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 4
+    Info (12022): Found design unit 1: projetoMIPS-arquitetura File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 53
+    Info (12023): Found entity 1: projetoMIPS File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file id.vhd
     Info (12022): Found design unit 1: ID-decode File: C:/DesComp/Aulas_pos_P1/Projeto-2/ID.vhd Line: 36
     Info (12023): Found entity 1: ID File: C:/DesComp/Aulas_pos_P1/Projeto-2/ID.vhd Line: 5
@@ -2211,7 +2211,7 @@ Info (12128): Elaborating entity "IFF" for hierarchy "IFF:BLOCO_IF" File: C:/Des
 Info (12128): Elaborating entity "registradorGenerico" for hierarchy "IFF:BLOCO_IF|registradorGenerico:PC_REG" File: C:/DesComp/Aulas_pos_P1/Projeto-2/IFF.vhd Line: 34
 Info (12128): Elaborating entity "somaConstante" for hierarchy "IFF:BLOCO_IF|somaConstante:Somador1" File: C:/DesComp/Aulas_pos_P1/Projeto-2/IFF.vhd Line: 44
 Info (12128): Elaborating entity "memoriaROM" for hierarchy "IFF:BLOCO_IF|memoriaROM:ROM1" File: C:/DesComp/Aulas_pos_P1/Projeto-2/IFF.vhd Line: 48
-Warning (10540): VHDL Signal Declaration warning at memoriaROM.vhd(131): used explicit default value for signal "memROM" because signal was never assigned a value File: C:/DesComp/Aulas_pos_P1/Projeto-2/memoriaROM.vhd Line: 131
+Warning (10540): VHDL Signal Declaration warning at memoriaROM.vhd(137): used explicit default value for signal "memROM" because signal was never assigned a value File: C:/DesComp/Aulas_pos_P1/Projeto-2/memoriaROM.vhd Line: 137
 Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:IF_ID" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 188
 Info (12128): Elaborating entity "ID" for hierarchy "ID:BLOCO_ID" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 197
 Info (12128): Elaborating entity "Decoder" for hierarchy "ID:BLOCO_ID|Decoder:decoderInstru1" File: C:/DesComp/Aulas_pos_P1/Projeto-2/ID.vhd Line: 73
@@ -2278,26 +2278,26 @@ Warning (20013): Ignored 16 assignments for entity "probesSourcesDebug" -- entit
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 12 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "FPGA_RESET_N" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 16
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 17
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 17
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 17
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 18
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 18
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 18
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 18
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 18
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 18
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 18
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 18
+    Warning (15610): No output dependent on input pin "FPGA_RESET_N" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 17
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 18
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 18
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 18
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 19
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 19
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 19
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 19
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 19
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 19
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 19
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl Line: 19
 Info (21057): Implemented 5162 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 52 output pins
     Info (21061): Implemented 5094 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 49 warnings
-    Info: Peak virtual memory: 4913 megabytes
-    Info: Processing ended: Tue Dec 06 19:55:09 2022
-    Info: Elapsed time: 00:00:39
-    Info: Total CPU time (on all processors): 00:01:27
+    Info: Peak virtual memory: 4894 megabytes
+    Info: Processing ended: Wed Dec 07 10:36:12 2022
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:55
 
 

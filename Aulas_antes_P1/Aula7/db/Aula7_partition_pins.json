@@ -1,0 +1,213 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "PC_OUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "REGA_OUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "REGA_OUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "REGA_OUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "REGA_OUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "REGA_OUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "REGA_OUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "REGA_OUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "REGA_OUT[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Palavra[10]",
+					"strict" : false
+				},
+				{
+					"name" : "HabilitaRAM",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_ADDRESS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_ADDRESS[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_ADDRESS[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_ADDRESS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_ADDRESS[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MEM_ADDRESS[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ADD_OUT[7]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
