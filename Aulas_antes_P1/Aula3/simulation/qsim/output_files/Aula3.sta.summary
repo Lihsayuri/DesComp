@@ -1,0 +1,85 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'KEY[0]'
+Slack : -1.309
+TNS   : -6.831
+
+Type  : Slow 1100mV 85C Model Hold 'KEY[0]'
+Slack : 0.456
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'KEY[0]'
+Slack : -0.844
+TNS   : -3.368
+
+Type  : Slow 1100mV 85C Model Removal 'KEY[0]'
+Slack : 1.007
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.538
+TNS   : -10.256
+
+Type  : Slow 1100mV 0C Model Setup 'KEY[0]'
+Slack : -1.489
+TNS   : -7.613
+
+Type  : Slow 1100mV 0C Model Hold 'KEY[0]'
+Slack : 0.429
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'KEY[0]'
+Slack : -0.850
+TNS   : -3.390
+
+Type  : Slow 1100mV 0C Model Removal 'KEY[0]'
+Slack : 0.964
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.538
+TNS   : -9.761
+
+Type  : Fast 1100mV 85C Model Setup 'KEY[0]'
+Slack : -0.043
+TNS   : -0.170
+
+Type  : Fast 1100mV 85C Model Hold 'KEY[0]'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'KEY[0]'
+Slack : 0.154
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'KEY[0]'
+Slack : 0.461
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.579
+TNS   : -8.898
+
+Type  : Fast 1100mV 0C Model Setup 'KEY[0]'
+Slack : 0.023
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'KEY[0]'
+Slack : 0.184
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'KEY[0]'
+Slack : 0.206
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'KEY[0]'
+Slack : 0.421
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.611
+TNS   : -9.754
+
+------------------------------------------------------------

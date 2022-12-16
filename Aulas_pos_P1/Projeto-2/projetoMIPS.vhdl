@@ -1,5 +1,6 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL; -- Biblioteca IEEE para funções aritméticas
 
 ENTITY projetoMIPS IS
 	-- Total de bits das entradas e saidas
@@ -130,7 +131,6 @@ ARCHITECTURE arquitetura OF projetoMIPS IS
 	ALIAS BEQ : STD_LOGIC IS EX_MEM_OUT(164);
 	ALIAS BNE: STD_LOGIC IS EX_MEM_OUT(163);
 	
-
 -- JR|SelMuxBEQJmp|muxRTRD|ORI_ANDI|habEscritaReg|muxRTImediato|TipoR|muxULAMEM|BEQ|Leitura|Escrita
 
 BEGIN
@@ -307,12 +307,12 @@ BEGIN
 		MUX_DADO_BANCO_WB => MUX_DADO_BANCO,
 		write_REG_WB => write_REG_WB
 	);
-
+	
 
 	MUX_INFO: ENTITY work.muxGenerico4x1 GENERIC MAP (larguraDados => larguraDados)
 	PORT MAP(
 		E0 => PC_OUT, -- PC_OUT
-		E1 => EX_MEM_OUT(211 downto 180), -- somador_constante
+		E1 => EX_MEM_OUT(211 downto 180) , ---EX_MEM_OUT(211 downto 180),  somador_constante
 		E2 =>  ULA_OUT, -- ULA_OUT
 		E3	=> MUX_DADO_BANCO, -- dado que salva
 		SEL_MUX => SW(1) & SW(0),

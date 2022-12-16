@@ -1,0 +1,49 @@
+Quartus Prime Archive log --	C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.qarlog
+
+Archive:	C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.qar
+Date:		Wed Dec 07 10:48:20 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/DesComp/Aulas_pos_P1/Projeto-2/ControleULA.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/Decoder.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/DecoderFunct.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/DecoderOpcode.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/EX.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/ID.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/IFF.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/MEM.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/Toplevel.mif
+C:/DesComp/Aulas_pos_P1/Projeto-2/ULA1a31bit.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/ULA32bit.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/ULASomaSub.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/WB.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/Waveform.vwf
+C:/DesComp/Aulas_pos_P1/Projeto-2/bancoReg.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/conversorHex7Seg.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/debugMonitor.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/edgeDetector.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/estendeSinal.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/flipflopGenerico.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/logica_7Seg.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/memoriaRAM.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/memoriaROM.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/muxGenerico2x1.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/muxGenerico4x1.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/output_files/Waveform.vwf
+C:/DesComp/Aulas_pos_P1/Projeto-2/probesSourcesDebug.qsys
+C:/DesComp/Aulas_pos_P1/Projeto-2/probesSourcesDebug.sopcinfo
+C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.qpf
+C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.qsf
+C:/DesComp/Aulas_pos_P1/Projeto-2/projetoMIPS.vhdl
+C:/DesComp/Aulas_pos_P1/Projeto-2/registradorGenerico.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/shiftSinal.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/simulation/qsim/output_files/Waveform.vwf
+C:/DesComp/Aulas_pos_P1/Projeto-2/somaConstante.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/somadorGenerico.vhd
+C:/DesComp/Aulas_pos_P1/Projeto-2/somadorGenerico1bit.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 38 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
